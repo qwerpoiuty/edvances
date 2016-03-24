@@ -1,0 +1,14 @@
+<div class = "pageContainer">
+	<div ng-show = "teacher" class="container">
+		<form novalidate class="css-form">
+	    Email: <input type="email" ng-model="user.email" required /><br />
+	    Password: <input type="password" ng-model="user.password" required /><br />
+	    Confirm Password: <input type="password" ng-model="user.confirm" required /><br />
+		</form>
+		<button class="btn btn-primary" type="button" ng-click="signup(user)">Submit</button>
+	</div>
+
+	<div ng-show = "!teacher" class="container">
+		
+	</div>
+</div>

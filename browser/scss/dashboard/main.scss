@@ -1,0 +1,37 @@
+#sidebar-border{
+	position:fixed;
+	width:10px;
+	height:85vh;
+	display:flex;
+	left:-10px;
+}
+.sidebarController{
+	color:$blue;
+	background:none;
+	border:none;
+	padding:0;
+}
+.nav-sidebar{
+	padding:0;
+	margin-bottom:20px;
+	margin-top: 10px
+}
+.nav-sidebar > li{
+	list-style:none;
+	color:$blue;
+	padding: 5px;
+	font-size: 1.3em;
+	margin-left:10px;
+}
+
+.page-header{
+	margin: 20px 0 10px;
+	color:$blue;
+}
+
+.sub-header{
+	color:$blue;
+}
+@import 'reports/main';
+@import 'creation/main';
+@import 'overview/main';

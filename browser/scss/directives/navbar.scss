@@ -1,0 +1,61 @@
+.navbar {
+
+  display: block;
+  background: #0F70B7;
+  width:100%;
+  margin-bottom:0;
+  .container {
+    width:100%;
+  }
+
+  a {
+    color: white;
+    font-size: 16px;
+  }
+
+  .nav{
+    display:inline-block;
+    li{
+      margin-right:5px;
+    }
+  }
+  .nav > li > a {
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &.active {
+      background-color:white;
+      border-radius:50%;
+      color: $blue;
+    }
+    &:hover {
+      background: none;
+      color: darken($blue, 20%);
+    }
+    &:focus {
+      background-color:white;
+      border-radius:50%;
+    }
+  }
+
+  .login-button {
+    float: right;
+    border: 1px solid white;
+    margin-top: 10px;
+    background: white;
+    outline: none !important;
+  }
+
+  .welcome {
+    float: right;
+    margin-top: 12px;
+    span {
+      color: white;
+    }
+    a {
+      color: #f30046;
+      cursor: pointer;
+    }
+  }
+
+}
