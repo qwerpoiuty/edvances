@@ -1,0 +1,61 @@
+VirtualHost "jitsi.humantics.ca"
+    authentication = "anonymous"
+    ssl = {
+        key = "/var/lib/prosody/jitsi.humantics.ca.key";
+        certificate = "/var/lib/prosody/jitsi.humantics.ca.crt";
+    }
+    modules_enabled = {
+        "bosh";
+        "pubsub";
+    }
+
+VirtualHost "auth.jitsi.humantics.ca"
+    authentication = "internal_plain"
+
+admins = { "focus@auth.jitsi.humantics.ca" }
+
+Component "conference.jitsi.humantics.ca" "muc"
+Component "jitsi-videobridge.jitsi.humantics.ca"
+    component_secret = "humantics"
+Component "focus.jitsi.humantics.ca"
+    component_secret = "humantics"
+
+ln -s /etc/prosody/conf.avail/jitsi.humantics.ca.cfg.lua /etc/prosody/conf.d/jitsi.humantics.ca.cfg.lua
+
+prosodyctl cert generate jitsi.humantics.ca
+
+prosodyctl register focus auth.jitsi.humantics.ca humantics
+
+
+server_names_hash_bucket_size 64;
+
+server {
+    listen 80;
+    server_name jitsi.humantics.ca;
+    # set the root
+    root /srv/jitsi.humantics.ca;
+    index index.html;
+    location ~ ^/([a-zA-Z0-9=\?]+)$ {
+        rewrite ^/(.*)$ / break;
+    }
+    location / {
+        ssi on;
+    }
+    # BOSH
+    location /http-bind {
+        proxy_pass      http://localhost:5280/http-bind;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $http_host;
+    }
+}
+
+ln -s ../sites-available/jitsi.humantics.ca jitsi.humantics.ca
+
+./jvb.sh --host=localhost --domain=jitsi.humantics.ca --port=5347 --secret=humantics &
+
+remember to use the ant lib in usr/share
+
+./jicofo.sh --domain=jitsi.humantics.ca --secret=humantics --user_domain=auth.jitsi.humantics.ca --user_name=focus --user_password=humantics
+
+lsof -i tcp:5347 for monitoring ports
+
