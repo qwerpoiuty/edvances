@@ -19,4 +19,4 @@ module.exports = {
 };
 // mongodb://database:database@ds015398.mongolab.com:15398/alanalanalan
 
-"mongodb://localhost:27017/"
+// "mongodb://localhost:27017/"

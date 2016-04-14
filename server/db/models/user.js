@@ -34,6 +34,9 @@ var schema = new mongoose.Schema({
     education: {
         type: String
     },
+    calendar: [{
+        type: Date
+    }],
     attachments: [{
         data: Buffer,
         contentType: String

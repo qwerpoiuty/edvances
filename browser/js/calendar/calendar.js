@@ -1,6 +1,6 @@
 app.config(function($stateProvider) {
     $stateProvider.state('calendar', {
-        url: '/',
+        url: '/calendar',
         templateUrl: 'js/calendar/calendar.html'
     })
 });

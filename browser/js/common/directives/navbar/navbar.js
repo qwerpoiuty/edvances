@@ -13,6 +13,10 @@ app.directive('navbar', function($rootScope, AuthService, AUTH_EVENTS, $state) {
                 label: 'Your Profile',
                 state: 'profile',
                 auth: true
+            }, {
+                lable: 'Your Calendar',
+                state: 'calendar',
+                auth: true
             }];
 
             scope.user = null;

@@ -15,16 +15,7 @@ body {
     clear: both;
   }
 }
-.axis text {
-  font: 10px sans-serif;
-}
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
 #main {
   padding-top: 50px;
   width: 100%;
@@ -37,4 +28,4 @@ body {
 @import 'home/main';
 @import 'landing/main';
 @import 'login/main';
-@import 'dashboard/main';
+@import 'classroom/main';
