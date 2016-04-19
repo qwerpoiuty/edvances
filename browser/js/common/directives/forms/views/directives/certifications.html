@@ -1,0 +1,29 @@
+<form name="certificationsForm" novalidate>
+        <div class="row">
+            <div class="form-group">
+              <label class="control-label" for="name">Certification</label>
+                <div class="controls">
+                  <input class="form-control" type="text" id="certification" name="certification" data-ng-model="userData.certification"
+                         maxlength="20" placeholder="Certificate Name" data-ng-required="true" data-ng-disabled="disabled" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+              <label class="control-label" for="name">Year Certified</label>
+                <div class="controls">
+                  <input class="form-control" type="text" id="yearOfCertification" name="yearOfCertification" data-ng-model="userData.yearOfCertification"
+                         maxlength="4" placeholder="Year of Certification" data-ng-required="true" data-ng-disabled="disabled" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class ="row">
+              <div class="form-group">
+                  <button class="btn btn-success" ng-click="saveForm()" ng-show="!disabled">Save</button>
+              </div>
+        </div>
+</form>
+
+

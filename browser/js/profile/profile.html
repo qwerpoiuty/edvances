@@ -1,33 +1,60 @@
-<div class = "pageContainer">
-	<h3 class = "sectionTitle">Your Basic Info</h3>
-	<button ng-show = "!editing" class = "btn btn-danger">Edit your info</button>
-	<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-	<div class="inputContainer">
-		<h4 class = "info">First Name</h4>
-		<input name = "edit" type="text" placeholder="{{user.firstName}}" />
-	</div>
-	<div class="inputContainer">
-		<h4 class = "info">Last Name</h4>
-		<input name = "edit" type="text" placeholder = "{{user.lastName}}"/>
-	</div>
-	<div class="inputContainer">
-		<h4 class = "info">Date of Birth</h4>
-		<input name = "edit" type="date" placeholder = "{{user.dob}}"/>
-	</div>
-	<div class="inputContainer">
-		<h4 class = "info">Years of Experience</h4>
-		<input name = "edit" type="number" placeholder = "{{user.yearsTeaching}}"/>
-	</div>
-	<div class="inputContainer">
-		<h4 class = "info">Specialties</h4>
-		<input name = "edit" type="text" placeholder="{{user.specialties}}" />
-	</div>
-	<div class="inputContainer">
-		<h4 class = "info">Degree</h4>
-		<input name = "edit" type="text" placeholder = "{{user.education}}"/>
-	</div>
-	<button ng-show = "editing" class = "btn btn-default">Save</button>
+<div class = "profileContainer">
+	<form name = "parent">
+		<div class="aboutContainer formContainer">
+            <h1 class="container-header">About You</h1>
+            <h2 class="container-sub-header">Basic Information</h2>
+			<div about-you
+				data-register-form-scope="registerFormScope"
+				data-validate-child-form="validateChildForm"
+				data-user-data="user">
+            </div>
+		</div>
 
-	<h3 class = "sectionTitle">Upload Documents</h3>
-		<input type = "file" file-model = "myFile"/><button ng-click = "uploadFile()" class = "btn">Upload</button>
+        <div class="teachingPreferencesContainer formContainer">
+            <h1 class="container-header">Teaching Preferences</h1>
+            <h5 class="container-small-sub-header">What subjects and grade level are you most comfortable teaching?</h5>
+            <div teaching-preferences
+                 data-register-form-scope="registerFormScope"
+                 data-validate-child-form="validateChildForm"
+                 data-user-data="user">
+            </div>
+        </div>
+
+        <div class="educationContainer formContainer">
+            <h1 class="container-header">Education</h1>
+            <div education
+                 data-register-form-scope="registerFormScope"
+                 data-validate-child-form="validateChildForm"
+                 data-user-data="user">
+            </div>
+        </div>
+
+        <div class="certificationsContainer formContainer">
+            <h1 class="container-header">Certifications</h1>
+            <div certifications
+                 data-register-form-scope="registerFormScope"
+                 data-validate-child-form="validateChildForm"
+                 data-user-data="user">
+            </div>
+        </div>
+
+        <div class="personalStatementContainer formContainer">
+            <h1 class="container-header">Personal Statement</h1>
+            <h5 class="container-small-sub-header">This is an optional field to tell us more about yourself. What do you love most about teaching?</h5>
+                <div personal-statement
+                     data-register-form-scope="registerFormScope"
+                     data-validate-child-form="validateChildForm"
+                     data-user-data="user">
+                </div>
+        </div>
+
+        <div class="attachmentsContainer formContainer">
+            <h1 class="container-header">Attachments</h1>
+            <div attachments
+                 data-register-form-scope="registerFormScope"
+                 data-validate-child-form="validateChildForm"
+                 data-user-data="user">
+            </div>
+        </div>
+	</form>
 </div>

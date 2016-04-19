@@ -1,4 +1,10 @@
 $blue:#0F70B7;
+$title-yellow:#F5A623;
+$title-blue:#4A90E2;
+$title-dark-grey:#4A4A4A;
+$title-light-grey:#9B9B9B;
+$title-muted-grey:#DADFEA;
+
 
 * {
   box-sizing: border-box;
@@ -17,6 +23,7 @@ body {
 }
 
 #main {
+  background-color: $title-muted-grey;
   padding-top: 50px;
   width: 100%;
   margin: 0 auto;
@@ -29,3 +36,5 @@ body {
 @import 'landing/main';
 @import 'login/main';
 @import 'classroom/main';
+@import 'profile/main';
+

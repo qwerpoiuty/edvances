@@ -1,0 +1,47 @@
+<form class="form-horizontal" role="form" id="aboutYouForm" novalidate name="aboutYouForm" >
+  <fieldset>
+        <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label for="title" class="control-label">Title</label>
+                        <div class="controls">
+                            <input class="form-control" type="text" id="aboutYouTitle" name="title" data-ng-model="userData.title"
+                                   maxlength="20" placeholder="A Descriptive Title" data-ng-required="true" data-ng-disabled="disabled" required/>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="line-fix">
+                  <label class="control-label" for="name">Name</label>
+                  <div class="controls">
+                        <input class="form-control" type="text" id="aboutYouName" name="name" data-ng-model="userData.name"
+                           maxlength="20" placeholder="Your Full Name" data-ng-required="true" data-ng-disabled="disabled" required/>
+                  </div>
+                </div>
+
+
+        </div>
+      </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="line-fix">
+                    <label class="control-label" for="dateOfBirth">Date of Birth</label>
+                    <div class="controls">
+                    <input class="form-control" type="date" id="dateOfBirth" name="dateOfBirth" data-ng-model="userData.dateOfBirth"
+                        placeholder="Date" data-ng-required="true" data-ng-disabled="disabled" required/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="row">
+              <div class="form-group">
+                  <button class="btn btn-success" ng-click="saveForm()" ng-show="!disabled">Save</button>
+        </div>
+      </div>
+    </fieldset>
+</form>

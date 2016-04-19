@@ -1,0 +1,21 @@
+<form name="attachmentsForm" novalidate>
+        <div class="row">
+                <div class="form-group">
+                    <div class="controls" id="attachmentControl">
+
+                    <input class="form-control" type="file" id="attachment" name="attachment" data-ng-model="userData.attachment"
+                           maxlength="20" placeholder="" data-ng-required="true" data-ng-disabled="disabled"/>
+                    </div>
+
+                </div>
+        </div>
+
+        <div class ="row">
+              <div class="form-group">
+                  <button class="btn btn-success" ng-click="saveForm()" ng-show="!disabled">Save</button>
+              </div>
+        </div>
+
+
+</form>
+

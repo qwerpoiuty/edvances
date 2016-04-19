@@ -1,0 +1,53 @@
+
+<form name="educationForm" novalidate>
+
+        <div class="row">
+                <div class="form-group">
+                    <label class="control-label" for="school">School</label>
+                    <div class="controls">
+                        <input class="form-control" type="text" id="school" name="school" data-ng-model="userData.school"
+                               maxlength="20" placeholder="School of Graduation" data-ng-required="true" data-ng-disabled="disabled" required/>
+                    </div>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+              <label class="control-label" for="major">Major</label>
+                <div class="controls">
+                  <input class="form-control" type="text" id="major" name="major" data-ng-model="userData.major"
+                         maxlength="20" placeholder="Major Focus" data-ng-required="true" data-ng-disabled="disabled"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+              <label class="control-label" for="degree">Degree</label>
+                <div class="controls">
+                  <input class="form-control" type="text" id="degree" name="degree" data-ng-model="userData.degree"
+                         maxlength="20" placeholder="Degree Name" data-ng-required="true" data-ng-disabled="disabled"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+              <label class="control-label" for="yearOfGraduation" id="yearOfGraduationLabel">Year of Graduation</label>
+                <div class="controls">
+                  <input class="form-control" type="text" id="yearOfGraduation" name="yearOfGraduation" id="yearOfGraduation" data-ng-model="userData.yearOfGraduation"
+                         maxlength="4" placeholder="Graduating Year" data-ng-required="true" data-ng-disabled="disabled" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class ="row">
+              <div class="form-group">
+                  <button class="btn btn-success" ng-click="saveForm()" ng-show="!disabled">Save</button>
+              </div>
+        </div>
+
+
+
+</form>
+

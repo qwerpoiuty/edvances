@@ -22,8 +22,8 @@ var Promise = require('bluebird');
 var chalk = require('chalk');
 var connectToDb = require('./server/db');
 var User = Promise.promisifyAll(mongoose.model('User'));
-var Groups = Promise.promisifyAll(mongoose.model('Groups'));
-var Graphs = Promise.promisifyAll(mongoose.model('Graphs'));
+//var Groups = Promise.promisifyAll(mongoose.model('Groups'));
+//var Graphs = Promise.promisifyAll(mongoose.model('Graphs'));
 
 
 var getCurrentUserData = function() {
@@ -33,12 +33,12 @@ var seedUsers = function() {
 
     var users = [{
         email: 'stanle@123.com',
-        password: 'password',
-        groups: []
+        password: 'password'
+        //groups: []
     }, {
         email: 'obama@gmail.com',
-        password: 'potus',
-        groups: []
+        password: 'potus'
+        //groups: []
     }];
 
     return User.createAsync(users);
