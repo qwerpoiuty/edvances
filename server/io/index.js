@@ -11,7 +11,7 @@ module.exports = function(server) {
         console.log(socket.id, 'connected');
 
         socket.on('join awesome room', function(roomName) {
-            console.log(roomName)
+
             var chatBot = {
 
                     log: function() {
