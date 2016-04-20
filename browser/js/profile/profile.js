@@ -18,16 +18,8 @@ app.config(function($stateProvider) {
 })
 
 app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q, $timeout) {
-    $scope.user = {
-        email: user.email,
-        firstName: "Stan",
-        lastName: "Le",
-        title: "TEACHERMAN",
-        summary: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde quae ipsum facere expedita perferendis illum minus nobis nesciunt dicta. Voluptates rerum mollitia eveniet beatae ipsam fugiat dicta quaerat officiis.",
-        subjectArea: ["maths", "computers", "chinese"],
-        gradeLevels: [1, 2, 3],
-        education: ["Economics", "Bachelor of Arts", "Swarthmore College", "2014"]
-    }
+    $scope.user = user
+    console.log($scope.user)
     $scope.uploadFile = function() {
         var file = $scope.myFile;
 
@@ -38,11 +30,23 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         fileUpload.uploadFileToUrl(file, uploadUrl);
     };
 
-    // if ($scope.user.completed) {
-    //     $scope.fullprofile = true
-    // } else {
-    //     $scope.fullprofile = false
-    // }
+    $scope.submit = function(user) {
+        user.email = $scope.user.email
+        user.education = Object.keys(user.education).map(function(key) {
+            return user.education[key]
+        });
+        user.grades = Object.keys(user.grades).map(function(key) {
+            return user.grades[key]
+        })
+        dataFactory.updateUser(user).then(function(res) {
+            console.log(res)
+        })
+    }
+    if ($scope.user.completed) {
+        $scope.fullprofile = true
+    } else {
+        $scope.fullprofile = false
+    }
     $scope.fullprofile = true
     //form controlling
     $scope.form = {};
