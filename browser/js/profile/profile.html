@@ -43,39 +43,78 @@
 </div>
 
 <div ng-if = "fullprofile" class = "profileContainer">
+    <!-- the about section -->
     <div class="formContainer">
-        <div class = "aboutContainer">
-            <div class = "introContainer">
-                <img id="profilePic" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/140.jpg" alt="">
+        <div ng-switch on="(edits.about)"class = "aboutContainer">
+            <img id="profilePic" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/140.jpg" alt="">
+            <div ng-switch-default class = "introContainer">
                 <h1 class = "container-header">{{user.firstName}} {{user.lastName}}</h1>
                 <h3 class = "container-small-sub-header">{{user.title}}</h3>
+                <h3 class = "container-sub-header">About</h3>
+                <p>{{user.statement}}</p>
             </div>
-
-        <h3 class = "container-sub-header">About</h3>
-        <p>{{user.statement}}</p>
-        <!-- picture -->
-
+             <!-- The edit portion -->
+            <div class = "introContainer" ng-switch-when="true">
+                
+                <input class = "container-header" ng-model="editObject.about.firstName" placeholder="First Name" type="text"/>
+                <input ng-model="editObject.about.lastName" placeholder="Last Name" type="text"/>
+                <input ng-model="editObject.about.title" placeholder="Title" type="text"/>
+                <textarea ng-model="editObject.about.statement" placeholder="Your education statement"> </textarea>
+            </div>
+            <button class="btn btn-primary" ng-switch-default ng-click="edit('about')">edit</button>
+            <button class="btn btn-success" ng-switch-when="true" ng-click="save('about')">save</button>
+            <button class="btn btn-danger" ng-switch-when="true" ng-click="cancel('about')">X</button>
+        </div>
     </div>
+
+    <!-- teacher pforile -->
     <div class="formContainer">
-        <div class = "teachingPreferencesContainer">
+        <div class = "teachingPreferencesContainer" ng-switch on="(edits.preferences)">
             <h3 class = "container-sub-header">Teacher Profile</h3>
-            <div class = "row">
+            <div class = "row" ng-switch-default>
                 <div class = "col-lg-6 col-sm-6 col-md-6">
                     <h4 class = "topic-label">Subject Area</h4>
-                    <h3 class = "container-small-sub-header-bold-small">{{user.subjectArea[0]}} {{user.subjectArea[1]}} & {{user.subjectArea[2]}}</h3>
+                    <h3 class = "container-small-sub-header-bold-small">{{user.area }}</h3>
                     <!-- specialty subject -->
                 </div>
                 <div class = "col-lg-6 col-sm-6 col-md-6">
                     <h4 class = "topic-label">Grade Levels</h4>
-                    <h3 class = "container-small-sub-header-bold-small">{{user.gradeLevels[0]}}</h3>
+                    <h3 class = "container-small-sub-header-bold-small" ng-repeat = "grade in user.grades">{{grade}}</h3>
                     <!-- grade levels -->
                 </div>
             </div>
+            <!-- edits -->
+            <div class = "row" ng-switch-when="true">
+                <div class = "col-lg-6 col-sm-6 col-md-6">
+                    <h4 class = "topic-label">Subject Area</h4>
+                    <h3 class = "container-small-sub-header-bold-small"><input ng-model="editObject.preferences.area"/></h3>
+                    <!-- specialty subject -->
+                </div>
+                <div class = "col-lg-6 col-sm-6 col-md-6">
+                    <h4 class = "topic-label">Grade Levels</h4>
+                    <h3 class = "container-small-sub-header-bold-small" ng-repeat = "$index in editObject.preferences.grades track by $index">
+                        <select ng-model="editObject.preferences.grades[$index]">
+                          <option value="none">None
+                          <option value="elementarySchool">Elementary School
+                          <option value="middleSchool">Middle School
+                          <option value="highSchool">High School
+                          <option value="university">University
+
+                        </select>
+                    </h3>
+                    <!-- grade levels -->
+                </div>
+            </div>
+            <button class="btn btn-primary" ng-switch-default ng-click="edit('preferences')">edit</button>
+            <button class="btn btn-success" ng-switch-when="true" ng-click="save('preferences')">save</button>
+            <button class="btn btn-danger" ng-switch-when="true" ng-click="cancel('preferences')">X</button>
         </div>
     </div>
+
+    <!-- education/certification -->
     <div class="formContainer">
-        <div class = "certificationsContainer">
-            <div class = "row">
+        <div class = "certificationsContainer" ng-switch on="(edits.certification)">
+            <div class = "row" ng-switch-default>
                 <div class="col-lg-6 col-sm-6 col-md-6">
                     <h4 class = "container-sub-header">Education</h4>
                     <div class = "line-fix-profile">
@@ -92,15 +131,38 @@
                             <h4 class="container-small-sub-header-bold-small educationInfo">{{user.education[3]}}</h4>
                         </div>
                     </div>
-                    <!-- major, degree, school, year -->
                 </div>
 
                 <div class="col-lg-6 col-sm-6 col-md-6">
-                    <h4 class = "container-sub-header">Certification</h4>
-                    <h3 class = "container-small-sub-header-bold-small">{{user.certification[0]}}, {{user.dateOfCertification[0]}}</h3>
+                    <h4 class = "container-sub-header">Documents</h4>
                     <!-- certificates -->
                 </div>
             </div>
+            <!-- edits -->
+            <div class = "row" ng-switch-when="true">
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <h4 class = "container-sub-header">Education</h4>
+                    <div class = "line-fix-profile">
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <h4 class="topic-label">Major</h4>
+                            <h4 class="topic-label">Degree</h4>
+                            <h4 class="topic-label">School</h4>
+                            <h4 class="topic-label">Year</h4>
+                        </div>
+                        <div class=" col-lg-9 col-sm-9 col-md-9">
+                            <h4 ng-repeat="$index in editObject.certification.education track by $index"><input ng-model="editObject.certification.education[$index]" ng-required/></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <h4 class = "container-sub-header">Documents</h4>
+                    <!-- certificates -->
+                </div>
+            </div>
+            <button class="btn btn-primary" ng-switch-default ng-click="edit('certification')">edit</button>
+            <button class="btn btn-success" ng-switch-when="true" ng-click="save('certification')">save</button>
+            <button class="btn btn-danger" ng-switch-when="true" ng-click="cancel('certification')">X</button>
         </div>
     </div>
 </div>
