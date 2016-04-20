@@ -20,6 +20,7 @@ app.config(function($stateProvider) {
 app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q, $timeout) {
     $scope.user = user
     console.log($scope.user)
+
     $scope.uploadFile = function() {
         var file = $scope.myFile;
 

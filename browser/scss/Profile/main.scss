@@ -6,7 +6,7 @@
 }
 
 .container-header{
-  font-family:'Lato' , sans-serif !important;
+  font-family:'Lato', sans-serif !important;
   font-size: 3.2em;
   font-weight: bold;
   color: $title-yellow;
@@ -30,6 +30,24 @@
   opacity:.75;
 }
 
+.container-small-sub-header-bold{
+  font-family: 'Lato', sans-serif !important;
+  font-size: 16px;
+  font-weight: bold;
+  color: $title-dark-grey;
+  font-style: oblique;
+  opacity:.75;
+}
+
+.container-small-sub-header-bold-small{
+  font-family: 'Lato', sans-serif !important;
+  font-size: 14px;
+  font-weight: bold;
+  color: $title-dark-grey;
+  font-style: oblique;
+  opacity:.75;
+}
+
 .formContainer{
   box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.2);
   padding: 15px;
@@ -39,9 +57,10 @@
   border-color: $title-light-grey;
   margin-bottom: 30px;
   margin-top: 30px;
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 3px;
 }
 .aboutContainer{
   .introContainer{
@@ -81,6 +100,34 @@
 
 }
 
+
+.topic-label{
+  width: 50%;
+  color: $title-light-grey;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+}
+
+.education-topic-label{
+  width: 50%;
+  color: $title-light-grey;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+}
+
+.line-fix-profile{
+  display: inline-block;
+  width:100%;
+}
+
+.educationInfo{
+  padding-top: 1%;
+  padding-bottom: .5%;
+}
 
 
 
