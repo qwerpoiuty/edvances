@@ -24,8 +24,10 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         lastName: "Le",
         title: "TEACHERMAN",
         summary: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde quae ipsum facere expedita perferendis illum minus nobis nesciunt dicta. Voluptates rerum mollitia eveniet beatae ipsam fugiat dicta quaerat officiis.",
-        subjectArea: ["maths", "computers", "chinese"],
-        gradeLevels: [1, 2, 3],
+        subjectArea: ["Math", "Computers", "Chinese"],
+        gradeLevels: ["College/University", "High School", "Middle School", "Elementary School"],
+        certification:["English as A Second Language"],
+        dateOfCertification: ["2008"],
         education: ["Economics", "Bachelor of Arts", "Swarthmore College", "2014"]
     }
     $scope.uploadFile = function() {

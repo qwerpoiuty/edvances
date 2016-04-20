@@ -60,39 +60,62 @@
 </div>
 
 <div ng-if = "fullprofile" class = "profileContainer">
-    <div class = "aboutContainer">
-        <div class = "introContainer">
-            <img id="profilePic" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/140.jpg" alt="">
-            <h1 class = "container-header">{{user.firstName}} {{user.lastName}}</h1>
-            <h3 class = "container-small-sub-header">{{user.title}}</h3>
-        </div>
-        <br>
-        <h3 class = "container-sub-header">About</h3>
-        <p>{{user.summary}}</p>
-        <!-- picture -->
-    </div>
-    <div class = "teacherProfile">
-        <h3 class = "container-sub-header">Teacher Profile</h3>
-        <div class = "row">
-            <div class = "col-lg-5 col-sm-5 col-md-5">
-                <h4 class = "topic">Subject Area</h4>
-                <!-- specialty subject -->
+    <div class="formContainer">
+        <div class = "aboutContainer">
+            <div class = "introContainer">
+                <img id="profilePic" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/140.jpg" alt="">
+                <h1 class = "container-header">{{user.firstName}} {{user.lastName}}</h1>
+                <h3 class = "container-small-sub-header">{{user.title}}</h3>
             </div>
-            <div class = "col-lg-5 col-sm-5 col-md-5">
-                <h4 class = "topic">Grade Levels</h4>
-                <!-- grade levels -->
-            </div>
+            <h3 class = "container-sub-header">About</h3>
+            <p>{{user.summary}}</p>
+            <!-- picture -->
         </div>
     </div>
-    <div class = "certifications">
-        <div class = "row">
-            <div class="col-lg-6 col-sm-6 col-md-6">
-                <h3 class = "container-sub-header">Education</h3>
-                <!-- major, degree, schoo, year -->
+    <div class="formContainer">
+        <div class = "teachingPreferencesContainer">
+            <h3 class = "container-sub-header">Teacher Profile</h3>
+            <div class = "row">
+                <div class = "col-lg-6 col-sm-6 col-md-6">
+                    <h4 class = "topic-label">Subject Area</h4>
+                    <h3 class = "container-small-sub-header-bold-small">{{user.subjectArea[0]}} {{user.subjectArea[1]}} & {{user.subjectArea[2]}}</h3>
+                    <!-- specialty subject -->
+                </div>
+                <div class = "col-lg-6 col-sm-6 col-md-6">
+                    <h4 class = "topic-label">Grade Levels</h4>
+                    <h3 class = "container-small-sub-header-bold-small">{{user.gradeLevels[0]}}</h3>
+                    <!-- grade levels -->
+                </div>
             </div>
-            <div ng-if = "user.documents.length" class="col-lg-6 col-sm-6 col-md-6">
-                <h3 class = "container-sub-header">Certification</h3>
-                <!-- certificates -->
+        </div>
+    </div>
+    <div class="formContainer">
+        <div class = "certificationsContainer">
+            <div class = "row">
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <h4 class = "container-sub-header">Education</h4>
+                    <div class = "line-fix-profile">
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <h4 class="topic-label">Major</h4>
+                            <h4 class="topic-label">Degree</h4>
+                            <h4 class="topic-label">School</h4>
+                            <h4 class="topic-label">Year</h4>
+                        </div>
+                        <div class=" col-lg-9 col-sm-9 col-md-9">
+                            <h4 class="container-small-sub-header-bold-small educationInfo">{{user.education[0]}}</h4>
+                            <h4 class="container-small-sub-header-bold-small educationInfo">{{user.education[1]}}</h4>
+                            <h4 class="container-small-sub-header-bold-small educationInfo">{{user.education[2]}}</h4>
+                            <h4 class="container-small-sub-header-bold-small educationInfo">{{user.education[3]}}</h4>
+                        </div>
+                    </div>
+                    <!-- major, degree, school, year -->
+                </div>
+
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <h4 class = "container-sub-header">Certification</h4>
+                    <h3 class = "container-small-sub-header-bold-small">{{user.certification[0]}}, {{user.dateOfCertification[0]}}</h3>
+                    <!-- certificates -->
+                </div>
             </div>
         </div>
     </div>
