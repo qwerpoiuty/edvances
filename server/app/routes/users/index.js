@@ -1,7 +1,6 @@
 'use strict';
 var router = require('express').Router();
 var models = require('../../../models')
-module.exports = router;
 
 var ensureAuthenticated = function(req, res, next) {
     if (req.isAuthenticated()) {
@@ -17,6 +16,15 @@ router.get('/', function(req, res) {
     });
 });
 
-router.put('/', function(req, res) {
-
+router.put('/update', function(req, res) {
+    req.body.completed = true
+    models.User.findById(req.body.id)
+        .then(function(user) {
+            return user.update(req.body)
+        }).then(function(updatedUser) {
+            res.json(updatedUser)
+        })
 })
+
+
+module.exports = router;

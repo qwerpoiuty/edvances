@@ -8,8 +8,7 @@
 				data-validate-child-form="validateChildForm"
 				data-user-data="user">
             </div>
-		</div>
-
+        </div>
         <div class="teachingPreferencesContainer formContainer">
             <h1 class="container-header">Teaching Preferences</h1>
             <h5 class="container-small-sub-header">What subjects and grade level are you most comfortable teaching?</h5>
@@ -29,15 +28,6 @@
             </div>
         </div>
 
-        <div class="certificationsContainer formContainer">
-            <h1 class="container-header">Certifications</h1>
-            <div certifications
-                 data-register-form-scope="registerFormScope"
-                 data-validate-child-form="validateChildForm"
-                 data-user-data="user">
-            </div>
-        </div>
-
         <div class="personalStatementContainer formContainer">
             <h1 class="container-header">Personal Statement</h1>
             <h5 class="container-small-sub-header">This is an optional field to tell us more about yourself. What do you love most about teaching?</h5>
@@ -46,17 +36,10 @@
                      data-validate-child-form="validateChildForm"
                      data-user-data="user">
                 </div>
+            <button class = "btn btn-alert" ng-click = "submit(user)">Submit</button>
         </div>
 
-        <div class="attachmentsContainer formContainer">
-            <h1 class="container-header">Attachments</h1>
-            <div attachments
-                 data-register-form-scope="registerFormScope"
-                 data-validate-child-form="validateChildForm"
-                 data-user-data="user">
-            </div>
-        </div>
-	</form>
+    </form>
 </div>
 
 <div ng-if = "fullprofile" class = "profileContainer">
@@ -67,10 +50,11 @@
                 <h1 class = "container-header">{{user.firstName}} {{user.lastName}}</h1>
                 <h3 class = "container-small-sub-header">{{user.title}}</h3>
             </div>
-            <h3 class = "container-sub-header">About</h3>
-            <p>{{user.summary}}</p>
-            <!-- picture -->
-        </div>
+
+        <h3 class = "container-sub-header">About</h3>
+        <p>{{user.statement}}</p>
+        <!-- picture -->
+
     </div>
     <div class="formContainer">
         <div class = "teachingPreferencesContainer">
