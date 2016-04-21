@@ -18,34 +18,116 @@ app.config(function($stateProvider) {
 })
 
 app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q, $timeout) {
-    $scope.user = {
-        email: user.email,
-        firstName: "Stan",
-        lastName: "Le",
-        title: "TEACHERMAN",
-        summary: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde quae ipsum facere expedita perferendis illum minus nobis nesciunt dicta. Voluptates rerum mollitia eveniet beatae ipsam fugiat dicta quaerat officiis.",
-        subjectArea: ["Math", "Computers", "Chinese"],
-        gradeLevels: ["College/University", "High School", "Middle School", "Elementary School"],
-        certification:["English as A Second Language"],
-        dateOfCertification: ["2008"],
-        education: ["Economics", "Bachelor of Arts", "Swarthmore College", "2014"]
+    $scope.user = user
+    if ($scope.user.completed) {
+        $scope.fullprofile = true
+    } else {
+        $scope.fullprofile = false
     }
-    $scope.uploadFile = function() {
-        var file = $scope.myFile;
 
-        console.log('file is ');
-        console.dir(file);
+    $scope.uploadFiles = function(file, errFiles) {
+        $scope.f = file;
+        console.log($scope.f)
+        $scope.errFile = errFiles && errFiles[0];
+        if (file) {
+            file.upload = Upload.upload({
+                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+                data: {
+                    file: file
+                }
+            });
 
-        var uploadUrl = "/api/users/docs/" + $scope.user._id;
-        fileUpload.uploadFileToUrl(file, uploadUrl);
+            file.upload.then(function(response) {
+                $timeout(function() {
+                    file.result = response.data;
+                });
+            }, function(response) {
+                if (response.status > 0)
+                    $scope.errorMsg = response.status + ': ' + response.data;
+            }, function(evt) {
+                file.progress = Math.min(100, parseInt(100.0 *
+                    evt.loaded / evt.total));
+            });
+        }
+    }
+
+
+    //editing section
+    $scope.editObject = {
+        about: {
+            firstName: "",
+            lastName: "",
+            title: "",
+            statement: ""
+        },
+        preferences: {
+            area: "",
+            grades: []
+        },
+        certification: {
+            education: [],
+
+        }
+    }
+    $scope.edits = {
+        about: false,
+        preferences: false,
+        certification: false
+    };
+    $scope.edit = function(bool) {
+        $scope.edits[bool] = true
+        for (var key in $scope.editObject[bool]) {
+            $scope.editObject[bool][key] = $scope.user[key]
+        }
+        console.log($scope.editObject)
+    }
+
+    $scope.save = function(bool) {
+        for (var key in $scope.editObject[bool]) {
+
+            if (Array.isArray($scope.editObject[bool][key])) {
+                for (var i = 0; i < $scope.editObject[bool][key].length; i++) {
+                    if ($scope.editObject[bool][key][i] === "") {
+                        return alert(key + " is required")
+                    }
+                }
+
+            }
+
+            $scope.user[key] = $scope.editObject[bool][key]
+        }
+        $scope.submit($scope.user)
+        $scope.edits[bool] = false
+    }
+
+
+    $scope.cancel = function(bool) {
+        $scope.edits[bool] = false
+
     };
 
-    // if ($scope.user.completed) {
-    //     $scope.fullprofile = true
-    // } else {
-    //     $scope.fullprofile = false
-    // }
-    $scope.fullprofile = true
+
+
+
+    $scope.submit = function(user) {
+        user.email = $scope.user.email
+        $scope.uploadImage()
+        console.log(user.photo)
+        user.education = Object.keys(user.education).map(function(key) {
+            return user.education[key]
+        });
+        user.grades = Object.keys(user.grades).map(function(key) {
+            return user.grades[key]
+        })
+        dataFactory.updateUser(user).then(function(res) {
+            console.log(res)
+        })
+    }
+
+
+
+
+
     //form controlling
     $scope.form = {};
     $scope.update = function(userData) {

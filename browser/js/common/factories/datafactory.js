@@ -6,6 +6,12 @@ app.factory('dataFactory', function($http, AuthService) {
                 .then(function(response) {
                     return response.data;
                 });
+        },
+        updateUser: function(user) {
+            return $http.put("/api/users/update", user)
+                .then(function(response) {
+                    return response.data;
+                })
         }
     }
 });

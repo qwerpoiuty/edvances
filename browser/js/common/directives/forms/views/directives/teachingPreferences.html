@@ -11,24 +11,13 @@
                 </div>
         </div>
 
-        <div class="row">
-            <div class="form-group">
-                <div class="line-fix">
-                    <label class="control-label" for="subject">Subject</label>
-                        <div class="controls">
-                          <input class="form-control" type="text" id="subject" name="subject" data-ng-model="userData.subject"
-                                 maxlength="20" placeholder="Subject Specialization" data-ng-required="true" data-ng-disabled="disabled"/>
-                        </div>
-                </div>
-            </div>
-        </div>
 
         <div class="row">
             <div class="form-group">
                 <div class="line-fix">
                     <label class="control-label" id="gradeLevelOneLabel" for="gradeLevelOne">First Choice</label>
                     <div class="controls">
-                    <select ng-model="userData.gradeLevelOne" id="gradeLevelOne">
+                    <select ng-model="userData.grades.gradelevelone" id="gradeLevelOne">
                       <option value="elementarySchool">Elementary School
                       <option value="middleSchool">Middle School
                       <option value="highSchool">High School
@@ -44,7 +33,7 @@
                 <div class="line-fix">
                     <label class="control-label" id="gradeLevelTwoLabel" for="gradeLevelTwo">Second Choice</label>
                     <div class="controls">
-                    <select ng-model="userData.gradeLevelTwo" id="gradeLevelTwo">
+                    <select ng-model="userData.grades.gradeleveltwo" id="gradeLevelTwo">
                       <option value="elementarySchool">Elementary School
                       <option value="middleSchool">Middle School
                       <option value="highSchool">High School
@@ -60,7 +49,7 @@
                 <div class="line-fix">
                     <label class="control-label" id="gradeLevelThreeLabel" for="gradeLevelThree">Third Choice</label>
                     <div class="controls">
-                    <select ng-model="userData.gradeLevelThree" id="gradeLevelThree">
+                    <select ng-model="userData.grades.gradelevelthree" id="gradeLevelThree">
                       <option value="elementarySchool">Elementary School
                       <option value="middleSchool">Middle School
                       <option value="highSchool">High School
@@ -71,9 +60,5 @@
             </div>
         </div>
 
-        <div class ="row">
-              <div class="form-group">
-                  <button class="btn btn-success" ng-click="saveForm()" ng-show="!disabled">Save</button>
-              </div>
-        </div>
+
 </form>
