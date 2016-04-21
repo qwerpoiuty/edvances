@@ -28,12 +28,12 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
-        }
+        },
+        notes: DataTypes.STRING
 
     }, {
         instanceMethods: {
             validPassword: function(password) {
-                console.log(bcrypt.compareSync(password, this.password, this.salt))
                 return bcrypt.compareSync(password, this.password, this.salt);
             },
             getFullName: function() {

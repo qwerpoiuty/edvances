@@ -4,18 +4,19 @@ var _ = require('lodash');
 var LocalStrategy = require('passport-local').Strategy;
 var models = require('../../../models/')
 var bcrypt = require('bcrypt')
+var chalk = require('chalk')
 module.exports = function(app) {
 
     // When passport.authenticate('local') is used, this function will receive
     // the email and password to run the actual authentication logic.
     var strategyFn = function(email, password, done) {
-
+        console.log(chalk.red(email))
         models.User.findOne({
-            email: email
+            where: {
+                email: email
+            }
         })
             .then(function(user) {
-                console.log(user)
-                // user.correctPassword is a method from the User schema.
                 if (!user || !user.validPassword(password)) {
                     done(null, false);
                 } else {

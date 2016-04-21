@@ -25,32 +25,6 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         $scope.fullprofile = false
     }
 
-    $scope.uploadFiles = function(file, errFiles) {
-        $scope.f = file;
-        console.log($scope.f)
-        $scope.errFile = errFiles && errFiles[0];
-        if (file) {
-            file.upload = Upload.upload({
-                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-                data: {
-                    file: file
-                }
-            });
-
-            file.upload.then(function(response) {
-                $timeout(function() {
-                    file.result = response.data;
-                });
-            }, function(response) {
-                if (response.status > 0)
-                    $scope.errorMsg = response.status + ': ' + response.data;
-            }, function(evt) {
-                file.progress = Math.min(100, parseInt(100.0 *
-                    evt.loaded / evt.total));
-            });
-        }
-    }
-
 
     //editing section
     $scope.editObject = {
@@ -79,7 +53,6 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         for (var key in $scope.editObject[bool]) {
             $scope.editObject[bool][key] = $scope.user[key]
         }
-        console.log($scope.editObject)
     }
 
     $scope.save = function(bool) {
@@ -106,12 +79,21 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
 
     };
 
+    $scope.uploadFile = function() {
+        var file = $scope.file;
+
+        console.log('file is ');
+        console.dir($scope.file);
+
+        var uploadUrl = "/fileUpload";
+        // fileUpload.uploadFileToUrl(file, uploadUrl);
+    };
 
 
 
     $scope.submit = function(user) {
         user.email = $scope.user.email
-        $scope.uploadImage()
+        $scope.uploadFile()
         console.log(user.photo)
         user.education = Object.keys(user.education).map(function(key) {
             return user.education[key]
@@ -119,9 +101,7 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         user.grades = Object.keys(user.grades).map(function(key) {
             return user.grades[key]
         })
-        dataFactory.updateUser(user).then(function(res) {
-            console.log(res)
-        })
+        dataFactory.updateUser(user)
     }
 
 
