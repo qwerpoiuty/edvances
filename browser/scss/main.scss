@@ -26,10 +26,17 @@ body {
   padding-top: 50px;
   width: 100%;
   margin: 0 auto;
+  min-height: 85vh;
 }
 .row{
   margin:0;
 }
+
+#testBar{
+  background-color: $title-dark-grey;
+
+}
+
 @import 'directives/main';
 @import 'home/main';
 @import 'landing/main';
