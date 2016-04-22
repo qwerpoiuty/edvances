@@ -91,12 +91,14 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
     };
 
     $scope.uploadPhoto = function() {
-        var file = $scope.file;
-        console.log('file is ');
-        console.dir($scope.file);
-        fileUpload.uploadPhoto($scope.user, $scope.file[0])
+        console.dir($scope.photo);
+        fileUpload.uploadPhoto($scope.user, $scope.photo[0])
     };
 
+    $scope.uploadDocument = function() {
+        console.dir($scope.document[0])
+        fileUpload.uploadDocument($scope.user, $scope.document[0])
+    }
 
     console.log($scope.user)
     $scope.submit = function(user) {

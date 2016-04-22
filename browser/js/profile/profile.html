@@ -75,7 +75,7 @@
 
             <div class = "introContainerEdited title-margin-fix" ng-switch-when="true">
                 <div id="introContainerTopLayer">
-                    <input id="introContainerPicture" type = "file" file-model = "$parent.$parent.file"/>
+                    <input id="introContainerPicture" type = "file" file-model = "$parent.$parent.photo"/>
                     <button ng-click = "uploadPhoto()">upload me</button>
                     <input id="introContainerFirstName" ng-model="editObject.about.firstName" placeholder="First Name" type="text"/>
                     <input id="introContainerLastName" ng-model="editObject.about.lastName" placeholder="Last Name" type="text"/>
@@ -171,6 +171,13 @@
 
                 <div class="col-lg-6 col-sm-6 col-md-6">
                     <h4 class = "container-sub-header">Documents</h4>
+                    <ul id = 'attachments'>
+                        <li ng-repeat = "doc in user.documents">
+                            <button>remove</button>
+                        </li>
+                    </ul>
+                    <input id="" type = "file" file-model = "$parent.$parent.document"/>
+                    <button ng-click = "uploadDocument()">Upload Me</button>
                     <!-- certificates -->
                 </div>
             </div>
@@ -186,7 +193,10 @@
                             <h4 class="topic-label">Year</h4>
                         </div>
                         <div class=" col-lg-9 col-sm-9 col-md-9">
-                            <h4 class="container-small-sub-header-bold-small educationInfo  " ng-repeat="$index in editObject.certification.education track by $index"><input ng-model="editObject.certification.education[$index]" ng-required/></h4>
+                            <h4 class="container-small-sub-header-bold-small educationInfo" ng-required/>{{user.education[0]}}</h4>
+                            <h4 class="container-small-sub-header-bold-small educationInfo  "ng-required/>{{user.education[1]}}</h4>
+                            <h4 class="container-small-sub-header-bold-small educationInfo  "ng-required/>{{user.education[2]}}</h4>
+                            <h4 class="container-small-sub-header-bold-small educationInfo  "ng-required/>{{user.education[3]}}</h4>
                         </div>
                     </div>
                 </div>
