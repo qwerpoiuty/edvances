@@ -12,6 +12,12 @@ app.factory('dataFactory', function($http, AuthService) {
                 .then(function(response) {
                     return response.data;
                 })
+        },
+        getUsers: function(user) {
+            return $http.get("/api/users/")
+                .then(function(response) {
+                    return response.data
+                })
         }
     }
 });

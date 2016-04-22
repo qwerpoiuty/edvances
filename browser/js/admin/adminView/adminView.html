@@ -1,0 +1,38 @@
+<div class = "adminViewContainer">
+	<h1>ALL THE TEACHERS</h1>
+	  <table>
+        <thead>
+          <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Level</td>
+            <td>Area</td>
+            <td>Validated</td>
+          </tr>  
+        </thead>
+        <tbody>
+          <tr ng-repeat-start="user in list" ng-click="!user.expanded">
+            <td>
+              <button ng-if="user.expanded" ng-click="user.expanded = false">-</button>
+              <button ng-if="!user.expanded" ng-click="user.expanded = true">+</button>
+            </td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>
+            	<ul>
+            		<li ng-repeat="level in user.grades">{{level}}</li>
+            	</ul>
+            </td>
+            <td>{{user.area}}</td>
+          </tr>
+          <tr ng-if="user.expanded" ng-repeat-end="">
+            <td>{{user.email}}</td>
+            <td>{{user.dob}}</td>
+            <td>{{user.statement}}</td>
+            <td>Admin Notes 
+            	<textarea ng-model="user.notes" placeholder="Details about this teacher"></textarea>
+            	<button ng-click = "update(user)">Save</button>
+            </td>
+          </tr>
+        </tbody>
+</div>
