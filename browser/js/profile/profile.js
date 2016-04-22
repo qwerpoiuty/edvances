@@ -48,6 +48,7 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         certification: false
     };
     $scope.edit = function(bool) {
+        console.log($scope.user)
         $scope.edits[bool] = true
         for (var key in $scope.editObject[bool]) {
             $scope.editObject[bool][key] = $scope.user[key]
@@ -72,7 +73,18 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         $scope.edits[bool] = false
     }
 
+    $scope.drawingProfile = function(image) {
+        var binary = '';
+        var bytes = new Uint8Array(image.data);
+        var len = bytes.byteLength;
+        for (var i = 0; i < len; i++) {
+            binary += String.fromCharCode(bytes[i]);
+        }
+        $scope.profileSrc = "data:image/png;base64," + window.btoa(binary)
+        // document.getElementById('profilePic').src = "data:image/png;base64," + src;
 
+    }
+    $scope.drawingProfile($scope.user.photo)
     $scope.cancel = function(bool) {
         $scope.edits[bool] = false
 
@@ -86,18 +98,18 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
     };
 
 
-
+    console.log($scope.user)
     $scope.submit = function(user) {
         user.email = $scope.user.email
-        $scope.uploadFile()
-        console.log(user.photo)
-        user.education = Object.keys(user.education).map(function(key) {
-            return user.education[key]
-        });
-        user.grades = Object.keys(user.grades).map(function(key) {
-            return user.grades[key]
-        })
-        dataFactory.updateUser(user)
+        $scope.uploadPhoto()
+        // console.log(user.photo)
+        // user.education = Object.keys(user.education).map(function(key) {
+        //     return user.education[key]
+        // });
+        // user.grades = Object.keys(user.grades).map(function(key) {
+        //     return user.grades[key]
+        // })
+        // dataFactory.updateUser(user)
     }
 
 

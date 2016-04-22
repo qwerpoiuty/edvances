@@ -33,10 +33,11 @@ router.put('/update', function(req, res) {
 })
 
 router.post('/photo/:id', upload.single('file'), function(req, res) {
+    console.log(req.file.buffer)
     models.User.findById(req.params.id)
         .then(function(user) {
             return user.update({
-                photo: req.file
+                photo: req.file.buffer
             })
         }).then(function(updatedUser) {
             res.json(updatedUser)
