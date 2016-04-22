@@ -111,8 +111,6 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
 
     $scope.submit = function(user) {
         user.email = $scope.user.email
-        $scope.uploadImage()
-        console.log(user.photo)
         user.education = Object.keys(user.education).map(function(key) {
             return user.education[key]
         });
