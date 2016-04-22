@@ -25,7 +25,6 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         $scope.fullprofile = false
     }
 
-
     //editing section
     $scope.editObject = {
         about: {
@@ -79,14 +78,11 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
 
     };
 
-    $scope.uploadFile = function() {
+    $scope.uploadPhoto = function() {
         var file = $scope.file;
-
         console.log('file is ');
         console.dir($scope.file);
-
-        var uploadUrl = "/fileUpload";
-        // fileUpload.uploadFileToUrl(file, uploadUrl);
+        fileUpload.uploadPhoto($scope.user, $scope.file[0])
     };
 
 

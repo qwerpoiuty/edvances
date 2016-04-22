@@ -47,7 +47,7 @@
     <div class="formContainer">
         <div ng-switch on="(edits.about)"class = "aboutContainer">
             <div ng-switch-default class = "introContainer">
-                <img id="profilePic" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/140.jpg" alt="">
+                <img id="profilePic" ng-src="data:image/JPEG;base64,{{user.photo}}" alt="">
                 <h1 class = "container-header">{{user.firstName}} {{user.lastName}}</h1>
                 <h3 class = "container-small-sub-header">{{user.title}}</h3>
                 <h3 class = "container-sub-header">About</h3>
@@ -56,8 +56,9 @@
              <!-- The edit portion -->
 
             <div class = "introContainer" ng-switch-when="true">
-                <input type = "file" file-model = "$parent.file"/>
-                <button ng-click = "uploadFile()">upload me</button>
+                <input type = "file" file-model = "$parent.$parent.file"/>
+                <button ng-click = "uploadPhoto()">upload me</button>
+                <img ng-src="$parent.$parent.file[0]"/>
                 <input class = "container-header" ng-model="editObject.about.firstName" placeholder="First Name" type="text"/>
                 <input ng-model="editObject.about.lastName" placeholder="Last Name" type="text"/>
                 <input ng-model="editObject.about.title" placeholder="Title" type="text"/>

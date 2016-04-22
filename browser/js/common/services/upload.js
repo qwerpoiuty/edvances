@@ -1,16 +1,17 @@
 app.service('fileUpload', function($http) {
-    this.uploadFileToUrl = function(file, uploadUrl) {
+    this.uploadPhoto = function(user, photo) {
         var fd = new FormData();
-        fd.append('file', file);
-        console.log(uploadUrl)
-        $http.put(uploadUrl, fd, {
+        fd.append('file', photo);
+        $http.post('/api/users/photo/' + user.id, fd, {
             transformRequest: angular.identity,
             headers: {
                 'Content-Type': undefined
             }
         })
 
-        .success(function() {})
+        .success(function(d) {
+            console.log(d)
+        })
 
         .error(function() {});
     }
