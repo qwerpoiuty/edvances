@@ -20,13 +20,24 @@ body {
     clear: both;
   }
 }
+.center-text{
+  text-align: center;
+}
+
+.flex-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+}
 
 #main {
   background-color: $title-muted-grey;
   padding-top: 50px;
   width: 100%;
   margin: 0 auto;
-  min-height: 85vh;
+  min-height: 95vh;
+  overflow-y:auto;
 }
 .row{
   margin:0;
@@ -43,4 +54,5 @@ body {
 @import 'login/main';
 @import 'classroom/main';
 @import 'profile/main';
+@import 'signup/main';
 

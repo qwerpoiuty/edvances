@@ -96,8 +96,8 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
     };
 
     $scope.uploadDocument = function() {
-        console.dir($scope.document[0])
-        fileUpload.uploadDocument($scope.user, $scope.document[0])
+        console.dir($scope.document[0], $scope.documentName)
+        // fileUpload.uploadDocument($scope.user, $scope.document[0], $scope.documentName)
     }
 
     console.log($scope.user)
@@ -116,7 +116,10 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
 
 
 
-
+    $scope.removeDoc = function(index) {
+        $scope.user.documents.splice(index, 1)
+        console.log($scope.user)
+    }
 
     //form controlling
     $scope.form = {};

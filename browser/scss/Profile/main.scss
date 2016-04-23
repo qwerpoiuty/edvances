@@ -7,18 +7,7 @@
 
   .profileEditButton{
     position: relative;
-    right: 0;
-    margin-left: 95%;
-    margin-top: .4%;
-    z-index: 20;
-    box-shadow: 0 0 4px 0.2px #969696;
-  }
-
-  .profileCancelButton{
-    position: relative;
-    right: 0;
-    margin-left: 95%;
-    margin-top: .4%;
+    float:right;
     z-index: 20;
     box-shadow: 0 0 4px 0.2px #969696;
   }
@@ -87,6 +76,10 @@
   margin-right: auto;
   border-radius: 3px;
 }
+.form-title{
+  padding-left:25px;
+  text-decoration: underline;
+}
 .aboutContainerProfile{
 
   #aboutContainerTitleFix{
@@ -95,100 +88,61 @@
 
   .introContainer{
     #profilePic{
-      postion: relative;
-      float: left;
+      position: relative;
       width: 120px;
-      max-width: 40%;
-      max-height: 60%;
       border-radius:50%;
-      margin-right: 5%;
-      margin-left: 1%;
       border: solid 1px;
       border-color: darken($title-muted-grey, 20%);
       box-shadow: 0 0 4px 0.2px #969696;
     }
-    .name{
-      color: $title-yellow;
-      font-family: Lato, sans-serif;
-      font-size: 20px;
-      opacity:.95;
+    .aboutHeader{
+      padding-top:2%;
     }
 
-    #aboutContainerMiddleLayer{
-      position: relative;
-      margin-top: 7.5%;
+    .introHeader{
+      padding-top:20px;
+      padding-bottom:20px
     }
 
   }
 
   .introContainerEdited{
 
-    #introContainerTopLayer{
-      display: inline-block;
-      margin-bottom: 5%;
+    .aboutHeader{
+      padding-top:2%;
     }
     #introContainerPicture{
       position: relative;
+      display:inline-block;
       width: 120px;
       height: 120px;
-      max-width: 40%;
-      max-height: 60%;
       border: dashed 2px;
       border-color: $title-blue;
       box-shadow: 0 0 5px 1px #969696;
       font-family: Lato, sans-serif !important;
       font-size: 18px;
       border-radius: 50%;
-      margin-top: 1%;
-      margin-left: 1%;
     }
-    #introContainerFirstName{
+    .introContainerName{
       position: relative;
-      width: 300px;
-      height: 50px;
-      max-width: 30%;
-      max-height: 60%;
-      margin-left: 11.5%;
+      max-width: 45%;
+      margin: 0 1%;
       border: solid 2px;
       border-color: darken($title-muted-grey, 20%);
       box-shadow: 0 0 4px 0.2px #969696;
       font-family: Lato, sans-serif !important;
-      font-size: 16px;
-      text-align: center;
-      border-radius: 3px;
-    }
-
-    #introContainerLastName{
-      position: relative;
-      width: 300px;
-      height: 50px;
-      max-width: 30%;
-      max-height: 60%;
-      margin-left: 5%;
-      border: solid 2px;
-      border-color: darken($title-muted-grey, 20%);
-      box-shadow: 0 0 4px 0.2px #969696;
-      font-family: Lato, sans-serif !important;
-      font-size: 16px;
-      text-align: center;
-      border-radius: 3px;
+      border-radius: 5px;
     }
 
     #introContainerTitle{
       position: relative;
-      width: 300px;
-      height: 50px;
-      max-width: 100%;
-      max-height: 100%;
-      margin-left: 37.5%;
-      margin-bottom: 5%;
+      margin-top: 3%;
       border: solid 2px;
       border-color: darken($title-muted-grey, 20%);
       box-shadow: 0 0 4px 0.2px #969696;
       font-family: Lato, sans-serif !important;
       font-size: 16px;
-      text-align: center;
-      border-radius: 3px;
+      border-radius: 5px;
     }
 
     #introContainerStatement{
@@ -211,29 +165,6 @@
 
   }
 
-}
-
-.teachingPreferencesContainer{
-
-}
-
-.educationContainer{
-
-}
-
-.certificationsContainer{
-
-}
-
-.personalStatementContainer{
-}
-
-.attachmentsContainer{
-
-}
-
-.title-margin-fix{
- margin-top: -5%;
 }
 
 .topic-label{
@@ -260,51 +191,10 @@
 }
 
 .educationInfo{
-  padding-top: 1%;
-  padding-bottom: .5%;
+  padding-top:10px;
+  padding-bottom:10px;
+  margin:0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
