@@ -19,7 +19,8 @@ module.exports = function(app) {
     app.use(session({
         store: new pgSession({
             pg: pg,
-            errorLog: console.error.bind(console)
+            errorLog: console.error.bind(console),
+            schemaName: 'cookies'
         }),
         secret: "Optimus Prime is my real dad",
         resave: false,
