@@ -45,7 +45,6 @@ body {
 
 #testBar{
   background-color: $title-dark-grey;
-
 }
 
 @import 'directives/main';
@@ -55,4 +54,6 @@ body {
 @import 'classroom/main';
 @import 'profile/main';
 @import 'signup/main';
+@import 'admin/adminview/main';
+
 

@@ -84,16 +84,16 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         // document.getElementById('profilePic').src = "data:image/png;base64," + src;
 
     }
-    $scope.drawingProfile($scope.user.photo)
+   // $scope.drawingProfile($scope.user.photo)
     $scope.cancel = function(bool) {
         $scope.edits[bool] = false
 
     };
 
-    $scope.uploadPhoto = function() {
-        console.dir($scope.photo);
-        fileUpload.uploadPhoto($scope.user, $scope.photo[0])
-    };
+   // $scope.uploadPhoto = function() {
+   //     console.dir($scope.photo);
+   //     fileUpload.uploadPhoto($scope.user, $scope.photo[0])
+   // };
 
     $scope.uploadDocument = function() {
         console.dir($scope.document[0], $scope.documentName)
@@ -103,15 +103,16 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
     console.log($scope.user)
     $scope.submit = function(user) {
         user.email = $scope.user.email
-        $scope.uploadPhoto()
+        //  $scope.uploadPhoto()
         // console.log(user.photo)
-        // user.education = Object.keys(user.education).map(function(key) {
-        //     return user.education[key]
-        // });
-        // user.grades = Object.keys(user.grades).map(function(key) {
-        //     return user.grades[key]
-        // })
-        // dataFactory.updateUser(user)
+        console.log(user);
+         user.education = Object.keys(user.education).map(function(key) {
+             return user.education[key]
+         });
+         user.grades = Object.keys(user.grades).map(function(key) {
+             return user.grades[key]
+         })
+         dataFactory.updateUser(user)
     }
 
 
