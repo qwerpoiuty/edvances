@@ -34,7 +34,6 @@ body {
 
 #testBar{
   background-color: $title-dark-grey;
-
 }
 
 @import 'directives/main';
@@ -43,4 +42,5 @@ body {
 @import 'login/main';
 @import 'classroom/main';
 @import 'profile/main';
+@import 'admin/adminview/main';
 
