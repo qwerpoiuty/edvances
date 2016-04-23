@@ -11,7 +11,7 @@ app.controller('signupCtrl', function($scope, dataFactory, $state, AuthService) 
     $scope.teacher = true
 
     $scope.signup = function(user) {
-        if (user.password !== user.confirm) {
+        if (user.password !== user.comfirm) {
             alert('Passwords do not match')
         } else {
             $scope.error = null;
