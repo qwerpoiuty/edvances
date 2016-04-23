@@ -4,10 +4,7 @@ var fs = require("fs");
 var path = require("path");
 var Sequelize = require("sequelize");
 var env = process.env.NODE_ENV || "development";
-var sequelize = new Sequelize("postgres://localhost:5432/edvancesdb", {
-    username: 'postgres',
-    password: 'humantics'
-});
+var sequelize = new Sequelize("postgres://postgres:humantics@localhost:5432/edvancesdb");
 var db = {};
 
 fs
