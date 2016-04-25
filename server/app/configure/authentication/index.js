@@ -4,8 +4,6 @@ var _ = require('lodash');
 var passport = require('passport');
 var path = require('path');
 var models = require('../../../models')
-var pg = require('pg'),
-    pgSession = require('connect-pg-simple')(session)
 var ENABLED_AUTH_STRATEGIES = [
     'local',
     //'twitter',
@@ -15,13 +13,11 @@ var ENABLED_AUTH_STRATEGIES = [
 
 module.exports = function(app) {
 
-
+    // First, our session middleware will set/read sessions from the request.
+    // Our sessions will get stored in Mongo using the same connection from
+    // mongoose. Check out the sessions collection in your MongoCLI.
     app.use(session({
-        store: new pgSession({
-            pg: pg,
-            errorLog: console.error.bind(console),
-            schemaName: 'cookies'
-        }),
+        store: new(require('connect-pg-simple')(session))(),
         secret: "Optimus Prime is my real dad",
         resave: false,
         cookie: {
