@@ -3,6 +3,13 @@
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 5%;
+
+  tr:nth-child(even){
+  }
+
+  tr:hover{
+    background-color: lighten($title-yellow, 25%);
+  }
 }
 
 .dotRemove{
@@ -18,8 +25,7 @@
   width: 0;
   z-index: 20;
   border: 0px solid;
-  border-color: $title-muted-grey;
-  box-shadow: 0 0 0px 0px $title-muted-grey;
+  background-color: white;
 }
 
 .table-row-header{
@@ -28,8 +34,19 @@
   border-collapse: collapse;
   border: 1px solid;
   border-color: $title-light-grey;
+    box-shadow: 0 0 4px 0.2px #969696;
+}
+
+.table-row-header-top{
+  text-align: center;
+  width: 20%;
+  border-collapse: collapse;
+  border: 1px solid;
+  border-color: $title-light-grey;
   box-shadow: 0 0 4px 0.2px #969696;
-  background-color: lighten($title-dark-grey, 50%);
+  color: white;
+  background-color: darken($title-blue, 20%);
+  height: 40px;
 }
 
 .table-row-full-edited-header{
@@ -41,7 +58,6 @@
   border: 1px solid;
   border-color: $title-light-grey;
   box-shadow: 0 0 4px 0.2px #969696;
-  background-color: lighten($title-dark-grey, 50%);
   padding-top: 0.6%;
 }
 
@@ -64,8 +80,8 @@
 
 .edited-save{
   padding-top: 2.2%;
-  #saveButton{
-    background-color: $title-blue;
+  #editedSaveButton{
+    background-color: darken($title-blue, 20%);
     border: 1px solid $title-yellow;
     font-family: "Lato", sans-serif !important;
     border-radius: 3px;
@@ -73,6 +89,48 @@
     font-weight: bold;
     color: $title-yellow;
     font-size: 14px;
+  }
+}
+
+#adminTitle{
+  margin-top: -1%;
+  margin-left: 5%;
+}
+
+#plusButton{
+  border: none;
+  border-collapse: collapse;
+  background-color: #1b5dab;
+  color: white;
+  font-family: "Lato", sans-serif !important;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 0 0 4px 0.2px #969696;
+
+  &:active{
+    outline: none;
+  }
+}
+
+#minusButton{
+  border: none;
+  border-collapse: collapse;
+  background-color: #1b5dab;
+  color: white;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Lato", sans-serif !important;
+  font-style: normal;
+  font-weight: bold;
+  box-shadow: 0 0 4px 0.2px #969696;
+  &:active{
+    outline: none;
   }
 }
 

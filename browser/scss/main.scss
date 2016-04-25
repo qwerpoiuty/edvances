@@ -10,7 +10,6 @@ $title-muted-grey:#DADFEA;
 }
 
 body {
-  background: #fdfdfd;
 }
 
 @mixin clearfix {
@@ -22,7 +21,7 @@ body {
 }
 
 #main {
-  background-color: $title-muted-grey;
+  background-color: white;
   padding-top: 50px;
   width: 100%;
   margin: 0 auto;
