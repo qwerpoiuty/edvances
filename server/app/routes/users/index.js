@@ -34,31 +34,30 @@ router.put('/update', function(req, res) {
 
 router.put('/doc/:id', upload.single('doc'), function(req, res) {
     console.log(req.file)
-    // models.User.findById(req.params.id)
-    //     .then(function(user) {
-    //         if (user.documents === null) {
-    //             user.documents = [req.doc.buffer]
-    //         } else {
+    models.User.findById(req.params.id)
+        .then(function(user) {
+            if (user.documents === null) {
+                user.documents = [req.file.buffer]
+            } else {
 
-    //             user.documents.push(req.doc.buffer)
-    //         }
-    //         console.log(user.document)
-    //         return user.update({
-
-    //         })
-    //     })
+                user.documents.push(req.file.buffer)
+            }
+            return user.save()
+        }).then(function(updatedUser) {
+            res.json(updatedUser)
+        })
 })
 
 router.post('/photo/:id', upload.single('photo'), function(req, res) {
     console.log('hello', req.file)
-    // models.User.findById(req.params.id)
-    //     .then(function(user) {
-    //         return user.update({
-    //             photo: req.photo.buffer
-    //         })
-    //     }).then(function(updatedUser) {
-    //         res.json(updatedUser)
-    //     })
+    models.User.findById(req.params.id)
+        .then(function(user) {
+            return user.update({
+                photo: req.photo.buffer
+            })
+        }).then(function(updatedUser) {
+            res.json(updatedUser)
+        })
 })
 
 module.exports = router;

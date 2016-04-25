@@ -17,10 +17,10 @@ app.service('fileUpload', function($http) {
         .error(function() {});
     }
 
-    this.uploadDocument = function(user, doc) {
+    this.uploadDocument = function(user, doc, docName) {
         var fd = new FormData();
         fd.append('doc', doc);
-        $http.put('/api/users/doc/' + user.id, fd, {
+        $http.put('/api/users/doc/' + user.id, fd, docName, {
             transformRequest: angular.identity,
             headers: {
                 'Content-Type': undefined

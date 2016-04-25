@@ -23,6 +23,7 @@ module.exports = function(sequelize, DataTypes) {
         years: DataTypes.INTEGER,
         education: DataTypes.ARRAY(DataTypes.STRING),
         documents: DataTypes.ARRAY(DataTypes.BLOB),
+        documentnames: DataTypes.ARRAY(DataTypes.STRING),
         photo: DataTypes.BLOB,
         completed: {
             type: DataTypes.BOOLEAN,
