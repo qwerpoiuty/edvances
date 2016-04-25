@@ -1,21 +1,21 @@
 <div class = "adminViewContainer">
-	<h1 class="container-header" >ALL THE TEACHERS</h1>
+	<h1 id="adminTitle" class="container-header">ALL THE TEACHERS</h1>
 	  <table class="admin-table-full">
         <thead>
           <tr class="table-row-full-header">
             <td class="invisible-col"></td>
-            <td class="container-small-sub-header-bold-small table-row-header">First Name</td>
-            <td class="container-small-sub-header-bold-small table-row-header">Last Name</td>
-            <td class="container-small-sub-header-bold-small table-row-header">Level</td>
-            <td class="container-small-sub-header-bold-small table-row-header">Area</td>
-            <td class="container-small-sub-header-bold-small table-row-header">Validated</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">First Name</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">Last Name</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">Level</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">Area</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">Validated</td>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat-start="user in list" ng-click="!user.expanded">
             <td class="invisible-col">
-              <button ng-if="user.expanded" ng-click="user.expanded = false">-</button>
-              <button ng-if="!user.expanded" ng-click="user.expanded = true">+</button>
+              <button id="minusButton"  ng-if="user.expanded" ng-click="user.expanded = false"><i class="fa fa-minus" aria-hidden="true"></i></button>
+              <button id="plusButton" ng-if="!user.expanded" ng-click="user.expanded = true"><i class="fa fa-plus" aria-hidden="true"></i></button>
             </td>
             <td class="container-small-sub-header-bold-small table-row-header">{{user.firstName}}</td>
             <td class="container-small-sub-header-bold-small table-row-header">{{user.lastName}}</td>
@@ -46,7 +46,7 @@
                         <textarea class="container-small-sub-header-bold-small" ng-model="user.notes" placeholder="Details about this teacher"></textarea>
                     </div>
                     <div class="edited-save col-lg-1 col-md-1 col-sm-1">
-                        <button id="saveButton" ng-click = "update(user)">Save</button>
+                        <button id="editedSaveButton" ng-click = "update(user)">Save</button>
                      </div>
                 </div>
             </td>
