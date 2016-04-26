@@ -1,3 +1,4 @@
+/* Original Option */
 .control-label{
   padding: 1.2%;
   float: left;
@@ -34,6 +35,88 @@
   display: inline-block;
   width:100%;
 }
+
+
+/* Option 2 */
+
+.control-label-2{
+  //padding: 1.2%;
+  padding-left: 3%;
+  float: left;
+  width: 30%;
+  color: $title-light-grey;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Lato", sans-serif !important;
+  letter-spacing: 1px;
+}
+
+.controls-2{
+  float: right;
+  width:70%;
+  padding-right:3%
+}
+
+.btn-success-2{
+  color: $title-blue;
+  font-size: 14px;
+  font-family: Lato;
+  background-color: white;
+  border-style: ridge;
+  border-width: 2px;
+  border-color: $title-blue;
+  float: right;
+
+  &:hover{
+    color: $title-yellow;
+    background-color: $title-blue;
+  }
+}
+
+.line-fix-2{
+  display: inline-block;
+  width:100%;
+}
+
+/* Option 3 */
+
+.control-label-3{
+  padding: 1.2%;
+  float: left;
+  width: 30%;
+  color: $title-light-grey;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+}
+
+.controls-3{
+  float: right;
+  width:70%;
+}
+
+.btn-success-3{
+  color: $title-blue;
+  font-size: 14px;
+  font-family: Lato;
+  background-color: white;
+  border-style: ridge;
+  border-width: 2px;
+  border-color: $title-blue;
+  float: right;
+
+  &:hover{
+    color: $title-yellow;
+    background-color: $title-blue;
+  }
+}
+
+.line-fix-3{
+  display: inline-block;
+  width:100%;
+}
+
 
 @import "teachingPreferences";
 @import "personalStatement";

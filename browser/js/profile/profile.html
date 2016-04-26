@@ -2,7 +2,7 @@
 	<form name = "parent">
 		<div class="aboutContainer formContainer">
             <h1 class="container-header">About You</h1>
-            <h2 class="container-sub-header">Basic Information</h2>
+            <!-- <h2 class="container-sub-header">Basic Information</h2> -->
 			<div about-you
 				data-register-form-scope="registerFormScope"
 				data-validate-child-form="validateChildForm"
@@ -66,7 +66,7 @@
                         <h3 class = "container-small-sub-header">{{user.title}}</h3>
                     </div>
                 </div>
-                
+
                 <h3 class = "container-sub-header form-title">About</h3>
                 <div class = "row">
                     <p class = "col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">{{user.statement}}</p>
@@ -82,7 +82,7 @@
                         <input type = "file" file-model = "$parent.$parent.photo"/>
                         <button ng-click = "uploadPhoto()">upload me</button>
                     </div>
-                    
+
                     <div class = "introHeader col-lg-9 col-md-9 col-sm-6">
                         <input class = "container-header introContainerName" ng-model="editObject.about.firstName" placeholder="First Name" type="text"/>
                         <input class = "container-header introContainerName" ng-model="editObject.about.lastName" placeholder="Last Name" type="text"/>
@@ -154,7 +154,7 @@
                 </div>
                 <button class="btn btn-success profileSaveButton" ng-switch-when="true" ng-click="save('preferences')">Save</button>
             </div>
-            
+
         </div>
     </div>
 
@@ -217,7 +217,7 @@
                                 <button ng-click="removeDoc($index)">remove</button>
                             </li>
                         </ul>
-                        
+
                         <!-- certificates -->
                     </div>
                 </div>
