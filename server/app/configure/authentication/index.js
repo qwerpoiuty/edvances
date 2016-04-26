@@ -1,5 +1,7 @@
 'use strict';
 var session = require('express-session');
+var pg = require('pg')
+var pgSession = require('connect-pg-simple')(session);
 var _ = require('lodash');
 var passport = require('passport');
 var path = require('path');
@@ -17,8 +19,11 @@ module.exports = function(app) {
     // Our sessions will get stored in Mongo using the same connection from
     // mongoose. Check out the sessions collection in your MongoCLI.
     app.use(session({
-        store: new(require('connect-pg-simple')(session))(),
-        secret: "Optimus Prime is my real dad",
+        store: new pgSession({
+            pg: pg, // Use global pg-module
+            conString: "postgres://root:humantics@74.208.126.7:5432/edvancesdb"
+        }),
+        secret: 'I believe Ang can change the world',
         resave: false,
         cookie: {
             maxAge: 30 * 24 * 60 * 60 * 1000
