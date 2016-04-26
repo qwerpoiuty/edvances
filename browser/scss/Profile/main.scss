@@ -1,8 +1,11 @@
 // forms
+$container-background-1: lighten(#F2F1F6, 1%);
+$container-background-2: #FBFBFD;
+
 .profileContainer{
-  width:70%;
+  width: 70%;
   margin: 0 auto;
-  margin-top: -5%;
+  margin-top: -3%;
   position: relative;
 
   .profileEditButton{
@@ -66,24 +69,23 @@
   //box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.2);
   padding: 15px;
   background-color: white;
-  border: solid 2px;
-  border-color: darken($title-muted-grey, 20%);
-  box-shadow: 0 0 4px 0.2px #969696;
+  box-shadow: 0 0 5px 1px lighten($title-muted-grey, 5%);
   margin-bottom: 30px;
   margin-top: 30px;
-  max-width: 800px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 3px;
 }
+
 .form-title{
   padding-left:25px;
   text-decoration: underline;
 }
+
 .aboutContainerProfile{
 
   #aboutContainerTitleFix{
-    margin-top: -5%;
+    margin-top: -3%;
   }
 
   .introContainer{
@@ -197,9 +199,92 @@
 }
 
 
+/* Option 2 */
+
+.container-header-2{
+  font-family:'Lato', sans-serif !important;
+  //font-size: 3.2em;
+  font-size: 32px;
+  font-weight: bold;
+  color: $title-orange-2;
+  letter-spacing: 2px;
+  opacity:.95;
+  border-bottom: solid 1px;
+  border-color: #DADBDD;
+  background-color: $container-background-2;
+  padding: 15px;
+}
+
+.container-sub-header-2{
+  font-family: 'Lato', sans-serif !important;
+  font-size: 24px;
+  font-weight: bold;
+  color: lighten($title-blue, 5%);
+}
+
+.container-small-sub-header-2{
+  font-family: 'Lato', sans-serif !important;
+  font-size: 16px;
+  font-weight: lighter;
+  color: $title-dark-grey;
+  font-style: oblique;
+  opacity:.75;
+  padding-left: 1.75%;
+}
+
+.formContainer-2{
+  //box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.2);
+  //padding: 15px;
+  background-color: $container-background-1;
+  box-shadow: 0 0 5px 1px lighten($title-muted-grey, 5%);
+  margin-bottom: 30px;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
+
+/* Option 3 */
+
+.container-header-3{
+  font-family:'Lato', sans-serif !important;
+  font-size: 3.2em;
+  font-weight: bold;
+  color: $title-yellow;
+  letter-spacing: 2px;
+  opacity:.95;
+}
+
+.container-sub-header-3{
+  font-family: 'Lato', sans-serif !important;
+  font-size: 24px;
+  font-weight: bold;
+  color: $title-blue;
+}
+
+.container-small-sub-header-3{
+  font-family: 'Lato', sans-serif !important;
+  font-size: 16px;
+  font-weight: lighter;
+  color: $title-dark-grey;
+  font-style: oblique;
+  opacity:.75;
+}
+
+.formContainer-3{
+  //box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 0 5px 1px lighten($title-muted-grey, 5%);
+  margin-bottom: 30px;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 

@@ -1,8 +1,13 @@
 $title-yellow:#F5A623;
+$title-orange:#EE7A53;
+$title-orange-2:lighten(#EE7852, 5%);
 $title-blue:#4A90E2;
 $title-dark-grey:#4A4A4A;
 $title-light-grey:#9B9B9B;
 $title-muted-grey:#DADFEA;
+$back-color-1:lighten(#6A90AB,25%);
+$back-color-original: #FAFBFF;
+$back-color-2:lighten(#3B4F5B, 40%);
 
 
 * {
@@ -31,7 +36,7 @@ body {
 }
 
 #main {
-  background-color: white;
+  background-color: $back-color-1;
   padding-top: 50px;
   width: 100%;
   margin: 0 auto;
@@ -54,5 +59,4 @@ body {
 @import 'profile/main';
 @import 'signup/main';
 @import 'admin/adminview/main';
-
 
