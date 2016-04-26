@@ -1,5 +1,5 @@
 module.exports = {
-    // "DATABASE_URI": "mongodb://localhost:27017/",
+    "DATABASE_URI": "postgres://root:humantics@74.208.126.7:5432/edvancesdb",
     "SESSION_SECRET": "Optimus Prime is my real dad",
     "TWITTER": {
         "consumerKey": "INSERT_TWITTER_CONSUMER_KEY_HERE",
