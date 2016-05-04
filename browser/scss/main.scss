@@ -1,6 +1,7 @@
 $title-yellow:#F5A623;
 $title-orange:#EE7A53;
 $title-orange-2:lighten(#EE7852, 5%);
+$title-yellow-dark: darken($title-yellow, 5%);
 $title-blue:#4A90E2;
 $title-dark-grey:#4A4A4A;
 $title-light-grey:#9B9B9B;
@@ -59,4 +60,5 @@ body {
 @import 'profile/main';
 @import 'signup/main';
 @import 'admin/adminview/main';
+@import 'browser/asset/VarsityPlaybook-DEMO.ttf';
 

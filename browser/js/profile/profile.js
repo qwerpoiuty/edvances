@@ -10,9 +10,9 @@ app.config(function($stateProvider) {
                 })
             }
         },
-        data: {
-            authenticate: true
-        }
+      //  data: {
+      //      authenticate: true
+      //  }
     });
 
 })
