@@ -8,6 +8,8 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var less = require('gulp-less');
+var merge = require('merge-stream');
 var livereload = require('gulp-livereload');
 var minifyCSS = require('gulp-minify-css');
 var ngAnnotate = require('gulp-ng-annotate');
@@ -87,40 +89,29 @@ gulp.task('testBrowserJS', function(done) {
 });
 
 gulp.task('buildCSS', function() {
-    console.log('hello')
-    return gulp.src('./browser/scss/main.scss')
+
+
+    var lessStream = gulp.src('./browser/less/main.less')
+        .pipe(less({
+            errLogToConsole: true
+        }))
+        .pipe(concat('less-files.less'));
+
+    var scssStream = gulp.src('./browser/scss/main.scss')
         .pipe(sass({
             errLogToConsole: true
         }))
-        .pipe(rename('style.css'))
+        .pipe(concat('scss-files.scss'));
+
+    var mergedStream = merge(lessStream, scssStream)
+        .pipe(concat('style.css'))
         .pipe(gulp.dest('./public'));
+
+    return mergedStream;
+
 });
 
-// gulp.task('seedDB', function() {
 
-//     var users = [{
-//         email: 'testing@fsa.com',
-//         password: 'testing123'
-//     }, {
-//         email: 'joe@fsa.com',
-//         password: 'rainbowkicks'
-//     }, {
-//         email: 'obama@gmail.com',
-//         password: 'potus'
-//     }];
-
-//     var dbConnected = require('./server/db');
-
-//     return dbConnected.then(function() {
-//         var User = require('mongoose').model('User');
-//         return User.create(users);
-//     }).then(function() {
-//         process.kill(0);
-//     }).catch(function(err) {
-//         console.error(err);
-//     });
-
-// });
 
 // --------------------------------------------------------------
 
