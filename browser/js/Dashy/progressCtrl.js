@@ -7,7 +7,8 @@
  * # MainCtrl
  * Controller of dashyAngular
  */
-angular.module('dashyAngular').controller('ProgressDemoCtrl', function ($scope) {
+
+app.controller('ProgressDemoCtrl', function ($scope) {
   $scope.max = 200;
 
   $scope.random = function() {

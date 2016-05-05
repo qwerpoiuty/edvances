@@ -6,8 +6,8 @@
  * @description
  * # pageHeader
  */
-angular.module('dashyAngular')
-	.directive('pageheader',function(){
+
+app.directive('pageheader',function(){
 		return {
         templateUrl:'scripts/directives/pageheader/pageheader.html?v='+window.app_version,
         restrict: 'E',

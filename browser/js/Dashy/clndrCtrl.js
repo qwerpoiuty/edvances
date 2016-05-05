@@ -7,8 +7,9 @@
  * # MainCtrl
  * Controller of dashyAngular
  */
-angular.module('dashyAngular').controller('calendarCtrl', function ($scope) {
-   
+
+app.controller('calendarCtrl', function ($scope) {
+
    $scope.eventSources = [];
-    
+
 });

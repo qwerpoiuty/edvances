@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('dashyAngular')
-	.directive('menu',function(){
+app.directive('menu',function(){
 		return {
 	        templateUrl:'scripts/directives/sidenav/menu/menu.html?v='+window.app_version,
 	        restrict: 'E',
@@ -20,8 +19,8 @@ angular.module('dashyAngular')
 						$scope.showingSubNav = x;
 
 
-				};				
-				
+				};
+
 
 	        },
     	}

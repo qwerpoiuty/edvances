@@ -7,7 +7,8 @@
  * # MainCtrl
  * Controller of dashyAngular
  */
-angular.module('dashyAngular').controller('PopoverDemoCtrl', function ($scope) {
+
+app.controller('PopoverDemoCtrl', function ($scope) {
   $scope.dynamicPopover = 'Hello, World!';
   $scope.dynamicPopoverTitle = 'Title';
 });

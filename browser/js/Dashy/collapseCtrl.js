@@ -7,6 +7,7 @@
  * # MainCtrl
  * Controller of dashyAngular
  */
-angular.module('dashyAngular').controller('CollapseDemoCtrl', function ($scope) {
+
+app.controller('CollapseDemoCtrl', function ($scope) {
   $scope.isCollapsed = false;
 });

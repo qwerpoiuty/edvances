@@ -7,7 +7,8 @@
  * # MainCtrl
  * Controller of dashyAngular
  */
-angular.module('dashyAngular').controller('PaginationDemoCtrl', function ($scope, $log) {
+
+app.controller('PaginationDemoCtrl', function ($scope, $log) {
   $scope.totalItems = 64;
   $scope.currentPage = 4;
 

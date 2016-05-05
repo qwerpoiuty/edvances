@@ -6,8 +6,8 @@
  * @description
  * # pageHeader
  */
-angular.module('dashyAngular')
-	.directive('homeChart',function(){
+
+app.directive('homeChart',function(){
 		return {
 	        templateUrl:'scripts/directives/home-chart/home-chart.html?v='+window.app_version,
 	        restrict: 'E',
@@ -16,7 +16,7 @@ angular.module('dashyAngular')
 
 		        	$scope.line = {
 					    labels: ['', '', '', '', '', '', ''],
-					    
+
 					    data: [
 					      [65, 59, 80, 81, 56, 55, 40],
 					      [28, 48, 40, 19, 86, 27, 90]
