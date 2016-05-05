@@ -7,16 +7,14 @@
  * # pageHeader
  */
 
-app.directive('pageheader',function(){
-		return {
-        templateUrl:'scripts/directives/pageheader/pageheader.html?v='+window.app_version,
+app.directive('pageheader', function() {
+    return {
+        templateUrl: 'js/common/directives/dashy/pageheader/pageheader.html',
         restrict: 'E',
         replace: true,
         scope: {
-	        'pagename': '@',
-	        'subtitle': '@'
-  		}
-    	}
-	});
-
-
+            'pagename': '@',
+            'subtitle': '@'
+        }
+    }
+});

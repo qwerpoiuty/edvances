@@ -1,17 +1,15 @@
 'use strict';
 
-app.directive('stats',function(){
+app.directive('stats', function() {
     return {
-        templateUrl:'scripts/directives/stats/stats.html?v='+window.app_version,
+        templateUrl: 'js/common/directives/dashy/stats/stats.html',
         restrict: 'E',
         replace: true,
         scope: {
-          'icon': '@',
-          'value': '@',
-          'text': '@',
-          'bgclass': '@'
+            'icon': '@',
+            'value': '@',
+            'text': '@',
+            'bgclass': '@'
         }
-      }
-  });
-
-
+    }
+});
