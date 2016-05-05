@@ -1,4 +1,4 @@
-angular.module('dashyAngular').directive('relinkEvent', function($rootScope) {
+app.directive('relinkEvent', function($rootScope) {
     return {
         transclude: 'element',
         restrict: 'A',
@@ -16,11 +16,11 @@ angular.module('dashyAngular').directive('relinkEvent', function($rootScope) {
                         element.parent().append(clone);
                         previousContent = clone;
                     });
-               
+
 
             };
 
-            triggerRelink();                
+            triggerRelink();
             $rootScope.$on(attr.relinkEvent, triggerRelink);
 
         }

@@ -1,13 +1,12 @@
 'use strict';
 
-angular.module('dashyAngular')
-	.directive('topnav',function(){
+app.directive('topnav',function(){
 		return {
 	        templateUrl:'scripts/directives/topnav/topnav.html?v='+window.app_version,
 	        restrict: 'E',
 	        replace: true,
 	        controller: function($scope, $rootScope){
-	        	
+
 	        	$scope.toggleBodyLayout = function(){
 
 			        $('body').toggleClass('box-section');
@@ -15,7 +14,7 @@ angular.module('dashyAngular')
 	        	}
 
 
-			            	
+
 	        	$scope.$watch('val', function  () {
 	        		if ($scope.val == true) {
 	        			// alert("message");
@@ -29,7 +28,7 @@ angular.module('dashyAngular')
 
 	        	$scope.val = JSON.parse(localStorage.getItem("switched"));
 
-	        	
+
 
 	        	$scope.showMenu = function(){
 
@@ -37,7 +36,7 @@ angular.module('dashyAngular')
 
 	        	}
 
-	        	
+
 
 
 	        	$scope.changeTheme = function(setTheme){

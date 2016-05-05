@@ -7,18 +7,18 @@
  * # MainCtrl
  * Controller of dashyAngular
  */
-angular.module('dashyAngular')
-  .controller('DashboardCtrl', function($scope, $state, $rootScope, $timeout) {
+
+app.controller('DashboardCtrl', function($scope, $state, $rootScope, $timeout) {
 
     $scope.$state = $state;
 
     $scope.date = new Date();
     $scope.eventSources = [];
 
-  	$rootScope.$on('$stateChangeSuccess', function(){ 
+  	$rootScope.$on('$stateChangeSuccess', function(){
 		$timeout(function() {
 			$('#body-container').scrollTop(0);
 		}, 200);
 	});
-  
+
   });

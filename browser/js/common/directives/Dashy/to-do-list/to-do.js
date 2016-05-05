@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('dashyAngular')
-.directive('todolist',function(){
+app.directive('todolist',function(){
 		return {
 	    templateUrl:'scripts/directives/to-do-list/to-do.html?v='+window.app_version,
 	    restrict: 'E',

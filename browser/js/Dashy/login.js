@@ -7,8 +7,8 @@
  * # MainCtrl
  * Controller of dashyAngular
  */
-angular.module('dashyAngular')
-  .controller('LoginCtrl', function($scope, $location) {
+
+app.controller('LoginCtrl', function($scope, $location) {
 
     $scope.submit = function() {
 

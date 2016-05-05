@@ -7,7 +7,8 @@
  * # MainCtrl
  * Controller of dashyAngular
  */
-angular.module('dashyAngular').controller('ChartCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+
+app.controller('ChartCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
     $scope.line = {
 	    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 	          data: [
@@ -28,7 +29,7 @@ angular.module('dashyAngular').controller('ChartCtrl', ['$scope', '$timeout', fu
 		   [28, 48, 40, 19, 86, 27, 90]
 		],
 		colours: ['#a2d19e','#80b1cb','#e8b769','#d57d6d','#06c5ac']
-    	
+
     };
 
     $scope.donut = {

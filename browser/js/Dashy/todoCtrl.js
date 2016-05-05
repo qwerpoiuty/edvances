@@ -7,11 +7,12 @@
  * # MainCtrl
  * Controller of AniTheme
  */
- angular.module('dashyAngular').controller('todoCtrl', function ($scope) {
+
+app.controller('todoCtrl', function ($scope) {
  	$scope.todos = [
- 	{text:'Meeting with Nabindar Singh.', done:false, id: 'option1'}, 
- 	{text:'Exercise at 6:pm with Nicholas.', done:false, id: 'option3'},         
- 	{text:'Avengers Age of Ultron.', done:false, id: 'option4'},         
+ 	{text:'Meeting with Nabindar Singh.', done:false, id: 'option1'},
+ 	{text:'Exercise at 6:pm with Nicholas.', done:false, id: 'option3'},
+ 	{text:'Avengers Age of Ultron.', done:false, id: 'option4'},
  	{text: 'Henna birthday at Mezbaan.', done:false, id: 'option5'}
  	];
  	function makeid()
