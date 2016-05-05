@@ -1,11 +1,9 @@
 'use strict';
 
-app.directive('notification',function(){
-		return {
-        templateUrl:'scripts/directives/sidenav/notification/notification.html',
+app.directive('notification', function() {
+    return {
+        templateUrl: 'js/common/directives/dashy/sidenav/notification/notification.html',
         restrict: 'E',
         replace: true,
-    	}
-	});
-
-
+    }
+});

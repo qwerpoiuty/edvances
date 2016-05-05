@@ -2,7 +2,7 @@
 
 app.directive('footer',function(){
 		return {
-        templateUrl:'scripts/directives/footer/footer.html?v='+window.app_version,
+        templateUrl: 'js/common/directives/dashy/footer/footer.html',
         restrict: 'E',
         replace: true,
     	}

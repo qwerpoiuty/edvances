@@ -1,11 +1,9 @@
 'use strict';
 
-app.directive('calendar',function(){
-		return {
-        templateUrl:'scripts/directives/sidenav/calendar/calendar.html?v='+window.app_version,
+app.directive('calendar', function() {
+    return {
+        templateUrl: 'js/common/directives/dashy/sidenav/calendar/calendar.html',
         restrict: 'E',
         replace: true,
-    	}
-	});
-
-
+    }
+});
