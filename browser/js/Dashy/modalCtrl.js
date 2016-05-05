@@ -33,7 +33,7 @@ app.controller('ModalDemoCtrl', function ($scope, $modal, $log) {
   };
 });
 
-angular.module('dashyAngular').controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
 
   $scope.items = items;
   $scope.selected = {
