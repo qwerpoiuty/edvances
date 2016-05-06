@@ -9,7 +9,9 @@ $title-muted-grey:#DADFEA;
 $back-color-1:lighten(#6A90AB,25%);
 $back-color-original: #FAFBFF;
 $back-color-2:lighten(#3B4F5B, 40%);
-
+$sdiebar-color:#2E2E2E;
+$back-color-3:lighten(#2E2E2E, 35%);
+$back-color-4: #F7F7F7;
 
 * {
   box-sizing: border-box;
@@ -37,7 +39,7 @@ body {
 }
 
 #main {
-  background-color: $back-color-1;
+  background-color: $back-color-4;
   padding-top: 50px;
   width: 100%;
   margin: 0 auto;
