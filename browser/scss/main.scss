@@ -28,7 +28,9 @@ body {
 .center-text{
   text-align: center;
 }
-
+.fullHeight{
+  height:100%;
+}
 .flex-center-vertically {
   display: flex;
   justify-content: center;
@@ -60,4 +62,4 @@ body {
 @import 'profile/main';
 @import 'signup/main';
 @import 'admin/adminview/main';
-
+@import 'dashboard/main';

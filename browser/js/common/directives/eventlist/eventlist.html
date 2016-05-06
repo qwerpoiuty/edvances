@@ -1,0 +1,18 @@
+<div class="event-container panel panel-warning">
+	<div class="panel-heading">
+		<div class="event-header text-center">
+			<h4><i class="fa fa-bars"></i>&nbsp; Event List</h4>
+		</div>
+	</div>
+	<div class="panel-body bg-warning">
+		<div class="todo-list-wrap">
+			<ul class="event-list">
+				<li ng-repeat="event in events">
+					<span class="dates done-false animated bounceInRight">{{event.date}}</span>
+					<span class="bounceInRight done-false">{{event.text}}</span>
+				</li>
+			</ul>
+		</div>
+	
+	</div>
+</div>
