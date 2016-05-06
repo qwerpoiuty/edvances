@@ -1,6 +1,8 @@
 // forms
 $container-background-1: lighten(#F2F1F6, 1%);
 $container-background-2: #FBFBFD;
+$container-background-3: lighten(#2E2E2E, 15%);
+$title-yellow-2: #F9A837;
 
 .profileContainer{
   width: 70%;
@@ -23,10 +25,10 @@ $container-background-2: #FBFBFD;
 }
 
 .container-header{
-  font-family: 'chalk' !important;
+  font-family: 'Lato', sans-serif !important;
   font-size: 3.2em;
   font-weight: bold;
-  color: $title-yellow-dark;
+  color: $title-yellow-2;
   letter-spacing: 2px;
   opacity:.95;
 }
@@ -67,13 +69,14 @@ $container-background-2: #FBFBFD;
 
 .formContainer{
   //box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.2);
-  padding: 15px;
-  background-image: url(asset/images/chalkboard-black.jpg);
-  border-image: url("http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg") 30 30 stretch;
-  border-style: solid;
-  border-width: 15px;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 5px 1px #CCCCCC;
+  margin-top: 80px;
+  margin-bottom: -50px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -287,6 +290,35 @@ $container-background-2: #FBFBFD;
   margin-left: auto;
   margin-right: auto;
 }
+
+.formContainer-6{
+  //box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  background-color: $container-background-3;
+  box-shadow: 0 0 5px 1px black;
+  border: solid 5px $title-yellow-dark;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formContainer-7{
+  //box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 5px 1px #CCCCCC;
+  border: solid 1px;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 
 
