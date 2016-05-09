@@ -13,12 +13,11 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('classroomCtrl', function($scope, AuthService, $state, user, jitsi) {
+app.controller('classroomCtrl', function($scope, AuthService, $state, user) {
+    console.log('hello')
     $scope.user = user
     $scope.title = "This is a filler title";
     $scope.teacher = "Mr. Le"
     $scope.date = Date.now()
-    $scope.hideFilm = function() {
-        // console.log(jitsi.api)
-    }
+
 });

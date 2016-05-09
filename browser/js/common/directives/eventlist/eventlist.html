@@ -1,0 +1,25 @@
+<div class="todo-container panel panel-warning">
+	<div class="panel-heading">
+		<div class="todo-header text-center">
+			<h4><i class="fa fa-bars"></i>&nbsp; Your Classes</h4>
+		</div>
+	</div>
+	<div class="panel-body bg-warning">
+		<div class="event-list-wrap">
+			<ul class="event-list">
+				<li class='events' ng-repeat="event in events">
+					<div class="row">
+						<div class="col-md-3 dateHolder">
+							<i class="fa fa-pencil" area-hidden="true"></i>
+							<span class="dates done-false animated bounceInRight">{{event.date}}</span>
+						</div>
+						<div class="col-md-9 eventHolder">
+							<span class="bounceInRight done-false">{{event.text}}</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	
+	</div>
+</div>

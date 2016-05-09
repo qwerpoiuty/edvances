@@ -26,8 +26,6 @@ module.exports = function(server) {
             socket.join(roomName);
             if (!chatHistory[roomName]) chatHistory[roomName] = []
             else socket.emit('chat', chatHistory[roomName])
-                //whiteboard things
-
 
             //chat things
             socket.on('chat message', function(msg) {

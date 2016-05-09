@@ -38,20 +38,7 @@ app.directive('topnav', function() {
 
 
 
-            $scope.changeTheme = function(setTheme) {
 
-                $('<link>')
-                    .appendTo('head')
-                    .attr({
-                        type: 'text/css',
-                        rel: 'stylesheet'
-                    })
-                    .attr('href', 'styles/app-' + setTheme + '.css');
-                console.log('hey');
-
-                // $.get('/api/change-theme?setTheme='+setTheme);
-
-            }
         }
     }
 });

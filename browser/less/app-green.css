@@ -6244,7 +6244,7 @@ body {
 }
 body {
   background-color: #2e2e2e;
-  background-image: url("../images/bg-strips-light.png");
+  // background-image: url("../images/bg-strips-light.png");
   background-repeat: repeat;
 }
 .conter-wrapper {
@@ -6614,7 +6614,7 @@ ul.home-ul li a:hover {
   }
 }
 .striped-bg {
-  background-image: url("../images/bg-strips-light.png");
+  // background-image: url("../images/bg-strips-light.png");
   background-repeat: repeat;
 }
 #app-container {
@@ -8611,7 +8611,7 @@ blockquote.pull-right {
 #sidenav .sidebar-top-nav .nav-tabs.nav-justified > li:hover a {
   border-radius: 0;
   background-color: #2e2e2e;
-  background-image: url("/images/bg-strips-light.png");
+  // background-image: url("/images/bg-strips-light.png");
   background-repeat: repeat;
   color: #ffffff;
 }

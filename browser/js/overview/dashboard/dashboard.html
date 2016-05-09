@@ -1,0 +1,45 @@
+<div class="content-wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8">
+				<h1 class='welcome-message'>Welcome {{user.firstName}}</h1>
+				<div class="alert alert-white">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<strong>Attention: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius lacus vitae purus tincidunt blandit. <a ui-sref="c3chart">View Details</a>
+				</div>
+				<stats clas="browse" bgclass="info" icon="graduation-cap" value="Start Learning!" text="Browse classes"></stats>
+			</div>
+			<div class="col-md-4 pull-right calendar-col">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Your Calendar</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-4 calendar-wrapper">
+								<div class="today">
+									<h2 class="date">{{date | date:'dd'}}</h2>  <span class="month">{{date | date:'MMMM'}}</span>
+								</div>									
+							</div>
+							<div class="col-md-8" relink-event="resize">
+								<div class="calendar-widget" ui-calendar ng-model="eventSources"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<todolist></todolist>
+			</div>
+			<div class="col-md-6 fullHeight">
+				<eventlist></eventlist>
+			</div>
+		</div>
+
+
+	</div>
+</div>

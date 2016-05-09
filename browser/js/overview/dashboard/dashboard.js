@@ -1,10 +1,8 @@
-'use strict';
-
 app.config(function($stateProvider) {
     $stateProvider.state('dashboard', {
-        url: '/dashboard',
-        templateUrl: 'js/dashboard/dashboard.html',
+        templateUrl: 'js/overview/dashboard/dashboard.html',
         controller: 'dashboardCtrl',
+        parent: 'overview',
         resolve: {
             user: function(AuthService) {
                 return AuthService.getLoggedInUser().then(function(user) {
@@ -13,8 +11,12 @@ app.config(function($stateProvider) {
             }
         }
     })
-});
-app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout) {
+})
+
+app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, user) {
+    $scope.user = user
+    $scope.date = new Date();
+    $scope.eventSources = [];
 
 
-});
+})

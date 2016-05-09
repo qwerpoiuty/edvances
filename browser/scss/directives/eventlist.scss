@@ -1,0 +1,33 @@
+.event-list-wrap{
+	height:250px;
+	overflow:hidden;
+	position:relative;
+	margin-bottom:15px;
+}
+.event-list{
+	color:#fff;
+	padding:0;
+	margin:0;
+	overflow-x:hidden;
+}
+.event-list li{
+	font-size:15px;
+	padding-top:8px;
+	padding-bottom:8px;
+	.dates{
+		margin-left:5px;
+	}
+	.fa{
+		font-size:19px;
+		padding: 4px;
+	}
+}
+
+.dateHolder{
+
+}
+
+.eventHolder{
+	padding-top:3px;
+	padding-bottom:3px;
+}
