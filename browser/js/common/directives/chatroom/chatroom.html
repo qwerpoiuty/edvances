@@ -1,7 +1,15 @@
-<div class="chatroomContainer">
-	<ul class="chats"></ul>
-	<ul id = "messages"></ul>
-        <div id = "inputContainer">
-            <input ng-model = "msg.text" id = "message" autocomplete="off" /><button ng-click = "sendMsg()" id = "send">Send</button>
-        </div>
+<div class="todo-container panel panel-info">
+	<div class="panel-heading">
+		<div class="chat-header text-center">
+			<h4><i class="fa fa-comment"></i>&nbsp; Chat</h4>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="chat-wrap">
+			<ul id="messages" class="chats"></ul>
+			<div id="inputContainer">
+				<input ng-model="msg.text" id="message" autocomplete="off"/><button ng-click="sendMsg()" id="send">Send</button>
+			</div>
+		</div>
+	</div>
 </div>

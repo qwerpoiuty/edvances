@@ -12,9 +12,9 @@ app.config(function($stateProvider) {
                 })
             }
         },
-        data: {
-            authenticate: true
-        }
+        // data: {
+        //     authenticate: true
+        // }
     })
 });
 app.controller('overviewCtrl', function($scope, $state, $rootScope, $timeout) {
