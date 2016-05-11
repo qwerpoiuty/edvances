@@ -16,6 +16,7 @@ $button-yellow: #e8b769;
 $khan-blue: #46A8BF;
 $khan-white: #FDFDFD;
 $khan-white2: #f0f0f0;
+$dashy-grey: #999;
 
 * {
   box-sizing: border-box;
@@ -63,9 +64,7 @@ body {
 @import 'directives/main';
 @import 'home/main';
 @import 'landing/main';
-@import 'login/main';
 @import 'classroom/main';
 @import 'profile/main';
-@import 'signup/main';
 @import 'admin/adminview/main';
 @import 'dashboard/main';
