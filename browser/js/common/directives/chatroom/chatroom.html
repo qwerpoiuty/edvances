@@ -1,15 +1,30 @@
-<div class="todo-container panel panel-info">
-	<div class="panel-heading">
-		<div class="chat-header text-center">
-			<h4><i class="fa fa-comment"></i>&nbsp; Chat</h4>
-		</div>
-	</div>
-	<div class="panel-body">
-		<div class="chat-wrap">
-			<ul id="messages" class="chats"></ul>
-			<div id="inputContainer">
-				<input ng-model="msg.text" id="message" autocomplete="off"/><button ng-click="sendMsg()" id="send">Send</button>
-			</div>
-		</div>
-	</div>
+<div class="todo-container panel panel-info" id="chatroom-panel">
+    <div class="panel-heading">
+        <div class="chat-header text-center">
+            <h4><i class="fa fa-comment"></i>&nbsp; Chat</h4>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="chat-wrap">
+            <div id="messagesContainer">
+                <ul id="messages" class="chats"></ul>
+            </div>
+            <form class="form-horizontal chat-form">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Click here to chat" ng-model="msg.text" id="message" autocomplete="off">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" ng-click="sendMsg()" type="submit" id="send">Send</button>
+                                    </span>
+                     </div>
+                </div>
+            </div>
+        </form>
+
+        </div>
+    </div>
 </div>
+
+
+

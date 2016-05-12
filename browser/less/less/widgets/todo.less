@@ -14,8 +14,9 @@
 				top: 3px;
 				right: 2px;
 			}
-		}			
+		}
 	}
+
 	.todo-body {
 		.todo-list-wrap {
 			height: 215px;
@@ -24,7 +25,7 @@
 			margin-bottom: 15px;
 		}
 		.todo-list {
-			color: white;
+			color: #555;
 			padding: 0;
 			margin: 0;
 			overflow-x: hidden;
@@ -33,8 +34,9 @@
 				padding-bottom: 8px;
 				font-size: 15px;
 				.checkbox1 input:checked + span:before {
-				  background: inherit;
-				  border-color: inherit;
+				  background: white;
+                  color: #999;
+				  border-color: #555;
 				  content: "\2713";
 				}
 				.checkbox1 {
@@ -42,25 +44,27 @@
 				}
 				.done-true {
 					text-decoration: line-through;
+                  color: #999;
 				}
 				.done-false {
-					
+
 				}
 			}
 		}
 		.todo-from-bottom {
-			.form-control {
-				border-color: white;			
-			}
-			.btn {
-				background: inherit;
-				color: white;
-				border-color: white;
-			}
+          margin-bottom: 10px;
+              .form-control {
+                border-color: #999;
+              }
+              .btn {
+                background: white;
+                color: #555;
+                border-color: #999;
+              }
 		}
 
 		.checkbox1 span:before {
-			border-color: #fff;
+			border-color: #555;
 		}
 	}
 	&.panel-danger {

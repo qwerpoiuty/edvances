@@ -7,13 +7,23 @@
 
 .calendar-wrapper > .today > .date{
 	font-size:60px;
+    text-align: center;
 }
 
 .calendar-wrapper > .today > .month{
 	font-size:30px;
+    text-align: center;
 }
 
 .text-col > h2{
 	font-weight:500;
 	font-size:40px;
+}
+
+#event-list-box{
+  margin-top: 10px;
+}
+
+#dashboard-container{
+  background-color: #EEE;
 }

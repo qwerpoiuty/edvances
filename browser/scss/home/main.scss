@@ -1,7 +1,109 @@
-#home {
-  h1 {
-    margin-top: 40px;
-    text-align: center;
+.content {
+  margin: 0 auto;
+  width:100%;
+}
+
+.splashTitleSmall{
+  color: #464646;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.splashTitleBig{
+  color: #464646;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.signUpButton{
+  text-align: center;
+}
+
+.buttonSpacing{
+  padding: 10px;
+}
+//.content h1 {
+//  font-size: 40px;
+//  color: #464646;
+//  font-family: 'Open Sans', sans-serif;
+//  font-weight: 600;
+//  margin: 30px 60px;
+//}
+//.content p {
+//  font-size:20px;
+//  color: #343434;
+//  font-family: 'Open Sans', sans-serif;
+//  font-weight: 300;
+//  margin: 30px 60px;
+//}
+
+//h1::first-letter {
+//  font-size: 30px;
+//  font-weight: 600;
+//  color: #e8b769;
+//}
+
+#content_1{
+  height: 725px;
+  background-color: $khan-blue;
+  width: 100%;
+  .splashTitleBig{
+    color: white;
+  }
+  .splashTitleSmall{
+    color: white;
   }
 }
 
+
+#content_2{
+  height: 825px;
+  background-color: $khan-white;
+  padding: 30px;
+  width: 100%;
+
+  .splashTitleBig{
+    padding-top: 250px;
+    padding-bottom: 40px;
+  }
+}
+
+
+#content_3{
+  height: 825px;
+  background-color: $khan-blue;
+  padding: 30px;
+  width: 100%;
+
+  .splashTitleBig{
+    padding-top: 250px;
+    padding-bottom: 40px;
+    color: white;
+  }
+}
+
+
+#content_4{
+  height: 825px;
+  background-color: $khan-white;
+  padding: 30px;
+  width: 100%;
+
+  .splashTitleBig{
+    padding-top: 250px;
+    padding-bottom: 40px;
+  }
+}
+
+#splashPage{
+  display: inline-block;
+  position: absolute;
+  max-width: 100%;
+  overflow-x: hidden;
+}
