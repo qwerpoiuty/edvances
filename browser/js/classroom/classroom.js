@@ -13,11 +13,19 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('classroomCtrl', function($scope, AuthService, $state, user) {
+app.controller('classroomCtrl', function($scope, AuthService, $state, user, socket) {
     console.log('hello')
     $scope.user = user
     $scope.title = "This is a filler title";
     $scope.teacher = "Mr. Le"
     $scope.date = Date.now()
+    $scope.live = false
+
+
+
+    socket.emit('join awesome room', location.pathname.slice(1));
+    socket.on('live class'function() {
+        $scope.live = true
+    })
 
 });

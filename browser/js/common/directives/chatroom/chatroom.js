@@ -9,7 +9,7 @@ app.directive('chatroom', function($rootScope, AuthService, AUTH_EVENTS, $state,
             scope.msg = {}
             scope.msg.user = scope.user.firstName
             scope.msg.timeStamp = Date.now()
-            console.log(location.pathname.slice(1))
+            console.log(location.pathname)
             socket.emit('join awesome room', location.pathname.slice(1));
 
             socket.on('chat message', function(chat) {
