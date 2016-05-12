@@ -3,6 +3,11 @@
 	<div class="main-view">
 		<div class="content-wrapper">
 			<div class="container-fluid">
+				<div class="row" id="classroomTitle">
+					<h1>Welcome to Class</h1>
+					<button class="btn">{{liveClass}}</button>
+					<button ng-if="user.powerLevel >=2"class="btn">{{startClass}}</button>
+				</div>
 				<div class="row" id="classroomTopRow">
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="panel panel-primary">
