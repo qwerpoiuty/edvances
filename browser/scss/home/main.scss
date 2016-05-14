@@ -26,7 +26,7 @@
 }
 
 .buttonSpacing{
-  padding: 10px;
+  padding: 1%;
 }
 //.content h1 {
 //  font-size: 40px;
@@ -50,7 +50,7 @@
 //}
 
 #content_1{
-  height: 725px;
+  height: 95vh;
   background-color: $khan-blue;
   width: 100%;
   .splashTitleBig{
@@ -63,41 +63,38 @@
 
 
 #content_2{
-  height: 825px;
+  height: 95vh;
   background-color: $khan-white;
   padding: 30px;
   width: 100%;
 
   .splashTitleBig{
-    padding-top: 250px;
-    padding-bottom: 40px;
+    padding-top: 20vh;
   }
 }
 
 
 #content_3{
-  height: 825px;
+  height: 95vh;
   background-color: $khan-blue;
   padding: 30px;
   width: 100%;
 
   .splashTitleBig{
-    padding-top: 250px;
-    padding-bottom: 40px;
+    padding-top: 20vh;
     color: white;
   }
 }
 
 
 #content_4{
-  height: 825px;
+  height: 95vh;
   background-color: $khan-white;
   padding: 30px;
   width: 100%;
 
   .splashTitleBig{
-    padding-top: 250px;
-    padding-bottom: 40px;
+    padding-top: 20vh;
   }
 }
 

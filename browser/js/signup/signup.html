@@ -1,28 +1,38 @@
-<div class = "signupContainer">
-	<div ng-show = "teacher" class="container">
-		<form id="signup-form" name="signupForm">
+<div class="back">
+    <div class="errors col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-8 col-mg-offset-2">
+        <div class="login-outer">
+            <div class="login-wrap">
+                <div class="login-left striped-bg text-center">
+                    <a ui-sref="home" class="logo-lg" href=""><i class="fa fa-paper-plane"></i>Edvances</a>
+                    <div class="slogan">Learning on your own terms</div> </div>
+                <div class="login-right striped-bg">
+                    <div>
+                        <div class="heading ">Create your Account</div>
 
-		    <div class="form-group">
-		        <label for="email">Email address</label>
-		        <input type="text" ng-model="user.email" class="form-control" id="email" placeholder="Enter email">
-		    </div>
-
-		    <div class="form-group">
-		        <label for="signup-password">Password</label>
-		        <input type="password" ng-model="user.password" class="form-control" id="signup-password" placeholder="Password">
-		    </div>
-
-		    <div class="form-group">
-		        <label for="signup-password">Comfirm Password</label>
-		        <input type="password" ng-model="user.comfirm" class="form-control" id="signup-password" placeholder="Comfirm your password">
-		    </div>
-
-			<button class="btn btn-primary" type="button" ng-click="signup(user)">Submit</button>
-		</form>
-
-	</div>
-
-	<div ng-show = "!teacher" class="container">
-
-	</div>
+                        <div class="input ">
+                            <form class="form-horizontal ng-pristine ng-valid" role="form" ng-submit="submit()">
+                                <input type="hidden" name="_token" value="6z7mfMW1GwKzG2sgsG9icqN1bfcJTooGwIOySP22">
+                                <div class="login-input-group">
+                                    <span class="login-input-group-addon" id="basic-addon3"><i class="fa fa-user fa-fw"></i></span>
+                                    <input type="text" class="here form-control" placeholder="name" aria-describedby="basic-addon2" name="name">
+                                </div>
+                                <div class="login-input-group"> <span class="login-input-group-addon" id="basic-addon1"><i class="fa fa-at fa-fw"></i></span>
+                                    <input type="email" class="here form-control" placeholder="email" aria-describedby="basic-addon1" name="email">
+                                </div>
+                                <div class="login-input-group">
+                                    <span class="login-input-group-addon" id="basic-addon2"><i class="fa fa-key fa-fw"></i></span>
+                                    <input type="password" class="here form-control" placeholder="password" aria-describedby="basic-addon2" name="password">
+                                </div>
+                                <div class="login-input-group"> <span class="login-input-group-addon" id="basic-addon2"><i class="fa fa-key fa-fw"></i></span>
+                                    <input type="password" class="here form-control" placeholder="confirm password" aria-describedby="basic-addon2" name="password_confirmation">
+                                </div>
+                                <button type="submit" class="btn btn-default btn-lg submit">Signup</button>
+                            </form>
+                        </div>
+                        <div class="rightFooter"> <a ui-sref="login" href="">Already have an Account?</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
