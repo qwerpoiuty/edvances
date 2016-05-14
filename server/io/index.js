@@ -36,6 +36,7 @@ module.exports = function(server) {
             socket.on('check class', function() {
                 socket.emit('class check', liveClass)
             })
+
             //chat things
             socket.on('chat message', function(msg) {
                 chatHistory[roomName].push(msg)
