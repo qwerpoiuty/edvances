@@ -16,7 +16,7 @@ app.controller('signupCtrl2', function($scope, dataFactory, $state, AuthService)
         } else {
             $scope.error = null;
 
-
+            user.powerLevel = 2
             dataFactory.createUser(user)
                 .then(function() {
                     return AuthService.login(user);
@@ -24,8 +24,8 @@ app.controller('signupCtrl2', function($scope, dataFactory, $state, AuthService)
                 .then(function() {
                     $state.go('home');
                 }).catch(function() {
-                $scope.error = 'Invalid signup credentials.';
-            });
+                    $scope.error = 'Invalid signup credentials.';
+                });
         }
     };
 

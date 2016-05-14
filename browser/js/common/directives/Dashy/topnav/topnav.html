@@ -22,10 +22,10 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right top-nav">
-                <li style="border:none;">
-                    <a href="http://www.strapui.com/themes/dashy-angular/" class="btn btn-rounded btn-primary" style="padding: 6px 15px; color: #fff; margin-top: 16px; border: none; margin-right: 15px;">Buy Credits</a>
+                <li ng-show="user"style="border:none;">
+                    <a style="padding: 6px 15px; color: #fff; margin-top: 16px; border: none; margin-right: 15px;">Buy Credits</a>
                 </li>
-                <li class="dropdown" dropdown on-toggle="toggled(open)">
+                <li ng-show="user"class="dropdown" dropdown on-toggle="toggled(open)">
                     <a href class="dropdown-toggle notoggle" dropdown-toggle>
                         <span class="notification"><i class="fa fa-bell-o"></i></span>
                         <b class="badge nobadge">2</b>
@@ -67,17 +67,19 @@
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown" dropdown on-toggle="toggled(open)">
+                <li ng-show="user" class="dropdown" dropdown on-toggle="toggled(open)">
                     <a href class="dropdown-toggle admin-toggle" dropdown-toggle>
-                        <img class="img-circle admin-img" src="" alt="">&nbsp;&nbsp;&nbsp;<span class="add">Stan&nbsp;
+                        <img class="img-circle admin-img" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg" alt="">&nbsp;&nbsp;&nbsp;<span class="add">Stan&nbsp;
                         <i class="fa fa-angle-down"></i></span>
                     </a>
-                    <ul class="dropdown-menu admin" role="menu">
+                    <ul  class="dropdown-menu admin" role="menu">
                         <li role="presentation" class="dropdown-header"> Stan Le</li>
                         <li><a ui-sref="profile"><i class="fa fa-info"></i> Profile</a></li>
-                        <li><a ui-sref="login"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                        <li><a ng-click="logout()"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
+                <li ng-show="!user"><a ng-click="login()">Login</a>
             </ul>
         </div>
     </div>

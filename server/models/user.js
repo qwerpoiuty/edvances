@@ -21,6 +21,7 @@ module.exports = function(sequelize, DataTypes) {
         grades: DataTypes.ARRAY(DataTypes.STRING),
         dob: DataTypes.DATEONLY,
         years: DataTypes.INTEGER,
+        powerLevel: DataTypes.INTEGER,
         education: DataTypes.ARRAY(DataTypes.STRING),
         documents: DataTypes.ARRAY(DataTypes.BLOB),
         documentnames: DataTypes.ARRAY(DataTypes.STRING),

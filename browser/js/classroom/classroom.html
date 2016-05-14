@@ -4,54 +4,57 @@
 		<div class="content-wrapper">
 			<div class="container-fluid">
 				<div class="row" id="classroomTitle">
-					<h1>Welcome to Class</h1>
-					<button class="btn">{{liveClass}}</button>
-					<button ng-if="user.powerLevel >=2"class="btn">{{startClass}}</button>
+					<div class="welcome-container">
+						<h1 class="welcome-message">Welcome to Class</h1>
+						<button class="btn" ng-click = "joinClass()">{{liveClass}}</button>
+						<button ng-if="user.powerLevel >=1" ng-click="toggleClass()" class="btn">{{startClass}}</button>
+					</div>
 				</div>
 				<div class="row" id="classroomTopRow">
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading" id="panel1Heading">
-                                <h3 class="panel-title">Primary Panel
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation.
-                            </div>
-                        </div>
-                    </div>
+					<div class="col-lg-8 col-md-8 col-sm-8">
+	                    <div class="col-lg-4 col-md-4 col-sm-4">
+	                        <div class="panel panel-primary">
+	                            <div class="panel-heading" id="panel1Heading">
+	                                <h3 class="panel-title">Primary Panel
+	                                </h3>
+	                            </div>
+	                            <div class="panel-body">
+	                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                                quis nostrud exercitation.
+	                            </div>
+	                        </div>
+	                    </div>
 
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading" id="panel2Heading">
-                                <h3 class="panel-title">Primary Panel
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation.
-                            </div>
-                        </div>
-                    </div>
+	                    <div class="col-lg-4 col-md-4 col-sm-4">
+	                        <div class="panel panel-primary">
+	                            <div class="panel-heading" id="panel2Heading">
+	                                <h3 class="panel-title">Primary Panel
+	                                </h3>
+	                            </div>
+	                            <div class="panel-body">
+	                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                                quis nostrud exercitation.
+	                            </div>
+	                        </div>
+	                    </div>
 
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading" id="panel3Heading">
-                                <h3 class="panel-title">Primary Panel
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-3">
+	                    <div class="col-lg-4 col-md-4 col-sm-4">
+	                        <div class="panel panel-primary">
+	                            <div class="panel-heading" id="panel3Heading">
+	                                <h3 class="panel-title">Primary Panel
+	                                </h3>
+	                            </div>
+	                            <div class="panel-body">
+	                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                                quis nostrud exercitation.
+	                            </div>
+	                        </div>
+	                    </div>
+					</div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 chatroom-col">
 						<chatroom></chatroom>
 					</div>
 			    </div>

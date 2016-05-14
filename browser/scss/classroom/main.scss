@@ -6,7 +6,9 @@
   overflow-y: hidden;
   overflow-x: hidden;
 }
-
+.welcome-container{
+  margin-left:15px;
+}
 #panel1Heading{
  background-color: #D57D6D;
 }
@@ -19,14 +21,23 @@
   background-color: #E8B769;
 }
 #classroomTopRow{
+  height:80vh;
   margin-top: 5px;
 }
+.chatroom-col{
+  height:80vh;
 
+}
 #chatroom-panel{
-  height: 90vh;
-
+  height:100%;
+  .chatbody{
+    height:100%;
+  }
+  .chat-wrap{
+    height:70vh;
+  }
   #messagesContainer{
-    height: 70vh;
+    height:90%;
   }
 
   #inputContainer{

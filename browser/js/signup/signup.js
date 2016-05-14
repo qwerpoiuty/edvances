@@ -16,7 +16,7 @@ app.controller('signupCtrl', function($scope, dataFactory, $state, AuthService) 
         } else {
             $scope.error = null;
 
-
+            user.powerLevel = 1
             dataFactory.createUser(user)
                 .then(function() {
                     return AuthService.login(user);

@@ -4,7 +4,7 @@
             <h4><i class="fa fa-comment"></i>&nbsp; Chat</h4>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="panel-body chatbody">
         <div class="chat-wrap">
             <div id="messagesContainer">
                 <ul id="messages" class="chats"></ul>
@@ -14,9 +14,9 @@
                 <div class="col-sm-12">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Click here to chat" ng-model="msg.text" id="message" autocomplete="off">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" ng-click="sendMsg()" type="submit" id="send">Send</button>
-                                    </span>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" ng-click="sendMsg()" type="submit" id="send">Send</button>
+                            </span>
                      </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ module.exports = function(server) {
             //class checking
             socket.on('toggle class', function() {
                 liveClass = !liveClass
-                socket.emit('check class')
+                socket.emit('class check', liveClass)
             })
 
             socket.on('check class', function() {
