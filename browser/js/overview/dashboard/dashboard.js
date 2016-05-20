@@ -14,6 +14,7 @@ app.config(function($stateProvider) {
 })
 
 app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, user) {
+
     $scope.user = user
     $scope.date = new Date();
     $scope.eventSources = [];

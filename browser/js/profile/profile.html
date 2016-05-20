@@ -1,4 +1,4 @@
-<div class = "profileContainer">
+<div ng-if="!fullprofile" class = "profileContainer">
 	<form name = "parent">
 		<div class="aboutContainer formContainer">
             <h1 class="container-header">About You</h1>
@@ -48,18 +48,20 @@
     <div class="formContainer">
         <div ng-switch on="(edits.about)" class = "aboutContainerProfile">
 
-            <button class="btn btn-primary profileEditButton" ng-switch-default ng-click="edit('about')">
+            <!-- buttons -->
+            <button class="btn btn-primary profileEditButton" ng-show="!viewing" ng-switch-default ng-click="edit('about')">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
             </button>
-            <button class="btn btn-danger profileEditButton" ng-switch-when="true" ng-click="cancel('about')">
+            <button class="btn btn-danger profileEditButton" ng-show="!viewing" ng-switch-when="true" ng-click="cancel('about')">
                 <i class="fa fa-ban" aria-hidden="true"></i>
             </button>
 
+            <!-- standard display -->
             <div ng-switch-default class = "introContainer">
                 <div class = "aboutHeader row">
                 <!-- name,title,picture -->
                     <div class = "center-text col-lg-3 col-md-3 col-sm-6">
-                        <img  id="profilePic" src = "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg" alt="">
+                        <img id="profilePic" ng-src = "{{proPhoto}}" alt="">
                     </div>
                     <div class="introHeader col-lg-9 col-md-9 col-sm-6">
                         <h1 class = "container-header">{{user.firstName}} {{user.lastName}}</h1>
@@ -73,6 +75,7 @@
                 </div>
 
             </div>
+
              <!-- The edit portion -->
 
             <div class = "introContainerEdited" ng-switch-when="true">
@@ -94,7 +97,7 @@
                     <textarea id="introContainerStatement"  ng-model="editObject.about.statement" placeholder="Your education statement"> </textarea>
                 </div>
 
-                <button class="btn btn-success profileSaveButton" ng-switch-when="true" ng-click="save('about')">Save</button>
+                <button class="btn btn-success profileSaveButton" ng-click="save('about')">Save</button>
             </div>
         </div>
     </div>
@@ -102,10 +105,10 @@
     <!-- teacher profile -->
     <div class="formContainer">
         <div class = "teachingPreferencesContainerProfile" ng-switch on="(edits.preferences)">
-            <button class="btn btn-primary profileEditButton" ng-switch-default ng-click="edit('preferences')">
+            <button class="btn btn-primary profileEditButton" ng-show="!viewing" ng-switch-default ng-click="edit('preferences')">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
             </button>
-            <button class="btn btn-danger profileEditButton" ng-switch-when="true" ng-click="cancel('preferences')">
+            <button class="btn btn-danger profileEditButton" ng-show="!viewing" ng-switch-when="true" ng-click="cancel('preferences')">
                 <i class="fa fa-ban" aria-hidden="true"></i>
             </button>
 
@@ -152,7 +155,7 @@
                         <!-- grade levels -->
                     </div>
                 </div>
-                <button class="btn btn-success profileSaveButton" ng-switch-when="true" ng-click="save('preferences')">Save</button>
+                <button class="btn btn-success profileSaveButton" ng-click="save('preferences')">Save</button>
             </div>
 
         </div>
@@ -161,10 +164,10 @@
     <!-- education/certification -->
     <div class="formContainer">
         <div class = "certificationsContainerProfile" ng-switch on="(edits.certification)">
-            <button class="btn btn-primary profileEditButton" ng-switch-default ng-click="edit('certification')">
+            <button class="btn btn-primary profileEditButton" ng-show="!viewing" ng-switch-default ng-click="edit('certification')">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
             </button>
-            <button class="btn btn-danger profileEditButton" ng-switch-when="true" ng-click="cancel('certification')">
+            <button class="btn btn-danger profileEditButton" ng-show="!viewing" ng-switch-when="true" ng-click="cancel('certification')">
                 <i class="fa fa-ban" aria-hidden="true"></i>
             </button>
 
@@ -272,7 +275,7 @@
                         <input type = "file" file-model = "$parent.$parent.document"/>
                         <button ng-click = "uploadDocument()">Upload Me</button>
                 </div>
-                <button class="btn btn-success profileSaveButton" ng-switch-when="true" ng-click="save('certification')">save</button>
+                <button class="btn btn-success profileSaveButton"  ng-click="save('certification')">save</button>
             </div>
         </div>
     </div>

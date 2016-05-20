@@ -5,8 +5,15 @@ app.directive('sidenav', function() {
         templateUrl: 'js/common/directives/dashy/sidenav/sidenav.html',
         restrict: 'E',
         replace: true,
-        controller: function($scope, $timeout, $rootScope) {
-
+        controller: function($scope, $timeout, $rootScope, AuthService, AUTH_EVENTS) {
+            var setUser = function() {
+                AuthService.getLoggedInUser().then(function(user) {
+                    $scope.user = user;
+                });
+            };
+            var removeUser = function() {
+                $scope.user = null;
+            };
             $scope.tabActive = [];
 
             $scope.$watch('tabActive', function() {
@@ -49,11 +56,11 @@ app.directive('sidenav', function() {
 
 
             }
-            if ($('body').hasClass('menu-hidden') == 1) {
+            setUser();
+            $rootScope.$on(AUTH_EVENTS.loginSuccess, setUser);
+            $rootScope.$on(AUTH_EVENTS.logoutSuccess, removeUser);
+            $rootScope.$on(AUTH_EVENTS.sessionTimeout, removeUser);
 
-            } else {
-
-            }
         },
         link: function(scope, el, attrs) {
 

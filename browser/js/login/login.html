@@ -15,15 +15,15 @@
                                     <span class="login-input-group-addon">
                                         <i class="fa fa-at fa-fw"></i>
                                     </span>
-                                    <input type="email" class="form-control" name="email" placeholder="email">
+                                    <input ng-model="loginInfo.email"type="email" class="form-control" name="email" placeholder="email">
                                 </div>
                                 <div class="login-input-group">
                                     <span class="login-input-group-addon">
                                         <i class="fa fa-key fa-fw"></i>
                                     </span>
-                                    <input type="password" class="form-control" placeholder="password" name="password">
+                                    <input ng-model="loginInfo.password" type="password" class="form-control" placeholder="password" name="password">
                                 </div>
-                                <button type="submit" class="btn btn-default btn-lg submit">Login</button>
+                                <button ng-click="sendLogin(loginInfo)" class="btn btn-default btn-lg submit">Login</button>
                             </form>
                             <div class="login-other text-right">Or Login with
                                 <a href="javascript:;" class="m-l-sm">
@@ -39,7 +39,16 @@
                             </div>
                         </div>
                         <div class="rightFooter ng-scope">
-                            <a ui-sref="signup" href="signup">Don't have an Account?</a>
+                            <div class = "container">
+                                <div class = "row">
+                                    <span>Don't have an Account?</span>
+                                </div>
+                                <div class = "row">
+                                    <a ui-sref="signupTeacher">I'm a Teacher</a>
+                                    <a ui-sref="signupStudent">I'm a Student</a>
+                                </div>
+                            </div>
+
                             <a ui-sref="forgot-password" class="m-l" href="">Forgot Password?</a>
                         </div>
                     </div>

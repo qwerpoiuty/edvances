@@ -3,6 +3,7 @@ app.service('fileUpload', function($http) {
         var fd = new FormData();
 
         fd.append('photo', photo);
+        console.log(photo)
         $http.post('/api/users/photo/' + user.id, fd, {
             transformRequest: angular.identity,
             headers: {

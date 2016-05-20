@@ -14,7 +14,7 @@
                     </a>
                     <ul class="dropdown-menu admin" role="menu">
                         <li role="presentation" class="dropdown-header">Admin name</li>
-                        <li><a ui-sref="profile"><i class="fa fa-info"></i> Profile</a></li>
+                        <li><a ng-click=""><i class="fa fa-info"></i> Profile</a></li>
                         <li><a ui-sref="login"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right top-nav">
                 <li ng-show="user"style="border:none;">
-                    <a style="padding: 6px 15px; color: #fff; margin-top: 16px; border: none; margin-right: 15px;">Buy Credits</a>
+                    <a id="buy-credits">Buy Credits</a>
                 </li>
                 <li ng-show="user"class="dropdown" dropdown on-toggle="toggled(open)">
                     <a href class="dropdown-toggle notoggle" dropdown-toggle>
@@ -69,17 +69,17 @@
                 </li>
                 <li ng-show="user" class="dropdown" dropdown on-toggle="toggled(open)">
                     <a href class="dropdown-toggle admin-toggle" dropdown-toggle>
-                        <img class="img-circle admin-img" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg" alt="">&nbsp;&nbsp;&nbsp;<span class="add">Stan&nbsp;
+                        <img class="img-circle admin-img" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg" alt="">&nbsp;&nbsp;&nbsp;<span class="add">{{user.firstName}}&nbsp;
                         <i class="fa fa-angle-down"></i></span>
                     </a>
                     <ul  class="dropdown-menu admin" role="menu">
-                        <li role="presentation" class="dropdown-header"> Stan Le</li>
-                        <li><a ui-sref="profile"><i class="fa fa-info"></i> Profile</a></li>
+                        <li role="presentation" class="dropdown-header"> {{user.firstName}} {{user.lastName}}</li>
+                        <li><a ng-click="myProfile()"><i class="fa fa-info"></i> Profile</a></li>
                         <li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                         <li><a ng-click="logout()"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
-                <li ng-show="!user"><a ng-click="login()">Login</a>
+                <li ng-show="!user"><a ng-click="redirect('login')">Login</a>
             </ul>
         </div>
     </div>

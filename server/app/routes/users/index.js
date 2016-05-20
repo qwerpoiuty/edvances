@@ -16,12 +16,21 @@ var ensureAuthenticated = function(req, res, next) {
     }
 }
 
+
+//FETCHES FOR DATA
 router.get('/', function(req, res) {
     models.User.findAll({}).then(function(users) {
         res.json(users);
     });
 });
 
+router.get('/:id', function(req, res) {
+    models.User.findById(req.params.id).then(function(user) {
+        res.json(user)
+    })
+})
+
+//UPDATES FOR THINGS
 router.put('/update', function(req, res) {
     req.body.completed = true
     models.User.findById(req.body.id)
@@ -48,10 +57,11 @@ router.put('/doc/:id', upload.single('doc'), function(req, res) {
 })
 
 router.post('/photo/:id', upload.single('photo'), function(req, res) {
+    console.log(req.file)
     models.User.findById(req.params.id)
         .then(function(user) {
             return user.update({
-                photo: req.photo.buffer
+                photo: req.file.buffer
             })
         }).then(function(updatedUser) {
             res.json(updatedUser)

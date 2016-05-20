@@ -13,9 +13,19 @@ app.directive('topnav', function($rootScope, AuthService, AUTH_EVENTS, $state) {
                 $scope.val = !$scope.val;
             }
 
-            $scope.login = function() {
-                $state.go('login');
+            $scope.redirect = function(state) {
+                $state.go(state);
             }
+
+            $scope.myProfile = function() {
+                console.log('hello')
+                AuthService.getLoggedInUser().then(function(user) {
+                    $state.go('profile', {
+                        id: user.id
+                    })
+                })
+            }
+
             $scope.logout = function() {
                 AuthService.logout().then(function() {
                     $state.go('home');

@@ -1,12 +1,17 @@
 app.config(function($stateProvider) {
     $stateProvider.state('profile', {
-        url: '/profile',
+        url: '/profile/:id',
         templateUrl: 'js/profile/profile.html',
         controller: 'profileCtrl',
         resolve: {
-            user: function(AuthService) {
+            person: function(AuthService) {
                 return AuthService.getLoggedInUser().then(function(user) {
                     return user
+                })
+            },
+            user: function(dataFactory, $stateParams) {
+                return dataFactory.getUserById($stateParams.id).then(function(person) {
+                    return person
                 })
             }
         },
@@ -17,12 +22,38 @@ app.config(function($stateProvider) {
 
 })
 
-app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q, $timeout) {
+app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q, $timeout, person) {
+
+
+    //determining who's looking at the profile and adjust view accordingly
+    $scope.person = person
     $scope.user = user
-    if ($scope.user.completed) {
-        $scope.fullprofile = true
+    console.log($scope.user)
+    $scope.viewing = false;
+    if ($scope.user.id === $scope.person.id) {
+        if ($scope.user.completed) {
+            $scope.fullprofile = true
+        } else {
+            $scope.fullprofile = false
+        }
     } else {
-        $scope.fullprofile = false
+        $scope.fullprofile = true
+        $scope.viewing = true
+    }
+
+
+    //documents and photo loading
+
+    if ($scope.user.photo !== null) {
+        var binary = '';
+        var bytes = new Uint8Array($scope.user.photo.data);
+        var len = bytes.byteLength;
+        for (var i = 0; i < len; i++) {
+            binary += String.fromCharCode(bytes[i]);
+        }
+        $scope.proPhoto = "data:image/png;base64," + window.btoa(binary)
+    } else {
+        $scope.proPhoto = "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg"
     }
 
     //editing section
@@ -48,7 +79,7 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         certification: false
     };
     $scope.edit = function(bool) {
-        console.log($scope.user)
+
         $scope.edits[bool] = true
         for (var key in $scope.editObject[bool]) {
             $scope.editObject[bool][key] = $scope.user[key]
@@ -56,6 +87,10 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
     }
 
     $scope.save = function(bool) {
+        if ($scope.user.id !== $scope.person.id) {
+            alert('You can\'t do that')
+            return
+        }
         for (var key in $scope.editObject[bool]) {
 
             if (Array.isArray($scope.editObject[bool][key])) {
@@ -73,16 +108,7 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         $scope.edits[bool] = false
     }
 
-    $scope.drawingProfile = function(image) {
-        var binary = '';
-        var bytes = new Uint8Array(image.data);
-        var len = bytes.byteLength;
-        for (var i = 0; i < len; i++) {
-            binary += String.fromCharCode(bytes[i]);
-        }
-        $scope.profileSrc = "data:image/png;base64," + window.btoa(binary)
 
-    }
 
     $scope.cancel = function(bool) {
         $scope.edits[bool] = false
@@ -103,10 +129,14 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         user.grades = Object.keys(user.grades).map(function(key) {
             return user.grades[key]
         })
-        dataFactory.updateUser(user)
+        dataFactory.updateUser(user).then(function() {
+            $route.reload()
+        })
     }
 
-
+    $scope.uploadPhoto = function() {
+        fileUpload.uploadPhoto($scope.user, $scope.photo[0])
+    }
 
     $scope.removeDoc = function(index) {
         $scope.user.documents.splice(index, 1)
