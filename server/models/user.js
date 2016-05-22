@@ -40,6 +40,12 @@ module.exports = function(sequelize, DataTypes) {
             },
             getFullName: function() {
                 return this.firstName + " " + this.lastName
+            },
+            getDashboard: function() {
+                //return the dashboard association
+            },
+            getDocuments: function() {
+                //return the documents association
             }
         }
     });

@@ -1,5 +1,6 @@
 app.factory('dataFactory', function($http, AuthService) {
     return {
+        //user fetches
         createUser: function(user) {
             console.log('hello', user)
             return $http.post("/signup", user)
@@ -21,6 +22,12 @@ app.factory('dataFactory', function($http, AuthService) {
         },
         getUserById: function(id) {
             return $http.get("/api/users/" + id)
+                .then(function(response) {
+                    return response.data
+                })
+        },
+        getVerifiedTeachers: function() {
+            return $http.get("/api/users/verified")
                 .then(function(response) {
                     return response.data
                 })

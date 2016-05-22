@@ -64,14 +64,14 @@
                         <img id="profilePic" ng-src = "{{proPhoto}}" alt="">
                     </div>
                     <div class="introHeader col-lg-9 col-md-9 col-sm-6">
-                        <h1 class = "container-header">{{user.firstName}} {{user.lastName}}</h1>
-                        <h3 class = "container-small-sub-header">{{user.title}}</h3>
+                        <h1 class = "container-header">{{person.firstName}} {{person.lastName}}</h1>
+                        <h3 class = "container-small-sub-header">{{person.title}}</h3>
                     </div>
                 </div>
 
                 <h3 class = "container-sub-header form-title">About</h3>
                 <div class = "row">
-                    <p class = "col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">{{user.statement}}</p>
+                    <p class = "col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">{{person.statement}}</p>
                 </div>
 
             </div>
@@ -119,7 +119,7 @@
                 <div class = "row">
                     <div class = "col-lg-5 col-sm-5 col-md-5 col-lg-offset-1 col-sm-offset-1 col-md-offset-1">
                         <h4 class = "topic-label">Subject Area</h4>
-                        <h3 class = "container-small-sub-header-bold-small">{{user.area }}</h3>
+                        <h3 class = "container-small-sub-header-bold-small">{{person.area }}</h3>
                         <!-- specialty subject -->
                     </div>
                     <div class = "col-lg-6 col-sm-6 col-md-6">
@@ -184,7 +184,7 @@
                                 <h4 class="topic-label">School</h4>
                             </div>
                             <div class=" col-lg-9 col-sm-9 col-md-9 educationInput">
-                                <h3 class = "container-small-sub-header-bold-small educationInfo">{{user.education[0]}}</h3>
+                                <h3 class = "container-small-sub-header-bold-small educationInfo">{{person.education[0]}}</h3>
                             </div>
                         </div>
                         <div class = "row">
@@ -192,7 +192,7 @@
                                 <h4 class="topic-label">Major</h4>
                             </div>
                             <div class=" col-lg-9 col-sm-9 col-md-9 educationInput">
-                                <h3 class = "container-small-sub-header-bold-small educationInfo">{{user.education[1]}}</h3>
+                                <h3 class = "container-small-sub-header-bold-small educationInfo">{{person.education[1]}}</h3>
                             </div>
                         </div>
                         <div class = "row">
@@ -200,7 +200,7 @@
                                 <h4 class="topic-label">Degree</h4>
                             </div>
                             <div class=" col-lg-9 col-sm-9 col-md-9 educationInput">
-                                <h3 class = "container-small-sub-header-bold-small educationInfo">{{user.education[2]}}</h3>
+                                <h3 class = "container-small-sub-header-bold-small educationInfo">{{person.education[2]}}</h3>
                             </div>
                         </div>
                         <div class = "row">
@@ -208,7 +208,7 @@
                                 <h4 class="topic-label">Year</h4>
                             </div>
                             <div class=" col-lg-9 col-sm-9 col-md-9 educationInput">
-                                <h3 class = "container-small-sub-header-bold-small educationInfo">{{user.education[3]}}</h3>
+                                <h3 class = "container-small-sub-header-bold-small educationInfo">{{person.education[3]}}</h3>
                             </div>
                         </div>
                     </div>

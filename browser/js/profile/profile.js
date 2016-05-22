@@ -4,12 +4,12 @@ app.config(function($stateProvider) {
         templateUrl: 'js/profile/profile.html',
         controller: 'profileCtrl',
         resolve: {
-            person: function(AuthService) {
+            user: function(AuthService) {
                 return AuthService.getLoggedInUser().then(function(user) {
                     return user
                 })
             },
-            user: function(dataFactory, $stateParams) {
+            person: function(dataFactory, $stateParams) {
                 return dataFactory.getUserById($stateParams.id).then(function(person) {
                     return person
                 })
@@ -26,9 +26,9 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
 
 
     //determining who's looking at the profile and adjust view accordingly
+    // $scope.admin = ($scope.person.powerlevel >= 3)
     $scope.person = person
     $scope.user = user
-    console.log($scope.user)
     $scope.viewing = false;
     if ($scope.user.id === $scope.person.id) {
         if ($scope.user.completed) {
@@ -129,8 +129,10 @@ app.controller('profileCtrl', function($scope, dataFactory, user, fileUpload, $q
         user.grades = Object.keys(user.grades).map(function(key) {
             return user.grades[key]
         })
-        dataFactory.updateUser(user).then(function() {
-            $route.reload()
+        dataFactory.updateUser(user).then(function(user) {
+            $scope.person = user
+            console.log($scope.person)
+            $scope.fullprofile = true
         })
     }
 
