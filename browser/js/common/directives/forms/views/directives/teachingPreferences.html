@@ -1,4 +1,5 @@
-<form subject="form" novalidate>
+<form class="form-horizontal" role="form" novalidate>
+    <fieldset>
         <div class="row">
                 <div class="form-group">
                     <div class="line-fix">
@@ -16,14 +17,12 @@
             <div class="form-group">
                 <div class="line-fix">
                     <label class="control-label" id="gradeLevelOneLabel" for="gradeLevelOne">First Choice</label>
-                    <div class="controls">
-                    <select ng-model="userData.grades.gradelevelone" id="gradeLevelOne">
+                    <select class="form-control" ng-model="userData.grades.gradelevelone" id="gradeLevelOne">
                       <option value="elementarySchool">Elementary School
                       <option value="middleSchool">Middle School
                       <option value="highSchool">High School
                       <option value="university">University
                     </select>
-                    </div>
                 </div>
             </div>
         </div>
@@ -32,14 +31,12 @@
             <div class="form-group">
                 <div class="line-fix">
                     <label class="control-label" id="gradeLevelTwoLabel" for="gradeLevelTwo">Second Choice</label>
-                    <div class="controls">
-                    <select ng-model="userData.grades.gradeleveltwo" id="gradeLevelTwo">
+                    <select class="form-control" ng-model="userData.grades.gradeleveltwo" id="gradeLevelTwo">
                       <option value="elementarySchool">Elementary School
                       <option value="middleSchool">Middle School
                       <option value="highSchool">High School
                       <option value="university">University
                     </select>
-                    </div>
                 </div>
             </div>
         </div>
@@ -48,17 +45,14 @@
             <div class="form-group">
                 <div class="line-fix">
                     <label class="control-label" id="gradeLevelThreeLabel" for="gradeLevelThree">Third Choice</label>
-                    <div class="controls">
-                    <select ng-model="userData.grades.gradelevelthree" id="gradeLevelThree">
+                    <select class="form-control" ng-model="userData.grades.gradelevelthree" id="gradeLevelThree">
                       <option value="elementarySchool">Elementary School
                       <option value="middleSchool">Middle School
                       <option value="highSchool">High School
                       <option value="university">University
                     </select>
-                    </div>
                 </div>
             </div>
         </div>
-
-
+    </fieldset>
 </form>
