@@ -1,56 +1,47 @@
-<div class = "adminViewContainer">
-	<h1 id="adminTitle" class="container-header">ALL THE TEACHERS</h1>
-	  <table class="admin-table-full">
-        <thead>
-          <tr class="table-row-full-header">
-            <td class="invisible-col"></td>
-            <td class="container-small-sub-header-bold-small table-row-header-top">First Name</td>
-            <td class="container-small-sub-header-bold-small table-row-header-top">Last Name</td>
-            <td class="container-small-sub-header-bold-small table-row-header-top">Level</td>
-            <td class="container-small-sub-header-bold-small table-row-header-top">Area</td>
-            <td class="container-small-sub-header-bold-small table-row-header-top">Validated</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat-start="user in list" ng-click="!user.expanded">
-            <td class="invisible-col">
-              <button id="minusButton"  ng-if="user.expanded" ng-click="user.expanded = false"><i class="fa fa-minus" aria-hidden="true"></i></button>
-              <button id="plusButton" ng-if="!user.expanded" ng-click="user.expanded = true"><i class="fa fa-plus" aria-hidden="true"></i></button>
-            </td>
-            <td class="container-small-sub-header-bold-small table-row-header">{{user.firstName}}</td>
-            <td class="container-small-sub-header-bold-small table-row-header">{{user.lastName}}</td>
-            <td class="table-row-header">
-            	<ul class="dotRemove">
-            		<li class="container-small-sub-header-bold-small" ng-repeat="level in user.grades">{{level}}</li>
-            	</ul>
-            </td>
-            <td class="container-small-sub-header-bold-small table-row-header">{{user.area}}</td>
-            <td class="container-small-sub-header-bold-small table-row-header"><i class=" fa fa-check" aria-hidden="true"></i></td>
-          </tr>
-          <tr class="container-small-sub-header-bold-small table-row-full-edited-header" ng-if="user.expanded" ng-repeat-end="">
-
-              <td class="invisible-col"></td>
-
-            <td colspan="5" class="table-row-edited-header">
-                <div class="table-row-edited col-lg-12 col-md-12 col-sm-12">
-                    <div class="editedBasicInfo col-lg-6 col-md-6 col-sm-6">
-                        <div class="row container-small-sub-header-bold-small">
-                            Email: {{user.email}}
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-10 col-md-10 col-sm-10 adminContainer">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Teacher Validation Check
+                        <div class="panel-control pull-right">
+                            <a class="panelButton"><i class="fa fa-refresh"></i></a>
+                            <a class="panelButton"><i class="fa fa-minus"></i></a>
+                            <a class="panelButton"><i class="fa fa-remove"></i></a>
                         </div>
-                        <div class="row container-small-sub-header-bold-small">
-                            Date of Birth: {{user.dob}}
-                        </div>
-                    </div>
-                    <div class="container-small-sub-header-bold-small col-lg-5 col-md-5 col-sm-5">
-                        Admin Notes
-                        <textarea class="container-small-sub-header-bold-small" ng-model="user.notes" placeholder="Details about this teacher"></textarea>
-                    </div>
-                    <div class="edited-save col-lg-1 col-md-1 col-sm-1">
-                        <button id="editedSaveButton" ng-click = "update(user)">Save</button>
-                     </div>
+                    </h3>
                 </div>
-            </td>
-          </tr>
-        </tbody>
-    </table>
+
+                <div class="panel-body">
+                    <table class="table table-hover text-center">
+                        <thead>
+                            <tr>
+                                 <th class="text-center">Name</th>
+                                 <th class="text-center">Area of Expertise</th>
+                                 <th class="text-center">Verification Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Stan Le</td>
+                                <td>Fluid Dynamics</td>
+                                <td><i class="fa fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Inderpal Deol</td>
+                                <td>Time Travel</td>
+                                <td><button type="button" class="btn btn-success"><i class="fa fa-university"></i>&nbsp;&nbsp;Verify</button> </td>
+                            </tr>
+                            <tr> <td>Sooch Johal</td>
+                                <td>Sustainable Space Living</td>
+                                <td><i class="fa fa-check"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

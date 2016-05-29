@@ -1,0 +1,56 @@
+<div class = "adminViewContainer">
+    <h1 id="adminTitle" class="container-header">ALL THE TEACHERS</h1>
+    <table class="admin-table-full">
+        <thead>
+        <tr class="table-row-full-header">
+            <td class="invisible-col"></td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">First Name</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">Last Name</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">Level</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">Area</td>
+            <td class="container-small-sub-header-bold-small table-row-header-top">Validated</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat-start="user in list" ng-click="!user.expanded">
+            <td class="invisible-col">
+                <button id="minusButton"  ng-if="user.expanded" ng-click="user.expanded = false"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                <button id="plusButton" ng-if="!user.expanded" ng-click="user.expanded = true"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </td>
+            <td class="container-small-sub-header-bold-small table-row-header">{{user.firstName}}</td>
+            <td class="container-small-sub-header-bold-small table-row-header">{{user.lastName}}</td>
+            <td class="table-row-header">
+                <ul class="dotRemove">
+                    <li class="container-small-sub-header-bold-small" ng-repeat="level in user.grades">{{level}}</li>
+                </ul>
+            </td>
+            <td class="container-small-sub-header-bold-small table-row-header">{{user.area}}</td>
+            <td class="container-small-sub-header-bold-small table-row-header"><i class=" fa fa-check" aria-hidden="true"></i></td>
+        </tr>
+        <tr class="container-small-sub-header-bold-small table-row-full-edited-header" ng-if="user.expanded" ng-repeat-end="">
+
+            <td class="invisible-col"></td>
+
+            <td colspan="5" class="table-row-edited-header">
+                <div class="table-row-edited col-lg-12 col-md-12 col-sm-12">
+                    <div class="editedBasicInfo col-lg-6 col-md-6 col-sm-6">
+                        <div class="row container-small-sub-header-bold-small">
+                            Email: {{user.email}}
+                        </div>
+                        <div class="row container-small-sub-header-bold-small">
+                            Date of Birth: {{user.dob}}
+                        </div>
+                    </div>
+                    <div class="container-small-sub-header-bold-small col-lg-5 col-md-5 col-sm-5">
+                        Admin Notes
+                        <textarea class="container-small-sub-header-bold-small" ng-model="user.notes" placeholder="Details about this teacher"></textarea>
+                    </div>
+                    <div class="edited-save col-lg-1 col-md-1 col-sm-1">
+                        <button id="editedSaveButton" ng-click = "update(user)">Save</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

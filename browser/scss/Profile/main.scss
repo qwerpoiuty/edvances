@@ -6,7 +6,7 @@ $title-yellow-2: #F9A837;
 
 .profileContainer{
   width: 70%;
-  margin: 80px auto;
+  margin: auto;
   position: relative;
 
   .profileEditButton{
@@ -34,7 +34,6 @@ $title-yellow-2: #F9A837;
   font-weight: bold;
   color: $title-yellow-2;
   letter-spacing: 2px;
-  opacity:.95;
 }
 
 .container-sub-header{
@@ -50,7 +49,6 @@ $title-yellow-2: #F9A837;
   font-weight: lighter;
   color: $title-light-grey;
   font-style: oblique;
-  opacity:.75;
 }
 
 .container-small-sub-header-bold{
@@ -59,7 +57,6 @@ $title-yellow-2: #F9A837;
   font-weight: bold;
   color: $title-dark-grey;
   font-style: oblique;
-  opacity:.75;
 }
 
 .container-small-sub-header-bold-small{
@@ -68,7 +65,6 @@ $title-yellow-2: #F9A837;
   font-weight: bold;
   color: $title-dark-grey;
   font-style: oblique;
-  opacity:.75;
 }
 
 .formContainer{
@@ -79,8 +75,8 @@ $title-yellow-2: #F9A837;
   padding-right: 30px;
   background-color: #FFFFFF;
   box-shadow: 0 0 5px 1px #CCCCCC;
-  margin-top: 80px;
-  margin-bottom: -50px;
+  margin-top: 30px;
+  margin-bottom: 15px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -154,12 +150,12 @@ $title-yellow-2: #F9A837;
       font-family: Lato, sans-serif !important;
       font-size: 16px;
       border-radius: 5px;
+      text-align: center;
     }
 
     #introContainerStatement{
       position: relative;
-      width: 650px;
-      height: 150px;
+      height: 100px;
       max-width: 100%;
       max-height: 100%;
       margin-top: 3%;
@@ -205,6 +201,10 @@ $title-yellow-2: #F9A837;
   padding-top:10px;
   padding-bottom:10px;
   margin:0;
+}
+
+.introContainerName{
+  text-align: center;
 }
 
 
@@ -367,6 +367,7 @@ $title-yellow-2: #F9A837;
   margin-left: auto;
   margin-right: auto;
 }
+
 
 
 

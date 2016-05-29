@@ -1,37 +1,45 @@
 <div ng-if="!fullprofile" class = "profileContainer">
 	<form name = "parent">
-		<div class="aboutContainer formContainer">
-            <h1 class="container-header">About You</h1>
+		<div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">About You</div>
+            </div>
             <!-- <h2 class="container-sub-header">Basic Information</h2> -->
-			<div about-you
+			<div class="panel-body" about-you
 				data-register-form-scope="registerFormScope"
 				data-validate-child-form="validateChildForm"
 				data-user-data="user">
             </div>
         </div>
-        <div class="teachingPreferencesContainer formContainer">
-            <h1 class="container-header">Teaching Preferences</h1>
-            <h5 class="container-small-sub-header">What subjects and grade level are you most comfortable teaching?</h5>
-            <div teaching-preferences
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Teaching Preferences</div>
+                <h5 class="container-small-sub-header">What subjects and grade level are you most comfortable teaching?</h5>
+            </div>
+            <div class="panel-body" teaching-preferences
                  data-register-form-scope="registerFormScope"
                  data-validate-child-form="validateChildForm"
                  data-user-data="user">
             </div>
         </div>
 
-        <div class="educationContainer formContainer">
-            <h1 class="container-header">Education</h1>
-            <div education
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Education</div>
+            </div>
+            <div class="panel-body" education
                  data-register-form-scope="registerFormScope"
                  data-validate-child-form="validateChildForm"
                  data-user-data="user">
             </div>
         </div>
 
-        <div class="personalStatementContainer formContainer">
-            <h1 class="container-header">Personal Statement</h1>
-            <h5 class="container-small-sub-header">This is an optional field to tell us more about yourself. What do you love most about teaching?</h5>
-                <div personal-statement
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Personal Statement</div>
+                <h5 class="container-small-sub-header">This is an optional field to tell us more about yourself. What do you love most about teaching?</h5>
+            </div>
+                <div class="panel-body" personal-statement
                      data-register-form-scope="registerFormScope"
                      data-validate-child-form="validateChildForm"
                      data-user-data="user">
@@ -83,7 +91,7 @@
                     <div class = "col-lg-3 col-md-3 col-sm-6">
                         <div id = "introContainerPicture"></div>
                         <input type = "file" file-model = "$parent.$parent.photo"/>
-                        <button ng-click = "uploadPhoto()">upload me</button>
+                        <button ng-click = "uploadPhoto()">Upload</button>
                     </div>
 
                     <div class = "introHeader col-lg-9 col-md-9 col-sm-6">
@@ -94,7 +102,7 @@
                 </div>
 
                 <div class = "row">
-                    <textarea id="introContainerStatement"  ng-model="editObject.about.statement" placeholder="Your education statement"> </textarea>
+                    <textarea id="introContainerStatement" class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1" ng-model="editObject.about.statement" placeholder="Your education statement"> </textarea>
                 </div>
 
                 <button class="btn btn-success profileSaveButton" ng-click="save('about')">Save</button>
@@ -143,14 +151,15 @@
                     <div class = "col-lg-6 col-sm-6 col-md-6">
                         <h4 class = "topic-label">Grade Levels</h4>
                         <h3 class = "container-small-sub-header-bold-small" ng-repeat = "$index in editObject.preferences.grades track by $index">
-                            <select ng-model="editObject.preferences.grades[$index]">
-                              <option value="none">None</option>
-                              <option value="Elementary School">Elementary School</option>
-                              <option value="Middle School">Middle School</option>
-                              <option value="High School">High School</option>
-                              <option value="University">University</option>
-
-                            </select>
+                            <div ng-controller="DropdownCtrl" class="btn-group ng-scope" dropdown="" is-open="status.isopen">
+                                <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" ng-disabled="disabled" aria-haspopup="true" aria-expanded="false"> Grade Level <span class="caret"></span> </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Elementary School</a></li>
+                                    <li><a href="#">Middle Shcool</a></li>
+                                    <li><a href="#">Highschool</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">University</a></li> </ul>
+                            </div>
                         </h3>
                         <!-- grade levels -->
                     </div>
@@ -217,7 +226,7 @@
                     <div class="col-lg-6 col-sm-6 col-md-6">
                         <ul id = 'attachments'>
                             <li ng-repeat = "doc in user.documents track by $index" >
-                                <button ng-click="removeDoc($index)">remove</button>
+                                <button ng-click="removeDoc($index)">Remove</button>
                             </li>
                         </ul>
 
@@ -226,7 +235,7 @@
                 </div>
             </div>
             <!-- edits -->
-            <div class = "row" ng-switch-when="true">
+            <div class ="certContainer aboutHeader" ng-switch-when="true">
                 <div class = "row">
                     <h4 class = "container-sub-header form-title col-lg-6 col-sm-6 col-md-6">Education</h4>
                     <h4 class = "container-sub-header">Documents</h4>
@@ -275,7 +284,7 @@
                         <input type = "file" file-model = "$parent.$parent.document"/>
                         <button ng-click = "uploadDocument()">Upload Me</button>
                 </div>
-                <button class="btn btn-success profileSaveButton"  ng-click="save('certification')">save</button>
+                <button class="btn btn-success profileSaveButton"  ng-click="save('certification')">Save</button>
             </div>
         </div>
     </div>
