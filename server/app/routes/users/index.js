@@ -25,7 +25,12 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:id', function(req, res) {
-    models.User.findById(req.params.id).then(function(user) {
+    models.User.find({
+        where: {
+            id: req.params.id
+        },
+        include: [models.Dashboard]
+    }).then(function(user) {
         res.json(user)
     })
 })
@@ -41,6 +46,8 @@ router.put('/update', function(req, res) {
         })
 })
 
+
+//FILE
 router.put('/doc/:id', upload.single('doc'), function(req, res) {
     models.User.findById(req.params.id)
         .then(function(user) {

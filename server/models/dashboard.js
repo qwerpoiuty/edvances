@@ -3,14 +3,26 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Dashboard = sequelize.define("Dashboard", {
-        owner: {
+        dashboard_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            primaryKey: true,
+            autoIncrement: true
         },
-        events: DataTypes.ARRAY(DataTypes.STRING),
         todo: DataTypes.ARRAY(DataTypes.STRING)
     }, {
-        tableName: 'Dashboard'
+        classMethods: {
+            associate: function(models) {
+                Dashboard.belongsTo(models.User, {
+                    onDelete: "CASCADE",
+                    foreignKey: {
+                        allowNull: false,
+                        as: 'id'
+                    }
+                })
+            }
+        }
+    }, {
+        tableName: 'Dashboard '
     });
 
     return Dashboard;
