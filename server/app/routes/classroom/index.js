@@ -10,17 +10,14 @@ var upload = multer({
 
 //get functions
 router.get('/', function(req, res) {
-    models.Classroom.findAll({}).then(function(classrooms) {
-        res.json(classrooms)
+    // models.Classroom.findAll({}).then(function(classrooms) {
+    //     res.json(classrooms)
+    // })
+    models.class.findById(1).then(function(classroom) {
+        console.log(classroom.blocks)
     })
     // models.Calendar.find({
-    //     where:{id: },
-    //     include:[{
-    //         model:Calendar,
-    //         where:[
 
-    //         ]
-    //     }]
     // })
 })
 

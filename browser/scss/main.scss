@@ -45,6 +45,10 @@ body {
   height: 400px;
 }
 
+.indent-1{
+  margin-left:8.3333333333333% !important;
+}
+
 #main {
   background-color: $back-color-4;
   padding-top: 50px;
@@ -69,3 +73,4 @@ body {
 @import 'admin/adminview/main';
 @import 'dashboard/main';
 @import 'login/main';
+@import 'calendar/main';
