@@ -13,7 +13,7 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('classroomCtrl', function($scope, AuthService, $state, user, socket, $window) {
+app.controller('classroomCtrl', function($scope, AuthService, dataFactory, $state, user, socket, $window) {
     $scope.user = user
     $scope.date = Date.now()
     socket.emit('join awesome room', location.pathname.slice(1));
@@ -41,5 +41,10 @@ app.controller('classroomCtrl', function($scope, AuthService, $state, user, sock
         console.log(liveClass, $scope.liveClass)
     })
 
+    $scope.checkTeacher = function() {
+        console.log('hello')
+        dataFactory.getClassroom()
+    }
     $scope.checkClass()
+    $scope.checkTeacher()
 });

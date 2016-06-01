@@ -22,6 +22,7 @@ app.config(function($stateProvider) {
 app.controller('adminViewCtrl', function($scope, AuthService, user, users, dataFactory) {
     $scope.user = user
     $scope.list = users
+    console.log($scope.list)
     $scope.update = function(user) {
         dataFactory.updateUser(user)
     }
