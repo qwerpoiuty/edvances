@@ -1,4 +1,9 @@
-<h1 class="test">Hello World!</h1>
+<h1>Student Calendar</h1>
+<button class="md-button md-ink-ripple" ng-click="setDirection('vertical')"><span class="ng-scope">Agenda</span><div class="md-ripple-container"></div></button>
+<button class="md-button md-ink-ripple" ng-click="setDirection('horizontal')"><span class="ng-scope">Calendar</span><div class="md-ripple-container"></div></button>
+
+<button class="btn btn-primary btn-rounded" ng-click="open()">Create Event</button>
+
 <calendar-md flex layout layout-fill
     calendar-direction="direction"
     on-prev-month="prevMonth"
@@ -7,8 +12,6 @@
     title-format="'MMMM y'"
     ng-model='selectedDate'
     week-starts-on="firstDayOfWeek"
-    data-start-month="1"
-    data-start-year="2016"
     tooltips="tooltips"
     day-format="dayFormat"
     day-label-format="'EEE'"
