@@ -19,6 +19,7 @@ module.exports = function(sequelize, DataTypes) {
                         as: 'id'
                     }
                 })
+                Dashboard.hasMany(models.Classroom)
             }
         }
     }, {

@@ -2,7 +2,7 @@ app.factory('dataFactory', function($http, AuthService) {
     var dataFactory = {}
         //user fetches
     dataFactory.createUser = function(user) {
-        console.log('hello', user)
+
         return $http.post("/signup", user)
             .then(function(response) {
                 return response.data;
@@ -33,8 +33,15 @@ app.factory('dataFactory', function($http, AuthService) {
             })
     }
     //classroom
+    dataFactory.createClassroom = function(classroom) {
+        return $http.post("/api/classroom/", classroom)
+            .then(function(response) {
+                return response.data
+            })
+    }
     dataFactory.getClassroom = function() {
-        return $http.get("/api/classrooms/")
+
+        return $http.get("/api/classroom/")
             .then(function(response) {
                 console.log(response.data)
             })

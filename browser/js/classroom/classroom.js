@@ -42,8 +42,9 @@ app.controller('classroomCtrl', function($scope, AuthService, dataFactory, $stat
     })
 
     $scope.checkTeacher = function() {
+        console.log('hello')
         dataFactory.getClassroom()
     }
-    $scope.checkTeacher()
     $scope.checkClass()
+    $scope.checkTeacher()
 });

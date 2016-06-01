@@ -18,6 +18,12 @@ module.exports = function(sequelize, DataTypes) {
         end: {
             type: DataTypes.DATE
         },
+        teacher: {
+            type: DataTypes.INTEGER
+        },
+        students: {
+            type: DataTypes.INTEGER
+        },
         completed: {
             type: DataTypes.BOOLEAN,
             allowNull: false
