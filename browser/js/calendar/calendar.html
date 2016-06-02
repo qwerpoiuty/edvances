@@ -2,7 +2,9 @@
 <button class="md-button md-ink-ripple" ng-click="setDirection('vertical')"><span class="ng-scope">Agenda</span><div class="md-ripple-container"></div></button>
 <button class="md-button md-ink-ripple" ng-click="setDirection('horizontal')"><span class="ng-scope">Calendar</span><div class="md-ripple-container"></div></button>
 
-<button class="btn btn-primary btn-rounded" ng-click="open()">Create Event</button>
+<button class="md-button md-ink-ripple" ng-click="open()">Create Event</button>
+
+<pre>{{selectedDate}}</pre>
 
 <calendar-md flex layout layout-fill
     calendar-direction="direction"
