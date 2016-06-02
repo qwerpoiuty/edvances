@@ -4,20 +4,21 @@ app.directive('topnav', function($rootScope, AuthService, AUTH_EVENTS, $state) {
     return {
         templateUrl: 'js/common/directives/dashy/topnav/topnav.html',
         restrict: 'E',
+        scope: {},
         replace: true,
-        controller: function($scope, $rootScope) {
+        link: function(scope, element, attrs) {
 
-            $scope.toggleBodyLayout = function() {
+            scope.toggleBodyLayout = function() {
 
                 $('body').toggleClass('box-section');
-                $scope.val = !$scope.val;
+                scope.val = !scope.val;
             }
 
-            $scope.redirect = function(state) {
+            scope.redirect = function(state) {
                 $state.go(state);
             }
 
-            $scope.myProfile = function() {
+            scope.myProfile = function() {
                 console.log('hello')
                 AuthService.getLoggedInUser().then(function(user) {
                     $state.go('profile', {
@@ -26,30 +27,30 @@ app.directive('topnav', function($rootScope, AuthService, AUTH_EVENTS, $state) {
                 })
             }
 
-            $scope.logout = function() {
+            scope.logout = function() {
                 AuthService.logout().then(function() {
                     $state.go('home');
                 });
             }
-            $scope.$watch('val', function() {
-                if ($scope.val == true) {
+            scope.$watch('val', function() {
+                if (scope.val == true) {
                     // alert("message");
                     $rootScope.$broadcast('resize');
-                } else if ($scope.val == false) {
+                } else if (scope.val == false) {
                     $rootScope.$broadcast('resize');
                 }
-                localStorage.setItem("switched", JSON.stringify($scope.val));
+                localStorage.setItem("switched", JSON.stringify(scope.val));
             });
 
-            $scope.val = JSON.parse(localStorage.getItem("switched"));
+            scope.val = JSON.parse(localStorage.getItem("switched"));
 
             var removeUser = function() {
-                $scope.user = null;
+                scope.user = null;
             };
 
             var setUser = function() {
                 AuthService.getLoggedInUser().then(function(user) {
-                    $scope.user = user;
+                    scope.user = user;
                 });
             };
 
@@ -59,7 +60,7 @@ app.directive('topnav', function($rootScope, AuthService, AUTH_EVENTS, $state) {
             $rootScope.$on(AUTH_EVENTS.logoutSuccess, removeUser);
             $rootScope.$on(AUTH_EVENTS.sessionTimeout, removeUser);
 
-            $scope.showMenu = function() {
+            scope.showMenu = function() {
 
                 $('#app-container').toggleClass('push-right');
 

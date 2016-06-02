@@ -19,16 +19,17 @@ var ensureAuthenticated = function(req, res, next) {
 //fetches
 //get the schdeuld of a particular dashboard
 router.get('/:dashboard_id', function(req, res) {
+
     models.Dashboard.find({
         where: {
-            dashboard_id: req.params.id
+            dashboard_id: req.params.dashboard_id
         },
         include: [{
             model: models.Classroom,
             include: [models.Calendar]
         }]
     }).then(function(dashboard) {
-        res.json(dashbaord)
+        res.json(dashboard)
     })
 })
 
@@ -52,3 +53,5 @@ router.put('/removeClass/:id', function(req, res) {
         res.json(dashboard)
     })
 })
+
+module.exports = router;

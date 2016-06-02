@@ -7,7 +7,7 @@ app.directive('chatroom', function($rootScope, AuthService, AUTH_EVENTS, $state,
         templateUrl: 'js/common/directives/chatroom/chatroom.html',
         link: function(scope, element, attrs) {
             scope.msg = {}
-            scope.msg.user = 'stan'
+            scope.msg.user = scope.user.firstName
             scope.msg.timeStamp = Date.now()
 
 

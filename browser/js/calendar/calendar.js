@@ -2,17 +2,28 @@ app.config(function($stateProvider) {
     $stateProvider.state('calendar', {
         url: '/calendar',
         templateUrl: 'js/calendar/calendar.html',
-        controller: "calendarControl"
+        controller: "calendarControl",
+        resolve: {
+            user: function(AuthService) {
+                return AuthService.getLoggedInUser().then(function(user) {
+                    return user
+                })
+            }
+        }
     })
 });
 
 
 
-app.controller("calendarControl", function($scope, $filter, $http, $q, $modal){
+app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, user, scheduler) {
+    $scope.user = user
+    scheduler.getCalendar($scope.user.id).then(function(calendar) {
+        $scope.schedule = calendar
+        console.log($scope.schedule)
+    })
 
-    $scope.items = ['item1', 'item2', 'item3'];
 
-    $scope.open = function (size) {
+    $scope.open = function(size) {
 
         console.log("hello world");
 
@@ -22,9 +33,9 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal){
             size: size
         });
 
-        modalInstance.result.then(function (selectedItem) {
+        modalInstance.result.then(function(selectedItem) {
             $scope.selected = selectedItem;
-        }, function () {
+        }, function() {
             $log.info('Modal dismissed at: ' + new Date());
         });
     };
@@ -78,5 +89,3 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal){
     };
 
 });
-
-
