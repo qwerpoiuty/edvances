@@ -1,5 +1,5 @@
 <div class="eventContainer">
-    <div class="panel panel-info">
+    <div class="panel panel-theme">
         <div class="panel-heading">
             <div class="panel-title">Event Creation Form</div>
         </div>
@@ -60,14 +60,17 @@
                     <div class="line-fix">
                         <label class="control-label" for="eventDescription">Event Description</label>
                         <div class="controls">
-                              <textarea class="form-control" cols="100" rows="10" type="text" id="eventDescription" name="eventDescription"
-                                        maxlength="1000" placeholder="A short description of the event" data-ng-required="true" data-ng-disabled="disabled">
-                        </textarea>
+                              <textarea class="form-control" cols="100" rows="10" type="text" id="eventDescription" name="eventDescription" maxlength="1000" placeholder="A short description of the event" data-ng-required="true" data-ng-disabled="disabled"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="text-right">
+                    <button class="btn btn-alert" ng-click="submit(user)">Submit</button>
+                </div>
+            </div>
 
         </div>
     </div>

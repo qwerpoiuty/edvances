@@ -65,6 +65,18 @@ body {
   background-color: $title-dark-grey;
 }
 
+
+textarea{
+  resize: none;
+}
+
+.panel.panel-theme > .panel-heading {
+  color: #fff;
+  background-color: $khan-blue;
+  border-color: #67b0c1;
+}
+
+
 @import 'directives/main';
 @import 'home/main';
 @import 'landing/main';
