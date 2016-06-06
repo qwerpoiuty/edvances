@@ -2,13 +2,37 @@ app.config(function($stateProvider) {
     $stateProvider.state('calendar', {
         url: '/calendar',
         templateUrl: 'js/calendar/calendar.html',
-        controller: "calendarCtrl"
+        controller: "calendarControl"
     })
 });
 
 
 
-app.controller("calendarCtrl", function($scope, $filter, $http, $q){
+app.controller("calendarControl", function($scope, $filter, $http, $q, $modal){
+
+    $scope.items = ['item1', 'item2', 'item3'];
+
+    $scope.open = function (size) {
+
+        console.log("hello world");
+
+        var modalInstance = $modal.open({
+            templateUrl: 'js/common/directives/modal/modal.html',
+            controller: 'ModalInstanceCtrl',
+            size: size
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+            $scope.selected = selectedItem;
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+
+
+
+
+
 
     $scope.dayFormat = "d";
 
@@ -18,7 +42,7 @@ app.controller("calendarCtrl", function($scope, $filter, $http, $q){
     // If you want multi-date select, initialize it as an array.
     $scope.selectedDate = [];
 
-    $scope.firstDayOfWeek = 0; // First day of the week, 0 for Sunday, 1 for Monday, etc.
+    $scope.firstDayOfWeek = 1; // First day of the week, 0 for Sunday, 1 for Monday, etc.
     $scope.setDirection = function(direction) {
         $scope.direction = direction;
         $scope.dayFormat = direction === "vertical" ? "EEEE, MMMM d" : "d";
@@ -56,3 +80,5 @@ app.controller("calendarCtrl", function($scope, $filter, $http, $q){
     };
 
 });
+
+

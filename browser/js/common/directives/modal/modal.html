@@ -1,0 +1,77 @@
+<div class="eventContainer">
+    <div class="panel panel-theme">
+        <div class="panel-heading">
+            <div class="panel-title">Event Creation Form</div>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label for="eventTitle" class="control-label">Title</label>
+                        <div class="controls">
+                            <input class="form-control" type="text" id="eventTitle" name="title" data-ng-model="userData.title"
+                                   maxlength="20" placeholder="A Descriptive Title" data-ng-required="true" data-ng-disabled="disabled" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label class="control-label" for="eventStart">Start Time</label>
+                        <div class="controls">
+                            <input class="form-control" type="date" id="eventStart" name="eventStart" data-ng-model="userData.dob" placeholder="Date" data-ng-required="true" data-ng-disabled="disabled" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label class="control-label" for="eventEnd">End Time</label>
+                        <div class="controls">
+                            <input class="form-control" type="date" id="eventEnd" name="eventEnd" data-ng-model="userData.dob" placeholder="Date" data-ng-required="true" data-ng-disabled="disabled" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label class="control-label" for="eventRepeat">Repeat Event</label>
+                        <div class="controls">
+                            <select class="form-control" id="eventRepeat">
+                                <option value="daily">Daily
+                                <option value="weekly">Weekly
+                                <option value="biWeekly">Bi-Weekly
+                                <option value="monthly">Monthly
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label class="control-label" for="eventDescription">Event Description</label>
+                        <div class="controls">
+                              <textarea class="form-control" cols="100" rows="10" type="text" id="eventDescription" name="eventDescription" maxlength="1000" placeholder="A short description of the event" data-ng-required="true" data-ng-disabled="disabled"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="text-right">
+                    <button class="btn btn-alert" ng-click="submit(user)">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

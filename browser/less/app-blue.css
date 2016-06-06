@@ -5257,7 +5257,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel.panel-info > .panel-heading {
   color: #fff;
-  background-color: #80b1cb;
+  background-color: #46A8BF !important;
   border-color: #67b0c1;
 }
 .panel.panel-info > .panel-heading + .panel-collapse > .panel-body {
@@ -7892,8 +7892,8 @@ pre {
   color: #ffffff;
 }
 .btn-bordered.btn-info {
-  border-color: #80b1cb;
-  color: #80b1cb;
+  border-color: #46A8BF;
+  color: #46A8BF;
 }
 .btn-bordered.btn-info:hover {
   background: #80b1cb;
@@ -7949,7 +7949,7 @@ pre {
   border-color: #a2d19e;
 }
 .btn-info {
-  border-color: #80b1cb;
+  border-color: #46A8BF;
 }
 .btn-warning {
   border-color: #e8b769;
@@ -7964,7 +7964,7 @@ pre {
   border-color: #a2d19e;
 }
 .alert-info {
-  border-color: #80b1cb;
+  border-color: #46A8BF;
 }
 .alert-warning {
   border-color: #e8b769;
@@ -7991,7 +7991,7 @@ button.btn.btn-success.btn-bordered.dropdown-toggle.haha {
   border-left: 1px solid #a2d19e;
 }
 button.btn.btn-info.btn-bordered.dropdown-toggle.haha {
-  border-left: 1px solid #80b1cb;
+  border-left: 1px solid #46A8BF;
 }
 button.btn.btn-warning.btn-bordered.dropdown-toggle.haha {
   border-left: 1px solid #e8b769;
@@ -8334,7 +8334,7 @@ div.carousel-photo .carousel-control {
   color: inherit;
 }
 .has-info .form-control {
-  border-color: #80b1cb;
+  border-color: #46A8BF;
 }
 .has-info .form-control:focus {
   border-color: #5c9bbc;
@@ -8393,7 +8393,7 @@ table.modal-table tbody tr td.moleft {
   background-color: #a2d19e;
 }
 .infob {
-  background-color: #80b1cb;
+  background-color: #46A8BF;
 }
 .warningb {
   background-color: #e8b769;
