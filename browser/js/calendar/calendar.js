@@ -43,6 +43,8 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, u
 
 
 
+
+
     $scope.dayFormat = "d";
 
     // To select a single date, make sure the ngModel is not an array.
