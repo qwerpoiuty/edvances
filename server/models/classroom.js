@@ -22,11 +22,12 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER
         },
         students: {
-            type: DataTypes.INTEGER
+            type: DataTypes.ARRAY(DataTypes.INTEGER)
         },
         completed: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: false
         },
         description: {
             type: DataTypes.TEXT

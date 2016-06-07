@@ -1,0 +1,16 @@
+.scheduleContainer{
+	display:flex;
+	flex-flow:row;
+	height:100%;
+}
+.dayContainer{
+	width:14%;
+	height:85%;
+	text-align: center;
+}
+.weekday{
+	height:100%;
+	background-color:blue;
+	width:100%;
+	border:1px solid black;
+}

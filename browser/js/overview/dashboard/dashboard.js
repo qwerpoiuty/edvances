@@ -13,8 +13,7 @@ app.config(function($stateProvider) {
     })
 })
 
-app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, user, $modal, $log) {
-    console.log(user)
+app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, user, $modal, $log, scheduler) {
     $scope.browse = function() {
         //this is going to be a student section for browsing classes
         console.log('hello')
@@ -25,6 +24,7 @@ app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, u
         var modalInstance = $modal.open({
             templateUrl: 'js/common/directives/modals/classCreation/create.html',
             controller: 'createClassCtrl',
+            scope: $scope,
             size: 'lg'
         });
 
@@ -34,7 +34,10 @@ app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, u
             $log.info('Modal dismissed at: ' + new Date());
         });
     }
-
+    scheduler.getCalendar(user.id).then(function(dashboard) {
+        $scope.dashboard = dashboard
+        console.log($scope.dashboard)
+    })
     $scope.user = user
     $scope.date = new Date();
     $scope.eventSources = [];

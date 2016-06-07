@@ -28,7 +28,7 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, u
         console.log("hello world");
 
         var modalInstance = $modal.open({
-            templateUrl: 'js/common/directives/modal/modal.html',
+            templateUrl: 'js/common/directives/modals/eventModa/modal.html',
             controller: 'ModalInstanceCtrl',
             size: size
         });
