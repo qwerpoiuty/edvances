@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         date: {
-            type: DataTypes.STRING
+            type: DataTypes.DATE
         },
         block: {
             type: DataTypes.INTEGER

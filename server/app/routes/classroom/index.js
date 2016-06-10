@@ -99,10 +99,21 @@ router.put('/removeBlock/:id', function(req, res) {
 
 
 //posts
-router.post('/', function(req, res) {
+router.post('/:id', function(req, res) {
     //this route needs to receive the classroom object, as well as a dashboardid
-    modesls.Classroom.create(req.body).then(function(classroom) {
-        res.json(classroom)
+    models.Classroom.create({
+        title: req.body.title,
+        start: req.body.start,
+        end: req.body.end,
+        teacher: req.params.id,
+        description: req.body.description
+    }).then(function(classroom) {
+        //do some scheduling for this
+        models.Dashboard.findById(req.params.id).then(function(dashboard) {
+            dashboard.addClassroom(classroom)
+            console.log(dashboard)
+        })
+        // res.json(classroom)
     })
 })
 

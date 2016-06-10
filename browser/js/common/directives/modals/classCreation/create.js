@@ -1,4 +1,4 @@
-app.controller('createClassCtrl', function($scope, $modalInstance, scheduler) {
+app.controller('createClassCtrl', function($scope, $modalInstance, scheduler, dataFactory) {
     $scope.days = [{
         id: 0,
         day: 'Monday'
@@ -57,7 +57,6 @@ app.controller('createClassCtrl', function($scope, $modalInstance, scheduler) {
     $scope.hstep = 1;
     $scope.mstep = 15;
 
-    console.log($scope.user)
 
     for (var i = 0; i < $scope.class.classdays.length; i++) {
         $scope.classData[i] = !!parseInt($scope.class.classdays[i]);
@@ -65,7 +64,9 @@ app.controller('createClassCtrl', function($scope, $modalInstance, scheduler) {
     $scope.classData = {}
 
     $scope.ok = function() {
-        console.log($scope.classData)
+        dataFactory.createClassroom($scope.user.id, $scope.classData).then(function() {
+            modalInstance.close(true)
+        })
     };
 
     $scope.cancel = function() {

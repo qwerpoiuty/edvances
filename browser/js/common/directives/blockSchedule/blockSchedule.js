@@ -31,10 +31,10 @@ app.directive('blockschedule', function($rootScope, AuthService, AUTH_EVENTS, $s
                 day: 'Sunday'
             }];
 
-            // scope.classes = scope.dashboard.classes
-            // for (var i = 0; i < scope.class.length; i++) {
-            //figure out how to convert 
-            // }
+            scope.classes = scope.dashboard.classrooms
+            for (var i = 0; i < scope.classes.length; i++) {
+
+            }
         }
     }
 });

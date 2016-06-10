@@ -36,6 +36,15 @@ app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, u
     }
     scheduler.getCalendar(user.id).then(function(dashboard) {
         $scope.dashboard = dashboard
+        $scope.dashboard.Classrooms.push({
+            calendar_id: 1,
+            title: 'Computers',
+            block: 20,
+            year: 2016,
+            month: 6,
+            day: 7
+        })
+
         console.log($scope.dashboard)
     })
     $scope.user = user

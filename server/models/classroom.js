@@ -31,9 +31,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         description: {
             type: DataTypes.TEXT
-        },
-        blocks: {
-            type: DataTypes.ARRAY(DataTypes.INTEGER)
         }
     }, {
         classMethods: {

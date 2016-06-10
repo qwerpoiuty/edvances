@@ -33,15 +33,16 @@ app.factory('dataFactory', function($http, AuthService) {
             })
     }
     //classroom
-    dataFactory.createClassroom = function(classroom) {
-        return $http.post("/api/classroom/", classroom)
+    dataFactory.createClassroom = function(id, classroom) {
+        console.log(id)
+        return $http.post("/api/classrooms/" + id, classroom)
             .then(function(response) {
                 return response.data
             })
     }
     dataFactory.getClassroom = function() {
 
-        return $http.get("/api/classroom/")
+        return $http.get("/api/classrooms/")
             .then(function(response) {
                 console.log(response.data)
             })

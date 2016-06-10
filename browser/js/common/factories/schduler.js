@@ -14,7 +14,7 @@ app.factory('scheduler', function($http) {
 
     //add a class
     s.addClass = function(dashboardId, classroom) {
-        return $http.put("/api/dashboards/addClass/" + dashboardId, classroom)
+        return $http.put("/api/dashboards/addClass/" + dashboardId, classData)
             .then(function(response) {
                 return response.data
             })

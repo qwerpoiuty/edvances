@@ -40,11 +40,6 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, u
         });
     };
 
-
-
-
-
-
     $scope.dayFormat = "d";
 
     // To select a single date, make sure the ngModel is not an array.
@@ -60,7 +55,12 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, u
     };
 
     $scope.dayClick = function(date) {
-        $scope.msg = "You clicked " + $filter("date")(date, "MMM d, y h:mm:ss a Z");
+        $scope.msg = $filter("date")(date, "MMM d, y h:mm:ss a Z");
+        if ($scope.selectedDate.indexOf($scope.msg) != -1) {
+            $scope.selectedDate.splice($scope.selectedDate.indexof($scope.msg), 1)
+        } else {
+            $scope.selectedDate.push($scope.msg)
+        }
     };
 
     $scope.prevMonth = function(data) {
@@ -70,13 +70,25 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, u
     $scope.nextMonth = function(data) {
         $scope.msg = "You clicked (next) month " + data.month + ", " + data.year;
     };
+    $scope.events = {
+        "1464591600000": {
+            title: 'hello',
+            time: 'some time'
+        }
+    }
 
     $scope.tooltips = true;
     $scope.setDayContent = function(date) {
+        var date = Number(date)
+        if ($scope.events[date] != undefined) {
+            return "<p>" + $scope.events[date].title + "</p>"
+        } else {
+            return
+        }
 
         // You would inject any HTML you wanted for
         // that particular date here.
-        return "<p></p>";
+
 
         // You could also use an $http function directly.
         return $http.get("/some/external/api");
