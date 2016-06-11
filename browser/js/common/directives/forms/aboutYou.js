@@ -18,7 +18,6 @@ app.directive('aboutYou', function($timeout) {
             $timeout(function() {
                 scope.form.fields = ['title', 'firstName', 'lastName', 'dob'];
             });
-
         }
     };
 });

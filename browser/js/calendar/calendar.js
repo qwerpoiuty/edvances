@@ -15,7 +15,7 @@ app.config(function($stateProvider) {
 
 
 
-app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, user, scheduler) {
+app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, user, scheduler, MaterialCalendarData) {
     $scope.user = user
     scheduler.getCalendar($scope.user.id).then(function(calendar) {
         $scope.schedule = calendar
@@ -23,18 +23,23 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, u
     })
 
 
+    $scope.events = {
+    }
+
     $scope.open = function(size) {
 
         console.log("hello world");
 
         var modalInstance = $modal.open({
-            templateUrl: 'js/common/directives/modals/eventModa/modal.html',
+            templateUrl: 'js/common/directives/modals/eventModal/modal.html',
             controller: 'ModalInstanceCtrl',
             size: size
         });
 
-        modalInstance.result.then(function(selectedItem) {
-            $scope.selected = selectedItem;
+        modalInstance.result.then(function(classData) {
+            $scope.selected = classData;
+            MaterialCalendarData.setDayContent(classData.start, '<span>'+ classData.title + '</span>');
+
         }, function() {
             $log.info('Modal dismissed at: ' + new Date());
         });
@@ -70,21 +75,10 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, u
     $scope.nextMonth = function(data) {
         $scope.msg = "You clicked (next) month " + data.month + ", " + data.year;
     };
-    $scope.events = {
-        "1464591600000": {
-            title: 'hello',
-            time: 'some time'
-        }
-    }
 
     $scope.tooltips = true;
     $scope.setDayContent = function(date) {
-        var date = Number(date)
-        if ($scope.events[date] != undefined) {
-            return "<p>" + $scope.events[date].title + "</p>"
-        } else {
-            return
-        }
+        return "<p></p>"
 
         // You would inject any HTML you wanted for
         // that particular date here.
