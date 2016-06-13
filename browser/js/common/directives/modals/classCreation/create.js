@@ -64,8 +64,8 @@ app.controller('createClassCtrl', function($scope, $modalInstance, scheduler, da
     $scope.classData = {}
 
     $scope.ok = function() {
-        dataFactory.createClassroom($scope.user.id, $scope.classData).then(function() {
-            modalInstance.close(true)
+        dataFactory.createClassroom($scope.user.id, $scope.classData).then(function(classroom) {
+            $modalInstance.close(classroom)
         })
     };
 

@@ -1,9 +1,8 @@
-app.directive('blockschedule', function($rootScope, AuthService, AUTH_EVENTS, $state, socket) {
+app.directive('blockschedule', function($rootScope, AuthService, AUTH_EVENTS, $state, socket, scheduler) {
     return {
         restrict: 'E',
         scrope: {
             user: "=",
-            dashboard: "="
         },
         templateUrl: 'js/common/directives/blockSchedule/blockSchedule.html',
         link: function(scope, element, attrs) {
@@ -31,10 +30,22 @@ app.directive('blockschedule', function($rootScope, AuthService, AUTH_EVENTS, $s
                 day: 'Sunday'
             }];
 
-            scope.classes = scope.dashboard.classrooms
-            for (var i = 0; i < scope.classes.length; i++) {
+            scheduler.getCalendar(scope.user.id).then(function(dashboard) {
+                scope.dashboard = dashboard
+                scope.dashboard.Classrooms.push({
+                    calendar_id: 1,
+                    title: 'Computers',
+                    block: 20,
+                    year: 2016,
+                    month: 6,
+                    day: 7
+                })
 
-            }
+                scope.dashboard.Classrooms.forEach(function(e) {
+                    var day = scope.weekdays[new Date(e.year, e.month, e.day).getDay()].day
+                    $('#' + day + e.block).append('<p>hello</p>')
+                })
+            })
         }
     }
 });

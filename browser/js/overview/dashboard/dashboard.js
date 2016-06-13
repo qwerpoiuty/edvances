@@ -14,6 +14,7 @@ app.config(function($stateProvider) {
 })
 
 app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, user, $modal, $log, scheduler) {
+    $scope.user = user
     $scope.browse = function() {
         //this is going to be a student section for browsing classes
         console.log('hello')
@@ -34,20 +35,8 @@ app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, u
             $log.info('Modal dismissed at: ' + new Date());
         });
     }
-    scheduler.getCalendar(user.id).then(function(dashboard) {
-        $scope.dashboard = dashboard
-        $scope.dashboard.Classrooms.push({
-            calendar_id: 1,
-            title: 'Computers',
-            block: 20,
-            year: 2016,
-            month: 6,
-            day: 7
-        })
 
-        console.log($scope.dashboard)
-    })
-    $scope.user = user
+
     $scope.date = new Date();
     $scope.eventSources = [];
 
