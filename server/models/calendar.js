@@ -22,6 +22,14 @@ module.exports = function(sequelize, DataTypes) {
         day: {
             type: DataTypes.INTEGER
         }
+    }, {
+        classMethods: {
+            associate: function(models) {
+                Calendar.belongsToMany(models.Classroom, {
+                    through: 'schedule',
+                })
+            }
+        }
     });
     return Calendar;
 }
