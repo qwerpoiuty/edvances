@@ -39,11 +39,18 @@ app.factory('dataFactory', function($http, AuthService) {
                 return response.data
             })
     }
-    dataFactory.getClassroom = function() {
+    dataFactory.getClassrooms = function() {
 
         return $http.get("/api/classrooms/")
             .then(function(response) {
                 console.log(response.data)
+            })
+    }
+    dataFactory.getClassroomById = function(id) {
+        return $http.get("/api/classrooms/" + id)
+            .then(function(response) {
+                console.log('hello', response)
+                return response.data
             })
     }
     return dataFactory

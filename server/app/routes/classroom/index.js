@@ -7,6 +7,11 @@ var storage = multer.memoryStorage()
 var upload = multer({
     storage: storage
 })
+var Sequelize = require('sequelize')
+var sequelize = new Sequelize('postgres://localhost:5432/edvancesdb', {
+    dialect: 'postgres',
+    protocol: 'postgres'
+})
 
 //get functions
 router.get('/', function(req, res) {
@@ -109,9 +114,12 @@ router.post('/:id', function(req, res) {
         description: req.body.description,
         DashboardDashboardId: req.params.id
     }).then(function(classroom) {
-        models.Schedule.create({
-            ClassroomClassroomId: classroom.classroom_id,
-            CalendarCalendarId: 3
+        models.Calendar.findById(1).then(function(calendar) {
+            console.log(calendar)
+            classroom.addCalendar(calendar, {
+                calendar_id: 1
+            })
+            console.log(classroom)
 
         })
         // res.json(classroom)

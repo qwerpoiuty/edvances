@@ -36,8 +36,8 @@ module.exports = function(sequelize, DataTypes) {
         classMethods: {
             associate: function(models) {
                 Classroom.hasMany(models.Document)
-                Classroom.belongsToMany(models.Calendar, {
-                    through: 'schedule'
+                Classroom.hasMany(models.Calendar, {
+                    foreignKey: 'classroom_hasMany_blocks'
                 })
             }
         }

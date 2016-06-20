@@ -13,7 +13,8 @@ app.config(function($stateProvider) {
     })
 })
 
-app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, user, $modal, $log, scheduler) {
+app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, user, $modal, $log, scheduler, dataFactory) {
+    dataFactory.getClassroomById(1)
     $scope.user = user
     $scope.browse = function() {
         //this is going to be a student section for browsing classes
