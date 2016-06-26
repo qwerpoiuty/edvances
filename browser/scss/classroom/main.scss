@@ -1,58 +1,14 @@
-.jitsiContainer{
-	height: 33vh;
-	width: 100%;
-}
-#body-container{
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-.welcome-container{
-  margin-left:15px;
-}
-#panel1Heading{
- background-color: #D57D6D;
+#classroom-container{
+  height:100%;
+  width: 100%;
 }
 
-#panel2Heading{
-  background-color: #A2D19E;
-}
-
-#panel3Heading{
-  background-color: #E8B769;
-}
-#classroomTopRow{
+.whiteboard-container{
   height:70vh;
-  margin-top: 5px;
+  margin: 0 auto;
 }
-.chatroom-col{
-  height:75vh;
 
-}
-#chatroom-panel{
-  height:95%;
-  .chatbody{
-    height:95%;
-  }
-  .chat-wrap{
-    height:60vh;
-  }
-  #messagesContainer{
-    height:90%;
-  }
-
-  #inputContainer{
-    margin-bottom: 0;
-
-    #message{
-      position: relative;
-      left: 5px;
-      bottom: 5px;
-    }
-
-    #send{
-      position: absolute;
-      right: 20px;
-      bottom: 26px;
-    }
-  }
+.classroom-navbar{
+  border: 3px solid black;
+  padding-top:15px;
 }

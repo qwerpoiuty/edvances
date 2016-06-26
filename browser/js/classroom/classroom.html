@@ -1,65 +1,35 @@
-<div id="body-container">
-	<sidenav></sidenav>
-	<div class="main-view">
-		<div class="content-wrapper">
-			<div class="container-fluid">
-				<div class="row" id="classroomTitle">
-					<div class="welcome-container">
-						<h1 class="welcome-message">Welcome to Class</h1>
-						<button class="btn" ng-click = "joinClass()">{{liveClass}}</button>
-						<button ng-if="user.powerLevel >=1" ng-click="toggleClass()" class="btn">{{startClass}}</button>
-					</div>
+<div id="classroom-container">
+	<div class = "row row-centered">
+		<!-- this might be a 10 col? maybe 12 on a md? -->
+		<div class = "whiteboard-container col-lg-10 col-md-10 col-centered">
+			<div ui-view></div>
+		</div>
+	</div>
+	<div class = "row row-centered">
+		<!-- same thing as the previous row -->
+		<div class = "classroom-navbar navbar-container col-lg-10 col-md-10 col-sm-10 col-centered">
+			<div class = "row row-centered">
+				<div class = "icon-container col-md-3 row-centered" ng-click = "transition('info')">
+					<!-- about -->
+					<i class="fa fa-comments fa-4x" aria-hidden="true"></i>
+					<h3 class = "classroom-icon-text">Class Info</h3>
 				</div>
-				<div class="row" id="classroomTopRow">
-					<div class="col-lg-8 col-md-8 col-sm-8">
-	                    <div class="col-lg-4 col-md-4 col-sm-4">
-	                        <div class="panel panel-primary">
-	                            <div class="panel-heading" id="panel1Heading">
-	                                <h3 class="panel-title">Primary Panel
-	                                </h3>
-	                            </div>
-	                            <div class="panel-body">
-	                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	                                quis nostrud exercitation.
-	                            </div>
-	                        </div>
-	                    </div>
-
-	                    <div class="col-lg-4 col-md-4 col-sm-4">
-	                        <div class="panel panel-primary">
-	                            <div class="panel-heading" id="panel2Heading">
-	                                <h3 class="panel-title">Primary Panel
-	                                </h3>
-	                            </div>
-	                            <div class="panel-body">
-	                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	                                quis nostrud exercitation.
-	                            </div>
-	                        </div>
-	                    </div>
-
-	                    <div class="col-lg-4 col-md-4 col-sm-4">
-	                        <div class="panel panel-primary">
-	                            <div class="panel-heading" id="panel3Heading">
-	                                <h3 class="panel-title">Primary Panel
-	                                </h3>
-	                            </div>
-	                            <div class="panel-body">
-	                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	                                quis nostrud exercitation.
-	                            </div>
-	                        </div>
-	                    </div>
-					</div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 chatroom-col">
-						<chatroom></chatroom>
-					</div>
-			    </div>
-
-		    </div>
-	    </div>
-    </div>
+				<div class = "icon-container col-md-3 row-centered" ng-click = "transition('tools')">
+					<!-- classroom -->
+					<i class="fa-4x fa fa-comments" aria-hidden="true"></i>
+					<h3 class = "classroom-icon-text">Class Tools</h3>
+				</div>
+				<div class = "icon-container col-md-3 row-centered" ng-click = "transition('resources')">
+					<!-- resources -->
+					<i class="fa-4x fa fa-comments" aria-hidden="true"></i>
+					<h3 class = "classroom-icon-text">Class Resources</h3>
+				</div>
+				<div class = "icon-container col-md-3 row-centered" ng-click = "transition('messaging')">
+					<!-- communication -->
+					<i class="fa fa-comments fa-4x" aria-hidden="true"></i>
+					<h3 class = "classroom-icon-text">Class Messaging</h3> 
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
