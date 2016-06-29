@@ -24,7 +24,6 @@ app.controller('classroomCtrl', function($scope, AuthService, dataFactory, $stat
     $state.transitionTo('info')
     socket.emit('join awesome room', location.pathname.slice(1));
     $scope.joinClass = function() {
-        console.log($scope.liveClass)
         if ($scope.liveClass === "Class is live") $window.open('//humantics.build/' + $scope.date)
         else alert('Class is out')
     }

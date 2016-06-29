@@ -8,4 +8,21 @@ app.config(function($stateProvider) {
 
 app.controller('toolsCtrl', function($scope) {
     console.log('hello world')
+    $scope.items = {
+        whiteboard: {
+            name: "Whiteboard",
+            state: "whiteboard",
+            icon: "comment"
+        },
+        notepad: {
+            name: "Notepad",
+            state: "notepad",
+            icon: "comment"
+        },
+        scheduling: {
+            name: "Calendar",
+            state: "classCalendar",
+            icon: "comment"
+        }
+    }
 })

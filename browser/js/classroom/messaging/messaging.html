@@ -1,9 +1,10 @@
-<div class="classroom-about-container">
+<div class="classroom-container">
 	<!-- the about page shouldn't have a sidebar -->
-	<div class = "col-lg-1 col-md-1 col-sm-1">
-		
+	<sidebar class = "col-md-1 col-lg-1 col-sm-1 fullHeight" items = "items"></sidebar>
+
+	<div class = "col-md-11 col-lg-11 col-sm-12 classroom-view">
+		<div  ui-view></div>
 	</div>
-	<div ui-view></div>
-	<h1>THIS IS A CLASS WITH FILLER INFO</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea laudantium in voluptas sint neque, natus accusantium ab fugiat pariatur alias distinctio, perferendis laborum ut quaerat et a, error consequuntur illo!</p>
+	
+	
 </div>

@@ -7,5 +7,27 @@ app.config(function($stateProvider) {
 });
 
 app.controller('messagingCtrl', function($scope) {
-    console.log('hello world')
+    $scope.items = {
+        classChat: {
+            name: "Class Chat",
+            state: "classChat",
+            icon: "comment"
+        },
+        teacherPm: {
+            name: "PM the Teaher",
+            state: "pmTeach",
+            icon: "comment"
+        },
+        studentPm: {
+            name: "PM a student",
+            state: "pmStudent",
+            icon: "comment"
+        },
+        messageBoard: {
+            name: "Class Bulletin",
+            state: "messageBoard",
+            icon: "comment"
+        }
+    }
+    console.log($scope.items)
 })
