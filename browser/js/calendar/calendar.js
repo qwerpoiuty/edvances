@@ -2,37 +2,48 @@ app.config(function($stateProvider) {
     $stateProvider.state('calendar', {
         url: '/calendar',
         templateUrl: 'js/calendar/calendar.html',
-        controller: "calendarControl"
+        controller: "calendarControl",
+        resolve: {
+            user: function(AuthService) {
+                return AuthService.getLoggedInUser().then(function(user) {
+                    return user
+                })
+            }
+        }
     })
 });
 
 
 
-app.controller("calendarControl", function($scope, $filter, $http, $q, $modal){
+app.controller("calendarControl", function($scope, $filter, $http, $q, $modal, user, scheduler, MaterialCalendarData) {
+    $scope.user = user
+    scheduler.getCalendar($scope.user.id).then(function(calendar) {
+        $scope.schedule = calendar
+        console.log($scope.schedule)
+    })
 
-    $scope.items = ['item1', 'item2', 'item3'];
 
-    $scope.open = function (size) {
+    $scope.events = {
+    }
+
+    $scope.open = function(size) {
 
         console.log("hello world");
 
         var modalInstance = $modal.open({
-            templateUrl: 'js/common/directives/modal/modal.html',
+            templateUrl: 'js/common/directives/modals/eventModal/modal.html',
             controller: 'ModalInstanceCtrl',
             size: size
         });
 
-        modalInstance.result.then(function (selectedItem) {
-            $scope.selected = selectedItem;
-        }, function () {
+        modalInstance.result.then(function(classData) {
+            $scope.selected = classData;
+            MaterialCalendarData.setDayContent(classData.start, '<span>'+ classData.title + '</span>');
+
+        }, function() {
             $log.info('Modal dismissed at: ' + new Date());
         });
     };
-
-
-
-
-
 
     $scope.dayFormat = "d";
 
@@ -49,7 +60,12 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal){
     };
 
     $scope.dayClick = function(date) {
-        $scope.msg = "You clicked " + $filter("date")(date, "MMM d, y h:mm:ss a Z");
+        $scope.msg = $filter("date")(date, "MMM d, y h:mm:ss a Z");
+        if ($scope.selectedDate.indexOf($scope.msg) != -1) {
+            $scope.selectedDate.splice($scope.selectedDate.indexof($scope.msg), 1)
+        } else {
+            $scope.selectedDate.push($scope.msg)
+        }
     };
 
     $scope.prevMonth = function(data) {
@@ -62,10 +78,11 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal){
 
     $scope.tooltips = true;
     $scope.setDayContent = function(date) {
+        return "<p></p>"
 
         // You would inject any HTML you wanted for
         // that particular date here.
-        return "<p></p>";
+
 
         // You could also use an $http function directly.
         return $http.get("/some/external/api");
@@ -80,5 +97,3 @@ app.controller("calendarControl", function($scope, $filter, $http, $q, $modal){
     };
 
 });
-
-
