@@ -33,7 +33,7 @@
   "_resolution": {
     "type": "version",
     "tag": "0.4.11",
-    "commit": "a4caece97c676d2049fd770a74a83b62f8a1b625"
+    "commit": "223404a79246c61d150d8a209dbdc81f6955083b"
   },
   "_source": "https://github.com/masayuki0812/c3.git",
   "_target": "~0.4.10",

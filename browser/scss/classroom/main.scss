@@ -1,3 +1,13 @@
+
+.jitsiContainer{
+	height: 33vh;
+	width: 100%;
+}
+.chatroom-col{
+  height: 70vh;
+}
+#body-container{
+
 .classroom-container{
   height:100%;
   width: 100%;
@@ -17,6 +27,7 @@
 .class-sidenav{
 	text-align:center;
 	padding-top:15px;
+<<<<<<< HEAD
 	float:left;
 }
 .sidebar-icon{
@@ -57,6 +68,64 @@
 	padding:0;
 	background-color:white;
 }
+
+#classroomTopRow{
+  margin-top: 5px;
+}
+
+.chat-message{
+  padding-bottom: 20px;
+}
+#messages{
+  padding:0;
+  magrin:0;
+}
+.username{
+  border:1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 0.2px #969696;
+  padding: 2px;
+}
+#chatroom-panel{
+  height: 70vh;
+  magin-bottom: 0;
+}
+.chatbody{
+  height: 90%;
+  position: relative;
+}
+
+.chat-wrap{
+  height: 100%;
+}
+
+.chat-form{
+  position: absolute;
+  bottom: 0;
+}
+
+#messagesContainer{
+  height:85%;
+  margin:0;
+  position: absolute;
+}
+
+#inputContainer{
+  margin-bottom: 0;
+
+  #message{
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+  }
+
+  #send{
+    position: absolute;
+    right: 20px;
+    bottom: 26px;
+  }
+}
+
 .classroom-message{
 	margin-top:3%;
 	margin-bottom:2%;
@@ -68,5 +137,11 @@
 
 .classroom-navbar{
   border: 1px solid black;
+<<<<<<< HEAD
   padding:15px 0 0 0;
 }
+=======
+  padding-top:15px;
+}
+
+>>>>>>> c4d3a96a27653c4060a6cd500f0d76235fbf7d92
