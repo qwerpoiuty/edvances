@@ -23,28 +23,11 @@ app.controller('classroomCtrl', function($scope, AuthService, dataFactory, $stat
     $scope.date = Date.now()
     $state.transitionTo('info')
     socket.emit('join awesome room', location.pathname.slice(1));
-    $scope.joinClass = function() {
-        if ($scope.liveClass === "Class is live") $window.open('//humantics.build/' + $scope.date)
-        else alert('Class is out')
-    }
+
     $scope.toggleClass = function() {
         socket.emit('toggle class')
     }
-    $scope.checkClass = function() {
-        socket.emit('check class')
-    }
-    socket.on('class check', function(liveClass) {
-        if (liveClass) {
-            $scope.liveClass = "Class is live"
-            $scope.startClass = "End Class"
-            $scope.$apply()
-        } else {
-            $scope.liveClass = "Class is out"
-            $scope.startClass = "Start Class"
-            $scope.$apply()
-        }
-        console.log(liveClass, $scope.liveClass)
-    })
+
     $scope.transition = function(state) {
         $state.transitionTo(state)
     }

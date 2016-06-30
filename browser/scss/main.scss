@@ -37,7 +37,9 @@ body {
     /* inline-block space fix */
     margin-right:-4px;
 }
-
+.no-pad{
+  padding:0;
+}
 @mixin clearfix {
   &:after {
     content: "";

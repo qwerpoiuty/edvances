@@ -7,10 +7,16 @@ app.directive('sidebar', function($rootScope, $state) {
         },
         templateUrl: 'js/common/directives/sidenav/sidenav.html',
         link: function(scope, element, attrs) {
-            console.log(scope.items)
-            scope.transition = function(state) {
-                console.log(state)
+            scope.colors = [
+                "blue",
+                "green",
+                "yellow",
+                "red"
+            ]
+            scope.transition = function(state, index) {
+                scope.selected = index
                 $state.transitionTo(state)
+
             }
 
         }

@@ -1,7 +1,7 @@
 <div id="classroom-container">
 	<div class = "row row-centered">
 		<!-- this might be a 10 col? maybe 12 on a md? -->
-		<div class = "whiteboard-container col-lg-10 col-md-10 col-centered">
+		<div class = "no-pad whiteboard-container col-lg-10 col-md-10 col-sm-12 col-centered">
 			<div ui-view></div>
 		</div>
 	</div>
@@ -9,26 +9,26 @@
 		<!-- same thing as the previous row -->
 		<div class = "classroom-navbar navbar-container col-lg-10 col-md-10 col-sm-10 col-centered">
 			<div class = "row row-centered">
-				<div class = "icon-container col-md-3 row-centered" ng-click = "transition('info')">
+				<span class = "icon-container col-md-3 row-centered" ng-click = "transition('info')">
 					<!-- about -->
-					<i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+					<i class="glyphicon glyphicon-apple" aria-hidden="true"></i>
 					<h5 class = "classroom-icon-text">Class Info</h5>
-				</div>
-				<div class = "icon-container col-md-3 row-centered" ng-click = "transition('tools')">
+				</span>
+				<span class = "icon-container col-md-3 row-centered" ng-click = "transition('tools')">
 					<!-- classroom -->
-					<i class="fa-3x fa fa-comments" aria-hidden="true"></i>
+					<i class="glyphicon glyphicon-briefcase" aria-hidden="true"></i>
 					<h5 class = "classroom-icon-text">Class Tools</h5>
-				</div>
-				<div class = "icon-container col-md-3 row-centered" ng-click = "transition('resources')">
+				</span>
+				<span class = "icon-container col-md-3 row-centered" ng-click = "transition('resources')">
 					<!-- resources -->
-					<i class="fa-3x fa fa-comments" aria-hidden="true"></i>
+					<i class="glyphicon glyphicon-paperclip" aria-hidden="true"></i>
 					<h5 class = "classroom-icon-text">Class Resources</h5>
-				</div>
-				<div class = "icon-container col-md-3 row-centered" ng-click = "transition('messaging')">
+				</span>
+				<span class = "icon-container col-md-3 row-centered" ng-click = "transition('messaging')">
 					<!-- communication -->
 					<i class="fa fa-comments fa-3x" aria-hidden="true"></i>
-					<h5 class = "classroom-icon-text">Class Messaging</h5> 
-				</div>
+					<h5 class = "classroom-icon-text">Messaging Center</h5> 
+				</span>
 			</div>
 		</div>
 	</div>

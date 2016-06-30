@@ -2,14 +2,48 @@
   height:100%;
   width: 100%;
 }
-.class-nav{
+.reverse{
+	moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+.glyphicon{
+	font-size:xx-large;
+}
+.sidebar-container{
+	width:4.5%;
+}
+.class-sidenav{
 	text-align:center;
 	padding-top:15px;
-	border-right:1px solid grey;
-
+	float:left;
+}
+.sidebar-icon{
+	font-size:x-large;
+}
+.active{
+	background-color:red !important;
+}
+.icon-container{
+	padding:0;
+	cursor:pointer !important;
+	z-index:100;
+}
+.icon-container:focus{
+	outline:0;
 }
 .sidebar-icon-container{
+	width:6vh;
+	height:10vh;
+	padding-top:15px;
 	cursor:pointer;
+	border-radius:15px 0 0 15px;
+	background-color:white;
+	border:none;
+}
+.sidebar-icon-text{
+	font-size:.8em;
 }
 .sidebar-icon-container:hover{
 	text-decoration:none;
@@ -19,7 +53,9 @@
 }
 
 .classroom-view{
-	height:85%;
+	height:100%;
+	padding:0;
+	background-color:white;
 }
 .classroom-message{
 	margin-top:3%;
@@ -32,5 +68,5 @@
 
 .classroom-navbar{
   border: 1px solid black;
-  padding-top:15px;
+  padding:15px 0 0 0;
 }
