@@ -7,6 +7,11 @@ var storage = multer.memoryStorage()
 var upload = multer({
     storage: storage
 })
+var Sequelize = require('sequelize')
+var sequelize = new Sequelize('postgres://localhost:5432/edvancesdb', {
+    dialect: 'postgres',
+    protocol: 'postgres'
+})
 
 //get functions
 router.get('/', function(req, res) {
@@ -101,21 +106,24 @@ router.put('/removeBlock/:id', function(req, res) {
 //posts
 router.post('/:id', function(req, res) {
     //this route needs to receive the classroom object, as well as a dashboardid
-    console.log(req.body)
-    // models.Classroom.create({
-    //     title: req.body.title,
-    //     start: req.body.start,
-    //     end: req.body.end,
-    //     teacher: req.params.id,
-    //     description: req.body.description
-    // }).then(function(classroom) {
-    //     //do some scheduling for this
-    //     models.Dashboard.findById(req.params.id).then(function(dashboard) {
-    //         dashboard.addClassroom(classroom)
-    //         console.log(dashboard)
-    //     })
-    //     // res.json(classroom)
-    // })
+    models.Classroom.create({
+        title: req.body.title,
+        start: req.body.start,
+        end: req.body.end,
+        teacher: req.params.id,
+        description: req.body.description,
+        DashboardDashboardId: req.params.id
+    }).then(function(classroom) {
+        models.Calendar.findById(1).then(function(calendar) {
+            console.log(calendar)
+            classroom.addCalendar(calendar, {
+                calendar_id: 1
+            })
+            console.log(classroom)
+
+        })
+        // res.json(classroom)
+    })
 })
 
 

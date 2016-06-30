@@ -1,3 +1,4 @@
+
 .jitsiContainer{
 	height: 33vh;
 	width: 100%;
@@ -7,21 +8,31 @@
 }
 #body-container{
 
+.classroom-container{
+  height:100%;
+  width: 100%;
 }
-.welcome-container{
-  margin-left:15px;
+.class-nav{
+	text-align:center;
+	padding-top:15px;
+	border-right:1px solid grey;
+
+
 }
-#panel1Heading{
- background-color: #D57D6D;
+.sidebar-icon-container{
+	cursor:pointer;
+}
+.sidebar-icon-container:hover{
+	text-decoration:none;
+}
+.sidebar-icon-container:focus{
+	outline:0;
 }
 
-#panel2Heading{
-  background-color: #A2D19E;
+.classroom-view{
+	height:85%;
 }
 
-#panel3Heading{
-  background-color: #E8B769;
-}
 #classroomTopRow{
   margin-top: 5px;
 }
@@ -78,3 +89,18 @@
     bottom: 26px;
   }
 }
+
+.classroom-message{
+	margin-top:3%;
+	margin-bottom:2%;
+}
+.whiteboard-container{
+  height:80vh;
+  margin: 0 auto;
+}
+
+.classroom-navbar{
+  border: 1px solid black;
+  padding-top:15px;
+}
+

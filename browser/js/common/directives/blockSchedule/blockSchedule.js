@@ -40,11 +40,11 @@ app.directive('blockschedule', function($rootScope, AuthService, AUTH_EVENTS, $s
                     month: 6,
                     day: 7
                 })
-
-                scope.dashboard.Classrooms.forEach(function(e) {
-                    var day = scope.weekdays[new Date(e.year, e.month, e.day).getDay()].day
-                    $('#' + day + e.block).append('<p>hello</p>')
-                })
+                console.log("test", dashboard)
+                // scope.dashboard.Classrooms.forEach(function(e) {
+                //     var day = scope.weekdays[new Date(e.year, e.month, e.day).getDay()].day
+                //     $('#' + day + e.block).append('<p>hello</p>')
+                // })
             })
         }
     }

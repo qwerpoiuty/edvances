@@ -25,8 +25,8 @@ router.get('/:dashboard_id', function(req, res) {
             dashboard_id: req.params.dashboard_id
         },
         include: [{
-            model: models.Classroom,
-            include: [models.Calendar]
+            model: models.Classroom
+            // include: [models.Calendar]
         }]
     }).then(function(dashboard) {
         res.json(dashboard)

@@ -36,7 +36,9 @@ module.exports = function(sequelize, DataTypes) {
         classMethods: {
             associate: function(models) {
                 Classroom.hasMany(models.Document)
-                Classroom.hasMany(models.Calendar)
+                Classroom.hasMany(models.Calendar, {
+                    foreignKey: 'classroom_hasMany_blocks'
+                })
             }
         }
     }, {
