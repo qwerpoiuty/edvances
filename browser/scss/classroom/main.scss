@@ -2,9 +2,11 @@
 	height: 33vh;
 	width: 100%;
 }
+.chatroom-col{
+  height: 70vh;
+}
 #body-container{
-  overflow-y: hidden;
-  overflow-x: hidden;
+
 }
 .welcome-container{
   margin-left:15px;
@@ -21,38 +23,58 @@
   background-color: #E8B769;
 }
 #classroomTopRow{
-  height:70vh;
   margin-top: 5px;
 }
-.chatroom-col{
-  height:75vh;
 
+.chat-message{
+  padding-bottom: 20px;
+}
+#messages{
+  padding:0;
+  magrin:0;
+}
+.username{
+  border:1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 0.2px #969696;
+  padding: 2px;
 }
 #chatroom-panel{
-  height:95%;
-  .chatbody{
-    height:95%;
-  }
-  .chat-wrap{
-    height:60vh;
-  }
-  #messagesContainer{
-    height:90%;
+  height: 70vh;
+  magin-bottom: 0;
+}
+.chatbody{
+  height: 90%;
+  position: relative;
+}
+
+.chat-wrap{
+  height: 100%;
+}
+
+.chat-form{
+  position: absolute;
+  bottom: 0;
+}
+
+#messagesContainer{
+  height:85%;
+  margin:0;
+  position: absolute;
+}
+
+#inputContainer{
+  margin-bottom: 0;
+
+  #message{
+    position: relative;
+    left: 5px;
+    bottom: 5px;
   }
 
-  #inputContainer{
-    margin-bottom: 0;
-
-    #message{
-      position: relative;
-      left: 5px;
-      bottom: 5px;
-    }
-
-    #send{
-      position: absolute;
-      right: 20px;
-      bottom: 26px;
-    }
+  #send{
+    position: absolute;
+    right: 20px;
+    bottom: 26px;
   }
 }
