@@ -11,7 +11,9 @@ app.controller('homeCtrl', function($scope, $state) {
         console.log('hello')
         $state.go('signupTeacher')
     }
-
+    $scope.post = function() {
+        console.log('hi')
+    }
     $scope.signupStudent = function() {
         console.log('hello')
         $state.go('signupStudent')

@@ -1,17 +1,19 @@
 .splashTitleSmall{
-  color: white;
+  color: rgba(243, 186, 76, 0.71);
   font-family: 'Montserrat', sans-serif; 
   font-weight: 300;
   font-size: 30px;
   text-align: center;
+  z-index:
 }
 
 .splashTitleBig{
-  color: white;
+  color: rgba(243, 186, 76, 0.71);
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 60px;
   text-align: center;
+  z-index:3
 }
 
 .puzzle-header{
@@ -50,7 +52,16 @@
   }
 
 }
+.fade{
 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #245030;
+    z-index: 2;
+
+}
 .puzzle-peice-2{
   height:80vh;
   border-top: 5px solid #f79a01;
@@ -93,33 +104,20 @@
   height: 10vh;
 }
 
-.puzzle-break-1{
+.puzzle-break{
    height: 20vh;
    border-top: 5px solid #f79a01;
    background-color: lighten(#434346, 80%);
 
    .splashTitleBig{
-   font-size: 40px;
+   font-size: 20px;
    }
 
    .splashTitleSmall{
-   font-size: 30px;
+   font-size: 10px;
    }
 }
 
-.puzzle-break-2{
-  height: 20vh;
-  border-bottom: 5px solid #f79a01;
-  background-color: lighten(#434346, 80%);
-
-    .splashTitleBig{
-   font-size: 40px;
-   }
-
-   .splashTitleSmall{
-   font-size: 30px;
-   }
-}
 
 .puzzle-break-box{
   padding-top: 3%;
@@ -141,6 +139,7 @@
   color: white;
   font-weight: 300px;
   font-size: 20px;
+  z-index:3
   }
 
 .student-button{
@@ -151,6 +150,7 @@
   color: white;
   font-weight: 300px;
   font-size: 20px;
+  z-index:3
 }
 
 .student-button:focus{

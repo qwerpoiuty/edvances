@@ -64,7 +64,6 @@ body {
 
 #main {
   background-color: $back-color-4;
-  padding-top: 70px;
   width: 100%;
   margin: 0 auto;
   min-height: 95vh;
@@ -100,7 +99,6 @@ textarea{
 @import 'home/main';
 @import 'landing/main';
 @import 'classroom/main';
-@import 'profile/main';
 @import 'admin/adminview/main';
 @import 'dashboard/main';
 @import 'login/main';
