@@ -7,15 +7,9 @@ app.config(function($stateProvider) {
 });
 
 app.controller('homeCtrl', function($scope, $state) {
-    $scope.signupTeacher = function() {
-        console.log('hello')
-        $state.go('signupTeacher')
+    $scope.signup = function(state) {
+        console.log('hello', state)
+        $state.go(state)
     }
-    $scope.post = function() {
-        console.log('hi')
-    }
-    $scope.signupStudent = function() {
-        console.log('hello')
-        $state.go('signupStudent')
-    }
+
 })

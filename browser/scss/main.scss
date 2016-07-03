@@ -18,6 +18,8 @@ $khan-white: #FDFDFD;
 $khan-white2: #f0f0f0;
 $dashy-grey: #999;
 
+
+
 * {
   box-sizing: border-box;
 }
@@ -37,6 +39,11 @@ body {
     /* inline-block space fix */
     margin-right:-4px;
 }
+
+.selectDisable {-webkit-user-select: none;  -khtml-user-select: none;   -moz-user-select: none; -o-user-select: none;    user-select: none; }
+
+.selectEnable { -webkit-user-select: text;  -khtml-user-select: text;   -moz-user-select: text; -o-user-select: text;    user-select: text; }
+
 .no-pad{
   padding:0;
 }
@@ -47,7 +54,12 @@ body {
     clear: both;
   }
 }
-
+.flex-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+}
 .fullHeight{
   height:100%;
 }
@@ -77,7 +89,13 @@ body {
   background-color: $title-dark-grey;
 }
 
-
+.flipped{
+  -webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
+  -moz-transform: rotate(180deg);        /* FF */
+  -o-transform: rotate(180deg);          /* Opera */
+  -ms-transform: rotate(180deg);         /* IE9 */
+  transform: rotate(180deg); 
+}
 textarea{
   resize: none;
 }
@@ -93,7 +111,10 @@ textarea{
   color: white;
   font-family: Lato, sans-serif !important;
 }
-
+@font-face{
+  font-family:chalk;
+  src:url("asset/font/chalkfont.ttf");
+}
 
 @import 'directives/main';
 @import 'home/main';

@@ -1,3 +1,88 @@
+#background{
+  background-image:url("asset/images/homepage.png");
+  background-size:cover;
+  max-width:100%;
+  height:311vh;
+  width:100%;
+  position:absolute;
+}
+.chalk{
+  font-family:chalk;
+  color:#e7e7e7;
+}
+#section1{
+  .arrow{
+    max-width:50%;
+    margin-bottom:15px;
+  }
+  .signup{
+    display:block;
+    font-size:1.2em;
+  }
+  .right{
+    float:right;
+  }
+  .left{
+    float:left;
+  }
+  #squigle{
+    width: 9%;
+    position: absolute;
+    left: 44%;
+    bottom: -3%;
+    transform: rotate(143deg);
+  }
+ 
+}
+#section2{
+  #left-chat{    
+    position: absolute;
+    width: 55%;
+    bottom: 16%;
+    left:2%;
+    max-width:90%;
+  }
+  #straight-squiggle{
+    height: 25%;
+    position: absolute;
+    bottom: -9%;
+    left: 47%;
+    transform: rotate(138deg);
+
+  }
+  .bubbled{
+
+    display: inline-block;
+    position: absolute;
+    bottom: 47%;
+    font-size: 4.5em;
+    left: -5%;
+
+  }
+}
+#section3{
+  #wtf{
+    width: 125%;
+    transform: rotate(-32deg);
+  }
+  div{
+    #cloud{
+      position: absolute;
+      right: 1%;
+      width: 100%;
+      bottom: 10%;
+      max-width:90%;
+    }
+  }
+  .clouded{
+    font-size: 4.5em;
+    height:100%;
+  }
+}
+#section4{
+
+}
+
 .splashTitleSmall{
   color: rgba(243, 186, 76, 0.71);
   font-family: 'Montserrat', sans-serif; 
@@ -18,35 +103,30 @@
 
 .puzzle-header{
   height: 100vh;
-  padding-top: 30vh;
-  background-image: url("asset/images/chalkbord1.jpg");
+  padding-top: 37vh;
   background-size: 100% 100%;
 }
 
 .puzzle-peice-1{
-  height:80vh;
-  border-top: 5px solid #f79a01;
-  background-color: #434346;
+  height:90vh;
 }
 
 .puzzle-peice-1-left{
-  border-left: 5px solid #f79a01;
+  
   height: 100%;
-  background-image: url("http://i.istockimg.com/image-zoom/85917903/3/268/380/stock-photo-85917903-book-of-imagination.jpg");
+  
 }
 
 .puzzle-peice-1-right{
-  border-left: 5px solid #f79a01;
-  border-right: 5px solid #f79a01;  
+  
   height: 100%;
-  background-color: lighten(#434346, 80%);
 
   .splashTitleBig{
-    color: #434346;
+    color: #f79a01;
     font-size: 40px;
   }
   .splashTitleSmall{
-    color: #434346;
+    color: #f79a01;
     text-align: left;
     font-size: 20px;
   }
@@ -64,32 +144,25 @@
 }
 .puzzle-peice-2{
   height:80vh;
-  border-top: 5px solid #f79a01;
-  border-bottom: 5px solid #f79a01;
-  background-color: #434346;
 }
 
 .puzzle-peice-2-left{
-  border-left: 5px solid #f79a01;
   height: 100%;
-  background-color: lighten(#434346, 80%);
 
    .splashTitleBig{
-    color: #434346;
+    color: #f79a01;
     font-size: 40px;
   }
   .splashTitleSmall{
-    color: #434346;
+    color: #f79a01;
     text-align: left;
     font-size: 20px;
   }
 }
 
 .puzzle-peice-2-right{
-  border-left: 5px solid #f79a01;
-  border-right: 5px solid #f79a01;
   height: 100%;
-  background-image: url("http://i.istockimg.com/image-zoom/39406662/3/253/380/stock-photo-39406662-education-tower.jpg");
+  text-align: center;
 }
 
 .puzzle-peice-box{
@@ -106,8 +179,6 @@
 
 .puzzle-break{
    height: 20vh;
-   border-top: 5px solid #f79a01;
-   background-color: lighten(#434346, 80%);
 
    .splashTitleBig{
    font-size: 20px;
@@ -137,7 +208,6 @@
   background: transparent;
   font-family: 'Montserrat', sans-serif;
   color: white;
-  font-weight: 300px;
   font-size: 20px;
   z-index:3
   }
@@ -148,11 +218,71 @@
   background: transparent; 
   font-family: 'Montserrat', sans-serif;
   color: white;
-  font-weight: 300px;
   font-size: 20px;
   z-index:3
 }
+#math1{
+    transform: rotate(39deg);
+    width: 100%;
+}
+@-webkit-keyframes bounceRight {
+ 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateX(0);} 
+ 40% {-webkit-transform: translateX(15px);}
+ 60% {-webkit-transform: translateX(30px);}
+}
+ 
+@-moz-keyframes bounceRight {
+ 0%, 20%, 50%, 80%, 100% {-moz-transform: translateX(0);}
+ 40% {-moz-transform: translateX(15px);}
+ 60% {-moz-transform: translateX(30px);}
+}
+ 
+@-o-keyframes bounceRight {
+ 0%, 20%, 50%, 80%, 100% {-o-transform: translateX(0);}
+ 40% {-o-transform: translateX(15px);}
+ 60% {-o-transform: translateX(30px);}
+}
+@keyframes bounceRight {
+ 0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+ 40% {transform: translateX(15px);}
+ 60% {transform: translateX(30px);}
+}
 
+@-webkit-keyframes bounceLeft {
+ 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateX(0);} 
+ 40% {-webkit-transform: translateX(-15px);}
+ 60% {-webkit-transform: translateX(-30px);}
+}
+ 
+@-moz-keyframes bounceLeft {
+ 0%, 20%, 50%, 80%, 100% {-moz-transform: translateX(0);}
+ 40% {-moz-transform: translateX(-15px);}
+ 60% {-moz-transform: translateX(-30px);}
+}
+ 
+@-o-keyframes bounceLeft {
+ 0%, 20%, 50%, 80%, 100% {-o-transform: translateX(0);}
+ 40% {-o-transform: translateX(-15px);}
+ 60% {-o-transform: translateX(-30px);}
+}
+@keyframes bounceLeft {
+ 0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+ 40% {transform: translateX(-15px);}
+ 60% {transform: translateX(-30px);}
+}
+ 
+.student-button:hover{
+   animation: bounceRight 2s infinite;
+   -webkit-animation: bounceRight 2s infinite;
+   -moz-animation: bounceRight 2s infinite;
+   -o-animation: bounceRight 2s infinite;
+}
+.teacher-button:hover{
+   animation: bounceLeft 2s infinite;
+   -webkit-animation: bounceLeft 2s infinite;
+   -moz-animation: bounceLeft 2s infinite;
+   -o-animation: bounceLeft 2s infinite;
+}
 .student-button:focus{
   outline:none;
 }
@@ -170,6 +300,6 @@
 }
 
 .puzzle-resource{
-  height: 100vh;
-  background-color: #434346;
+  height: 32vh;
+  background-color: #292929;
 }

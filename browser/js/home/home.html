@@ -1,5 +1,9 @@
-    <div class="fade"></div>
-    <div id="Section-1" class="puzzle-header col-lg-12 col-md-12 col-sm-12">
+<div id="homepage">
+    <div id="background">
+        
+    </div>
+    <div id="section1">
+        <div id="section-1" class="puzzle-header col-lg-12 col-md-12 col-sm-12">
             <div class="row col-lg-12 col-md-12 col-sm-12">
                 <h1 class="splashTitleBig">By teaching you will learn.</h1>
             </div>
@@ -7,142 +11,107 @@
                 <h3 class="splashTitleSmall">By learning you will teach.</h3>
             </div>
             <div class="row col-lg-12 col-md-12 col-sm-12 button-container">
-                        <button class="teacher-button col-lg-3 col-md-3 col-sm-3 col-lg-offset-3 col-md-offset-3" ng-click="post">Teacher Sign-Up</button>
-                        <button class="student-button col-lg-3 col-md-3 col-sm-3">Student Sign-Up</button>
+                        <button class="teacher-button col-lg-3 col-md-3 col-sm-3 col-lg-offset-3 col-md-offset-3" ng-click="signup('signupTeacher')"><img class = "selectDisable arrow flipped" src="asset/images/arrow.png"/><span class="signup chalk">Teacher Sign-Up</span></button>
+                        <button class="student-button col-lg-3 col-md-3 col-sm-3" ng-click="signup('signupStudent')"><img class = "selectDisable arrow" src="asset/images/arrow.png"/><span class="signup chalk">Student Sign-Up</span></button>
             </div>
-    </div>
-        
-        <div class="puzzle-break col-lg-12 col-md-12 col-sm-12">
-            <div class="col-lg-offset-4 col-md-offset-4 col-lg-4 col-md-4 col-sm-4 puzzle-break-box text-center">
-                <h1 class="splashTitleBig">An investment in knowledge pays the best interest. <h1>
-                <h3 class="splashTitleSmall">Benjamin Franklin</h3>
-            </div>
-        </div>
-
-    <div id="Section-2" class="puzzle-peice-1 col-lg-12 col-md-12 col-sm-12">
-        <div class="puzzle-peice-1-left col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2">
-          
-        </div>
-        <div class="puzzle-peice-1-right col-lg-3 col-md-3">
-            <div class="puzzle-peice-box">
-                <h2 class="splashTitleBig">Student Information</h2>
-                <p class="splashTitleSmall">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.
-                </p>
-            </div>
+            <img id = "squigle" src="asset/images/squiggle.png">
         </div>
     </div>
-    <div id="Section-3" class="puzzle-peice-2 col-lg-12 col-md-12 col-sm-12">
-        <div class="puzzle-peice-2-left col-lg-3 col-md-3 col-lg-offset-2 col-md-offset-2">
-           <div class="puzzle-peice-box">
-                <h2 class="splashTitleBig">Teacher Information</h2>
-                <p class="splashTitleSmall">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.
-                </p>
+    <div id="section2">
+        <div class="puzzle-peice-1 col-lg-12 col-md-12 col-sm-12">
+            <img class="selectDisable" id = "left-chat" src="asset/images/chalk-bubble.png"/>
+            <img class="selectDisable" id="straight-squiggle" src="asset/images/straight-squiggle.png"/>
+            <div class="puzzle-peice-1-left col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2">
+            </div>
+            <div class="puzzle-peice-1-right col-lg-3 col-md-3 col-sm-5">
+                <div class="puzzle-peice-box">
+                    <h2 class="splashTitleBig">Student Information</h2>
+                    <p class="splashTitleSmall">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <img class="doodles" id="math1" src="asset/images/math1.png"/>
             </div>
         </div>
-        <div class="puzzle-peice-2-right col-lg-5 col-md-5 col-sm-5">
-
-        </div>
     </div>
-
+    <div id="section3">
+        <div class="puzzle-peice-2 col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <img id="wtf" src="asset/images/wtf.png"/>
+            </div>
+            <div class="puzzle-peice-2-left col-lg-3 col-md-3 col-sm-5">
+               <div class="puzzle-peice-box">
+                    <h2 class="splashTitleBig">Teacher Information</h2>
+                    <p class="splashTitleSmall">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.
+                    </p>
+                </div>
+            </div>
+            <div class="puzzle-peice-2-right col-lg-7 col-md-7 col-sm-7">
+                <img class="selectDisable" id="cloud" src="asset/images/cloud.png"/>
+            </div>
+            
+        </div>
         <div class="puzzle-break col-lg-12 col-md-12 col-sm-12">
              <div class="col-lg-offset-4 col-md-offset-4 col-lg-4 col-md-4 col-sm-4 puzzle-break-box text-center">
-                <h1 class="splashTitleBig">I don't love studying. I hate studying. I like learning. Learning is beautiful.<h1>
-                <h3 class="splashTitleSmall">Natalie Portman</h3>
+               
+            </div>
+        </div>
+                <div class="puzzle-break col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-offset-4 col-md-offset-4 col-lg-4 col-md-4 col-sm-4 puzzle-break-box text-center">
             </div>
         </div>
 
-    <div id="Section-4" class="puzzle-resource col-lg-12 col-md-12 col-sm-12">
-        <h1 class="splashTitleBig ten-height">Resources / Credit to:</h1>
-        <div class="row col-lg-12 col-md-12 col-sm-12">
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Primary Panel
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation.
+    </div>
+    <div id="section4">
+        <div class="puzzle-resource col-lg-12 col-md-12 col-sm-12">
+            <h1 class="splashTitleSmall ten-height">Resources / Credit to:</h1>
+            <div class="row col-lg-12 col-md-12 col-sm-12">
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Primary Panel
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation.
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Primary Panel
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation.
+                    </div>
+                </div>
+            </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Primary Panel
-                    </h3>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Primary Panel
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation.
+                    </div>
                 </div>
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation.
                 </div>
             </div>
-        </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Primary Panel
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation.
-                </div>
-            </div>
-            </div>
-        </div>
-
-            <div class="page-breaker col-lg-12 col-md-12 col-sm-12"></div>
-
-        <div class="row col-lg-12 col-md-12 col-sm-12">
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Primary Panel
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation.
-                </div>
-            </div>
-        </div>
-
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Primary Panel
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation.
-                </div>
-            </div>
-        </div>
-
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Primary Panel
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation.
-                </div>
-            </div>
-            </div>
         </div>
     </div>
+</div>
 
