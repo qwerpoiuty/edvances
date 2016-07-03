@@ -19,7 +19,7 @@ module.exports = function(app) {
     app.use(session({
         store: new pgSession({
             pg: pg, // Use global pg-module
-            conString: "postgres://localhost:5432/edvancesdb"
+            conString: "postgres://edvancesAdmin:edadmin@localhost:5432/edvancesdb"
         }),
         secret: 'I believe Ang can change the world',
         resave: false,
