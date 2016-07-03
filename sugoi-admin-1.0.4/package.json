@@ -1,0 +1,24 @@
+{
+  "name": "sugoi-admin",
+  "version": "1.0.0",
+  "devDependancies": {
+    "grunt": "~0.4.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-contrib-copy": "0.4.x",
+    "grunt-contrib-imagemin": "~0.4.0",
+    "grunt-browser-sync": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "jshint-stylish": "~0.1.4",
+    "grunt-coffee-jshint": "~0.2.0"
+  },
+  "author": "Oskar Zabik",
+  "author_uri": "oskar.zabik@gmail.com"
+}

@@ -1,7 +1,7 @@
 <div id="classroom-container">
 	<div class = "row row-centered">
 		<!-- this might be a 10 col? maybe 12 on a md? -->
-		<div class = "no-pad whiteboard-container col-lg-10 col-md-10 col-sm-12 col-centered">
+		<div class = "no-pad whiteboard-container col-lg-12 col-md-12 col-sm-12 col-centered">
 			<div ui-view></div>
 		</div>
 	</div>
@@ -9,27 +9,84 @@
 		<!-- same thing as the previous row -->
 		<div class = "classroom-navbar navbar-container col-lg-10 col-md-10 col-sm-10 col-centered">
 			<div class = "row row-centered">
-				<span class = "icon-container col-md-3 row-centered" ng-click = "transition('info')">
-					<!-- about -->
-					<i class="glyphicon glyphicon-apple" aria-hidden="true"></i>
-					<h5 class = "classroom-icon-text">Class Info</h5>
-				</span>
-				<span class = "icon-container col-md-3 row-centered" ng-click = "transition('tools')">
-					<!-- classroom -->
-					<i class="glyphicon glyphicon-briefcase" aria-hidden="true"></i>
-					<h5 class = "classroom-icon-text">Class Tools</h5>
-				</span>
-				<span class = "icon-container col-md-3 row-centered" ng-click = "transition('resources')">
-					<!-- resources -->
-					<i class="glyphicon glyphicon-paperclip" aria-hidden="true"></i>
-					<h5 class = "classroom-icon-text">Class Resources</h5>
-				</span>
-				<span class = "icon-container col-md-3 row-centered" ng-click = "transition('messaging')">
-					<!-- communication -->
-					<i class="fa fa-comments fa-3x" aria-hidden="true"></i>
-					<h5 class = "classroom-icon-text">Messaging Center</h5> 
-				</span>
-			</div>
+				<div class="col-md-3 col-sm-6">
+        			<div class="fd-tile detail clean tile-purple">
+          				<div class="content">
+          					<h1 class="text-left">170</h1>
+          					<p>Class Info</p>
+          				</div>
+
+          				<div class="icon">
+          					<i class="glyphicon glyphicon-apple"></i>
+          				</div>
+
+          				<a class="details" href="#" ng-click = "transition('info')">Details 
+          					<span>
+          						<i class="fa fa-arrow-circle-right pull-right"></i>
+          					</span>
+          				</a>
+        			</div>
+    			</div>
+
+    			<div class="col-md-3 col-sm-6">
+        			<div class="fd-tile detail clean tile-purple">
+          				<div class="content">
+          					<h1 class="text-left">170</h1>
+          					<p>Class Tools</p>
+          				</div>
+
+          				<div class="icon">
+          					<i class="glyphicon glyphicon-briefcase"></i>
+          				</div>
+
+          				<a class="details" href="#"ng-click = "transition('tools')">Details 
+          					<span>
+          						<i class="fa fa-arrow-circle-right pull-right"></i>
+          					</span>
+          				</a>
+        			</div>
+    			</div>
+
+    			<div class="col-md-3 col-sm-6">
+        			<div class="fd-tile detail clean tile-purple">
+          				<div class="content">
+          					<h1 class="text-left">170</h1>
+          					<p>Class Resources</p>
+          				</div>
+
+          				<div class="icon">
+          					<i class="glyphicon glyphicon-paperclip"></i>
+          				</div>
+
+          				<a class="details" href="#" ng-click = "transition('resources')">Details 
+          					<span>
+          						<i class="fa fa-arrow-circle-right pull-right"></i>
+          					</span>
+          				</a>
+        			</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+        			<div class="fd-tile detail clean tile-purple">
+          				<div class="content">
+          					<h1 class="text-left">170</h1>
+          					<p>Messaging Center</p>
+          				</div>
+
+          				<div class="icon">
+          					<i class="fa fa-comments fa-3x"></i>
+          				</div>
+
+          				<a class="details" href="#"ng-click = "transition('messaging')">Details 
+          					<span>
+          						<i class="fa fa-arrow-circle-right pull-right"></i>
+          					</span>
+          				</a>
+        			</div>
+				</div>
+  			</div>
 		</div>
 	</div>
 </div>
+
+
