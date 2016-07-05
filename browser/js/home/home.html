@@ -103,10 +103,14 @@
             </div>
             <div class="puzzle-peice-1-right col-lg-3 col-md-3 col-sm-5">
                 <div class="puzzle-peice-box">
-                    <h2 class="splashTitleBig">Student Information</h2>
-                    <p class="splashTitleSmall">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.
-                    </p>
+                    <h2 class="splashTitleBig">Teacher Information</h2>
+                    <div class="carousel-body">
+                        <carousel interval="myInterval">
+                            <slide ng-repeat="slide in slides" active="slide.active">
+                                <p>{{slide.information}}</p>    
+                            </slide>
+                        </carousel>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2">
