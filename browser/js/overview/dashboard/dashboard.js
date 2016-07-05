@@ -41,5 +41,56 @@ app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, u
     $scope.date = new Date();
     $scope.eventSources = [];
 
+     $scope.dayFormat = "d";
+
+    // To select a single date, make sure the ngModel is not an array.
+    $scope.selectedDate = null;
+
+    // If you want multi-date select, initialize it as an array.
+    $scope.selectedDate = [];
+
+    $scope.firstDayOfWeek = 1; // First day of the week, 0 for Sunday, 1 for Monday, etc.
+    $scope.setDirection = function(direction) {
+        $scope.direction = direction;
+        $scope.dayFormat = direction === "vertical" ? "EEEE, MMMM d" : "d";
+    };
+
+    $scope.dayClick = function(date) {
+        $scope.msg = $filter("date")(date, "MMM d, y h:mm:ss a Z");
+        if ($scope.selectedDate.indexOf($scope.msg) != -1) {
+            $scope.selectedDate.splice($scope.selectedDate.indexof($scope.msg), 1)
+        } else {
+            $scope.selectedDate.push($scope.msg)
+        }
+    };
+
+    $scope.prevMonth = function(data) {
+        $scope.msg = "You clicked (prev) month " + data.month + ", " + data.year;
+    };
+
+    $scope.nextMonth = function(data) {
+        $scope.msg = "You clicked (next) month " + data.month + ", " + data.year;
+    };
+
+    $scope.tooltips = true;
+    $scope.setDayContent = function(date) {
+        return "<p></p>"
+
+        // You would inject any HTML you wanted for
+        // that particular date here.
+
+
+        // You could also use an $http function directly.
+        return $http.get("/some/external/api");
+
+        // You could also use a promise.
+        var deferred = $q.defer();
+        $timeout(function() {
+            deferred.resolve("<p></p>");
+        }, 1000);
+        return deferred.promise;
+
+    };
+
 
 })
