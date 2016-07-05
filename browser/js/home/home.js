@@ -7,9 +7,13 @@ app.config(function($stateProvider) {
 });
 
 app.controller('homeCtrl', function($scope, $state) {
-    $scope.signup = function(state) {
-        console.log('hello', state)
-        $state.go(state)
-    }
+    $scope.join_user = ""
 
+    $scope.signup = function(state) {
+        $scope.join_user = state
+        console.log('hello', $scope.join_user)
+    }
+    $scope.back = function() {
+        $scope.join_user = ""
+    }
 })

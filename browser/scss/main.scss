@@ -27,17 +27,29 @@ $dashy-grey: #999;
 body {
 }
 
+
+///////////////////////////////////////////
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
 .row-centered {
     text-align:center;
 }
+.left{
+  text-align:left !important;
+}
+.right{
+  text-align:right !important;
 
+}
 .col-centered {
     display:inline-block;
     float:none !important; 
     /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
+    margin:0 auto;
 }
 
 .selectDisable {-webkit-user-select: none;  -khtml-user-select: none;   -moz-user-select: none; -o-user-select: none;    user-select: none; }
@@ -54,14 +66,14 @@ body {
     clear: both;
   }
 }
-.flex-center-vertically {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 400px;
-}
+
+
+
 .fullHeight{
   height:100%;
+}
+.fullWidth{
+  width:100%;
 }
 .flex-center-vertically {
   display: flex;
@@ -80,6 +92,7 @@ body {
   margin: 0 auto;
   min-height: 95vh;
   overflow-y:auto;
+  overflow-x:hidden;
 }
 .row{
   margin:0;
@@ -124,3 +137,5 @@ textarea{
 @import 'dashboard/main';
 @import 'login/main';
 @import 'calendar/main';
+@import 'sugoi/admin';
+@importa 'animations/main';

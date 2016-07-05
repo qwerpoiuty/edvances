@@ -1,5 +1,5 @@
 app.config(function($stateProvider) {
-    $stateProvider.state('profile', {
+    $stateProvider.state('profiles', {
         url: '/profile/:id',
         templateUrl: 'js/profile/profile.html',
         controller: 'profileCtrl',

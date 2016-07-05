@@ -1,9 +1,10 @@
 $yellow-2: #f9e38b;
+$pencil-yellow: #f7a031;
 $brand-primary-color-1: #06c5ac;
 
 .back {
   width: 100%;
-  background-color: $dashy-grey;
+  background-image:url("asset/images/chalkboard1.png");
   background-size: cover;
   height: 100%;
   position: fixed;
@@ -42,8 +43,11 @@ $brand-primary-color-1: #06c5ac;
     }
 
     .login-left {
-      background-color:$khan-blue;
+      background-color:white;
       color: #fff;
+      #login-logo{
+        width:80%;
+      }
       .logo-lg {
         text-transform: uppercase;
         font-size: 32px;
@@ -82,7 +86,7 @@ $brand-primary-color-1: #06c5ac;
           height: 48px;
           border-bottom: solid 1px rgba(0,0,0,0.05);
           &:focus, &:active {
-            border-color: $khan-blue;
+            border-color: $pencil-yellow;
           }
         }
         .login-input-group-addon {
@@ -102,14 +106,14 @@ $brand-primary-color-1: #06c5ac;
         background: none;
         padding: 10px 30px;
         border-radius: 0 30px 30px 0;
-        border:solid 2px $khan-blue;
+        border:solid 2px $pencil-yellow;
         border-left: none;
-        color: $khan-blue;
+        color: $pencil-yellow;
         min-width: 160px;
         margin-top: 20px;
         font-family: Lato, sans-serif;
         &:hover, &:active, &:focus {
-          background-color: $khan-blue;
+          background-color: $pencil-yellow;
           color: #fff;
           box-shadow: none;
         }
@@ -120,6 +124,7 @@ $brand-primary-color-1: #06c5ac;
         padding-right: 20px;
         margin-top: -35px;
         a {
+          color:$pencil-yellow;
           display: inline-block;
           padding: 3px;
         }
@@ -176,7 +181,7 @@ $brand-primary-color-1: #06c5ac;
         .btn {
           border-radius: 30px;
           margin-left: 20px;
-          border: solid 2px $khan-blue;
+          border: solid 2px $pencil-yellow;
         }
       }
     }

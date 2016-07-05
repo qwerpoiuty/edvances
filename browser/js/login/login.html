@@ -3,8 +3,8 @@
         <div class="login-outer">
             <div class="login-wrap">
                 <div class="login-left striped-bg text-center">
-                    <a ui-sref="home" class="logo-lg" href=""><i class="fa fa-paper-plane"></i>Edvances</a>
-                    <div class="slogan">Learning on your own terms</div> </div>
+                    <a ui-sref="home" class="logo-lg" href=""><img id="login-logo" src="asset/images/Edvances Logo Color.png"/></a>
+                </div>
                 <div class="login-right striped-bg">
                     <div>
                         <div class="heading ng-scope">Login to your Account</div>
@@ -15,13 +15,13 @@
                                     <span class="login-input-group-addon">
                                         <i class="fa fa-at fa-fw"></i>
                                     </span>
-                                    <input ng-model="loginInfo.email"type="email" class="form-control" name="email" placeholder="email">
+                                    <input ng-model="loginInfo.email" type="email" class="form-control" name="email" placeholder="Email">
                                 </div>
                                 <div class="login-input-group">
                                     <span class="login-input-group-addon">
                                         <i class="fa fa-key fa-fw"></i>
                                     </span>
-                                    <input ng-model="loginInfo.password" type="password" class="form-control" placeholder="password" name="password">
+                                    <input ng-model="loginInfo.password" type="password" class="form-control" placeholder="Password" name="password">
                                 </div>
                                 <button ng-click="sendLogin(loginInfo)" class="btn btn-default btn-lg submit">Login</button>
                             </form>

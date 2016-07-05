@@ -1,18 +1,96 @@
+<navbar></navbar>
 <div id="homepage">
     <div id="background">
         
     </div>
     <div id="section1">
-        <div id="section-1" class="puzzle-header col-lg-12 col-md-12 col-sm-12">
+        <div class="puzzle-header col-lg-12 col-md-12 col-sm-12">
             <div class="row col-lg-12 col-md-12 col-sm-12">
-                <h1 class="splashTitleBig">By teaching you will learn.</h1>
+                <h1 class="splashTitleBig">By teaching, you will learn.</h1>
             </div>
             <div class="row col-lg-12 col-md-12 col-sm-12">
-                <h3 class="splashTitleSmall">By learning you will teach.</h3>
+                <h3 class="splashTitleSmall">By learning, you will teach.</h3>
             </div>
-            <div class="row col-lg-12 col-md-12 col-sm-12 button-container">
-                        <button class="teacher-button col-lg-3 col-md-3 col-sm-3 col-lg-offset-3 col-md-offset-3" ng-click="signup('signupTeacher')"><img class = "selectDisable arrow flipped" src="asset/images/arrow.png"/><span class="signup chalk">Teacher Sign-Up</span></button>
-                        <button class="student-button col-lg-3 col-md-3 col-sm-3" ng-click="signup('signupStudent')"><img class = "selectDisable arrow" src="asset/images/arrow.png"/><span class="signup chalk">Student Sign-Up</span></button>
+            <div ng-if= "(join_user==='')" class="row col-lg-12 col-md-12 col-sm-12 button-container animate-if">
+
+                <button class="teacher-button col-lg-3 col-md-3 col-sm-3 col-lg-offset-3 col-md-offset-3" ng-click="signup('teacher')">
+                    <img class = "selectDisable arrow flipped" src="asset/images/arrow.png"/>
+                    <span class="signup-button chalk">Teacher Sign-Up</span>
+                </button>
+                <button class="student-button col-lg-3 col-md-3 col-sm-3" ng-click="signup('student')">
+                    <img class = "selectDisable arrow" src="asset/images/arrow.png"/>
+                    <span class="signup-button chalk">Student Sign-Up</span>
+                    </button>
+            </div>
+            <div ng-if ="(join_user==='student')" class="row row-centered col-lg-12 col-md-12 col-sm-12 button-container animate-if col-centered">
+                <div class = "row">
+                    <div class = "col-lg-5 col-md-5 col-sm-5 col-lg-offset-7 col-md-offset-7 col-sm-offset-7 left">
+                        <img id="gradcap" src="asset/images/gradcap.png"/>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-centered col-lg-3 col-md-3 col-sm-3 left">
+                        <a class = "chalk red-chalk" ng-click="back()"><img class="selectDisable small-arrow flipped" src="asset/images/arrow.png"/><h4 class = "home-page-a"> &nbsp; Back</h4></a>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
+                        <input type="email" class="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder="Email" ng-model="user.email">
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
+                        <input type="password" class="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder="Password" ng-model="user.password">
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
+                        <input type="password" class ="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder = "Confirm your password">
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
+                        <input type="date" class ="unstyled input-glass chalk yellow-chalk signup-fields fullWidth" placeholder = "Enter Your Birthdate">
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-centered col-lg-3 col-md-3 col-sm-3 right">
+                        <a class = "chalk red-chalk right" ng-click = "signupStudent()"><h4 class = "home-page-a">Sign Up! &nbsp;</h4><img src="asset/images/arrow.png" class= "selectDisable small-arrow"/></a>
+                    </div>
+                </div>
+
+            </div>
+            <div ng-if="(join_user==='teacher')" class="row row-centered col-lg-12 col-md-12 col-sm-12 button-container animate-if col-centered">
+                <div class = "row">
+                    <div class = "col-lg-5 col-md-5 col-sm-5 col-lg-offset-7 col-md-offset-7 col-sm-offset-7 left">
+                        <img id="apple" src="asset/images/apple.png"/>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-centered col-lg-3 col-md-3 col-sm-3 left">
+                        <a class = "chalk red-chalk" ng-click="back()"><img class="selectDisable small-arrow flipped" src="asset/images/arrow.png"/><h4 class = "home-page-a"> &nbsp; Back</h4></a>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
+                        <input type="email" class="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder="Email" ng-model="user.email">
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
+                        <input type="password" class="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder="Password" ng-model="user.password">
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
+                        <input type="password" class ="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder = "Confirm your password">
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-centered col-lg-3 col-md-3 col-sm-3 right">
+                        <a class = "chalk red-chalk right" ng-click = "signupTeacher()"><h4 class = "home-page-a">Sign Up! &nbsp;</h4><img src="asset/images/arrow.png" class= "selectDisable small-arrow"/></a>
+                    </div>
+                </div>
             </div>
             <img id = "squigle" src="asset/images/squiggle.png">
         </div>
@@ -65,7 +143,7 @@
         </div>
 
     </div>
-    <div id="section4">
+<!--     <div id="section4">
         <div class="puzzle-resource col-lg-12 col-md-12 col-sm-12">
             <h1 class="splashTitleSmall ten-height">Resources / Credit to:</h1>
             <div class="row col-lg-12 col-md-12 col-sm-12">
@@ -112,6 +190,6 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 </div>
 
