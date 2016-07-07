@@ -6252,8 +6252,7 @@ body {
 }
 #body-container {
   left: 0;
-  padding-bottom: 50px;
-  top: 63px;
+  top: 0;
   right: 0;
   bottom: 0;
   overflow: auto;
@@ -6302,7 +6301,7 @@ div#footer-wrap span.pull-right a:hover .fa-twitter-square {
   }
   #body-container {
     background: #ECF1F5;
-    top: 50px;
+    top: 0;
   }
 }
 .home-wrapper {
