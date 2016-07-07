@@ -18,7 +18,9 @@ $khan-white: #FDFDFD;
 $khan-white2: #f0f0f0;
 $dashy-grey: #999;
 
-
+.ui-view{
+  poistion: relative !important;
+}
 
 * {
   box-sizing: border-box;
@@ -121,6 +123,7 @@ textarea{
 @import 'landing/main';
 @import 'classroom/main';
 @import 'admin/adminview/main';
+@import 'profile/main';
 @import 'dashboard/main';
 @import 'login/main';
 @import 'calendar/main';
