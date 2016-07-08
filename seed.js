@@ -16,34 +16,34 @@ fsg scaffolding, keep in mind that fsg always uses the same database
 name in the environment files.
 
 */
-
-var mongoose = require('mongoose');
 var Promise = require('bluebird');
 var chalk = require('chalk');
-var connectToDb = require('./server/db');
-var User = Promise.promisifyAll(mongoose.model('User'));
-//var Groups = Promise.promisifyAll(mongoose.model('Groups'));
-//var Graphs = Promise.promisifyAll(mongoose.model('Graphs'));
+// var User = Promise.promisifyAll(mongoose.model('User'));
+var fs = require('fs')
+    //var Groups = Promise.promisifyAll(mongoose.model('Groups'));
+    //var Graphs = Promise.promisifyAll(mongoose.model('Graphs'));
 
+var seed = fs.readFileSync('see.csv')
+console.log(seed)
 
-var getCurrentUserData = function() {
-    return q.ninvoke(User, 'find', {});
-}
-var seedUsers = function() {
+// var getCurrentUserData = function() {
+//     return q.ninvoke(User, 'find', {});
+// }
+// var seedUsers = function() {
 
-    var users = [{
-        email: 'stanle@123.com',
-        password: 'password'
-        //groups: []
-    }, {
-        email: 'obama@gmail.com',
-        password: 'potus'
-        //groups: []
-    }];
+//     var users = [{
+//         email: 'stanle@123.com',
+//         password: 'password'
+//         //groups: []
+//     }, {
+//         email: 'obama@gmail.com',
+//         password: 'potus'
+//         //groups: []
+//     }];
 
-    return User.createAsync(users);
+//     return User.createAsync(users);
 
-};
+// };
 // var seedGroups = function() {
 //     var user = User.findOne({
 //         email: "testing@fsa.com"

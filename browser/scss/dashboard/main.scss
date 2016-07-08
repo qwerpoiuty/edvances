@@ -1,3 +1,5 @@
+@import 'labels';
+
 .welcome-message{
 	font-size:4em;
 	text-decoration:underline;
@@ -26,4 +28,390 @@
 
 #dashboard-container{
   background-color: #EEE;
+}
+
+.schedulePanel{
+	height:40vh !important;
+	.scheduleBody{
+		height:85%;
+	}
+}
+
+.halfHour{
+	height:20px;
+}
+
+.nav-tabs {
+    border-color: #dde2e6;
+    border-bottom: 1px solid #dddddd;
+}
+
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.brad{
+    border-radius:5px;
+}
+
+.brad-tr {
+    border-top-right-radius: 5px;
+}
+
+.brad-bottom {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.b-top-none {
+    border-top: none;
+}
+
+.b-bot-2px-gray-light {
+    border-bottom: 2px solid #dde2e6;
+}
+
+.b-1px-gray-light {
+    border: 1px solid #dde2e6;
+}
+
+.bg-white {
+    background: white;
+}
+.main-content {
+    position: relative;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+    opacity: 1;
+    overflow-y: scroll;
+    height: 100%;
+    background-color: #e8ecef;
+    padding: 30px;
+}
+.p-10{
+    padding: 10px;
+}
+.p-30 {
+    padding: 30px;
+}
+
+.font-w-100 {
+    font-weight: 100;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-gray-alt {
+    color: #99a1a6;
+}
+.m-b-30 {
+    margin-bottom: 30px;
+}
+.p-b-30 {
+    padding-bottom: 30px;
+}
+
+.pos-rel{
+    position: relative;
+}
+
+.iconmelon, .im {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    fill: #525151;
+}
+
+.m-r-10 {
+    margin-right: 10px;
+}
+
+.align-with-button {
+    vertical-align: top;
+    line-height: 30px;
+}
+
+.text-large {
+    font-size: 1.625em;
+}
+
+.text-gray-dark {
+    color: #33363f;
+}
+
+.over-text {
+    width: 100%;
+}
+.top-left-abs {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.over-text input {
+    border: 1px solid #eaedef;
+    border-radius: 2px;
+    line-height: 27px;
+    width: calc(100% - 40px);
+    margin-top: -1px;
+    padding-left: 10px;
+}
+
+.opacity-0 {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
+
+.m-b-0{
+    margin-bottom: 0;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-b-10{
+    margin-bottom: 10px;
+}
+
+.m-l-10{
+    margin-left: 10px;
+}
+
+.m-t-10{
+    margin-top: 10px;
+}
+
+.m-t-30{
+    margin-top: 30px !important;
+}
+
+.m-r-30{
+    margin-right: 30px !important;
+}
+
+.m-l-30{
+    margin-left: 30px !important;
+}
+
+.m-b-30{
+    margin-bottom: 30px;
+}
+
+.m-r-15{
+    margin-right: 15px;
+}
+
+.d-block{
+    display: block;
+}
+
+.i-block{
+    display: inline-block;
+}
+
+.editable{
+    border-bottom: 1px dashed rgba(51,54,63,0.4);
+    padding-bottom: 3px;
+}
+
+.tasks-wrapper {
+    max-height: 204px;
+    overflow: auto;
+}
+
+.unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+.list-editable li {
+    border-bottom: 1px solid #eff2f4;
+    padding: 15px;
+    position: relative;
+    height: 51px;
+}
+
+.list-editable li .body {
+    text-overflow: ellipsis;
+    display: block;
+    width: calc(100% - 80px);
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+}
+
+.list-editable li .remove-box {
+    background: #2cc0d5;
+    padding: 16px 7px 10px 16px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+
+    a{
+    color: #438bca;
+    text-decoration: none;
+    }
+}
+
+.list-editable li .icheckbox_flat-blue {
+    margin-right: 10px;
+    float: left;
+}
+
+.icheckbox_flat-blue {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    vertical-align: top;
+    background-position: 0 0;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: #d7dcde;
+}
+
+.icheckbox_flat-blue .checked {
+    background-position: -22px 0;
+}
+
+.ichekcbox_flat-blue .hover{
+ background-color: #f4f7f9;   
+}
+
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.btn-group>.btn:first-child {
+    margin-left: 0;
+}
+.btn-group>.btn, .btn-group-vertical>.btn {
+    position: relative;
+    float: left;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.42857;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;  
+    user-select: none;
+
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-transition: background,0.4s;
+    -moz-transition: background,0.4s;
+    transition: background,0.4s;
+}
+
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.glyphicon{
+    font-size: medium;
+}
+
+.cal1{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 35vh;
+}
+
+.social-feed {
+    max-height: 204px;
+    margin-bottom: 30px;
+    overflow: auto;
+    border-bottom: 1px solid rgb(234, 237, 239);
+}
+
+.social-feed li:nth-child(2n+1) {
+    background: rgb(244, 247, 249);
+}
+
+.social-feed li {
+    padding: 10px 0px 10px 40px;
+}
+
+.social-feed > ul {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.center-on-hover {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
+
+.bootstrap-select{
+    
+    .form-control{
+    margin-bottom: 0;
+    padding: 0;
+    border-width: 2px;
+    height: 36px;
+    border-color: #e8ecef;
+    }
+
+    .btn-group{
+    float: none;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-left: 0;
+
+        .btn{
+        position: relative;
+        float: left;
+        }
+    }
+
+    .btn{
+    width:100%;
+    }
+}
+
+.margin-fix-row{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.fade{
+    position: relative !important;
+}
+
+.dashboard-title{
+    margin:0 !important;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }

@@ -1,7 +1,7 @@
 app.config(function($stateProvider) {
     $stateProvider.state('adminview', {
         url: '/admin/view',
-        templateUrl: 'js/admin/adminView/adminview.html',
+        templateUrl: 'js/admin/adminView/adminView.html',
         controller: 'adminViewCtrl',
         resolve: {
             user: function(AuthService) {
@@ -22,7 +22,9 @@ app.config(function($stateProvider) {
 app.controller('adminViewCtrl', function($scope, AuthService, user, users, dataFactory) {
     $scope.user = user
     $scope.list = users
+    console.log($scope.list)
     $scope.update = function(user) {
         dataFactory.updateUser(user)
     }
+    $scope.tooltips = true;
 });

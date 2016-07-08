@@ -2,6 +2,7 @@
 var bcrypt = require('bcrypt')
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define('User', {
+
         email: {
             type: DataTypes.STRING,
             allowNull: false
@@ -16,11 +17,12 @@ module.exports = function(sequelize, DataTypes) {
         firstName: DataTypes.STRING,
         lastName: DataTypes.STRING,
         title: DataTypes.STRING,
-        statement: DataTypes.STRING,
+        statement: DataTypes.TEXT,
         area: DataTypes.STRING,
         grades: DataTypes.ARRAY(DataTypes.STRING),
         dob: DataTypes.DATEONLY,
         years: DataTypes.INTEGER,
+        powerLevel: DataTypes.INTEGER,
         education: DataTypes.ARRAY(DataTypes.STRING),
         documents: DataTypes.ARRAY(DataTypes.BLOB),
         documentnames: DataTypes.ARRAY(DataTypes.STRING),
@@ -30,9 +32,17 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
             defaultValue: false
         },
-        notes: DataTypes.STRING
+        notes: DataTypes.TEXT
 
     }, {
+        classMethods: {
+            associate: function(models) {
+                User.hasOne(models.Dashboard)
+                User.hasMany(models.Document)
+            }
+
+        },
+
         instanceMethods: {
             validPassword: function(password) {
                 return bcrypt.compareSync(password, this.password, this.salt);
@@ -41,6 +51,7 @@ module.exports = function(sequelize, DataTypes) {
                 return this.firstName + " " + this.lastName
             }
         }
+
     });
 
     User.beforeCreate(function(user) {

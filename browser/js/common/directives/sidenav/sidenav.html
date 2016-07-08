@@ -1,0 +1,7 @@
+<div class = "class-sidenav fullHeight">
+	<h5 class="sidenav-title">{{state}}</h5>
+	<button class = "sidebar-icon-container" ng-click = transition(item.state,$index) ng-class="{active : $index === selected}" ng-repeat="item in items track by $index">
+		<i class="sidebar-icon {{item.icon}}"  aria-hidden="true"></i>
+		<h5 class="sidebar-icon-text">{{item.name}}</h5>
+	</button>
+</div>

@@ -1,0 +1,82 @@
+<div class="eventContainer">
+    <div class="panel panel-theme">
+        <div class="panel-heading">
+            <div class="panel-title">Create a Class!</div>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label for="classtitle" class="control-label">Your class' Title</label>
+                        <div class="controls">
+                            <input class="form-control" type="text" id="classtitle" name="title" data-ng-model="classData.title"
+                                   maxlength="20" placeholder="A Descriptive Title" data-ng-required="true" data-ng-disabled="disabled" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label class="control-label" for="eventStart">Start Date</label>
+                        <div class="controls">
+                            <input class="form-control" type="date" id="eventStart" name="eventStart" data-ng-model="classData.start" placeholder="Date" data-ng-required="true" data-ng-disabled="disabled" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label class="control-label" for="eventEnd">End Date</label>
+                        <div class="controls">
+                            <input class="form-control" type="date" id="eventEnd" name="eventEnd" data-ng-model="classData.end" placeholder="Date" data-ng-required="true" data-ng-disabled="disabled" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label class="control-label" for="eventRepeat">When will you be holding class?</label>
+                        <div class="controls">
+                            <!-- make this into checkboxes for days of the week -->
+                            <div class = "row" ng-repeat="day in days">
+                                <div class = "col-md-3 col-lg-3"
+                                    <label class = "control-label" for="date">{{day.day}}</label>
+                                    <input ng-model="classData.classDays[day.id].checked" ng-checked = "class.classdays[day.id]!=0" name = "time" type="checkbox"/>
+                                </div>
+                                <div class = "col-md-9 col-lg-9">
+                                    <timepicker ng-model="classData.classDays[day.id].time" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="line-fix">
+                        <label class="control-label" for="eventDescription">A description of your class</label>
+                        <div class="controls">
+                              <textarea class="form-control" cols="100" rows="10" type="text" id="eventDescription" name="eventDescription" maxlength="1000" placeholder="A short description of the event" data-ng-model="classData.description" data-ng-required="true" data-ng-disabled="disabled"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="text-right">
+                    <pre>{{classData}}</pre>
+                    <button class="btn btn-alert" ng-click="ok()">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

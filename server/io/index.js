@@ -11,7 +11,7 @@ module.exports = function(server) {
         console.log(socket.id, 'connected');
 
         socket.on('join awesome room', function(roomName) {
-
+            var liveClass = false
             var chatBot = {
 
                     log: function() {
@@ -27,10 +27,20 @@ module.exports = function(server) {
             if (!chatHistory[roomName]) chatHistory[roomName] = []
             else socket.emit('chat', chatHistory[roomName])
 
+            //class checking
+            socket.on('toggle class', function() {
+                liveClass = !liveClass
+                socket.emit('class check', liveClass)
+            })
+
+            socket.on('check class', function() {
+                socket.emit('class check', liveClass)
+            })
+
             //chat things
             socket.on('chat message', function(msg) {
                 chatHistory[roomName].push(msg)
-                io.emit('chat message', msg);
+                socket.emit('chat message', msg);
             });
         });
     });

@@ -1,62 +1,121 @@
-<section id="splashPage">
-    <div id="content_1" class="content">
-        <div class="row">
-            <h1 class="splashTitleSmall col-lg-12 col-md-12 col-sm-12">By learning you will teach.</h1>
-        </div>
-
-        <div class="row">
-            <h1 class="splashTitleBig col-lg-12 col-md-12 col-sm-12">By teaching you will learn.</h1>
-        </div>
-
-        <div class="row buttonSpacing">
-            <div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4">
-                <button type="button" class="btn btn-warning btn-block btn-rounded">Teacher Sign Up</button>
+<div id="homepage">
+    <div id="background">
+        
+    </div>
+    <div id="section1">
+        <div id="section-1" class="puzzle-header col-lg-12 col-md-12 col-sm-12">
+            <div class="row col-lg-12 col-md-12 col-sm-12">
+                <h1 class="splashTitleBig">By teaching you will learn.</h1>
             </div>
+            <div class="row col-lg-12 col-md-12 col-sm-12">
+                <h3 class="splashTitleSmall">By learning you will teach.</h3>
+            </div>
+            <div class="row col-lg-12 col-md-12 col-sm-12 button-container">
+                        <button class="teacher-button col-lg-3 col-md-3 col-sm-3 col-lg-offset-3 col-md-offset-3" ng-click="signup('signupTeacher')"><img class = "selectDisable arrow flipped" src="asset/images/arrow.png"/><span class="signup chalk">Teacher Sign-Up</span></button>
+                        <button class="student-button col-lg-3 col-md-3 col-sm-3" ng-click="signup('signupStudent')"><img class = "selectDisable arrow" src="asset/images/arrow.png"/><span class="signup chalk">Student Sign-Up</span></button>
+            </div>
+            <img id = "squigle" src="asset/images/squiggle.png">
         </div>
-
-        <div class="row buttonSpacing">
-            <div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4">
-                <button type="button" class="btn btn-warning btn-block btn-rounded">Student Sign Up</button>
+    </div>
+    <div id="section2">
+        <div class="puzzle-peice-1 col-lg-12 col-md-12 col-sm-12">
+            <img class="selectDisable" id = "left-chat" src="asset/images/chalk-bubble.png"/>
+            <img class="selectDisable" id="straight-squiggle" src="asset/images/straight-squiggle.png"/>
+            <div class="puzzle-peice-1-left col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2">
+            </div>
+            <div class="puzzle-peice-1-right col-lg-3 col-md-3 col-sm-5">
+                <div class="puzzle-peice-box">
+                    <h2 class="splashTitleBig">Teacher Information</h2>
+                    <div class="carousel-body">
+                        <carousel interval="myInterval">
+                            <slide ng-repeat="slide in slides" active="slide.active">
+                                <p>{{slide.information}}</p>    
+                            </slide>
+                        </carousel>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <img class="doodles" id="math1" src="asset/images/math1.png"/>
             </div>
         </div>
     </div>
-
-    <div id="content_2" class="content">
-
-        <div class="row">
-            <h1 class="splashTitleBig col-lg-12 col-md-12 col-sm-12">Math, science, computer programming, history, art, economics, and even more.</h1>
+    <div id="section3">
+        <div class="puzzle-peice-2 col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <img id="wtf" src="asset/images/wtf.png"/>
+            </div>
+            <div class="puzzle-peice-2-left col-lg-3 col-md-3 col-sm-5">
+               <div class="puzzle-peice-box">
+                    <h2 class="splashTitleBig">Teacher Information</h2>
+                    <p class="splashTitleSmall">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.
+                    </p>
+                </div>
+            </div>
+            <div class="puzzle-peice-2-right col-lg-7 col-md-7 col-sm-7">
+                <img class="selectDisable" id="cloud" src="asset/images/cloud.png"/>
+            </div>
+            
         </div>
-
-        <div class="row buttonSpacing">
-            <div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4">
-                <button type="button" class="btn btn-info btn-block btn-rounded">Start Learning</button>
+        <div class="puzzle-break col-lg-12 col-md-12 col-sm-12">
+             <div class="col-lg-offset-4 col-md-offset-4 col-lg-4 col-md-4 col-sm-4 puzzle-break-box text-center">
+               
+            </div>
+        </div>
+                <div class="puzzle-break col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-offset-4 col-md-offset-4 col-lg-4 col-md-4 col-sm-4 puzzle-break-box text-center">
             </div>
         </div>
 
     </div>
-
-    <div id="content_3" class="content">
-
-        <div class="row">
-            <h1 class="splashTitleBig col-lg-12 col-md-12 col-sm-12">Take control of your learning by working on the skills you choose with 1 on 1 teaching sessions.</h1>
-        </div>
-
-        <div class="row buttonSpacing">
-            <div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4">
-                <button type="button" class="btn btn-warning btn-block btn-rounded">Start Learning</button>
+    <div id="section4">
+        <div class="puzzle-resource col-lg-12 col-md-12 col-sm-12">
+            <h1 class="splashTitleSmall ten-height">Resources / Credit to:</h1>
+            <div class="row col-lg-12 col-md-12 col-sm-12">
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Primary Panel
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation.
+                    </div>
+                </div>
             </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Primary Panel
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Primary Panel
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation.
+                    </div>
+                </div>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
 
-    <div id="content_4" class="content">
-        <div class="row">
-            <h1 class="splashTitleBig col-lg-12 col-md-12 col-sm-12">Experience the comfort of learning from home without hindering your ability to interact and learn with others.</h1>
-        </div>
-
-        <div class="row buttonSpacing">
-            <div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4">
-                <button type="button" class="btn btn-info btn-block btn-rounded">Start Learning</button>
-            </div>
-        </div>
-    </div>
-</section>

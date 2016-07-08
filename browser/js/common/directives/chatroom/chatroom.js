@@ -9,22 +9,19 @@ app.directive('chatroom', function($rootScope, AuthService, AUTH_EVENTS, $state,
             scope.msg = {}
             scope.msg.user = scope.user.firstName
             scope.msg.timeStamp = Date.now()
-            console.log(location.pathname)
-            socket.emit('join awesome room', location.pathname.slice(1));
 
             socket.on('chat message', function(chat) {
 
                 // message = user + '[' + date + ']:' + message
-                $('#messages').append($('<li>').text(chat.text))
+                $('#messages').append('<li class="chat-message"><span class="username">' + chat.user + '</span>       ' + chat.text + '</li>')
             })
             socket.on('chat', function(chats) {
                 chats.forEach(function(chat) {
-                    $('#messages').append($('<li>').text(chat.text))
-                })
-            })
+                    $('#messages').append('<li class="chat-message"><span class="username">' + chat.user + '</span>       ' + chat.text + '</li>')
+                });
+            });
             scope.sendMsg = function() {
                 if (scope.msg.text !== '') {
-                    console.log('test')
                     socket.emit('chat message', scope.msg)
                     scope.msg.text = ''
                 }

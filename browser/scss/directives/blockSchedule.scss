@@ -1,0 +1,21 @@
+.scheduleContainer{
+	height:100%;
+	width:100%;
+	overflow:auto;
+}
+.dayTitles{
+	padding-left:10%;
+}
+.dayContainer{
+	text-align: center;
+	width:12%;
+}
+.weekDay{
+	// overflow:auto;
+	width:12%;
+	background-color:white;
+	border:1px solid black;
+}
+.day-times{
+	width:10%
+}

@@ -4,7 +4,7 @@ var fs = require("fs");
 var path = require("path");
 var Sequelize = require("sequelize");
 var env = process.env.NODE_ENV || "development";
-var sequelize = new Sequelize('postgres://localhost:5432/edvancesdb', {
+var sequelize = new Sequelize('postgres://edvancesAdmin:edadmin@localhost:5432/edvancesdb', {
     dialect: 'postgres',
     protocol: 'postgres'
 })
@@ -20,6 +20,12 @@ fs
         db[model.name] = model;
     });
 
+Object.keys(db).forEach(function(modelName) {
+    if ("associate" in db[modelName]) {
+        console.log(modelName)
+        db[modelName].associate(db);
+    }
+});
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

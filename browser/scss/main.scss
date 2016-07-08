@@ -18,6 +18,10 @@ $khan-white: #FDFDFD;
 $khan-white2: #f0f0f0;
 $dashy-grey: #999;
 
+.ui-view{
+  poistion: relative !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -25,6 +29,26 @@ $dashy-grey: #999;
 body {
 }
 
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none !important; 
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.selectDisable {-webkit-user-select: none;  -khtml-user-select: none;   -moz-user-select: none; -o-user-select: none;    user-select: none; }
+
+.selectEnable { -webkit-user-select: text;  -khtml-user-select: text;   -moz-user-select: text; -o-user-select: text;    user-select: text; }
+
+.no-pad{
+  padding:0;
+}
 @mixin clearfix {
   &:after {
     content: "";
@@ -32,8 +56,11 @@ body {
     clear: both;
   }
 }
-.center-text{
-  text-align: center;
+.flex-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
 }
 .fullHeight{
   height:100%;
@@ -45,9 +72,12 @@ body {
   height: 400px;
 }
 
+.indent-1{
+  margin-left:8.3333333333333% !important;
+}
+
 #main {
   background-color: $back-color-4;
-  padding-top: 50px;
   width: 100%;
   margin: 0 auto;
   min-height: 95vh;
@@ -61,10 +91,39 @@ body {
   background-color: $title-dark-grey;
 }
 
+.flipped{
+  -webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
+  -moz-transform: rotate(180deg);        /* FF */
+  -o-transform: rotate(180deg);          /* Opera */
+  -ms-transform: rotate(180deg);         /* IE9 */
+  transform: rotate(180deg); 
+}
+textarea{
+  resize: none;
+}
+
+.panel.panel-theme > .panel-heading {
+  color: #fff;
+  background-color: $khan-blue;
+  border-color: #67b0c1;
+}
+
+.btn.btn-theme{
+  background-color: $khan-blue;
+  color: white;
+  font-family: Lato, sans-serif !important;
+}
+@font-face{
+  font-family:chalk;
+  src:url("asset/font/chalkfont.ttf");
+}
+
 @import 'directives/main';
 @import 'home/main';
 @import 'landing/main';
 @import 'classroom/main';
-@import 'profile/main';
 @import 'admin/adminview/main';
+@import 'profile/main';
 @import 'dashboard/main';
+@import 'login/main';
+@import 'calendar/main';

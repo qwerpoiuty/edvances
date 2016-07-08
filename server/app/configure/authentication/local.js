@@ -68,7 +68,12 @@ module.exports = function(app) {
         // }, function(err, user) {
         //     if (!user) {
         models.User.create(req.body).then(function(user) {
-            res.json(user);
+            console.log(chalk.yellow("hello!", user.id))
+            models.Dashboard.create({
+                UserId: user.id
+            }).then(function() {
+                res.json(user);
+            })
         });
         // models.User.findAll().then(function(users) {
         //     console.log(users)

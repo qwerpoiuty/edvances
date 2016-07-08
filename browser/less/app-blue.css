@@ -3151,7 +3151,6 @@ tbody.collapse.in {
   top: 100%;
   left: 0;
   z-index: 1000;
-  display: none;
   float: left;
   min-width: 160px;
   padding: 5px 0;
@@ -5258,7 +5257,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel.panel-info > .panel-heading {
   color: #fff;
-  background-color: #80b1cb;
+  background-color: #46A8BF !important;
   border-color: #67b0c1;
 }
 .panel.panel-info > .panel-heading + .panel-collapse > .panel-body {
@@ -6252,10 +6251,8 @@ body {
   padding: 15px;
 }
 #body-container {
-  position: absolute;
   left: 0;
-  padding-bottom: 50px;
-  top: 63px;
+  top: 0;
   right: 0;
   bottom: 0;
   overflow: auto;
@@ -6304,15 +6301,15 @@ div#footer-wrap span.pull-right a:hover .fa-twitter-square {
   }
   #body-container {
     background: #ECF1F5;
-    top: 50px;
+    top: 0;
   }
 }
 .home-wrapper {
   margin: -15px;
 }
 .photo-container a {
-  color: #737272;
-  font-size: 13px;
+  color: #999;
+  font-size: 17px;
 }
 .photo-container .dash-profile {
   width: 90px;
@@ -7893,8 +7890,8 @@ pre {
   color: #ffffff;
 }
 .btn-bordered.btn-info {
-  border-color: #80b1cb;
-  color: #80b1cb;
+  border-color: #46A8BF;
+  color: #46A8BF;
 }
 .btn-bordered.btn-info:hover {
   background: #80b1cb;
@@ -7950,7 +7947,7 @@ pre {
   border-color: #a2d19e;
 }
 .btn-info {
-  border-color: #80b1cb;
+  border-color: #46A8BF;
 }
 .btn-warning {
   border-color: #e8b769;
@@ -7965,7 +7962,7 @@ pre {
   border-color: #a2d19e;
 }
 .alert-info {
-  border-color: #80b1cb;
+  border-color: #46A8BF;
 }
 .alert-warning {
   border-color: #e8b769;
@@ -7992,7 +7989,7 @@ button.btn.btn-success.btn-bordered.dropdown-toggle.haha {
   border-left: 1px solid #a2d19e;
 }
 button.btn.btn-info.btn-bordered.dropdown-toggle.haha {
-  border-left: 1px solid #80b1cb;
+  border-left: 1px solid #46A8BF;
 }
 button.btn.btn-warning.btn-bordered.dropdown-toggle.haha {
   border-left: 1px solid #e8b769;
@@ -8335,7 +8332,7 @@ div.carousel-photo .carousel-control {
   color: inherit;
 }
 .has-info .form-control {
-  border-color: #80b1cb;
+  border-color: #46A8BF;
 }
 .has-info .form-control:focus {
   border-color: #5c9bbc;
@@ -8394,7 +8391,7 @@ table.modal-table tbody tr td.moleft {
   background-color: #a2d19e;
 }
 .infob {
-  background-color: #80b1cb;
+  background-color: #46A8BF;
 }
 .warningb {
   background-color: #e8b769;
@@ -9291,7 +9288,7 @@ growl-notifications growl-notification.growl-warning {
   left: 0;
   right: 0;
 }
-/*! 
+/*!
  * angular-loading-bar v0.7.1
  * https://chieffancypants.github.io/angular-loading-bar
  * Copyright (c) 2015 Wes Cruver
