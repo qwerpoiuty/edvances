@@ -24,17 +24,17 @@
             </div>
             <div ng-if ="(join_user==='student')" class="row row-centered col-lg-12 col-md-12 col-sm-12 button-container animate-if col-centered">
                 <div class = "row">
-                    <div class = "col-lg-5 col-md-5 col-sm-5 col-lg-offset-7 col-md-offset-7 col-sm-offset-7 left">
-                        <img id="gradcap" src="asset/images/gradcap.png"/>
-                    </div>
-                </div>
-                <div class = "row">
                     <div class = "col-centered col-lg-3 col-md-3 col-sm-3 left">
                         <a class = "chalk red-chalk" ng-click="back()"><img class="selectDisable small-arrow flipped" src="asset/images/arrow.png"/><h4 class = "home-page-a"> &nbsp; Back</h4></a>
                     </div>
                 </div>
                 <div class = "row">
-                    <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
+                    <div class = "col-lg-2 col-md-2 col-sm-5 col-centered left">
+                        <h2 class="chalk unmargin">Students</h2>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = " col-centered col-lg-2 col-md-2 col-sm-5">
                         <input type="email" class="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder="Email" ng-model="user.email">
                     </div>
                 </div>
@@ -61,14 +61,15 @@
 
             </div>
             <div ng-if="(join_user==='teacher')" class="row row-centered col-lg-12 col-md-12 col-sm-12 button-container animate-if col-centered">
-                <div class = "row">
-                    <div class = "col-lg-5 col-md-5 col-sm-5 col-lg-offset-7 col-md-offset-7 col-sm-offset-7 left">
-                        <img id="apple" src="asset/images/apple.png"/>
-                    </div>
-                </div>
+
                 <div class = "row">
                     <div class = "col-centered col-lg-3 col-md-3 col-sm-3 left">
                         <a class = "chalk red-chalk" ng-click="back()"><img class="selectDisable small-arrow flipped" src="asset/images/arrow.png"/><h4 class = "home-page-a"> &nbsp; Back</h4></a>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-lg-2 col-md-2 col-sm-5 col-centered left">
+                        <h2 class="chalk unmargin">Teachers</h2>
                     </div>
                 </div>
                 <div class = "row">
@@ -96,56 +97,41 @@
         </div>
     </div>
     <div id="section2">
-        <div class="puzzle-peice-1 col-lg-12 col-md-12 col-sm-12">
-            <img class="selectDisable" id = "left-chat" src="asset/images/chalk-bubble.png"/>
+        <div class="puzzle-piece-1 col-lg-12 col-md-12 col-sm-12">
+            
             <img class="selectDisable" id="straight-squiggle" src="asset/images/straight-squiggle.png"/>
-            <div class="puzzle-peice-1-left col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2">
+            <div class="puzzle-piece-1-left col-lg-7 col-md-7 col-sm-6">
+                <img class="selectDisable" id = "left-chat" src="asset/images/chalk-bubble.png"/>
             </div>
-            <div class="puzzle-peice-1-right col-lg-3 col-md-3 col-sm-5">
-                <div class="puzzle-peice-box">
-                    <h2 class="splashTitleBig">Teacher Information</h2>
-                    <div class="carousel-body">
-                        <carousel interval="myInterval">
-                            <slide ng-repeat="slide in slides" active="slide.active">
-                                <p>{{slide.information}}</p>    
-                            </slide>
-                        </carousel>
-                    </div>
+            <div class="puzzle-piece-1-right col-lg-5 col-md-5 col-sm-6 flex-center-vertically">
+                <div class="puzzle-piece-box ">
+                    <h2 class="splashTitleBig">Learn from Anywhere. From Teachers Everwhere</h2>
+                    <p class="splashTitleSmall">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda voluptate, illum nobis labore animi quae aut iusto nisi maxime sunt ratione a quis molestiae. Ullam voluptates qui, tempore dolor quasi.</p>
+                    
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2">
-                <img class="doodles" id="math1" src="asset/images/math1.png"/>
+            <div class="col-lg-2 col-md-2 col-sm-2 right doodles col-lg-offset-9 col-md-offset-9 col-sm-offset-9">
+                <img id="math1" src="asset/images/math1.png"/>
             </div>
         </div>
     </div>
     <div id="section3">
-        <div class="puzzle-peice-2 col-lg-12 col-md-12 col-sm-12">
-            <div class="col-lg-2 col-md-2 col-sm-2">
+        <div class="puzzle-piece-2 col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-sm-2 doodles">
                 <img id="wtf" src="asset/images/wtf.png"/>
             </div>
-            <div class="puzzle-peice-2-left col-lg-3 col-md-3 col-sm-5">
-               <div class="puzzle-peice-box">
-                    <h2 class="splashTitleBig">Teacher Information</h2>
-                    <p class="splashTitleSmall">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.
-                    </p>
+            <div class="puzzle-piece-2-left col-lg-5 col-md-5 col-sm-6 flex-center-vertically">
+                <div class="puzzle-piece-box ">
+                    <h2 class="splashTitleBig">Teach Students Everywhere. From Anywhere</h2>
+                    <p class="splashTitleSmall">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda voluptate, illum nobis labore animi quae aut iusto nisi maxime sunt ratione a quis molestiae. Ullam voluptates qui, tempore dolor quasi.</p>
+                    
                 </div>
             </div>
-            <div class="puzzle-peice-2-right col-lg-7 col-md-7 col-sm-7">
+            <div class="puzzle-piece-2-right col-lg-7 col-md-7 col-sm-7">
                 <img class="selectDisable" id="cloud" src="asset/images/cloud.png"/>
             </div>
             
         </div>
-        <div class="puzzle-break col-lg-12 col-md-12 col-sm-12">
-             <div class="col-lg-offset-4 col-md-offset-4 col-lg-4 col-md-4 col-sm-4 puzzle-break-box text-center">
-               
-            </div>
-        </div>
-                <div class="puzzle-break col-lg-12 col-md-12 col-sm-12">
-            <div class="col-lg-offset-4 col-md-offset-4 col-lg-4 col-md-4 col-sm-4 puzzle-break-box text-center">
-            </div>
-        </div>
-
     </div>
 <!--     <div id="section4">
         <div class="puzzle-resource col-lg-12 col-md-12 col-sm-12">

@@ -5,10 +5,7 @@ app.config(function($stateProvider) {
         url: '/dashboard',
         templateUrl: 'js/overview/overview.html',
         controller: 'overviewCtrl',
-        resolve: {},
-        data: {
-            authenticate: true
-        }
+        resolve: {}
     })
 });
 app.controller('overviewCtrl', function($scope, $state, $rootScope, $timeout) {
