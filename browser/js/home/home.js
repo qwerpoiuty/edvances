@@ -27,6 +27,5 @@ app.controller('homeCtrl', function($scope, $state) {
     }, {
         information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.'
     }];
-    gulp
 
 })
