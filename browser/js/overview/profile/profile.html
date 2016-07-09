@@ -1,31 +1,8 @@
-<div id="container" class="main-content">
-	<ul class="nav nav-tabs">
-	  <li class="active">
-	  	<a ui-sref="dashboard" data-toggle="tab">
-	  		<div class="text-small">Manage your</div>
-	  		<span class="text-uppercase">Personal Dashboard</span>
-	  		<span class="text-gray-dark">/</span>
-	  		<span class="small text-gray-dark"></span>
-	  	</a>
-	  </li>
-	  <li>
-	  	<a ui-sref="profile" data-toggle="tab">
-	  		<div class="text-small">Watch your</div>
-	  		<span class="text-uppercase">Recent Statistics</span>
-	  		<span class="text-gray-dark">/</span>
-	  		<span class="small text-gray-dark"></span>
-	  	</a>
-	  </li>
-	</ul>
 
-	<div class="row">
+
+	<div class="row margin-fix-row">
   			<div class="col-sm-3 text-center">
   				<div class="p-10 brad">
-							<a href="#" class="center-on-hover">
-								<img src="placeholders/avatars/avatar.jpg" alt="" class="img-circle" width="115">
-								<span class="btn btn-primary centered-element">change</span>
-							</a>
-
 							<div>
 								<div>
 									<div class="editable i-block" contenteditable="">
@@ -70,22 +47,34 @@
 
 		<div class="bg-white p-30 m-t-10 brad b-bot-2px-gray-light b-right-1px-gray-light">
 
-			<h2 class="text-center p-b-30 m-t-0 page-header">Settings</h2>
+			<h2 class="text-center p-b-30 dashboard-title page-header">Settings</h2>
 			<form class="form-horizontal" role="form">
 				<div class="form-group">
 					<label class="col-sm-2 control-label">General</label>
 				  <div class="col-sm-10 m-t-10">
 				  	<div class="m-b-10">
-				  		<div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" name="notification" value="" class="icheck" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
-				  		<span class="m-l-10">Use desktop notifications</span>
+						<div class="roundedTwo">
+							<input type="checkbox" value="None" id="roundedTwo" name="check" />
+							<label for="roundedTwo"></label>
+						</div>
 				  	</div>
 				  	<div class="m-b-10">
-				  		<div class="icheckbox_flat-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" name="notification" value="" class="icheck" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
-				  		<span class="m-l-10">Justo Inceptos Fringilla</span>
+						<div class="squaredThree">
+							<input type="checkbox" value="None" id="squaredThree" name="check" />
+							<label for="squaredThree"></label>
+						</div>
 				  	</div>
 				  	<div class="m-b-10">
-				  		<div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" name="notification" value="" class="icheck" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
-				  		<span class="m-l-10">Curabitur blandit tempus porttitor.</span>
+						<div class="squaredFour">
+							<input type="checkbox" value="None" id="squaredFour" name="check" />
+							<label for="squaredFour"></label>
+						</div>
+				  	</div>
+				  	<div class="m-b-10">
+						<div class="squaredTwo">
+							<input type="checkbox" value="None" id="squaredTwo" name="check" />
+							<label for="squaredTwo"></label>
+						</div>
 				  	</div>
 				  </div>
 				</div>
@@ -112,210 +101,11 @@
 							</div>
 				  	</div>
 						<div class="m-b-10">
-			  			<div>Country of residence</div>
-				  		<div class="row">
-				  			<div class="col-sm-4">
-				  				<select class="form-control selectpicker" data-live-search="true" style="display: none;">
-									  <option value="">Afghanistan</option>
-										<option value="">Albania</option>
-										<option value="">Algeria</option>
-										<option value="">Andorra</option>
-										<option value="">Angola</option>
-										<option value="">Antigua &amp; Deps</option>
-										<option value="">Argentina</option>
-										<option value="">Armenia</option>
-										<option value="">Australia</option>
-										<option value="">Austria</option>
-										<option value="">Azerbaijan</option>
-										<option value="">Bahamas</option>
-										<option value="">Bahrain</option>
-										<option value="">Bangladesh</option>
-										<option value="">Barbados</option>
-										<option value="">Belarus</option>
-										<option value="">Belgium</option>
-										<option value="">Belize</option>
-										<option value="">Benin</option>
-										<option value="">Bhutan</option>
-										<option value="">Bolivia</option>
-										<option value="">Bosnia Herzegovina</option>
-										<option value="">Botswana</option>
-										<option value="">Brazil</option>
-										<option value="">Brunei</option>
-										<option value="">Bulgaria</option>
-										<option value="">Burkina</option>
-										<option value="">Burundi</option>
-										<option value="">Cambodia</option>
-										<option value="">Cameroon</option>
-										<option value="">Canada</option>
-										<option value="">Cape Verde</option>
-										<option value="">Central African Rep</option>
-										<option value="">Chad</option>
-										<option value="">Chile</option>
-										<option value="">China</option>
-										<option value="">Colombia</option>
-										<option value="">Comoros</option>
-										<option value="">Congo</option>
-										<option value="">Congo {Democratic Rep}</option>
-										<option value="">Costa Rica</option>
-										<option value="">Croatia</option>
-										<option value="">Cuba</option>
-										<option value="">Cyprus</option>
-										<option value="">Czech Republic</option>
-										<option value="">Denmark</option>
-										<option value="">Djibouti</option>
-										<option value="">Dominica</option>
-										<option value="">Dominican Republic</option>
-										<option value="">East Timor</option>
-										<option value="">Ecuador</option>
-										<option value="">Egypt</option>
-										<option value="">El Salvador</option>
-										<option value="">Equatorial Guinea</option>
-										<option value="">Eritrea</option>
-										<option value="">Estonia</option>
-										<option value="">Ethiopia</option>
-										<option value="">Fiji</option>
-										<option value="">Finland</option>
-										<option value="">France</option>
-										<option value="">Gabon</option>
-										<option value="">Gambia</option>
-										<option value="">Georgia</option>
-										<option value="">Germany</option>
-										<option value="">Ghana</option>
-										<option value="">Greece</option>
-										<option value="">Grenada</option>
-										<option value="">Guatemala</option>
-										<option value="">Guinea</option>
-										<option value="">Guinea-Bissau</option>
-										<option value="">Guyana</option>
-										<option value="">Haiti</option>
-										<option value="">Honduras</option>
-										<option value="">Hungary</option>
-										<option value="">Iceland</option>
-										<option value="">India</option>
-										<option value="">Indonesia</option>
-										<option value="">Iran</option>
-										<option value="">Iraq</option>
-										<option value="">Ireland {Republic}</option>
-										<option value="">Israel</option>
-										<option value="">Italy</option>
-										<option value="">Ivory Coast</option>
-										<option value="">Jamaica</option>
-										<option value="">Japan</option>
-										<option value="">Jordan</option>
-										<option value="">Kazakhstan</option>
-										<option value="">Kenya</option>
-										<option value="">Kiribati</option>
-										<option value="">Korea North</option>
-										<option value="">Korea South</option>
-										<option value="">Kosovo</option>
-										<option value="">Kuwait</option>
-										<option value="">Kyrgyzstan</option>
-										<option value="">Laos</option>
-										<option value="">Latvia</option>
-										<option value="">Lebanon</option>
-										<option value="">Lesotho</option>
-										<option value="">Liberia</option>
-										<option value="">Libya</option>
-										<option value="">Liechtenstein</option>
-										<option value="">Lithuania</option>
-										<option value="">Luxembourg</option>
-										<option value="">Macedonia</option>
-										<option value="">Madagascar</option>
-										<option value="">Malawi</option>
-										<option value="">Malaysia</option>
-										<option value="">Maldives</option>
-										<option value="">Mali</option>
-										<option value="">Malta</option>
-										<option value="">Marshall Islands</option>
-										<option value="">Mauritania</option>
-										<option value="">Mauritius</option>
-										<option value="">Mexico</option>
-										<option value="">Micronesia</option>
-										<option value="">Moldova</option>
-										<option value="">Monaco</option>
-										<option value="">Mongolia</option>
-										<option value="">Montenegro</option>
-										<option value="">Morocco</option>
-										<option value="">Mozambique</option>
-										<option value="">Myanmar, {Burma}</option>
-										<option value="">Namibia</option>
-										<option value="">Nauru</option>
-										<option value="">Nepal</option>
-										<option value="">Netherlands</option>
-										<option value="">New Zealand</option>
-										<option value="">Nicaragua</option>
-										<option value="">Niger</option>
-										<option value="">Nigeria</option>
-										<option value="">Norway</option>
-										<option value="">Oman</option>
-										<option value="">Pakistan</option>
-										<option value="">Palau</option>
-										<option value="">Panama</option>
-										<option value="">Papua New Guinea</option>
-										<option value="">Paraguay</option>
-										<option value="">Peru</option>
-										<option value="">Philippines</option>
-										<option value="">Poland</option>
-										<option value="">Portugal</option>
-										<option value="">Qatar</option>
-										<option value="">Romania</option>
-										<option value="">Russian Federation</option>
-										<option value="">Rwanda</option>
-										<option value="">St Kitts &amp; Nevis</option>
-										<option value="">St Lucia</option>
-										<option value="">Saint Vincent &amp; the Grenadines</option>
-										<option value="">Samoa</option>
-										<option value="">San Marino</option>
-										<option value="">Sao Tome &amp; Principe</option>
-										<option value="">Saudi Arabia</option>
-										<option value="">Senegal</option>
-										<option value="">Serbia</option>
-										<option value="">Seychelles</option>
-										<option value="">Sierra Leone</option>
-										<option value="">Singapore</option>
-										<option value="">Slovakia</option>
-										<option value="">Slovenia</option>
-										<option value="">Solomon Islands</option>
-										<option value="">Somalia</option>
-										<option value="">South Africa</option>
-										<option value="">South Sudan</option>
-										<option value="">Spain</option>
-										<option value="">Sri Lanka</option>
-										<option value="">Sudan</option>
-										<option value="">Suriname</option>
-										<option value="">Swaziland</option>
-										<option value="">Sweden</option>
-										<option value="">Switzerland</option>
-										<option value="">Syria</option>
-										<option value="">Taiwan</option>
-										<option value="">Tajikistan</option>
-										<option value="">Tanzania</option>
-										<option value="">Thailand</option>
-										<option value="">Togo</option>
-										<option value="">Tonga</option>
-										<option value="">Trinidad &amp; Tobago</option>
-										<option value="">Tunisia</option>
-										<option value="">Turkey</option>
-										<option value="">Turkmenistan</option>
-										<option value="">Tuvalu</option>
-										<option value="">Uganda</option>
-										<option value="">Ukraine</option>
-										<option value="">United Arab Emirates</option>
-										<option value="">United Kingdom</option>
-										<option value="" selected="">United States</option>
-										<option value="">Uruguay</option>
-										<option value="">Uzbekistan</option>
-										<option value="">Vanuatu</option>
-										<option value="">Vatican City</option>
-										<option value="">Venezuela</option>
-										<option value="">Vietnam</option>
-										<option value="">Yemen</option>
-										<option value="">Zambia</option>
-										<option value="">Zimbabwe</option>
-									</select><div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="United States"><span class="filter-option pull-left">United States</span>&nbsp;<span class="caret"></span></button><div class="dropdown-menu open"><div class="bootstrap-select-searchbox"><input type="text" class="input-block-level form-control"></div><ul class="dropdown-menu inner selectpicker" role="menu"><li rel="0"><a tabindex="0" class="" style=""><span class="text">Afghanistan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="1"><a tabindex="0" class="" style=""><span class="text">Albania</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="2"><a tabindex="0" class="" style=""><span class="text">Algeria</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="3"><a tabindex="0" class="" style=""><span class="text">Andorra</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="4"><a tabindex="0" class="" style=""><span class="text">Angola</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="5"><a tabindex="0" class="" style=""><span class="text">Antigua &amp; Deps</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="6"><a tabindex="0" class="" style=""><span class="text">Argentina</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="7"><a tabindex="0" class="" style=""><span class="text">Armenia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="8"><a tabindex="0" class="" style=""><span class="text">Australia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="9"><a tabindex="0" class="" style=""><span class="text">Austria</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="10"><a tabindex="0" class="" style=""><span class="text">Azerbaijan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="11"><a tabindex="0" class="" style=""><span class="text">Bahamas</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="12"><a tabindex="0" class="" style=""><span class="text">Bahrain</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="13"><a tabindex="0" class="" style=""><span class="text">Bangladesh</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="14"><a tabindex="0" class="" style=""><span class="text">Barbados</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="15"><a tabindex="0" class="" style=""><span class="text">Belarus</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="16"><a tabindex="0" class="" style=""><span class="text">Belgium</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="17"><a tabindex="0" class="" style=""><span class="text">Belize</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="18"><a tabindex="0" class="" style=""><span class="text">Benin</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="19"><a tabindex="0" class="" style=""><span class="text">Bhutan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="20"><a tabindex="0" class="" style=""><span class="text">Bolivia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="21"><a tabindex="0" class="" style=""><span class="text">Bosnia Herzegovina</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="22"><a tabindex="0" class="" style=""><span class="text">Botswana</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="23"><a tabindex="0" class="" style=""><span class="text">Brazil</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="24"><a tabindex="0" class="" style=""><span class="text">Brunei</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="25"><a tabindex="0" class="" style=""><span class="text">Bulgaria</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="26"><a tabindex="0" class="" style=""><span class="text">Burkina</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="27"><a tabindex="0" class="" style=""><span class="text">Burundi</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="28"><a tabindex="0" class="" style=""><span class="text">Cambodia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="29"><a tabindex="0" class="" style=""><span class="text">Cameroon</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="30"><a tabindex="0" class="" style=""><span class="text">Canada</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="31"><a tabindex="0" class="" style=""><span class="text">Cape Verde</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="32"><a tabindex="0" class="" style=""><span class="text">Central African Rep</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="33"><a tabindex="0" class="" style=""><span class="text">Chad</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="34"><a tabindex="0" class="" style=""><span class="text">Chile</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="35"><a tabindex="0" class="" style=""><span class="text">China</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="36"><a tabindex="0" class="" style=""><span class="text">Colombia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="37"><a tabindex="0" class="" style=""><span class="text">Comoros</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="38"><a tabindex="0" class="" style=""><span class="text">Congo</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="39"><a tabindex="0" class="" style=""><span class="text">Congo {Democratic Rep}</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="40"><a tabindex="0" class="" style=""><span class="text">Costa Rica</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="41"><a tabindex="0" class="" style=""><span class="text">Croatia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="42"><a tabindex="0" class="" style=""><span class="text">Cuba</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="43"><a tabindex="0" class="" style=""><span class="text">Cyprus</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="44"><a tabindex="0" class="" style=""><span class="text">Czech Republic</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="45"><a tabindex="0" class="" style=""><span class="text">Denmark</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="46"><a tabindex="0" class="" style=""><span class="text">Djibouti</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="47"><a tabindex="0" class="" style=""><span class="text">Dominica</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="48"><a tabindex="0" class="" style=""><span class="text">Dominican Republic</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="49"><a tabindex="0" class="" style=""><span class="text">East Timor</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="50"><a tabindex="0" class="" style=""><span class="text">Ecuador</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="51"><a tabindex="0" class="" style=""><span class="text">Egypt</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="52"><a tabindex="0" class="" style=""><span class="text">El Salvador</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="53"><a tabindex="0" class="" style=""><span class="text">Equatorial Guinea</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="54"><a tabindex="0" class="" style=""><span class="text">Eritrea</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="55"><a tabindex="0" class="" style=""><span class="text">Estonia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="56"><a tabindex="0" class="" style=""><span class="text">Ethiopia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="57"><a tabindex="0" class="" style=""><span class="text">Fiji</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="58"><a tabindex="0" class="" style=""><span class="text">Finland</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="59"><a tabindex="0" class="" style=""><span class="text">France</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="60"><a tabindex="0" class="" style=""><span class="text">Gabon</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="61"><a tabindex="0" class="" style=""><span class="text">Gambia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="62"><a tabindex="0" class="" style=""><span class="text">Georgia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="63"><a tabindex="0" class="" style=""><span class="text">Germany</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="64"><a tabindex="0" class="" style=""><span class="text">Ghana</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="65"><a tabindex="0" class="" style=""><span class="text">Greece</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="66"><a tabindex="0" class="" style=""><span class="text">Grenada</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="67"><a tabindex="0" class="" style=""><span class="text">Guatemala</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="68"><a tabindex="0" class="" style=""><span class="text">Guinea</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="69"><a tabindex="0" class="" style=""><span class="text">Guinea-Bissau</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="70"><a tabindex="0" class="" style=""><span class="text">Guyana</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="71"><a tabindex="0" class="" style=""><span class="text">Haiti</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="72"><a tabindex="0" class="" style=""><span class="text">Honduras</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="73"><a tabindex="0" class="" style=""><span class="text">Hungary</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="74"><a tabindex="0" class="" style=""><span class="text">Iceland</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="75"><a tabindex="0" class="" style=""><span class="text">India</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="76"><a tabindex="0" class="" style=""><span class="text">Indonesia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="77"><a tabindex="0" class="" style=""><span class="text">Iran</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="78"><a tabindex="0" class="" style=""><span class="text">Iraq</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="79"><a tabindex="0" class="" style=""><span class="text">Ireland {Republic}</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="80"><a tabindex="0" class="" style=""><span class="text">Israel</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="81"><a tabindex="0" class="" style=""><span class="text">Italy</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="82"><a tabindex="0" class="" style=""><span class="text">Ivory Coast</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="83"><a tabindex="0" class="" style=""><span class="text">Jamaica</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="84"><a tabindex="0" class="" style=""><span class="text">Japan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="85"><a tabindex="0" class="" style=""><span class="text">Jordan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="86"><a tabindex="0" class="" style=""><span class="text">Kazakhstan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="87"><a tabindex="0" class="" style=""><span class="text">Kenya</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="88"><a tabindex="0" class="" style=""><span class="text">Kiribati</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="89"><a tabindex="0" class="" style=""><span class="text">Korea North</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="90"><a tabindex="0" class="" style=""><span class="text">Korea South</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="91"><a tabindex="0" class="" style=""><span class="text">Kosovo</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="92"><a tabindex="0" class="" style=""><span class="text">Kuwait</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="93"><a tabindex="0" class="" style=""><span class="text">Kyrgyzstan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="94"><a tabindex="0" class="" style=""><span class="text">Laos</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="95"><a tabindex="0" class="" style=""><span class="text">Latvia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="96"><a tabindex="0" class="" style=""><span class="text">Lebanon</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="97"><a tabindex="0" class="" style=""><span class="text">Lesotho</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="98"><a tabindex="0" class="" style=""><span class="text">Liberia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="99"><a tabindex="0" class="" style=""><span class="text">Libya</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="100"><a tabindex="0" class="" style=""><span class="text">Liechtenstein</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="101"><a tabindex="0" class="" style=""><span class="text">Lithuania</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="102"><a tabindex="0" class="" style=""><span class="text">Luxembourg</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="103"><a tabindex="0" class="" style=""><span class="text">Macedonia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="104"><a tabindex="0" class="" style=""><span class="text">Madagascar</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="105"><a tabindex="0" class="" style=""><span class="text">Malawi</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="106"><a tabindex="0" class="" style=""><span class="text">Malaysia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="107"><a tabindex="0" class="" style=""><span class="text">Maldives</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="108"><a tabindex="0" class="" style=""><span class="text">Mali</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="109"><a tabindex="0" class="" style=""><span class="text">Malta</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="110"><a tabindex="0" class="" style=""><span class="text">Marshall Islands</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="111"><a tabindex="0" class="" style=""><span class="text">Mauritania</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="112"><a tabindex="0" class="" style=""><span class="text">Mauritius</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="113"><a tabindex="0" class="" style=""><span class="text">Mexico</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="114"><a tabindex="0" class="" style=""><span class="text">Micronesia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="115"><a tabindex="0" class="" style=""><span class="text">Moldova</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="116"><a tabindex="0" class="" style=""><span class="text">Monaco</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="117"><a tabindex="0" class="" style=""><span class="text">Mongolia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="118"><a tabindex="0" class="" style=""><span class="text">Montenegro</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="119"><a tabindex="0" class="" style=""><span class="text">Morocco</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="120"><a tabindex="0" class="" style=""><span class="text">Mozambique</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="121"><a tabindex="0" class="" style=""><span class="text">Myanmar, {Burma}</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="122"><a tabindex="0" class="" style=""><span class="text">Namibia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="123"><a tabindex="0" class="" style=""><span class="text">Nauru</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="124"><a tabindex="0" class="" style=""><span class="text">Nepal</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="125"><a tabindex="0" class="" style=""><span class="text">Netherlands</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="126"><a tabindex="0" class="" style=""><span class="text">New Zealand</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="127"><a tabindex="0" class="" style=""><span class="text">Nicaragua</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="128"><a tabindex="0" class="" style=""><span class="text">Niger</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="129"><a tabindex="0" class="" style=""><span class="text">Nigeria</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="130"><a tabindex="0" class="" style=""><span class="text">Norway</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="131"><a tabindex="0" class="" style=""><span class="text">Oman</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="132"><a tabindex="0" class="" style=""><span class="text">Pakistan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="133"><a tabindex="0" class="" style=""><span class="text">Palau</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="134"><a tabindex="0" class="" style=""><span class="text">Panama</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="135"><a tabindex="0" class="" style=""><span class="text">Papua New Guinea</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="136"><a tabindex="0" class="" style=""><span class="text">Paraguay</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="137"><a tabindex="0" class="" style=""><span class="text">Peru</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="138"><a tabindex="0" class="" style=""><span class="text">Philippines</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="139"><a tabindex="0" class="" style=""><span class="text">Poland</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="140"><a tabindex="0" class="" style=""><span class="text">Portugal</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="141"><a tabindex="0" class="" style=""><span class="text">Qatar</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="142"><a tabindex="0" class="" style=""><span class="text">Romania</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="143"><a tabindex="0" class="" style=""><span class="text">Russian Federation</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="144"><a tabindex="0" class="" style=""><span class="text">Rwanda</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="145"><a tabindex="0" class="" style=""><span class="text">St Kitts &amp; Nevis</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="146"><a tabindex="0" class="" style=""><span class="text">St Lucia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="147"><a tabindex="0" class="" style=""><span class="text">Saint Vincent &amp; the Grenadines</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="148"><a tabindex="0" class="" style=""><span class="text">Samoa</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="149"><a tabindex="0" class="" style=""><span class="text">San Marino</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="150"><a tabindex="0" class="" style=""><span class="text">Sao Tome &amp; Principe</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="151"><a tabindex="0" class="" style=""><span class="text">Saudi Arabia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="152"><a tabindex="0" class="" style=""><span class="text">Senegal</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="153"><a tabindex="0" class="" style=""><span class="text">Serbia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="154"><a tabindex="0" class="" style=""><span class="text">Seychelles</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="155"><a tabindex="0" class="" style=""><span class="text">Sierra Leone</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="156"><a tabindex="0" class="" style=""><span class="text">Singapore</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="157"><a tabindex="0" class="" style=""><span class="text">Slovakia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="158"><a tabindex="0" class="" style=""><span class="text">Slovenia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="159"><a tabindex="0" class="" style=""><span class="text">Solomon Islands</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="160"><a tabindex="0" class="" style=""><span class="text">Somalia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="161"><a tabindex="0" class="" style=""><span class="text">South Africa</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="162"><a tabindex="0" class="" style=""><span class="text">South Sudan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="163"><a tabindex="0" class="" style=""><span class="text">Spain</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="164"><a tabindex="0" class="" style=""><span class="text">Sri Lanka</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="165"><a tabindex="0" class="" style=""><span class="text">Sudan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="166"><a tabindex="0" class="" style=""><span class="text">Suriname</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="167"><a tabindex="0" class="" style=""><span class="text">Swaziland</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="168"><a tabindex="0" class="" style=""><span class="text">Sweden</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="169"><a tabindex="0" class="" style=""><span class="text">Switzerland</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="170"><a tabindex="0" class="" style=""><span class="text">Syria</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="171"><a tabindex="0" class="" style=""><span class="text">Taiwan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="172"><a tabindex="0" class="" style=""><span class="text">Tajikistan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="173"><a tabindex="0" class="" style=""><span class="text">Tanzania</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="174"><a tabindex="0" class="" style=""><span class="text">Thailand</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="175"><a tabindex="0" class="" style=""><span class="text">Togo</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="176"><a tabindex="0" class="" style=""><span class="text">Tonga</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="177"><a tabindex="0" class="" style=""><span class="text">Trinidad &amp; Tobago</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="178"><a tabindex="0" class="" style=""><span class="text">Tunisia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="179"><a tabindex="0" class="" style=""><span class="text">Turkey</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="180"><a tabindex="0" class="" style=""><span class="text">Turkmenistan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="181"><a tabindex="0" class="" style=""><span class="text">Tuvalu</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="182"><a tabindex="0" class="" style=""><span class="text">Uganda</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="183"><a tabindex="0" class="" style=""><span class="text">Ukraine</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="184"><a tabindex="0" class="" style=""><span class="text">United Arab Emirates</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="185"><a tabindex="0" class="" style=""><span class="text">United Kingdom</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="186" class="selected"><a tabindex="0" class="" style=""><span class="text">United States</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="187"><a tabindex="0" class="" style=""><span class="text">Uruguay</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="188"><a tabindex="0" class="" style=""><span class="text">Uzbekistan</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="189"><a tabindex="0" class="" style=""><span class="text">Vanuatu</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="190"><a tabindex="0" class="" style=""><span class="text">Vatican City</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="191"><a tabindex="0" class="" style=""><span class="text">Venezuela</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="192"><a tabindex="0" class="" style=""><span class="text">Vietnam</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="193"><a tabindex="0" class="" style=""><span class="text">Yemen</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="194"><a tabindex="0" class="" style=""><span class="text">Zambia</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="195"><a tabindex="0" class="" style=""><span class="text">Zimbabwe</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li></ul></div></div>
-				  			</div>
+				  				<div class="i-block">
+									<div>Country of Residence</div>
+									<input type="text" class="input-large input-light brad">
+								</div>
 				  		</div>
-				  	</div>
 					</div>
 				</div>
 				<hr>
@@ -343,6 +133,3 @@
 
 
 		</div>
-
-
-</div>

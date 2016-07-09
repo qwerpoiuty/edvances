@@ -10,7 +10,6 @@ app.directive('chatroom', function($rootScope, AuthService, AUTH_EVENTS, $state,
             scope.msg.user = scope.user.firstName
             scope.msg.timeStamp = Date.now()
 
-
             socket.on('chat message', function(chat) {
 
                 // message = user + '[' + date + ']:' + message

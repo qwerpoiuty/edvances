@@ -1,34 +1,7 @@
-<div id="container" class="main-content p-30 tp-t-60 tp-lr-10">
-
-	<button class="menu-btn btn btn-bordered text-gray-alt text-bold top-left-corner">&#9776; MENU</button>
-
-<div id="container" class="main-content">
-
-	<ul class="nav nav-tabs">
-	  <li class="active">
-  		<a ui-sref="dashboard" data-toggle="tab">
-	  		<div class="text-small">Manage your</div>
-	  		<span class="text-uppercase">Personal Dashboard</span>
-	  		<span class="text-gray-dark">/</span>
-	  		<span class="small text-gray-dark"></span>
-	  	</a>
-	  </li>
-	  <li>
-  	  	<a ui-sref="profile" data-toggle="tab">
-	  		<div class="text-small">Watch your</div>
-	  		<span class="text-uppercase">Recent Statistics</span>
-	  		<span class="text-gray-dark">/</span>
-	  		<span class="small text-gray-dark"></span>
-	  	</a>
-	  </li>
-	</ul>
-	
 	<!-- DASHBOARD TAB -->
 	<div class="bg-white b-1px-gray-light b-top-none brad-bottom brad-tr b-bot-2px-gray-light">
 
-		<div class="tab-content">
-
-			<div class="tab-pane active fade in p-30" id="dashboard">
+			<div class="tab-pane bg-white fade in p-30" id="dashboard">
 
 				<h1 class="text-center font-w-100">Welcome back <span class="text-blue">John Doe</span></h1>
 				<div class="row">
@@ -272,65 +245,8 @@
 								Add
 							</div>
 						</div>
-
-<<<<<<< HEAD
-						<ul class="unstyled messages">
-							<li>
-								<a href="message-single.html" class="p-tb-10 p-l-10 pm-lr-10">
-									<span class="avatar">
-									</span>
-									<span class="author hidden-xs m-r-1">Eddie Mcgee</span>
-									<span class="subject">
-										<i class="glyphicon glyphicon-star m-r-10 text-orange"></i>
-										This product is meant for educational purposes only. Any resemblance to real persons, living or dead is purely coincidental. 
-									</span>
-									<span class="date"><span class="text-gray-dark">23</span> minutes ago</span>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="p-tb-10 pm-lr-10 p-l-10">
-									<span class="avatar">
-									</span>
-									<span class="author hidden-xs">Timmy Osborne</span>
-									<span class="subject">
-										<i class="glyphicon glyphicon-star m-r-10 text-gray-light"></i>
-										Own yo' eget tortizzle. Sizzle erizzle.
-									</span>
-									<span class="date">Today <span class="text-gray-dark">1:05pm</span></span>
-								</a>
-							</li>
-
-							<li>
-								<a href="#" class="p-tb-10 pm-lr-10 p-l-10">
-									<span class="avatar">
-									</span>
-									<span class="author hidden-xs">Doug Ross</span>
-									<span class="subject">
-										<i class="glyphicon glyphicon-star m-r-10 text-gray-light"></i>
-										Children of the sun, see your time has just begun, searching for your ways, through adventures every day. 
-									</span>
-									<span class="date">Yesterday <span class="text-gray-dark">2:23pm</span></span>
-								</a>
-							</li>
-
-							<li>
-								<a href="#" class="p-tb-10 pm-lr-10 p-l-10">
-									<span class="avatar">
-										
-									</span>
-									<span class="author hidden-xs">Victor Benson</span>
-									<span class="subject">
-										<i class="glyphicon glyphicon-star m-r-10 text-gray-light"></i>
-										And I was getting a tattoo during the death from above.
-									</span>
-									<span class="date"><span class="text-gray-dark">2</span> days ago</span>
-								</a>
-							</li>
-
-						</ul>
-=======
 						<hr>
->>>>>>> 72d16400a882965b2103a03f9ba9aeb56f1bac71
+
 
 						<div class="cal1" id="events-calendar">
 							<calendar-md flex layout layout-fill
@@ -355,106 +271,3 @@
 
 				</div>
 			</div>
-			
-			<!-- STATISTICS TAB -->
-			<div class="tab-pane fade p-30" id="statistics">
-
-				<div class="row m-b-30">
-					<div class="col-sm-4">
-						<h1 class="font-w-100"><span class="text-blue">12</span> new followers</h1>
-					</div>
-					<div class="col-sm-8 m-t-30">
-
-						<div class="row">
-							<div class="col-sm-4 text-center">
-								<span class="twitter-sparkline">Loading..</span>
-								<div class="text-uppercase text-small text-gray-alt m-t-10">TWITTER</div>
-							</div>
-
-							<div class="col-sm-4 text-center">
-								<span class="facebook-sparkline">Loading..</span>
-								<div class="text-uppercase text-small text-gray-alt m-t-10">FACEBOOK</div>
-							</div>
-
-							<div class="col-sm-4 text-center">
-								<span class="google-sparkline">Loading..</span>
-								<div class="text-uppercase text-small text-gray-alt m-t-10">GOOGLE+</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-				<hr class="m-b-30">
-
-				<!-- visiotrs chart -->
-				<div class="iconmelon m-r-10">
-        <svg viewBox="0 0 32 32">
-          <g filter="">
-            <use xlink:href="#man-people-user"></use>
-          </g>
-        </svg>
-      </div>
-
-				<span class="text-gray-dark text-large align-with-button pos-abs">
-					Visitors
-				</span>
-			
-				<div class="btn-group pull-right" data-toggle="buttons">
-				  <label class="btn btn-primary active">
-				    <input type="radio" name="visitors" id="option1"> Week
-				  </label>
-				  <label class="btn btn-primary">
-				    <input type="radio" name="visitors" id="option2"> Month
-				  </label>
-				  <label class="btn btn-primary">
-				    <input type="radio" name="visitors" id="option3"> Year
-				  </label>
-				</div>
-
-				<div id="visitors-chart" style="height: 315px;" class="m-b-30"></div>
-
-				<hr>
-			
-				<div class="row">
-					<div class="col-sm-7">
-						<div class="iconmelon m-r-10">
-	            <svg viewBox="0 0 32 32">
-	              <g filter="">
-	                <use xlink:href="#earth-globe"></use>
-	              </g>
-	            </svg>
-	          </div>
-
-						<span class="text-gray-dark text-large align-with-button pos-abs">
-							Source
-						</span>
-
-						<div id="source-chart" class="m-b-30" style="height: 320px;"></div>
-					</div>
-
-					<div class="col-sm-5">
-
-						<div class="iconmelon m-r-10">
-	            <svg viewBox="0 0 32 32">
-	              <g filter="">
-	                <use xlink:href="#macintosh"></use>
-	              </g>
-	            </svg>
-	          </div>
-
-						<span class="text-gray-dark text-large align-with-button pos-abs">
-							Devices
-						</span>
-
-						<div id="device-chart" class="m-tb-30" style="height: 300px;"></div>
-					</div>
-				</div>
-	
-			</div>
-
-		</div>
-
-	</div>
-
-</div> <!-- /main content -->

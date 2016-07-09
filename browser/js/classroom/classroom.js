@@ -18,11 +18,20 @@ app.config(function($stateProvider) {
     })
 });
 
+
 app.controller('classroomCtrl', function($scope, AuthService, dataFactory, $state, user, socket, $window) {
-    $scope.user = user
-    $scope.date = Date.now()
+
+    $scope.live = false
+
+    //REMEMBER TO ADD THE MARGINS TO THE WHITEBOARD!!!!!
+
+    socket.emit('join awesome room', location.pathname.slice(1));
+    socket.on('live class', function() {
+        $scope.live = true
+    })
     $state.transitionTo('info')
     socket.emit('join awesome room', location.pathname.slice(1));
+
 
     $scope.toggleClass = function() {
         socket.emit('toggle class')

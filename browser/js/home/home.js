@@ -6,7 +6,7 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('homeCtrl', function($scope, $state) {
+app.controller('homeCtrl', function($scope, $state, dataFactory) {
     $scope.join_user = ""
 
     $scope.signup = function(state) {
@@ -15,6 +15,16 @@ app.controller('homeCtrl', function($scope, $state) {
     }
     $scope.back = function() {
         $scope.join_user = ""
+    }
+
+    $scope.signupTeacher = function(user) {
+        user.powerLevel = 2;
+        console.log(user)
+    }
+
+    $scope.signupStudenc = function(user) {
+        user.powerLevel = 1;
+        console.log(user)
     }
 
     $scope.myInterval = false;
