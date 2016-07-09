@@ -1,3 +1,23 @@
-.whiteboard{
-	height:33vh;
+#sketch{
+    width:100%;
+    height:100%;
 }
+#color-selector {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 120px;
+    background: black;
+}
+
+.marker {
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+.marker.selected {
+    border: 2px solid white;
+}
+
