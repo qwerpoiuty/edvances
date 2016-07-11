@@ -7,6 +7,8 @@ app.config(function($stateProvider) {
 })
 
 app.controller("searchCtrl", function($scope, dataFactory) {
-    // $scope.search;
+
+    $scope.search;
+
 
 })
