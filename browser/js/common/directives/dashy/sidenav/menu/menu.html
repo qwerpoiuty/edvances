@@ -1,0 +1,26 @@
+<div>
+    <div class="tab-pane active" id="menu">
+        <div class="photo-container text-center">
+            <a ui-sref="profile">
+                <img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg" alt="" class="img-circle dash-profile" />
+            </a>
+            <div class="t-p">
+                <a href="">{{user.firstName}} {{user.lastName}}</a>
+            </div>
+        </div>
+        <div class="section-heading">Menus</div>
+        <ul class="nav sidebar-nav">
+            <li ng-class="{active: $state.includes('home')}"><a ui-sref="dashboard" ng-click="showSubNav(0)"><i class="fa fa-home"></i> <span class="menu-text">Home </span></a>
+            </li>
+
+            <li ng-class="{active: $state.includes('calendar')}"><a ui-sref="calendar" ng-click="showSubNav(0)"><i class="fa fa-calendar"></i> <span class="menu-text">Calendar </span></a>
+            </li>
+
+            <li ng-class="{active: $state.includes('classes')}"><a ui-sref="classroom" ng-click="showSubNav(0)"><i class="fa fa-book"></i> <span class="menu-text">Classes</span></a>
+            </li>
+
+            <li ng-class="{active: $state.includes('messages')}"><a ui-sref="messages" ng-click="showSubNav(0)"><i class="fa fa-inbox"></i> <span class="menu-text">Messages </span></a>
+            </li>
+        </ul>
+    </div>
+</div>

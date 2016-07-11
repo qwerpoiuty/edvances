@@ -1,52 +1,266 @@
-<div class="content-wrapper" id="dashboard-container">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-8">
-				<h1 class='welcome-message'>Welcome {{user.firstName}}</h1>
-				<div class="alert alert-white">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<strong>Attention: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius lacus vitae purus tincidunt blandit. <a ui-sref="c3chart">View Details</a>
-				</div>
-				<stats ng-click = "(user.powerlevel===1)?browse():createClass()" class="browse" bgclass="info" icon="graduation-cap" value="{{(user.powerlevel === 1)?'Start Learning!':'Start Teaching!' }}" text="Browse classes"></stats>
-			</div>
-			<div class="col-md-4 pull-right" id="event-list-box">
-                <eventlist></eventlist>
-			</div>
-		</div>
+	<!-- DASHBOARD TAB -->
+	<div class="bg-white b-1px-gray-light b-top-none brad-bottom brad-tr b-bot-2px-gray-light">
 
-		<div class="row">
-			<div class="col-md-8">
-               <!--  <div class="panel panel-theme">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Your Calendar</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-4 calendar-wrapper">
-                                <div class="today">
-                                    <h2 class="date">{{date | date:'dd'}}</h2>  <h2 class="month">{{date | date:'MMMM'}}</h2>
-                                </div>
-                            </div>
-                            <div class="col-md-8" relink-event="resize">
-                                <div class="calendar-widget" ui-calendar ng-model="eventSources"></div>
-                            </div>
-                        </div>
-                    </div>
+			<div class="tab-pane bg-white fade in p-30" id="dashboard">
 
-                </div> -->
-                <div class = "panel panel-theme schedulePanel">
-					<div class = "panel-heading">
-						<h3 class = "panel-title">Your Schedule</h3>
+				<h1 class="text-center font-w-100">Welcome back <span class="text-blue">John Doe</span></h1>
+				<div class="row">
+					<p class="m-b-30 p-b-30 text-gray-alt text-uppercase text-center col-lg-8 col-lg-offset-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, quis, ipsam saepe voluptas rem possimus quas tenetur iusto dolorem architecto tempore fugiat amet iure distinctio quia vel consequuntur aut quod!</p>
+				</div>
+
+				<div class="row">
+					
+					<div class="col-sm-6 m-b-30">
+
+						<div class="pos-rel">
+							<div class="check-element animate-show" ng-show="checked">
+						 		<input placeholder="Add Event" type="text" class="input-large input-light brad">
+
+
+				            	<input type="button" ng-model="checked" aria-label="Toggle ngHide" class="btn btn-primary btn-text-square text-large pull-right">
+							</div>
+
+							<div class="check-element animate-show" ng-hide="checked">
+								<span class="text-gray-dark text-large align-with-button pos-abs hidden-xs">
+								Your Tasks
+								</span>
+
+
+				            	<input type="button" ng-model="checked" aria-label="Toggle ngHide" class="btn btn-primary btn-text-square text-large pull-right">
+						 	</div>
+						
+						</div>
+
+						<hr class="m-b-0">
+							
+
+						<div id="tasks-list" class="tasks-wrapper">
+							<ul class="list-editable unstyled">
+	  								<li style="display: none;" id="item-template">
+	  									<div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;">
+	  										<input type="checkbox" class="icheck" style="position: absolute; opacity: 0;">
+	  										<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins>
+	  									</div> 
+	  									<span class="body"></span>
+	  									<a href="#" class="remove-box">
+	  										<div class="iconmelon m-r-10">
+				                  <svg viewBox="0 0 32 32">
+				                    <g filter="">
+				                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete-garbage"></use>
+				                    </g>
+				                  </svg>
+				                </div>
+	  									</a>
+	  								</li>
+	  								<li>
+	  									<div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="icheck" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
+	  									<span class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, incidunt.</span>
+	  									<a href="#" class="remove-box">
+	  										<div class="iconmelon m-r-10">
+				                  <svg viewBox="0 0 32 32">
+				                    <g filter="">
+				                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete-garbage"></use>
+				                    </g>
+				                  </svg>
+				                </div>
+	  									</a>
+	  								</li>
+	  								<li>
+	  									<div class="icheckbox_flat-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" checked="" class="icheck" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
+	  									<span class="body">lMaecenas faucibus mollis interdum.</span>
+	  									<a href="#" class="remove-box">
+	  										<div class="iconmelon m-r-10">
+				                  <svg viewBox="0 0 32 32">
+				                    <g filter="">
+				                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete-garbage"></use>
+				                    </g>
+				                  </svg>
+				                </div>
+	  									</a>
+	  								</li>
+	  								<li>
+	  									<div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;">
+	  										<input type="checkbox" class="icheck" style="position: absolute; opacity: 0;">
+	  										<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins>
+	  									</div>
+	  									<span class="body">Nullam id dolor id nibh ultricies vehicula ut id elit.</span>
+	  									<div class="remove-box">
+	  										<a href="#" class="iconmelon m-r-10">
+				                  <svg viewBox="0 0 32 32">
+				                    <g filter="">
+				                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete-garbage"></use>
+				                    </g>
+				                  </svg>
+				                </a>
+	  									</div>
+	  								</li>
+	  								<li>
+	  									<div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;">
+	  										<input type="checkbox" class="icheck" style="position: absolute; opacity: 0;">
+	  										<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins>
+	  									</div>
+	  									<span class="body">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</span>
+	  									<div class="remove-box">
+	  										<a href="#" class="iconmelon m-r-10">
+				                  <svg viewBox="0 0 32 32">
+				                    <g filter="">
+				                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete-garbage"></use>
+				                    </g>
+				                  </svg>
+				                </a>
+	  									</div>
+	  								</li>
+	  							</ul>
+						</div>
+
 					</div>
-					<div class = "panel-body scheduleBody">
-						<blockschedule user = "user"></blockschedule>
+
+					<div class="col-sm-6">
+						<!-- SOCIAL STREAM -->
+						<div class="iconmelon m-r-10">
+          <svg viewBox="0 0 32 32">
+            <g filter="">
+              <use xlink:href="#bubble-love-talk"></use>
+            </g>
+          </svg>
+        </div>
+
+						<span class="text-gray-dark text-large align-with-button pos-abs hidden-xs">
+							Your social stream
+						</span>
+						<span class="hidden-sm hidden-md hidden-lg text-gray-dark text-large align-with-button ">
+							Social
+						</span>
+
+						<div class="btn-group pull-right">
+							<button class="btn btn-primary">
+								<i class="glyphicon glyphicon-cog text-white"></i>
+							</button>
+						</div>
+
+						<hr class="m-b-0">
+						
+	  					<div id="social-feed" class="social-feed">
+
+		  					<ul class="lifestream">
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/723127/after-10-years-and-billions-in-fines-the-uk-has-convicted-precisely-five-people-for-rigging-interest-rates/">After 10 years and billions in fines, the UK has convicted precisely five people for rigging interest rates</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/723212/saudi-tv-reports-a-suicide-bombing-near-the-prophets-mosque-in-medina-one-of-islams-holiest-sites/">Saudi TV reports a suicide bombing near the Prophet’s Mosque in Medina, one of Islam’s holiest sites</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/721774/what-its-like-to-chase-icelands-biggest-volcanic-eruption-in-200-years/">What it’s like to chase Iceland’s biggest volcanic eruption in 200 years</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/723039/kenyan-police-are-routinely-executing-citizens-and-the-public-is-finally-saying-stop/">Kenyan police are routinely executing citizens and the public is finally saying stop</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/723126/photographer-bill-cunningham-left-the-fashion-world-some-brilliant-advice-on-how-to-dress-millennials/">Photographer Bill Cunningham left the fashion world some brilliant advice on how to dress millennials</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/723125/the-real-reason-elon-musk-is-bringing-tesla-and-solar-city-together/">The real reason Elon Musk is bringing Tesla and Solar City together</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/723134/children-need-some-stress-in-their-lives-the-new-science-of-resilience/">“Children need some stress in their lives”: The new science of resilience</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/723037/brexit-must-be-enacted-by-parliament-lawyers-say/">Brexit must be enacted by Parliament, lawyers say</a></li><li class="lifestream-rss">posted <a href="http://qz.com/722004/toyota-wants-to-patent-a-ridiculous-flying-car/">Toyota wants to patent a ridiculous flying car</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/722106/sharing-news-on-facebook-could-help-save-journalism-and-my-job/">Sharing news on Facebook could help save journalism (and my job)</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/711813/antonin-scalia-was-a-jedi-donald-trump-is-not-darth-vader-and-the-prequels-are-highly-under-rated/">Donald Trump is not Darth Vader and Antonin Scalia was a Jedi: The Star Wars universe according to Cass Sunstein</a></li>
+		  						<li class="lifestream-rss">posted <a href="http://qz.com/723053/the-latest-tiger-jailed-by-xi-jinping-is-his-predecessors-right-hand-man/">The latest “tiger” jailed by Xi Jinping is his predecessor’s right-hand man</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/focusing-on-diversity30.html">Focusing on diversity</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/bay-area-nonprofits-homelessness.html">Supporting Bay Area nonprofits focused on homelessness</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/technology-help-teachers.html">Technology to help teachers do what they do best</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/pride-for-everyone.html">Be who you are. Love who you love. #prideforeveryone</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/global-entrepreneurship-summit.html"> Celebrating and advancing entrepreneurship around the world</a></li><li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/im-feeling-yucky-searching-for-symptoms.html">I’m Feeling Yucky :(  Searching for symptoms on Google</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/showing-support-on-world-refugee-day.html">Showing support on World Refugee Day</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/digital-love-letters-for-fathers-who.html">Digital Love Letters for fathers who are incarcerated</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/tango-see-more-with-new-kind-of-phone.html">Tango: See more with a new kind of phone</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/06/celebrating-my-accounts-first-birthday.html">Celebrating My Account's first birthday with improvements and new controls</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/05/google-photos-one-year-200-million.html">Google Photos: One year, 200 million users, and a whole lot of selfies</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/05/meet-more-of-our-top-contributors.html">Meet more of our Top Contributors</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/05/passionate-google-users-helping-others.html">Passionate Google users helping others with Google products</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/05/10-things-you-may-have-missed-at-google.html">10 things you may have missed at Google I/O</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/05/io-building-next-evolution-of-google.html">I/O: Building the next evolution of Google</a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/05/allo-duo-apps-messaging-video.html">Saying 👋 to Allo and Duo: new apps for smart messaging and video calling </a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/05/art-camera-cultural-institute.html">An eye for detail: Zoom through 1,000 artworks thanks to the new Art Camera from the Google Cultural Institute </a></li>
+		  						<li class="lifestream-blogger">posted <a href="http://googleblog.blogspot.com/2016/05/introducing-spaces-tool-for-small-group.html">Introducing Spaces, a tool for small group sharing</a></li>
+		  					</ul>
+	  					</div>
+
 					</div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-sm-6">
+						<!-- EVENTS CALENDAR -->
+						<div class="iconmelon m-r-10">
+				          <svg viewBox="0 0 32 32">
+				            <g filter="">
+				              <use xlink:href="#clock-time"></use>
+				            </g>
+				          </svg>
+				        </div>
+
+						<span class="text-gray-dark text-large align-with-button hidden-xs">
+							Your events
+						</span>
+						<span class="hidden-lg hidden-md hidden-sm text-gray-dark text-large align-with-button">
+							Events
+						</span>
+
+						<div class="btn-group pull-right">
+							<div class="btn btn-alt">
+								<i class="glyphicon glyphicon-plus text-white"></i>
+							</div>
+							<div class="btn btn-primary">
+								Add
+							</div>
+						</div>
+
+						<hr>
+
+						<div class="cal1" id="events-calendar">
+							<calendar></calendar>
+						</div>
+					</div>
+					
+					<div class="col-sm-6">
+						<!-- EVENTS CALENDAR -->
+						<div class="iconmelon m-r-10">
+				          <svg viewBox="0 0 32 32">
+				            <g filter="">
+				              <use xlink:href="#clock-time"></use>
+				            </g>
+				          </svg>
+				        </div>
+
+						<span class="text-gray-dark text-large align-with-button hidden-xs">
+							Your events
+						</span>
+						<span class="hidden-lg hidden-md hidden-sm text-gray-dark text-large align-with-button">
+							Events
+						</span>
+
+						<div class="btn-group pull-right">
+							<div class="btn btn-alt">
+								<i class="glyphicon glyphicon-plus text-white"></i>
+							</div>
+							<div class="btn btn-primary">
+								Add
+							</div>
+						</div>
+						<hr>
+
+
+						<div class="cal1" id="events-calendar">
+							<calendar-md flex layout layout-fill
+								    calendar-direction="horizontal"
+								    on-prev-month="prevMonth"
+								    on-next-month="nextMonth"
+								    on-day-click="dayClick"
+								    title-format="'MMMM y'"
+								    ng-model='selectedDate'
+								    week-starts-on="firstDayOfWeek"
+								    tooltips="tooltips"
+								    day-format="dayFormat"
+								    day-label-format="'EEE'"
+								    day-label-tooltip-format="'EEEE'"
+								    day-tooltip-format="'fullDate'"
+								    day-content="setDayContent"
+								    disable-future-selection="false">
+							</calendar-md>
+						</div>
+					</div>
+
+
 				</div>
 			</div>
-			<div class="col-md-4">
-				
-                <todolist></todolist>
-			</div>
-		</div>
-	</div>
-</div>

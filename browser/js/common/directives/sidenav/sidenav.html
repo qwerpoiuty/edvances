@@ -1,6 +1,16 @@
-<div class = "class-nav fullHeight">
-	<a class = "sidebar-icon-container" ng-click = transition(item.state) ng-repeat="item in items">
-		<i class="fa-2x fa fa-{{item.icon}}"  aria-hidden="true"></i>
+<!-- <div class = "class-sidenav fullHeight">
+	<h5 class="sidenav-title">{{state}}</h5>
+	<button class = "sidebar-icon-container" ng-click = transition(item.state,$index) ng-class="{active : $index === selected}" ng-repeat="item in items track by $index">
+		<i class="sidebar-icon {{item.icon}}"  aria-hidden="true"></i>
 		<h5 class="sidebar-icon-text">{{item.name}}</h5>
-	</a>
+	</button>
 </div>
+ -->
+<ul class="nav nav-tabs">
+  <li ng-repeat="item in items track by $index">
+  	<a ui-sref="{{state}}"" data-toggle="tab" ng-class="{active:dashboard==true}">
+  		<i class="sidebar-icon {{item.icon}}"  aria-hidden="true"></i>
+  		<div class="text-small">{{item.name}}</div>
+  	</a>
+  </li>
+</ul>

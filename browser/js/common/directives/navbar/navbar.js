@@ -9,16 +9,14 @@ app.directive('navbar', function($rootScope, AuthService, AUTH_EVENTS, $state) {
             scope.items = [
 
                 {
-                label: 'Your Profile',
-                state: 'profile',
-                auth: true
-            }, {
-                lable: 'Your Calendar',
-                state: 'calendar',
-                auth: true
-            }];
+                    label: 'Dashboard',
+                    state: 'dashboard',
+                    auth: true
+                }
+            ];
 
             scope.user = null;
+
 
             scope.isLoggedIn = function() {
                 return AuthService.isAuthenticated();
@@ -33,6 +31,8 @@ app.directive('navbar', function($rootScope, AuthService, AUTH_EVENTS, $state) {
             var setUser = function() {
                 AuthService.getLoggedInUser().then(function(user) {
                     scope.user = user;
+                    if (scope.user.firstName) scope.name = user.firstName + " " + user.lastName
+                    else scope.name = "Back"
                 });
             };
 

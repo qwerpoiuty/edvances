@@ -18,6 +18,10 @@ $khan-white: #FDFDFD;
 $khan-white2: #f0f0f0;
 $dashy-grey: #999;
 
+.ui-view{
+  poistion: relative !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -25,19 +29,41 @@ $dashy-grey: #999;
 body {
 }
 
+
+///////////////////////////////////////////
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+.unmargin{
+  margin-top:0;
+  margin-bottom:0;
+}
 .row-centered {
     text-align:center;
 }
+.left{
+  text-align:left !important;
+}
+.right{
+  text-align:right !important;
 
+}
 .col-centered {
     display:inline-block;
     float:none !important; 
     /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
+    margin:0 auto;
 }
 
+.selectDisable {-webkit-user-select: none;  -khtml-user-select: none;   -moz-user-select: none; -o-user-select: none;    user-select: none; }
+
+.selectEnable { -webkit-user-select: text;  -khtml-user-select: text;   -moz-user-select: text; -o-user-select: text;    user-select: text; }
+
+.no-pad{
+  padding:0;
+}
 @mixin clearfix {
   &:after {
     content: "";
@@ -46,8 +72,13 @@ body {
   }
 }
 
+
+
 .fullHeight{
   height:100%;
+}
+.fullWidth{
+  width:100%;
 }
 .flex-center-vertically {
   display: flex;
@@ -62,11 +93,11 @@ body {
 
 #main {
   background-color: $back-color-4;
-  padding-top: 70px;
   width: 100%;
   margin: 0 auto;
   min-height: 95vh;
   overflow-y:auto;
+  overflow-x:hidden;
 }
 .row{
   margin:0;
@@ -76,7 +107,13 @@ body {
   background-color: $title-dark-grey;
 }
 
-
+.flipped{
+  -webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
+  -moz-transform: rotate(180deg);        /* FF */
+  -o-transform: rotate(180deg);          /* Opera */
+  -ms-transform: rotate(180deg);         /* IE9 */
+  transform: rotate(180deg); 
+}
 textarea{
   resize: none;
 }
@@ -92,14 +129,19 @@ textarea{
   color: white;
   font-family: Lato, sans-serif !important;
 }
-
+@font-face{
+  font-family:chalk;
+  src:url("asset/font/chalkfont.ttf");
+}
 
 @import 'directives/main';
 @import 'home/main';
 @import 'landing/main';
 @import 'classroom/main';
-@import 'profile/main';
 @import 'admin/adminview/main';
+@import 'profile/main';
 @import 'dashboard/main';
 @import 'login/main';
 @import 'calendar/main';
+@import 'sugoi/admin';
+@import 'animations/main';

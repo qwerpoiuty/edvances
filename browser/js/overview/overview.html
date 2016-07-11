@@ -1,7 +1,35 @@
 <div id = "body-container">
-  <sidenav></sidenav>
-  <div class = "main-view">
-	<div ui-view></div>
-  </div>
-
+	<div id="container" class="main-content">
+		<ul class="nav nav-tabs">
+		  <li>
+		  	<a ui-sref="dashboard" data-toggle="tab" ng-class="{active:dashboard==true}" ng-click="transistion(dashboard)">
+		  		<div class="text-small">Manage your</div>
+		  		<span class="text-uppercase">Personal Dashboard</span>
+		  		<span class="text-gray-dark">/</span>
+		  		<span class="small text-gray-dark"></span>
+		  	</a>
+		  </li>
+		  <li>
+		  	<a ui-sref="profile" data-toggle="tab" ng-class="{active:profile==true}" ng-click="transistion(profile)">
+		  		<div class="text-small">Watch your</div>
+		  		<span class="text-uppercase">Recent Statistics</span>
+		  		<span class="text-gray-dark">/</span>
+		  		<span class="small text-gray-dark"></span>
+		  	</a>
+		  </li>
+		  <li>
+		  	<a ui-sref="search" data-toggle="tab" ng-class="{active:profile==true}"
+		  	ng-click="transistion(search)">
+		  		<div class="text-small">Watch your</div>
+		  		<span class="text-uppercase">Recent Statistics</span>
+		  		<span class="text-gray-dark">/</span>
+		  		<span class="small text-gray-dark"></span>
+		  	</a>
+		  </li>
+		</ul>
+		
+		<div class="ui-view-container">
+			<div ui-view></div>
+		</div>
+	</div>
 </div>

@@ -18,33 +18,25 @@ app.config(function($stateProvider) {
     })
 });
 
+
 app.controller('classroomCtrl', function($scope, AuthService, dataFactory, $state, user, socket, $window) {
-    $scope.user = user
-    $scope.date = Date.now()
+
+    $scope.live = false
+
+    //REMEMBER TO ADD THE MARGINS TO THE WHITEBOARD!!!!!
+
+    socket.emit('join awesome room', location.pathname.slice(1));
+    socket.on('live class', function() {
+        $scope.live = true
+    })
     $state.transitionTo('info')
     socket.emit('join awesome room', location.pathname.slice(1));
-    $scope.joinClass = function() {
-        if ($scope.liveClass === "Class is live") $window.open('//humantics.build/' + $scope.date)
-        else alert('Class is out')
-    }
+
+
     $scope.toggleClass = function() {
         socket.emit('toggle class')
     }
-    $scope.checkClass = function() {
-        socket.emit('check class')
-    }
-    socket.on('class check', function(liveClass) {
-        if (liveClass) {
-            $scope.liveClass = "Class is live"
-            $scope.startClass = "End Class"
-            $scope.$apply()
-        } else {
-            $scope.liveClass = "Class is out"
-            $scope.startClass = "Start Class"
-            $scope.$apply()
-        }
-        console.log(liveClass, $scope.liveClass)
-    })
+
     $scope.transition = function(state) {
         $state.transitionTo(state)
     }

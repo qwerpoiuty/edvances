@@ -1,15 +1,73 @@
+
+.jitsiContainer{
+	height: 33vh;
+	width: 100%;
+}
+.chatroom-col{
+  height: 70vh;
+}
+
+
+
 .classroom-container{
   height:100%;
   width: 100%;
+  margin-left: 1vw;
 }
-.class-nav{
+.classroom-about-container{
+  height:100%;
+  width: 90%;
+  margin-left: 5vw;
+
+  .panel-heading{
+    background-color: #e6e6e6 !important;
+    border-color: #888888 !important;
+  }
+
+  .panel-title{
+  color: white !important;
+  font-weight: 400 !important;
+  }
+}
+.reverse{
+	moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+.glyphicon{
+	font-size:xx-large;
+}
+.sidebar-container{
+}
+.class-sidenav{
 	text-align:center;
 	padding-top:15px;
-	border-right:1px solid grey;
+	float:left;
+}
+.sidebar-icon{
+	font-size:x-large;
+  color: #888888
+}
 
+.icon-container{
+	padding:0;
+	cursor:pointer !important;
+	z-index:100;
+}
+.icon-container:focus{
+	outline:0;
 }
 .sidebar-icon-container{
+	width:100%;
+	height:13vh;
+	padding-top:15px;
 	cursor:pointer;
+	border-radius:15px 0 0 15px;
+	background-color:white;
+}
+.sidebar-icon-text{
+	font-size:.8em;
 }
 .sidebar-icon-container:hover{
 	text-decoration:none;
@@ -19,18 +77,129 @@
 }
 
 .classroom-view{
-	height:85%;
+	height:100%;
+	padding:0;
+	background-color: white;
+  width: 88%  
 }
+
+#classroomTopRow{
+  margin-top: 5px;
+}
+
+.chat-message{
+  padding-bottom: 20px;
+}
+#messages{
+  padding:0;
+  margin:0;
+}
+.username{
+  border:1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 0.2px #969696;
+  padding: 2px;
+}
+#chatroom-panel{
+  height: 70vh;
+  margin-bottom: 0;
+}
+.chatbody{
+  height: 90%;
+  position: relative;
+}
+
+.chat-wrap{
+  height: 100%;
+}
+
+.chat-form{
+  position: absolute;
+  bottom: 0;
+}
+
+#messagesContainer{
+  height:85%;
+  margin:0;
+  position: absolute;
+}
+
+#inputContainer{
+  margin-bottom: 0;
+
+  #message{
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+  }
+
+  #send{
+    position: absolute;
+    right: 20px;
+    bottom: 26px;
+  }
+}
+
 .classroom-message{
 	margin-top:3%;
 	margin-bottom:2%;
 }
+
 .whiteboard-container{
   height:80vh;
-  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
-.classroom-navbar{
-  border: 1px solid black;
-  padding-top:15px;
+
+
+.fd-title{
+  margin-bottom:15px;
+}
+
+.content{
+  background: transparent;
+  padding: 10px 10px 13px;
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+
+  h1{
+  margin: 0 0 0;
+  font-weight: 300;
+  font-size: 40px;
+  }
+}
+
+.detail{
+position: relative;
+overflow: hidden;
+}
+
+.clean{
+background-color: #fff;
+color: #888;
+}
+
+.icon{
+  display: block;
+  float: right;
+  height: 80px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-top: 10px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 80px;
+}
+
+.details{
+  clear: both;
+  display: block;
+  padding: 5px 10px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.1);
 }

@@ -1,0 +1,39 @@
+<div>
+	<div class="pos-rel">
+		<div class="check-element animate-show" ng-show="checked">
+	 		<div class="input-group">
+                <input type="text" class="form-control" placeholder="" ng-model="formTodoText" ng-model-instant >
+                <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="addTodo()" type="submit">Add</button>
+                </span>
+            </div>
+		</div>
+
+		<div class="check-element animate-show" ng-hide="checked">
+			<span class="text-gray-dark text-large align-with-button pos-abs hidden-xs">
+			Your Tasks
+			</span>
+
+
+        	<input type="button" ng-model="checked" aria-label="Toggle ngHide" class="btn btn-primary btn-text-square text-large pull-right">
+	 	</div>
+	</div>
+
+	<hr class="m-b-0">
+
+	<div id="tasks-list" class="tasks-wrapper">
+		<div class="todo-body" ng-controller="todoCtrl">
+			<ul class="list-editable unstyled todo-list">
+				<li ng-repeat="todo in todos">
+					<label class="checkbox1 animated bounceInRight" for="{{todo.id}}">
+					
+					<input id="{{todo.id}}" type="checkbox" class="" ng-model="todo.done">
+						<span></span>
+					</label>
+
+					<span class="done-{{todo.done}} animated bounceInRight">{{todo.text}}</span>
+				</li>
+			</ul>
+		</div>	
+	</div>
+</div>
