@@ -1,11 +1,14 @@
-.navbar-fixed-top {
+.navbar-static-top{
 	border-bottom: 1px solid shade($color-gray-dark, 20%);
 	margin-bottom: 0;
-	position: fixed;
 
 	.navbar-brand {
+		#logo{
+			width:100%;
+			margin:10px;
+		}
 		color: $color-white;
-		padding: 15px 10px;
+		padding: 0 !important;
 		@media(min-width: 768px) {
 			padding: 15px 30px;
 		}
@@ -72,6 +75,7 @@
 
 	&.not-collapse .navbar-header {
 		float: left;
+		width:10%;
 	}
 
 	&.not-collapse .navbar-nav > li {
@@ -93,5 +97,4 @@
 			@include box-shadow(0 6px 12px rgba(0, 0, 0, 0.175));
 		}
 	}
-
 }
