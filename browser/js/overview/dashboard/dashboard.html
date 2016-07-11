@@ -13,32 +13,22 @@
 					<div class="col-sm-6 m-b-30">
 
 						<div class="pos-rel">
-							<div class="iconmelon m-r-10">
-				              <svg viewBox="0 0 32 32">
-				                <g filter="">
-				                  <use xlink:href="#receipt-shopping"></use>
-				                </g>
-				              </svg>
-				            </div>
+							<div class="check-element animate-show" ng-show="checked">
+						 		<input placeholder="Add Event" type="text" class="input-large input-light brad">
 
-							<span class="text-gray-dark text-large align-with-button pos-abs hidden-xs">
-								Your Tasks
-							</span>
-							<span class="hidden-sm hidden-md hidden-lg text-gray-dark text-large align-with-button pos-abs ">
-								Taks
-							</span>
-							
-							
-							<div class="top-left-abs clearfix over-text">
-								<input type="text"
-									id="task-content" 
-									class="text-over-header pull-left opacity-0 icheck"
-									placeholder="Add new task...">
-								<a href="#" 
-									id="task-toggle" 
-									class="btn btn-primary btn-text-square text-large pull-right">
-									+</a>
+
+				            	<input type="button" ng-model="checked" aria-label="Toggle ngHide" class="btn btn-primary btn-text-square text-large pull-right">
 							</div>
+
+							<div class="check-element animate-show" ng-hide="checked">
+								<span class="text-gray-dark text-large align-with-button pos-abs hidden-xs">
+								Your Tasks
+								</span>
+
+
+				            	<input type="button" ng-model="checked" aria-label="Toggle ngHide" class="btn btn-primary btn-text-square text-large pull-right">
+						 	</div>
+						
 						</div>
 
 						<hr class="m-b-0">
