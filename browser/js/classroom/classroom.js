@@ -1,7 +1,7 @@
 app.config(function($stateProvider) {
     $stateProvider.state('classroom', {
         url: '/classroom/:id',
-        templateUrl: 'js/classroom/classroom1.html',
+        templateUrl: 'js/classroom/classroom.html',
         controller: 'classroomCtrl',
         resolve: {
             user: function(AuthService) {
