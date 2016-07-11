@@ -20,11 +20,13 @@ app.controller('homeCtrl', function($scope, $state, dataFactory) {
     $scope.signupTeacher = function(user) {
         user.powerLevel = 2;
         console.log(user)
+        //input datafactory signup function
     }
 
     $scope.signupStudenc = function(user) {
         user.powerLevel = 1;
         console.log(user)
+        //input datafactory signup function
     }
 
     $scope.myInterval = false;
