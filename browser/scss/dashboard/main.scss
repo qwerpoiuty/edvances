@@ -1,5 +1,17 @@
 @import 'labels';
 
+#dashboard-container {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height:100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background: #2E2E2E;
+  transition: all 0.2s ease-in-out;
+}
+
 .welcome-message{
 	font-size:4em;
 	text-decoration:underline;
