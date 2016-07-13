@@ -12,6 +12,14 @@ app.directive('navbar', function($rootScope, AuthService, AUTH_EVENTS, $state) {
                     label: 'Dashboard',
                     state: 'dashboard',
                     auth: true
+                }, {
+                    label: 'Profile',
+                    state: 'profile',
+                    auth: true
+                }, {
+                    label: 'Search',
+                    state: 'search',
+                    auth: true
                 }
             ];
 

@@ -1,8 +1,8 @@
 app.config(function($stateProvider) {
     $stateProvider.state('dashboard', {
-        templateUrl: 'js/overview/dashboard/dashboard.html',
+        templateUrl: 'js/dashboard/dashboard.html',
         controller: 'dashboardCtrl',
-        parent: 'overview',
+        url: '/dashboard',
         resolve: {
             user: function(AuthService) {
                 return AuthService.getLoggedInUser().then(function(user) {
@@ -37,11 +37,29 @@ app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, u
         });
     }
 
+    $scope.open = function(size) {
+
+        console.log("hello world");
+
+        var modalInstance = $modal.open({
+            templateUrl: 'js/common/directives/modals/eventModal/modal.html',
+            controller: 'ModalInstanceCtrl',
+            size: size
+        });
+
+        modalInstance.result.then(function(classData) {
+            $scope.selected = classData;
+            MaterialCalendarData.setDayContent(classData.start, '<span>' + classData.title + '</span>');
+
+        }, function() {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
 
     $scope.date = new Date();
     $scope.eventSources = [];
 
-     $scope.dayFormat = "d";
+    $scope.dayFormat = "d";
 
     // To select a single date, make sure the ngModel is not an array.
     $scope.selectedDate = null;

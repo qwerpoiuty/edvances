@@ -10130,8 +10130,6 @@ a:focus {
 }
 
 .lifestream-rss:before {
-  content: "\f1aa";
-  color: #e6752f;
 }
 
 .lifestream-blogger:before {
