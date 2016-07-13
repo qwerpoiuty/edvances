@@ -1,88 +1,89 @@
 <div id = "classroom-container">
-	<div class="main-content row row-centered">
-	<div class="ui-view-container">
-		<div ui-view></div>
-	</div>
-	<div class = "row row-centered">
-		<!-- same thing as the previous row -->
-		<div class = "classroom-navbar navbar-container col-lg-10 col-md-10 col-sm-10 col-centered">
-			<div class = "row row-centered">
-				<div class="col-md-3 col-sm-6">
-        			<div class="fd-tile detail clean tile-purple">
-          				<div class="content">
-          					<h1 class="text-left">170</h1>
-          					<p>Class Info</p>
-          				</div>
+  <div class = "bg-white b-1px-gray-light b-top-none brad-bottom brad-tr b-bot-2px-gray-light margin-30" id="classroom-content">
+    <div class = "tab-pane bg-white fade in p-30" >
+      <div ui-view></div>
+    </div>
+  </div>
+  <div class = "row row-centered" id= "classroom-navbar">
+    <!-- same thing as the previous row -->
+    <div class = " navbar-container col-lg-10 col-md-10 col-sm-10 col-centered">
+      <div class = "row row-centered">
+        <div class="col-md-3 col-sm-6">
+              <div class="fd-tile detail clean tile-purple" ng-click = "transition('info')">
+                  <div class="content">
+                    <h1 class="text-left">170</h1>
+                    <p>Class Info</p>
+                  </div>
 
-          				<div class="icon">
-          					<i class="glyphicon glyphicon-apple"></i>
-          				</div>
+                  <div class="icon">
+                    <i class="glyphicon glyphicon-apple"></i>
+                  </div>
 
-          				<a class="details" href="#" ng-click = "transition('info')">Details 
-          					<span>
-          						<i class="fa fa-arrow-circle-right pull-right"></i>
-          					</span>
-          				</a>
-        			</div>
-    			</div>
+                  <a class="details">Details 
+                    <span>
+                      <i class="fa fa-arrow-circle-right pull-right"></i>
+                    </span>
+                  </a>
+              </div>
+          </div>
 
-    			<div class="col-md-3 col-sm-6">
-        			<div class="fd-tile detail clean tile-purple">
-          				<div class="content">
-          					<h1 class="text-left">170</h1>
-          					<p>Class Tools</p>
-          				</div>
+          <div class="col-md-3 col-sm-6">
+              <div class="fd-tile detail clean tile-purple" ng-click = "transition('tools')">
+                  <div class="content">
+                    <h1 class="text-left">170</h1>
+                    <p>Class Tools</p>
+                  </div>
 
-          				<div class="icon">
-          					<i class="glyphicon glyphicon-briefcase"></i>
-          				</div>
+                  <div class="icon">
+                    <i class="glyphicon glyphicon-briefcase"></i>
+                  </div>
 
-          				<a class="details" href="#" ng-click = "transition('tools')">Details 
-          					<span>
-          						<i class="fa fa-arrow-circle-right pull-right"></i>
-          					</span>
-          				</a>
-        			</div>
-    			</div>
+                  <a class="details">Details 
+                    <span>
+                      <i class="fa fa-arrow-circle-right pull-right"></i>
+                    </span>
+                  </a>
+              </div>
+          </div>
 
-    			<div class="col-md-3 col-sm-6">
-        			<div class="fd-tile detail clean tile-purple">
-          				<div class="content">
-          					<h1 class="text-left">170</h1>
-          					<p>Class Resources</p>
-          				</div>
+          <div class="col-md-3 col-sm-6">
+              <div class="fd-tile detail clean tile-purple" ng-click = "transition('resources')">
+                  <div class="content">
+                    <h1 class="text-left">170</h1>
+                    <p>Class Resources</p>
+                  </div>
 
-          				<div class="icon">
-          					<i class="glyphicon glyphicon-paperclip"></i>
-          				</div>
+                  <div class="icon">
+                    <i class="glyphicon glyphicon-paperclip"></i>
+                  </div>
 
-          				<a class="details" href="#" ng-click = "transition('resources')">Details 
-          					<span>
-          						<i class="fa fa-arrow-circle-right pull-right"></i>
-          					</span>
-          				</a>
-        			</div>
-				</div>
+                  <a class="details">Details 
+                    <span>
+                      <i class="fa fa-arrow-circle-right pull-right"></i>
+                    </span>
+                  </a>
+              </div>
+        </div>
 
-				<div class="col-md-3 col-sm-6">
-        			<div class="fd-tile detail clean tile-purple">
-          				<div class="content">
-          					<h1 class="text-left">170</h1>
-          					<p>Messaging Center</p>
-          				</div>
+        <div class="col-md-3 col-sm-6">
+              <div class="fd-tile detail clean tile-purple" ng-click = "transition('messaging')">
+                  <div class="content">
+                    <h1 class="text-left">170</h1>
+                    <p>Messaging Center</p>
+                  </div>
 
-          				<div class="icon">
-          					<i class="fa fa-comments fa-3x"></i>
-          				</div>
+                  <div class="icon">
+                    <i class="fa fa-comments fa-3x"></i>
+                  </div>
 
-          				<a class="details" href="#" ng-click = "transition('messaging')">Details 
-          					<span>
-          						<i class="fa fa-arrow-circle-right pull-right"></i>
-          					</span>
-          				</a>
-        			</div>
-				</div>
-  			</div>
-		</div>
-	</div>
+                  <a class="details">Details 
+                    <span>
+                      <i class="fa fa-arrow-circle-right pull-right"></i>
+                    </span>
+                  </a>
+              </div>
+        </div>
+        </div>
+    </div>
+  </div>
 </div>

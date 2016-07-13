@@ -13,10 +13,7 @@
 }
 
 .welcome-message{
-	font-size:4em;
-	text-decoration:underline;
-	margin-top:10px;
-	margin-bottom:12px;
+    margin-top:0;
 }
 
 .calendar-wrapper > .today > .date{
@@ -101,7 +98,6 @@
     overflow-y: scroll;
     height: 100%;
     background-color: #e8ecef;
-    padding: 30px;
 }
 .p-10{
     padding: 10px;

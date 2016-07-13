@@ -1,23 +1,37 @@
 
-.jitsiContainer{
-	height: 33vh;
-	width: 100%;
-}
 .chatroom-col{
-  height: 70vh;
+  height: 75vh;
 }
 
-
-
-.classroom-container{
+#classroom-container{
   height:100%;
   width: 100%;
-  margin-left: 1vw;
 }
+
+#classroom-content{
+  height:76vh;
+  margin-bottom:20px
+}
+
+#classroom-navbar{
+
+}
+.sidebar-tabs li a{
+    color:rgba(51, 54, 63, 0.4);
+    transition:color,.4s;
+}
+
+.sidebar-tabs li a:hover {
+    color: rgba(51, 54, 63, 0.8);
+    background: #F4F7F9;
+    border-color: #DDE2E6; }
+  
 .classroom-about-container{
+  position:relative;
   height:100%;
-  width: 90%;
-  margin-left: 5vw;
+  width:100%;
+  padding-left:3vw;
+  padding-right:3vw;
 
   .panel-heading{
     background-color: #e6e6e6 !important;
@@ -38,17 +52,7 @@
 .glyphicon{
 	font-size:xx-large;
 }
-.sidebar-container{
-}
-.class-sidenav{
-	text-align:center;
-	padding-top:15px;
-	float:left;
-}
-.sidebar-icon{
-	font-size:x-large;
-  color: #888888
-}
+
 
 .icon-container{
 	padding:0;
@@ -58,23 +62,8 @@
 .icon-container:focus{
 	outline:0;
 }
-.sidebar-icon-container{
-	width:100%;
-	height:13vh;
-	padding-top:15px;
-	cursor:pointer;
-	border-radius:15px 0 0 15px;
-	background-color:white;
-}
-.sidebar-icon-text{
-	font-size:.8em;
-}
-.sidebar-icon-container:hover{
-	text-decoration:none;
-}
-.sidebar-icon-container:focus{
-	outline:0;
-}
+
+
 
 .classroom-view{
 	height:100%;

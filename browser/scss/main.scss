@@ -43,6 +43,9 @@ body {
 .row-centered {
     text-align:center;
 }
+.margin-30{
+  margin:30px;
+}
 .left{
   text-align:left !important;
 }
@@ -93,9 +96,10 @@ body {
 
 #main {
   background-color: $back-color-4;
+  padding-top:51px;
   width: 100%;
   margin: 0 auto;
-  min-height: 95vh;
+  min-height: calc(100vh - 51px);
   overflow-y:auto;
   overflow-x:hidden;
 }
