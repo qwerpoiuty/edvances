@@ -2,7 +2,7 @@
   <h2 class = "sidebar-title">{{state}}</h2>
   <ul class="nav nav-tabs">
     <li ng-repeat="item in items track by $index">
-      <a ui-sref="{{state}}" data-toggle="tab" ng-class="{active:dashboard==true}">
+      <a ui-sref="{{item.state}}" data-toggle="tab" ng-class="{active:dashboard==true}">
         <i class="sidebar-icon {{item.icon}}"  aria-hidden="true"></i>
         <div class="text-small">{{item.name}}</div>
       </a>
