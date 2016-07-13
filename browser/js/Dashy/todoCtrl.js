@@ -13,7 +13,8 @@ app.controller('todoCtrl', function ($scope) {
  	{text:'Meeting with Nabindar Singh.', done:false, id: 'option1'},
  	{text:'Exercise at 6:pm with Nicholas.', done:false, id: 'option3'},
  	{text:'Avengers Age of Ultron.', done:false, id: 'option4'},
- 	{text: 'Henna birthday at Mezbaan.', done:false, id: 'option5'}
+ 	{text: 'Henna birthday at Mezbaan.', done:false, id: 'option5'},
+ 	{text: 'New Todo.', done:false, id: 'option6'}
  	];
  	function makeid()
  	{
@@ -28,5 +29,6 @@ app.controller('todoCtrl', function ($scope) {
  	$scope.addTodo = function () {
  		$scope.todos.push({text:$scope.formTodoText, done:false, id:makeid()});
  		$scope.formTodoText = '';
+ 		console.log($scope.todos);
  	};
  });

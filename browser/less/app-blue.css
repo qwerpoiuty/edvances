@@ -8703,8 +8703,8 @@ blockquote.pull-right {
   font-size: 12px;
   margin-top: 25px;
 }
-div#calendar .section-heading {
-  border-bottom: 1px solid #424242 !important;
+/*div#calendar .section-heading {
+  border-bottom: 1px solid #d6d6d6 !important;
 }
 div#calendar ul.today-ul {
   padding-left: 7px;
@@ -8712,7 +8712,7 @@ div#calendar ul.today-ul {
   margin-bottom: 30px;
 }
 div#calendar ul.today-ul li {
-  border-bottom: 1px solid #424242;
+  border-bottom: 1px solid #d6d6d6 !important;
   display: table;
   width: 100%;
 }
@@ -8728,7 +8728,7 @@ div#calendar ul.today-ul li .panel-here {
   padding-left: 1px;
   padding-top: 12px;
   padding-bottom: 12px;
-  border-right: 1px solid #424242;
+  border-right: 1px solid #d6d6d6 !important;
 }
 div#calendar ul.today-ul li .panel-here .label {
   border-bottom-left-radius: 30px;
@@ -8748,8 +8748,8 @@ div#calendar ul.today-ul li .happened a:hover {
   color: #ffffff;
 }
 div#calendar .dead .label-primary {
-  background: #676767;
-}
+  background: #d7dcde;
+}*/
 div#notification {
   margin-left: 0;
   margin-right: 0;
