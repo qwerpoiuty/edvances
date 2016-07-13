@@ -2,6 +2,7 @@ app.config(function($stateProvider) {
     $stateProvider.state('dashboard', {
         templateUrl: 'js/dashboard/dashboard.html',
         controller: 'dashboardCtrl',
+        url: '/dashboard',
         resolve: {
             user: function(AuthService) {
                 return AuthService.getLoggedInUser().then(function(user) {

@@ -1,0 +1,25 @@
+.search-results{
+	height:64vh;
+	overflow:auto;
+	.class-title{
+		font-weight:bold;
+		border-bottom:1px solid #d6d6d6;
+
+	}
+
+	.class-teacher{
+		padding-left:3%;
+		.teacher-name{
+			color:$khan-blue;
+		}
+		
+	}
+	.class-description{
+		padding-left: 3%;
+	}
+	.result{
+
+		margin-bottom:10px;
+		
+	}
+}
