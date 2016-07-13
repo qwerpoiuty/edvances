@@ -234,7 +234,7 @@
 }
 
 .list-editable li {
-    border-bottom: 1px solid #eff2f4;
+    border-bottom: 1px solid #d6d6d6;
     padding: 15px;
     position: relative;
     height: 51px;
@@ -436,4 +436,19 @@
 .check-element {
   padding: 10px;
   background: white;
+}
+
+.label-primary{
+    background-color:#46a8bf !important;
+}
+
+.dead{
+    .label-primary{
+    background-color: #d7dcde !important;
+    }
+}
+
+.orange-link{
+    text-decoration: underline;
+    color: orange;
 }

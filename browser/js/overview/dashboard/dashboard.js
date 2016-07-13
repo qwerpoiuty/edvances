@@ -37,6 +37,24 @@ app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, u
         });
     }
 
+    $scope.open = function(size) {
+
+    console.log("hello world");
+
+    var modalInstance = $modal.open({
+        templateUrl: 'js/common/directives/modals/eventModal/modal.html',
+        controller: 'ModalInstanceCtrl',
+        size: size
+    });
+
+    modalInstance.result.then(function(classData) {
+        $scope.selected = classData;
+        MaterialCalendarData.setDayContent(classData.start, '<span>'+ classData.title + '</span>');
+
+    }, function() {
+        $log.info('Modal dismissed at: ' + new Date());
+    });
+    };
 
     $scope.date = new Date();
     $scope.eventSources = [];
