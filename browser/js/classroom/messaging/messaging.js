@@ -6,7 +6,8 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('messagingCtrl', function($scope) {
+app.controller('messagingCtrl', function($scope, $state) {
+    $state.transitionTo('classChat')
     $scope.state = "Messaging Center"
     $scope.items = {
         classChat: {
@@ -14,21 +15,15 @@ app.controller('messagingCtrl', function($scope) {
             state: "classChat",
             icon: "fa-2x fa fa-comments"
         },
-        teacherPm: {
-            name: "PM the Teaher",
-            state: "pmTeach",
+        pms: {
+            name: "Messages",
+            state: "pms",
             icon: "glyphicon glyphicon-send"
         },
-        studentPm: {
-            name: "PM a student",
-            state: "pmStudent",
-            icon: "glyphicon glyphicon-send reverse"
-        },
         messageBoard: {
-            name: "Class Bulletin",
+            name: "Bulletin",
             state: "classBulletin",
             icon: "glyphicon glyphicon-list-alt"
         }
     }
-    console.log($scope.items)
 })

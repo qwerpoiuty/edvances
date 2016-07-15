@@ -7,5 +7,5 @@ app.config(function($stateProvider) {
 });
 
 app.controller('classChatCtrl', function($scope) {
-
+    console.log('hello')
 })

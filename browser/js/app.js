@@ -6,7 +6,8 @@ window.app = angular.module('FullstackGeneratedApp', ['ui.router', 'ui.bootstrap
     'angular-loading-bar',
     'angular-growl',
     'ngMaterial',
-    'materialCalendar'
+    'materialCalendar',
+    'angular-timeline'
 ]);
 
 app.config(function($urlRouterProvider, $locationProvider, $stateProvider) {

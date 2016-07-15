@@ -8,7 +8,7 @@ app.config(function($stateProvider) {
 
 app.controller('toolsCtrl', function($scope) {
     console.log('hello world')
-    $scope.state = "Class Tools"
+
     $scope.items = {
         whiteboard: {
             name: "Whiteboard",

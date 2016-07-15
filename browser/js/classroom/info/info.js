@@ -6,8 +6,8 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('infoCtrl', function($scope, socket) {
-    console.log('hello world')
+app.controller('infoCtrl', function($scope, socket, $state) {
+
     $scope.checkClass = function() {
         socket.emit('check class')
     }
@@ -28,5 +28,28 @@ app.controller('infoCtrl', function($scope, socket) {
         if ($scope.liveClass === "Class is live") $window.open('//humantics.build/' + $scope.date)
         else alert('Class is out')
     }
+
+    $scope.items = {
+        basic: {
+            name: "Basic Info",
+            state: "basicinfo",
+            icon: "fa-2x fa fa-info"
+        },
+        teacher: {
+            name: "Teacher Info",
+            state: "teacher",
+            icon: "glyphicon glyphicon-education"
+        },
+        assignments: {
+            name: "assignments",
+            state: "assignment",
+            icon: "fa-2x fa fa-exclamation-circle"
+        }
+    }
+
+
+
+
+
     $scope.checkClass()
 })

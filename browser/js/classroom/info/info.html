@@ -1,35 +1,8 @@
-<div class="classroom-about-container">
-	<!-- the about page shouldn't have a sidebar -->
-	<h1 class = "classroom-message">THIS IS A CLASS WITH FILLER INFO</h1>
-	<h3 class = "subtitle">TAUGHT BY STAN</h3>
-	<div class = "jitsi-alert">
-		<button class="btn" ng-click = "joinClass()">{{liveClass}}</button>
-		<button ng-if="user.powerLevel >=1" ng-click="toggleClass()" class="btn">{{startClass}}</button>
+<div class="classroom-container">
+	<sidebar class = "sidebar-container no-pad col-md-1 col-lg-1 col-sm-1 fullHeight" items = "items" state ="'Class Info'"></sidebar>
+
+	<div class = "col-md-11 col-lg-11 col-sm-12 classroom-view">
+		<div  ui-view></div>
 	</div>
-	<div class="alert alert-white">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<strong>Attention: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius lacus vitae purus tincidunt blandit. <a ui-sref="c3	chart">View Details</a>
-	</div>
-	<div class = "row">
-		<div class = "col-md-6 col-lg-6 col-sm-6">
-			 <div class = "panel panel-theme schedulePanel">
-				<div class = "panel-heading">
-					<h3 class = "panel-title">This Week</h3>
-				</div>
-				<div class = "panel-body">
-					
-				</div>
-			</div>
-		</div>
-		<div class = "col-md-6 col-lg-6 col-sm-6">
-			 <div class = "panel panel-theme schedulePanel">
-				<div class = "panel-heading">
-					<h3 class = "panel-title">Class List</h3>
-				</div>
-				<div class = "panel-body">
-					
-				</div>
-			</div>
-		</div>
-	</div>
+	
 </div>

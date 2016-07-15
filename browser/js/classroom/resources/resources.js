@@ -11,22 +11,22 @@ app.controller('resourcesCtrl', function($scope) {
     $scope.state = "Class Resources"
     $scope.items = {
         roadMap: {
-            name: "Class Road Map",
-            state: "roadMap",
+            name: "Road Map",
+            state: "roadmap",
             icon: "glyphicon glyphicon-map-marker"
         },
         slides: {
-            name: "Class Presentations",
+            name: "Presentations",
             state: "slides",
             icon: "fa-2x fa fa-slideshare"
         },
         materials: {
-            name: "Class Materials",
+            name: "Materials",
             state: "materials",
             icon: "fa-2x fa fa-suitcase"
         },
         handin: {
-            name: "Student Handin",
+            name: "Handin",
             state: "handin",
             icon: "fa-2x fa fa-upload"
         }
