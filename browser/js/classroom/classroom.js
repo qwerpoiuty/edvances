@@ -20,7 +20,7 @@ app.config(function($stateProvider) {
 
 
 app.controller('classroomCtrl', function($scope, AuthService, dataFactory, $state, user, socket, $window) {
-
+    $scope.user = user
     $scope.live = false
 
     //REMEMBER TO ADD THE MARGINS TO THE WHITEBOARD!!!!!
