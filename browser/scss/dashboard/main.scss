@@ -8,7 +8,6 @@
   height:100%;
   overflow-y: hidden;
   overflow-x: hidden;
-  background: #2E2E2E;
   transition: all 0.2s ease-in-out;
 }
 
@@ -36,7 +35,11 @@
 }
 
 #dashboard-container{
-  background-color: #EEE;
+  background-color: #f7f7f7;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .schedulePanel{
@@ -95,9 +98,9 @@
     -moz-transition: opacity 0.4s;
     transition: opacity 0.4s;
     opacity: 1;
-    overflow-y: scroll;
+    overflow: hidden;
     height: 100%;
-    background-color: #e8ecef;
+    background-color: #f7f7f7;
 }
 .p-10{
     padding: 10px;
@@ -414,10 +417,6 @@
     margin-right: -15px;
 }
 
-.fade{
-    position: relative !important;
-}
-
 .dashboard-title{
     margin:0 !important;
     padding-top: 20px;
@@ -459,4 +458,30 @@
 .orange-link{
     text-decoration: underline;
     color: orange;
+}
+
+.view-height-65{
+    height: 66vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#overflow-none{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.padding-zero{
+    padding: 0px !important;
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lifestream{
+    overflow-x:hidden;
 }

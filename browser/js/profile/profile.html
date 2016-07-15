@@ -1,8 +1,6 @@
 <div id = "dashboard-container">
-	<div id="container" class="main-content">
+	<div id="overflow-none" class="main-content">
 		<div class="ui-view-container">
-
-
 			<div class="row margin-fix-row">
 		  			<div class="col-sm-3 text-center">
 		  				<div class="p-10 brad">
@@ -33,14 +31,14 @@
 			                  </svg>
 			                </div>
 			  						</div>
-			  						<div class="text-large text-gray-alt">Chaplin</div>
+			  						<div class="text-large text-gray-alt">	Chaplin</div>
 			  						<a href="pricing.html" class="btn btn-primary btn-lg m-t-10">Change subscription plan</a>
 				  				</div>
 			  					<div class="col-sm-7">
-			  						<h4>Last successful login</h4>
+			  						<h4>Your Last Class</h4>
 			  						<p class="text-gray-alt">01.07.2014 1:34pm</p>
 			  						<hr>
-			  						<h4 class="">Last unsucessful login</h4>
+			  						<h4 class="">Your Next Class</h4>
 			  						<p class="text-gray-alt">01.03.2014 9:22am</p>
 			  					</div>
 			  				</div>
@@ -48,37 +46,46 @@
 		  			</div>
 	  		</div>
 
-			<div class="bg-white p-30 m-t-10 brad b-bot-2px-gray-light b-right-1px-gray-light">
-
-				<h2 class="text-center p-b-30 dashboard-title page-header">Settings</h2>
+			<div class="bg-white p-30 m-t-10 brad b-bot-2px-gray-light b-right-1px-gray-light view-height-65">
 				<form class="form-horizontal" role="form">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">General</label>
 					  <div class="col-sm-10 m-t-10">
-					  	<div class="m-b-10">
-							<div class="roundedTwo">
-								<input type="checkbox" value="None" id="roundedTwo" name="check" />
-								<label for="roundedTwo"></label>
-							</div>
-					  	</div>
-					  	<div class="m-b-10">
-							<div class="squaredThree">
-								<input type="checkbox" value="None" id="squaredThree" name="check" />
-								<label for="squaredThree"></label>
-							</div>
-					  	</div>
-					  	<div class="m-b-10">
-							<div class="squaredFour">
-								<input type="checkbox" value="None" id="squaredFour" name="check" />
-								<label for="squaredFour"></label>
-							</div>
-					  	</div>
-					  	<div class="m-b-10">
-							<div class="squaredTwo">
-								<input type="checkbox" value="None" id="squaredTwo" name="check" />
-								<label for="squaredTwo"></label>
-							</div>
-					  	</div>
+						<div class="form-group">
+							<div class="col-sm-10 m-t-10">
+								<div class="m-b-10">
+									<div>First Name</div>
+									<input type="text" class="input-large input-light brad">
+						  		</div>
+						  		<div class="m-b-10">
+									<div>Last Name</div>
+									<input type="text" class="input-large input-light brad">
+						  		</div>
+						  		<div class="m-b-10">
+									<div class="i-block">
+										<div>Email</div>
+										<input type="text" class="input-large input-light brad"> <span class="@span"> @ </span>
+									</div>
+									<div class="i-block">
+									  <div class="dropdown">
+									    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+									    <span class="caret"></span></button>
+									    <ul class="dropdown-menu">
+									      <li><a href="#">HTML</a></li>
+									      <li><a href="#">CSS</a></li>
+									      <li><a href="#">JavaScript</a></li>
+									    </ul>
+									  </div>
+									</div>
+								</div>
+								<div class="m-b-10">
+						  				<div class="i-block">
+											<div>Personal Description</div>
+											<textarea rows="3" cols="85" class="input-large input-light brad" style="resize:none;"></textarea>
+										</div>
+						  		</div>
+						</div>
+					</div>
 					  </div>
 					</div>
 					<hr>
