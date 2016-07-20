@@ -8,31 +8,11 @@ app.config(function($stateProvider) {
 
 app.controller('infoCtrl', function($scope, socket, $state) {
 
-    $scope.checkClass = function() {
-        socket.emit('check class')
-    }
-    socket.on('class check', function(liveClass) {
-        if (liveClass) {
-            $scope.liveClass = "Class is live"
-            $scope.startClass = "End Class"
-            $scope.$apply()
-        } else {
-            $scope.liveClass = "Class is out"
-            $scope.startClass = "Start Class"
-            $scope.$apply()
-        }
-        console.log('hello', liveClass, $scope.liveClass)
-    })
-
-    $scope.joinClass = function() {
-        if ($scope.liveClass === "Class is live") $window.open('//humantics.build/' + $scope.date)
-        else alert('Class is out')
-    }
 
     $scope.items = {
         basic: {
             name: "Basic Info",
-            state: "basicinfo",
+            state: "basicInfo",
             icon: "fa-2x fa fa-info"
         },
         teacher: {
@@ -40,16 +20,17 @@ app.controller('infoCtrl', function($scope, socket, $state) {
             state: "teacher",
             icon: "glyphicon glyphicon-education"
         },
-        assignments: {
-            name: "assignments",
-            state: "assignment",
-            icon: "fa-2x fa fa-exclamation-circle"
+        roadMap: {
+            name: "Road Map",
+            state: "roadmap",
+            icon: "glyphicon glyphicon-map-marker"
         }
     }
 
 
 
 
+    $state.transitionTo('basicInfo')
 
-    $scope.checkClass()
+
 })

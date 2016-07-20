@@ -34,6 +34,7 @@
              canvas.width = parseInt(sketchStyle.getPropertyValue('width'));
              canvas.height = parseInt(sketchStyle.getPropertyValue('height'));
 
+             var rect = canvas.getBoundingClientRect()
              var ctx = canvas.getContext('2d');
 
              ctx.lineWidth = 5;
@@ -51,11 +52,11 @@
              };
 
              var drawing = false;
-             console.log()
              canvas.addEventListener('mousedown', function(e) {
                  drawing = true;
-                 currentMousePosition.x = e.pageX - this.offsetLeft;
-                 currentMousePosition.y = e.pageY - this.offsetTop;
+
+                 currentMousePosition.x = (e.pageX - rect.left) / (rect.right - rect.left) * (canvas.width - ((e.pageX - rect.left) / (rect.right - rect.left) * 30))
+                 currentMousePosition.y = (e.pageY - rect.top) / (rect.bottom - rect.top) * (canvas.height - ((e.pageY - rect.top) / (rect.top - rect.bottom) * 30))
              });
 
              canvas.addEventListener('mouseup', function() {
@@ -69,8 +70,8 @@
                  lastMousePosition.x = currentMousePosition.x;
                  lastMousePosition.y = currentMousePosition.y;
 
-                 currentMousePosition.x = e.pageX - this.offsetLeft;
-                 currentMousePosition.y = e.pageY - this.offsetTop;
+                 currentMousePosition.x = (e.pageX - rect.left) / (rect.right - rect.left) * (canvas.width - ((e.pageX - rect.left) / (rect.right - rect.left) * 30))
+                 currentMousePosition.y = (e.pageY - rect.top) / (rect.bottom - rect.top) * (canvas.height - ((e.pageY - rect.top) / (rect.top - rect.bottom) * 30))
 
                  whiteboard.draw(lastMousePosition, currentMousePosition, color, true);
 
