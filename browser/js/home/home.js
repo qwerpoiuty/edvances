@@ -6,7 +6,7 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('homeCtrl', function($scope, $state, dataFactory) {
+app.controller('homeCtrl', function($scope, $state, userFactory) {
     $scope.join_user = ""
 
     $scope.signup = function(state) {
@@ -17,18 +17,20 @@ app.controller('homeCtrl', function($scope, $state, dataFactory) {
     }
 
     $scope.signupTeacher = function(user) {
+        console.log(user)
         user.powerLevel = 2;
-        dataFactory.createUser(user).then(function() {
-            $state.transitionTo('dashboard')
+        userFactory.createUser(user).then(function(bool) {
+            if (bool) $state.transitionTo('dashboard')
+            else alert('Email in use')
         })
-        //input datafactory signup function
+        //input userFactory signup function
     }
 
     $scope.signupStudent = function(user) {
         console.log('hi')
         user.powerLevel = 1;
-        dataFactory.createUser(user).then(function() {
-            $state.transitionTo('dashboard')
+        userFactory.createUser(user).then(function() {
+            // $state.transitionTo('dashboard')
         })
         //input datafactory signup function
     }
