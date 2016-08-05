@@ -6,7 +6,7 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('basicInfoCtrl', function($scope, socket) {
+app.controller('basicInfoCtrl', function($scope, socket, $window) {
 
     $scope.times = [{
         day: 'Monday',
@@ -20,7 +20,6 @@ app.controller('basicInfoCtrl', function($scope, socket) {
     }]
 
     $scope.checkClass = function() {
-        console.log('hello')
         socket.emit('check class')
     }
     socket.on('class check', function(liveClass) {
@@ -34,8 +33,14 @@ app.controller('basicInfoCtrl', function($scope, socket) {
         console.log('hello', liveClass, $scope.liveClass)
     })
 
+
+    $scope.toggleClass = function() {
+        socket.emit('toggle class')
+    }
+
+    //remember to make the conditional button if you're a teacher
     $scope.joinClass = function() {
-        if ($scope.liveClass === "Class is live") $window.open('//humantics.build/' + $scope.date)
+        if ($scope.liveClass) $window.open('http://google.com', 'edvances', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=800,height=700');
         else alert('Class is out')
     }
 

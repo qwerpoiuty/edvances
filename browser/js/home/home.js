@@ -11,7 +11,6 @@ app.controller('homeCtrl', function($scope, $state, dataFactory) {
 
     $scope.signup = function(state) {
         $scope.join_user = state
-        console.log('hello', $scope.join_user)
     }
     $scope.back = function() {
         $scope.join_user = ""
@@ -19,25 +18,20 @@ app.controller('homeCtrl', function($scope, $state, dataFactory) {
 
     $scope.signupTeacher = function(user) {
         user.powerLevel = 2;
-        console.log(user)
+        dataFactory.createUser(user).then(function() {
+            $state.transitionTo('dashboard')
+        })
         //input datafactory signup function
     }
 
-    $scope.signupStudenc = function(user) {
+    $scope.signupStudent = function(user) {
+        console.log('hi')
         user.powerLevel = 1;
-        console.log(user)
+        dataFactory.createUser(user).then(function() {
+            $state.transitionTo('dashboard')
+        })
         //input datafactory signup function
     }
 
-    $scope.myInterval = false;
-    $scope.slides = [{
-        information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.'
-    }, {
-        information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.'
-    }, {
-        information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.'
-    }, {
-        information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam. Fugit esse, at doloremque sint recusandae quasi labore nobis consectetur id, adipisci a. Animi illum laboriosam molestiae harum dicta eligendi quibusdam totam.'
-    }];
 
 })

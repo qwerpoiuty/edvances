@@ -32,8 +32,11 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
             defaultValue: false
         },
-        notes: DataTypes.TEXT
-
+        notes: DataTypes.TEXT,
+        classrooms: {
+            type: DataTypes.ARRAY(DataTypes.INTEGER),
+            defaultValue: []
+        }
     }, {
         classMethods: {
             associate: function(models) {

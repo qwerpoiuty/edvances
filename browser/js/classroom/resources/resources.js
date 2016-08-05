@@ -20,7 +20,7 @@ app.controller('resourcesCtrl', function($scope) {
             icon: "fa-2x fa fa-upload"
         },
         assignments: {
-            name: "assignments",
+            name: "Assignments",
             state: "assignment",
             icon: "fa-2x fa fa-exclamation-circle"
         }

@@ -1,7 +1,7 @@
 app.config(function($stateProvider) {
     $stateProvider.state('classroom', {
         url: '/classroom/:id',
-        templateUrl: 'js/classroom/classroom1.html',
+        templateUrl: 'js/classroom/classroom.html',
         controller: 'classroomCtrl',
         resolve: {
             user: function(AuthService) {
@@ -26,16 +26,10 @@ app.controller('classroomCtrl', function($scope, AuthService, dataFactory, $stat
     //REMEMBER TO ADD THE MARGINS TO THE WHITEBOARD!!!!!
 
     socket.emit('join awesome room', location.pathname.slice(1));
-    socket.on('live class', function() {
-        $scope.live = true
-    })
     $state.transitionTo('info')
     socket.emit('join awesome room', location.pathname.slice(1));
 
 
-    $scope.toggleClass = function() {
-        socket.emit('toggle class')
-    }
 
     $scope.transition = function(state) {
         $state.transitionTo(state)

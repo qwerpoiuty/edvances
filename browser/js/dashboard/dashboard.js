@@ -14,15 +14,18 @@ app.config(function($stateProvider) {
 })
 
 app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, user, $modal, $log, scheduler, dataFactory) {
-    dataFactory.getClassroomById(1)
     $scope.user = user
+    $scope.getClassrooms = function(classrooms) {
+        dataFactory.getClassroomsByIds(classrooms).then(function(classrooms) {
+            $scope.classrooms = classrooms
+        })
+    }
+
     $scope.browse = function() {
         //this is going to be a student section for browsing classes
-        console.log('hello')
     }
 
     $scope.createClass = function() {
-        console.log('hello')
         var modalInstance = $modal.open({
             templateUrl: 'js/common/directives/modals/classCreation/create.html',
             controller: 'createClassCtrl',
@@ -30,17 +33,15 @@ app.controller('dashboardCtrl', function($scope, $state, $rootScope, $timeout, u
             size: 'lg'
         });
 
-        modalInstance.result.then(function(selectedItem) {
-            $scope.selected = selectedItem;
+        modalInstance.result.then(function(classroom) {
+            $scope.user.classrooms = [5]
+            dataFactory.updateUser(user)
         }, function() {
             $log.info('Modal dismissed at: ' + new Date());
         });
     }
 
     $scope.open = function(size) {
-
-        console.log("hello world");
-
         var modalInstance = $modal.open({
             templateUrl: 'js/common/directives/modals/eventModal/modal.html',
             controller: 'ModalInstanceCtrl',

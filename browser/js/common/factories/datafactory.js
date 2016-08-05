@@ -20,6 +20,10 @@ app.factory('dataFactory', function($http, AuthService) {
                 return response.data
             })
     }
+
+    dataFactory.getUsersAndClassrooms = function(user) {
+
+    }
     dataFactory.getUserById = function(id) {
         return $http.get("/api/users/" + id)
             .then(function(response) {
@@ -35,20 +39,21 @@ app.factory('dataFactory', function($http, AuthService) {
     //classroom
     dataFactory.createClassroom = function(teacherid, classroom) {
         //creates a classroom by calling the teacher id and the classroom information
+        classroom.teacher = teacherid
         return $http.post("/api/classrooms/" + teacherid, classroom)
             .then(function(response) {
                 return response.data
             })
     }
-    dataFactory.getClassrooms = function(query) {
+    dataFactory.getClassrooms = function(search) {
         //this is going to be a search function
-        return $http.get("/api/classrooms/", query)
+        return $http.get("/api/classrooms/search/" + search)
             .then(function(response) {
                 console.log(response.data)
             })
     }
-    dataFactory.getClassroomById = function(id) {
-        return $http.get("/api/classrooms/" + id)
+    dataFactory.getClassroomsByIds = function(ids) {
+        return $http.get("/api/classrooms/", ids)
             .then(function(response) {
                 console.log('hello', response)
                 return response.data

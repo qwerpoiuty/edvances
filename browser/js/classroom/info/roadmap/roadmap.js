@@ -1,8 +1,8 @@
 app.config(function($stateProvider) {
     $stateProvider.state('roadmap', {
-        templateUrl: 'js/classroom/resources/roadmap/roadmap.html',
+        templateUrl: 'js/classroom/info/roadmap/roadmap.html',
         controller: 'roadmapCtrl',
-        parent: 'resources'
+        parent: 'info'
     })
 });
 

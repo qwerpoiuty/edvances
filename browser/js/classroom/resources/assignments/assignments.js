@@ -1,8 +1,8 @@
 app.config(function($stateProvider) {
     $stateProvider.state('assignments', {
-        templateUrl: 'js/classroom/info/assignments/assignments.html',
+        templateUrl: 'js/classroom/resources/assignments/assignments.html',
         controller: 'assignmentsCtrl',
-        parent: 'info'
+        parent: 'resources'
     })
 });
 

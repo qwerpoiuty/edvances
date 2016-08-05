@@ -1,6 +1,6 @@
 <div class = "info-container">
 	<div class = "row">
-		<h1 class = "text-center font-w-100 welcome-message">Welcome to 9th grade geometry<h1>
+		<h1 class = "text-center font-w-100 welcome-message">Welcome to 9<sup>th</sup> grade Geometry<h1>
 	</h1>
 	<div class = "row row-centered">
 		<p class = "text-gray-alt text-center">Taught by: Stan Le</p>
@@ -18,10 +18,14 @@
 				Virtual Classroom Status
 			</span>
 			<hr>
-			<div class = "status">
-				{{liveClass}}
-				<button>{{}}</button>
-
+			<div ng-show ="liveClass" class = "status">
+				<h4 class = "class-status">Class is live!</h4>
+				<button ng-click = "joinClass()" class = "btn btn-primary">Join now!</button>
+				<button ng-click = "toggleClass()" class = "btn btn-warning">End Class</button>
+			</div>
+			<div ng-hide = "liveClass" class = "status">
+				<h4 class = "class-status">Class is out</h4>
+				<button ng-click = "toggleClass()" class = "btn btn-success">Start Class</button>
 			</div>
 		</div>
 	</div>

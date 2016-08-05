@@ -31,14 +31,17 @@ module.exports = function(sequelize, DataTypes) {
         },
         description: {
             type: DataTypes.TEXT
+        },
+        tags: {
+            type: DataTypes.ARRAY(DataTypes.STRING)
+        },
+        blocks: {
+            type: DataTypes.ARRAY(DataTypes.INTEGER)
         }
     }, {
         classMethods: {
             associate: function(models) {
                 Classroom.hasMany(models.Document)
-                Classroom.hasMany(models.Calendar, {
-                    foreignKey: 'classroom_hasMany_blocks'
-                })
             }
         }
     }, {
