@@ -33,31 +33,10 @@ app.factory('dataFactory', function($http, AuthService) {
             })
     }
     dataFactory.getVerifiedTeachers = function() {
-        return $http.get("/api/users/verified")
-            .then(function(response) {
-                return response.data
-            })
-    }
-    //classroom
-    dataFactory.createClassroom = function(id, classroom) {
-        return $http.post("/api/classrooms/" + id, classroom)
-            .then(function(response) {
-                return response.data
-            })
-    }
-    dataFactory.getClassrooms = function() {
-
-        return $http.get("/api/classrooms/")
-            .then(function(response) {
-                console.log(response.data)
-            })
-    }
-    dataFactory.getClassroomById = function(id) {
-        return $http.get("/api/classrooms/" + id)
-            .then(function(response) {
-                console.log('hello', response)
-                return response.data
-            })
+    return $http.get("/api/users/verified")
+        .then(function(response) {
+            return response.data
+        })
     }
     return dataFactory
 });
