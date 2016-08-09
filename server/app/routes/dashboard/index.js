@@ -18,18 +18,12 @@ var ensureAuthenticated = function(req, res, next) {
 
 //fetches
 //get the schdeuld of a particular dashboard
-router.get('/:dashboard_id', function(req, res) {
+router.get('/classes/:dashboard_id', function(req, res) {
 
-    models.Dashboard.find({
-        where: {
-            dashboard_id: req.params.dashboard_id
-        },
-        include: [{
-            model: models.Classroom
-            // include: [models.Calendar]
-        }]
-    }).then(function(dashboard) {
-        res.json(dashboard)
+    //there needs to be a raw query here that returns the rows for classrooms on the dashboard
+    models.Dashboard.findById(req.body).then(function(dashboard) {
+        //there needs to be some check for scheduling conflicts here as well
+        res.json(dashboard.classes)
     })
 })
 
@@ -37,21 +31,25 @@ router.get('/:dashboard_id', function(req, res) {
 //scheduling is done by populating all the dashboards with classes and nesting the queries
 
 //this one adds a class
-router.put('/addClass/:id', function(req, res) {
-    models.Dashboard.findById(req.params.id).then(function(dashboard) {
-        return dashboard.addClassroom(req.body)
-    }).then(function(dashboard) {
-        res.json(dashboard)
+router.put('/students/add/:id', function(req, res) {
+    models.User.findById(req.params.id).then(function(user) {
+        user.classrooms.push(req.body)
+        return user.update(user)
+    }).then(function(user) {
+        if (user.classrooms.indexOf(req.body) !== -1) res.sendStatus(200)
+        else res.sendStatus(300)
     })
 })
 
-//this one removes a class
-router.put('/removeClass/:id', function(req, res) {
-    models.Dashboard.findById(req.params.id).then(function(dashboard) {
-        return dashboard.removeClassroom(req.body)
-    }).then(function(dashboard) {
-        res.json(dashboard)
+router.put('/students/remove/:id', function(req, res) {
+    models.User.findById(req.params.id).then(function(user) {
+        if (user.classrooms.indexOf(req.body) === -1) res.sendStatus(404)
+        user.classrooms.splice(user.classrooms.indexOf(req.body), 1)
+        return user.update(user)
+    }).then(function(user) {
+        res.sendStatus(200)
     })
 })
+
 
 module.exports = router;

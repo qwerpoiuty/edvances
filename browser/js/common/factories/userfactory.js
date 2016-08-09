@@ -1,4 +1,4 @@
-app.factory('userFactory', function($http, AuthService) {
+app.factory('userFactory', function($http) {
     var userFactory = {}
         //user fetches
     userFactory.createUser = function(user) {
@@ -9,15 +9,14 @@ app.factory('userFactory', function($http, AuthService) {
                         email: user.email,
                         password: user.password
                     }
-                    AuthService.login(credentials)
-                    return response.data
+                    return credentials
                 } else {
                     return response.data
                 }
             });
     }
     userFactory.updateUser = function(user) {
-        return $http.put("/api/users/update", user)
+        return $http.put("/api/users/update" + user.id, user)
             .then(function(response) {
                 return response.data;
             })
@@ -46,5 +45,20 @@ app.factory('userFactory', function($http, AuthService) {
                 return response.data
             })
     }
+    //these two add and remove classes from the classroom array on the dashboard
+    classroomFactory.addClass = function(classroom_id, studentId) {
+        return $http.put('/api/dashboard/add' + classroom_id, studentId)
+            .then(function(response) {
+                return response.data
+            })
+    }
+
+    classroomFactory.removeClass = function(classroom_id, sudentId) {
+        return $http.put('/api/dashboard/remove' + classrom_id, studentId)
+            .then(function(response) {
+                return response.data
+            })
+    }
+
     return userFactory
 });

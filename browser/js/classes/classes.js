@@ -6,11 +6,43 @@ app.config(function($stateProvider) {
     })
 })
 
-app.controller("classesCtrl", function($scope, dataFactory) {
+app.controller("classesCtrl", function($scope, classroomFactory, $state) {
+
+    $scope.createClassroom = function(classroom) {
+
+        var now = new Date(2016, 7, 8)
+        console.log(start, now, ((now - start) / 1000) / 1800)
+        // var classroom = {
+        //         title: "Test",
+        //         start: Date.now(),
+        //         end: Date.now(),
+        //         teacher: 5,
+        //         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consequatur soluta possimus commodi ab expedita ullam, dolorem impedit beatae quis. Veritatis delectus possimus incidunt sed commodi ut natus, dignissimos tempore.'
+        //     }
+        classroomFactory.createClassroom(classroom).then(function(id) {
+            $state.transitionTo('classroom', {
+                id: id
+            })
+        })
+    }
+
+    $scope.test = function() {
+        var classroom = {
+            classroom_id: 10,
+            title: 'Hello',
+            teacher: 7,
+            description: 'lorem sucks'
+        }
+        classroomFactory.updateClassroom(classroom)
+    }
+
+    $scope.updateClassroom = function() {
+
+    }
 
     $scope.search = function(search) {
 
-        dataFactory.getClassrooms(search)
+        // dataFactory.getClassrooms(search)
     }
     $scope.search('test,testing');
     $scope.classes = [{
