@@ -3,7 +3,8 @@ app.directive('sidebar', function($rootScope, $state) {
     return {
         restrict: 'E',
         scope: {
-            items: '='
+            items: '=',
+            state: '='
         },
         templateUrl: 'js/common/directives/sidenav/sidenav.html',
         link: function(scope, element, attrs) {
@@ -13,7 +14,9 @@ app.directive('sidebar', function($rootScope, $state) {
                 "yellow",
                 "red"
             ]
+            console.log(scope.state)
             scope.transition = function(state, index) {
+                console.log('hello')
                 scope.selected = index
                 $state.transitionTo(state)
 

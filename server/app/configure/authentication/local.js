@@ -63,18 +63,25 @@ module.exports = function(app) {
     });
 
     app.post('/signup', function(req, res, next) {
-        // models.User.findOne({
-        //     email: req.body.email
-        // }, function(err, user) {
-        //     if (!user) {
-        models.User.create(req.body).then(function(user) {
-            console.log(chalk.yellow("hello!", user.id))
-            models.Dashboard.create({
-                UserId: user.id
-            }).then(function() {
-                res.json(user);
-            })
-        });
+        models.User.findOrCreate({
+            where: {
+                email: req.body.email
+            }
+
+        }).spread(function(user, created) {
+            console.log(chalk.magenta(created))
+            if (!created) {
+                res.json(false)
+            }
+            res.sendStatus(200)
+        })
+        // models.User.create(req.body).then(function(user) {
+        //     models.Dashboard.create({
+        //         UserId: user.id
+        //     }).then(function(user) {
+        //         res.sendStatus(200)
+        //     })
+        // });
         // models.User.findAll().then(function(users) {
         //     console.log(users)
         // })

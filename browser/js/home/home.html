@@ -44,7 +44,7 @@
                 </div>
                 <div class = "row">
                     <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
-                        <input type="password" class ="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder = "Confirm your password">
+                        <input type="password" class ="input-glass chalk yellow-chalk signup-fields fullWidth" ng-model="user.confirm" placeholder = "Confirm your password">
                     </div>
                 </div>
                 <div class = "row">
@@ -54,7 +54,7 @@
                 </div>
                 <div class = "row">
                     <div class = "col-centered col-lg-3 col-md-3 col-sm-3 right">
-                        <a class = "chalk red-chalk right" ng-click = "signupStudent()"><h4 class = "home-page-a">Sign Up! &nbsp;</h4><img src="asset/images/arrow.png" class= "selectDisable small-arrow"/></a>
+                        <a class = "chalk red-chalk right" ng-click = "signupStudent(user)"><h4 class = "home-page-a">Sign Up! &nbsp;</h4><img src="asset/images/arrow.png" class= "selectDisable small-arrow"/></a>
                     </div>
                 </div>
 
@@ -83,12 +83,12 @@
                 </div>
                 <div class = "row">
                     <div class = " col-centered col-lg-2 col-md-2 col-sm-2">
-                        <input type="password" class ="input-glass chalk yellow-chalk signup-fields fullWidth" placeholder = "Confirm your password">
+                        <input type="password" class ="input-glass chalk yellow-chalk signup-fields fullWidth" ng-model="user.confirm" placeholder = "Confirm your password">
                     </div>
                 </div>
                 <div class = "row">
                     <div class = "col-centered col-lg-3 col-md-3 col-sm-3 right">
-                        <a class = "chalk red-chalk right" ng-click = "signupTeacher()"><h4 class = "home-page-a">Sign Up! &nbsp;</h4><img src="asset/images/arrow.png" class= "selectDisable small-arrow"/></a>
+                        <a class = "chalk red-chalk right" ng-click = "signupTeacher(user)"><h4 class = "home-page-a">Sign Up! &nbsp;</h4><img src="asset/images/arrow.png" class= "selectDisable small-arrow"/></a>
                     </div>
                 </div>
             </div>

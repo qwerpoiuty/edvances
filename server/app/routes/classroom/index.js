@@ -15,57 +15,64 @@ var sequelize = new Sequelize('postgres://localhost:5432/edvancesdb', {
 
 //get functions
 router.get('/', function(req, res) {
-    // models.Classroom.findAll({}).then(function(classrooms) {
-    //     res.json(classrooms)
-    // })
-    // models.Classroom.findById(1).then(function(classroom) {
-    //     console.log(classroom.blocks)
-    //     models.Calendar.findAll({
-    //         where: {
-    //             calendar_id: classroom.blocks
-    //         }
-    //     }).then(function(calendars) {
-    //         res.json(calendars)
-    //     })
-    // })
-    // models.Classroom.find({
-    //     include: [models.Calendar],
-    //     where:{
-    //         models.Calendar:
-    //     }
-    // }).then(function(classroom) {
-    //     console.log(classroom)
-    // })
-    // models.Classroom.findById(1).then(function(classroom) {
-    //     models.Calendar.findById(1).then(function(calendar) {
-    //         console.log(classroom.setCalendars)
-    //         classroom.setCalendars([calendar]).then(function(classroom) {
-    //             classroom.getCalendars().then(function(calendars) {
-    //                 console.log(calendars)
-    //             })
-    //         })
-    //     })
-    // })
-})
+    var modelParams = {}
+    if (req.query.classroomId) modelParams.id = req.query.classroomId
+    if (req.query.classroomTag) {
+        modelParams.tags = req.query.classroomTags
+    }
+    if (req.query.classroomKeyWord) modelParams.keyWord = req.query.classroomKeyWord
+    for (var key in modelParams) {
+        modelParams[key] = modelParams[key].map(function(e) {
+            return '{' + e + '}'
+        })
+    }
 
-router.get('/:id', function(req, res) {
-    models.Classroom.findById(req.params.id).then(function(classroom) {
-        res.json(classroom)
+    models.Classroom.findAll({
+        where: {
+            tags: {
+                $in: modelParams.tags
+            },
+            id: {
+                $in: modelParams.id
+            }
+        }
+    }).then(function(classrooms) {
+        res.json(classrooms)
     })
 })
 
+// router.get('/:id', function(req, res) {
+//     models.Classroom.findById(req.params.id).then(function(classroom) {
+//         res.json(classroom)
+//     })
+// })
+
 //some get function to do searches
-router.get('/search', function(req, res) {
+router.get('/search/:query', function(req, res) {
     //req.body is probably going to be a string
+    var query = req.params.query.toString().split(',')
+    query = query.map(function(e) {
+        return '{' + e + '}'
+    })
+    models.Classroom.findAll({
+        where: {
+            tags: {
+                $in: query
+            }
+        }
+    }).then(function(classrooms) {
+        res.json(classroom)
+    })
 
 })
 
-
 //puts
 //this is probably going to be for adding descriptions or assignments
-router.put('/update', function(req, res) {
-    models.Classroom.findById(req.body.id)
+router.put('/', function(req, res) {
+    //this is the update for ONLY THE CLASSROOM ATTRIBUTES. SCHEDULING TAKES PLACE IN THE SCHEDULING ROUTE
+    models.Classroom.findById(req.body.classroom_id)
         .then(function(classroom) {
+            console.log(classroom)
             return classroom.update(req.body)
         }).then(function(updatedClassroom) {
             res.json(updatedClassroom)
@@ -73,65 +80,53 @@ router.put('/update', function(req, res) {
 })
 
 //this is for scheduling
-router.put('/schedule/:id', function(req, res) {
+router.put('/schedule/', function(req, res) {
     //this route overides the previous schedule of the class with the new schedule
-    models.Classroom.findById(req.params.id).then(function(classroom) {
-        return classroom.setCalendars(req.body)
+    models.Classroom.findById(req.body.id).then(function(classroom) {
+        classroom.blocks = req.body
+        return classroom.update(classroom)
     }).then(function(classroom) {
         res.json(classroom)
     })
 })
 
-//this is for adding a block
-router.put('/addBlock/:id', function(req, res) {
-    models.Classroom.findById(req.params.id).then(function(classroom) {
-        return classroom.addCalendar(req.body)
-    }).then(function(classroom) {
-        res.json(classroom)
-    })
-})
+// router.put('/addBlock/:id', function(req, res) {
+//     models.Classroom.findById(req.params.id).then(function(classroom) {
+//         classroom.blocks = req.body
+//         return classroom.update(classroom)
+//     }).then(function(classroom) {
+//         res.json(classroom)
+//     })
+// })
 
-//this is for removing a block
-router.put('/removeBlock/:id', function(req, res) {
-    models.Classroom.findById(req.params.id).then(function(classroom) {
-        return classroom.removeCalendar(req.body)
-    }).then(function(classroom) {
-        res.json(classroom)
-    })
-})
+// //this is for removing a block
+// router.put('/removeBlock/:id', function(req, res) {
+//     models.Classroom.findById(req.params.id).then(function(classroom) {
+
+
+//     }).then(function(classroom) {
+//         res.json(classroom)
+//     })
+// })
+
 
 //this is probably going to be something for adding documents to the classroom. maybe avatar?
 
 
 //posts
-router.post('/:id', function(req, res) {
-    //this route needs to receive the classroom object, as well as a dashboardid
-    models.Classroom.create({
-        title: req.body.title,
-        start: req.body.start,
-        end: req.body.end,
-        teacher: req.params.id,
-        description: req.body.description,
-        DashboardDashboardId: req.params.id
-    }).then(function(classroom) {
-        models.Calendar.findById(1).then(function(calendar) {
-            console.log(calendar)
-            classroom.addCalendar(calendar, {
-                calendar_id: 1
-            })
-            console.log(classroom)
+router.post('/', function(req, res) {
+    models.Classroom.findOrCreate({
+        where: {
+            title: req.body.title
+        }
 
-        })
-        // res.json(classroom)
+    }).spread(function(classroom, created) {
+        if (!created) {
+            res.json(false)
+        }
+        res.json(classroom.classroom_id)
     })
 })
-
-
-
-
-
-
-
 
 
 module.exports = router;

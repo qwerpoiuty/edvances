@@ -6,22 +6,30 @@
 			</div>
 			<div class = "panel-body">
 				<accordion close-others="oneAtATime">
-				    <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-				      This content is straight in the template.
+				    <accordion-group heading="This is the beginning of a class discussion" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+				      <div class="question row">
+				      	<h2 class = "comment col-lg-10 col-md-10 col-sm-10">This is a comment</h2>
+						<h4 class = "author col-lg-2 col-md-2 col-sm-2">Made by Stan Le</h4>
+						
+				      </div>
+				      <div class = "response row">
+						<form ng-show='user' ng-submit="reply()">
+							<textarea rows="3" type="text" class="form-control" placeholder="Write a response..."></textarea cols="50">
+							<button class="btn btn-primary">Add response</button>
+						</form>
+				      </div>
 				    </accordion-group>
-				    <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-				      {{group.content}}
-				    </accordion-group>
-				    <accordion-group heading="Dynamic Body Content">
-				      <p>The body of the accordion group grows to fit the contents</p>
-				        <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
-				        <div ng-repeat="item in items">{{item}}</div>
-				    </accordion-group>
-				    <accordion-group is-open="status.open">
-				        <accordion-heading>
-				            I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-				        </accordion-heading>
-				        This is just some content to illustrate fancy headings.
+				    <accordion-group heading="This is another class discussion">
+				      <div class = "question row">
+						<h2 class = "comment col-lg-10 col-md-10 col-sm-10">This is another comment</h2>
+						<h4 class = "author col-lg-2 col-md-2 col-sm-2">Made by Inder Deol</h4>
+				      </div>
+				      <div class = "response row">
+						<form ng-show='user' ng-submit="reply()">
+							<textarea rows="3" type="text" class="form-control" placeholder="Write a response..."></textarea cols="50">
+							<button class="btn btn-primary">Add response</button>
+						</form>
+				      </div>
 				    </accordion-group>
 				  </accordion>
 			</div>

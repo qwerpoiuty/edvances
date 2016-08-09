@@ -1,0 +1,34 @@
+<button class = "btn btn-default" ng-click = "test()">DUMMY BUTTON</button>
+
+<div class="bg-white b-1px-gray-light b-top-none brad-bottom brad-tr b-bot-2px-gray-light">
+	<div class="tab-pane bg-white fade in p-30" id="search">
+		<h1 class="text-center font-w-100">What are you looking for?</h1>
+		<div class = "row">
+			<input type="text" ng-model="query" class = " col-lg-6 col-md-6 col-sm-6 input-large input-light"/>
+			<button class = "btn btn-default">Search!</button>
+		</div>
+		<div class="row">
+			<p class="m-b-30 p-b-30 text-gray-alt text-uppercase text-center col-lg-8 col-lg-offset-2">SOME INSPIRATION QUOTE PROBABLY NOT IN ALL CAPS!!!!!!!!!!</p>
+		</div>
+		<div class = "row">
+			<div class = "col-lg-11 col-md-11 col-sm-12 col-centered">
+				<h4 ng-if="search">Results...</h4>
+				<ul class = "search-holder">
+					<li ng-repeat="class in search track by $index">
+						<div class = "col-lg-10 col-md-10 col-sm-11 col-centered" ng-click = "transition(class.id)">
+							<div class = "row">
+								<h3 class = "class-title">{{class.Title}}</h3>
+							</div>
+							<div class = "row">
+								<h4 class = "class-teacher">{{class.teacher}}</h4>
+							</div>
+							<div class = "row">
+								<p>{{class.description}}</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

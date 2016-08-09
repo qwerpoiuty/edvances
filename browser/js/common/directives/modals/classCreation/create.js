@@ -64,9 +64,14 @@ app.controller('createClassCtrl', function($scope, $modalInstance, scheduler, da
     $scope.classData = {}
 
     $scope.ok = function() {
-        dataFactory.createClassroom($scope.user.id, $scope.classData).then(function(classroom) {
-            $modalInstance.close(classroom)
-        })
+        dataFactory.createClassroom($scope.user.id, $scope.classData)
+            .then(function(classroom) {
+                $scope.user.classrooms = [classroom.id]
+                dataFactory.updateUser($scope.user)
+                    .then(function() {
+                        $modalInstance.close(classroom)
+                    })
+            })
     };
 
     $scope.cancel = function() {

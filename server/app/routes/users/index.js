@@ -47,6 +47,7 @@ router.put('/update', function(req, res) {
 })
 
 
+
 //FILE
 router.put('/doc/:id', upload.single('doc'), function(req, res) {
     models.User.findById(req.params.id)

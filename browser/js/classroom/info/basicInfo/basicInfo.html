@@ -1,0 +1,51 @@
+<div class = "info-container">
+	<div class = "row">
+		<h1 class = "text-center font-w-100 welcome-message">Welcome to 9<sup>th</sup> grade Geometry<h1>
+	</h1>
+	<div class = "row row-centered">
+		<p class = "text-gray-alt text-center">Taught by: Stan Le</p>
+	</div>
+	<div class = "row">
+		<div class="col-lg-8 col-md-8 col-sm-8">
+			<span class = "text-gray-dark text-large align-with-button">
+				Class description
+			</span>
+			<hr>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptas, iste odio neque. Cumque dicta amet quae. Eaque omnis nesciunt, vitae, dolorem consequatur a obcaecati! Dolorem fugit ducimus delectus laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veritatis veniam nostrum qui consequatur voluptates est ex accusamus officia, beatae consectetur, laudantium repellendus eum perspiciatis labore laborum reiciendis, ratione rem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quae consequatur animi cumque ipsa molestias tenetur reprehenderit at perspiciatis voluptates ab, eveniet, voluptatum praesentium incidunt. Incidunt, iusto. Expedita, quidem, vitae.</p>
+		</div>
+		<div class = "col-lg-4 col-md-4 col-sm-4">
+			<span class = "text-gray-dark text-large align-with-button">
+				Virtual Classroom Status
+			</span>
+			<hr>
+			<div ng-show ="liveClass" class = "status">
+				<h4 class = "class-status">Class is live!</h4>
+				<button ng-click = "joinClass()" class = "btn btn-primary">Join now!</button>
+				<button ng-click = "toggleClass()" class = "btn btn-warning">End Class</button>
+			</div>
+			<div ng-hide = "liveClass" class = "status">
+				<h4 class = "class-status">Class is out</h4>
+				<button ng-click = "toggleClass()" class = "btn btn-success">Start Class</button>
+			</div>
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col-lg-6 col-md-6 col-sm-6">
+			<span class = "text-gray-dark text-large align-with-button">
+				Secheduled Meeting Times
+			</span>
+			<hr>
+			<div class = "">
+				<ul class = "meeting-times">
+					<li ng-repeat = "time in times">
+						<span class = "label label-success">{{time.day}}</span> @ <span class = "label label-warning">{{time.time}}</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class = "col-lg-6 col-md-6 col-sm-6">
+			
+		</div>
+	</div>
+
+</div>
