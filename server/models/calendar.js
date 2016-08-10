@@ -10,9 +10,6 @@ module.exports = function(sequelize, DataTypes) {
         date: {
             type: DataTypes.DATE
         },
-        block: {
-            type: DataTypes.INTEGER
-        },
         year: {
             type: DataTypes.INTEGER
         },
@@ -21,14 +18,9 @@ module.exports = function(sequelize, DataTypes) {
         },
         day: {
             type: DataTypes.INTEGER
-        }
-    }, {
-        classMethods: {
-            associate: function(models) {
-                Calendar.belongsToMany(models.Classroom, {
-                    through: 'schedule',
-                })
-            }
+        },
+        weekday: {
+            type: DataTypes.INTEGER
         }
     });
     return Calendar;

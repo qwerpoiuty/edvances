@@ -2,6 +2,7 @@ app.factory('classroomFactory', function($http, AuthService) {
     var classroomFactory = {}
         //user fetches
     classroomFactory.createClassroom = function(classroom) {
+        console.log(classroom)
         return $http.post("/api/classrooms/", classroom)
             .then(function(response) {
                 return response.data

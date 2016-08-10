@@ -72,7 +72,6 @@ router.put('/', function(req, res) {
     //this is the update for ONLY THE CLASSROOM ATTRIBUTES. SCHEDULING TAKES PLACE IN THE SCHEDULING ROUTE
     models.Classroom.findById(req.body.classroom_id)
         .then(function(classroom) {
-            console.log(classroom)
             return classroom.update(req.body)
         }).then(function(updatedClassroom) {
             res.json(updatedClassroom)
@@ -80,13 +79,15 @@ router.put('/', function(req, res) {
 })
 
 //this is for scheduling
-router.put('/schedule/', function(req, res) {
+router.put('/schedule/:id', function(req, res) {
     //this route overides the previous schedule of the class with the new schedule
-    models.Classroom.findById(req.body.id).then(function(classroom) {
-        classroom.blocks = req.body
-        return classroom.update(classroom)
+    models.Classroom.findById(req.params.id).then(function(classroom) {
+        // classroom.blocks = req.body
+        return classroom.update({
+            blocks: req.body
+        })
     }).then(function(classroom) {
-        res.json(classroom)
+        res.sendStatus(200)
     })
 })
 
@@ -118,7 +119,9 @@ router.post('/', function(req, res) {
     models.Classroom.findOrCreate({
         where: {
             title: req.body.title
-        }
+        },
+        defaults: req.body
+
 
     }).spread(function(classroom, created) {
         if (!created) {
