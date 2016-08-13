@@ -66,6 +66,9 @@ module.exports = function(app) {
         models.User.findOrCreate({
             where: {
                 email: req.body.email
+            },
+            defaults: {
+                password: req.body.password
             }
 
         }).spread(function(user, created) {
@@ -73,7 +76,12 @@ module.exports = function(app) {
             if (!created) {
                 res.json(false)
             }
-            res.sendStatus(200)
+            models.Dashboard.create({
+                UserId: user.id
+            }).then(function() {
+
+                res.sendStatus(200)
+            })
         })
         // models.User.create(req.body).then(function(user) {
         //     models.Dashboard.create({

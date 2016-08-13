@@ -46,15 +46,20 @@ app.factory('userFactory', function($http) {
             })
     }
     //these two add and remove classes from the classroom array on the dashboard
-    classroomFactory.addClass = function(classroom_id, studentId) {
-        return $http.put('/api/dashboard/add' + classroom_id, studentId)
+    userFactory.addClass = function(classroom_id, studentId) {
+        //can only pass an array or an object in the body
+        var array = [classroom_id]
+
+        return $http.put('/api/dashboards/students/add/' + studentId, array)
             .then(function(response) {
+                console.log(response.data)
                 return response.data
             })
     }
 
-    classroomFactory.removeClass = function(classroom_id, sudentId) {
-        return $http.put('/api/dashboard/remove' + classrom_id, studentId)
+    userFactory.removeClass = function(classroom_id, studentId) {
+        var array = [classroom_id]
+        return $http.put('/api/dashboards/students/remove/' + studentId, array)
             .then(function(response) {
                 return response.data
             })
