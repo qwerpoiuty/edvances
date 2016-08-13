@@ -6,7 +6,7 @@ app.config(function($stateProvider) {
     })
 });
 
-app.controller('homeCtrl', function($scope, $state, userFactory) {
+app.controller('homeCtrl', function($scope, $state, userFactory, AuthService) {
     $scope.join_user = ""
 
     $scope.signup = function(state) {
@@ -17,11 +17,12 @@ app.controller('homeCtrl', function($scope, $state, userFactory) {
     }
 
     $scope.signupTeacher = function(user) {
-        console.log(user)
         user.powerLevel = 2;
-        userFactory.createUser(user).then(function(bool) {
-            if (bool) $state.transitionTo('dashboard')
-            else alert('Email in use')
+        userFactory.createUser(user).then(function(credits) {
+            if (credits) {
+                AuthService.login(credits)
+                $state.transitionTo('dashboard')
+            } else alert('Email in use')
         })
         //input userFactory signup function
     }
@@ -37,3 +38,15 @@ app.controller('homeCtrl', function($scope, $state, userFactory) {
 
 
 })
+
+function shift(obj) {
+    var temp = []
+    var i = 0
+    for (var keys in obj) {
+        console.log(obj[keys])
+        temp.pueh(obj[keys])
+        if (i > 0) {
+            obj[keys] = temp[i - 1]
+        }
+    }
+}

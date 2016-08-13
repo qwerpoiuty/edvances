@@ -8,12 +8,12 @@ app.config(function($stateProvider) {
                 return AuthService.getLoggedInUser().then(function(user) {
                     return user
                 })
+            },
+            classroom: function(classroomFactory, $stateParams) {
+                return classroomFactory.getClassroomById($stateParams.id).then(function(classroom) {
+                    return classroom
+                })
             }
-            // classroom: function(dataFactory, $stateParams) {
-            //     return dataFactory.getClassroomById($stateParams.id).then(function(classroom) {
-            //         return classroom
-            //     })
-            // }
         }
     })
 });

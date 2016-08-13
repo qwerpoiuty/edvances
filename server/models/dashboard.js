@@ -8,6 +8,10 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
+        classrooms: {
+            type: DataTypes.ARRAY(DataTypes.INTEGER),
+            defaultValue: []
+        },
         todo: DataTypes.ARRAY(DataTypes.STRING)
     }, {
         classMethods: {
@@ -19,7 +23,6 @@ module.exports = function(sequelize, DataTypes) {
                         as: 'id'
                     }
                 })
-                Dashboard.hasMany(models.Classroom)
             }
         }
     }, {

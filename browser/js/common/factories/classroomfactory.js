@@ -8,18 +8,23 @@ app.factory('classroomFactory', function($http, AuthService) {
                 return response.data
             })
     }
-   classroomFactory.updateClassroom = function(id, classroom) {
-        return $http.put("/api/classrooms/" + id, classroom)
+
+    classroomFactory.updateClassroom = function(classroom) {
+        return $http.put("/api/classrooms/", classroom)
             .then(function(response) {
                 return response.data
             })
     }
+
     classroomFactory.getClassrooms = function() {
         return $http.get("/api/classrooms/")
             .then(function(response) {
                 console.log(response.data)
             })
     }
+    
+    //basic fetches for classrooms
+
     classroomFactory.getClassroomById = function(id) {
         return $http.get("/api/classrooms/" + id)
             .then(function(response) {
@@ -29,9 +34,10 @@ app.factory('classroomFactory', function($http, AuthService) {
     }
     classroomFactory.delClassroom = function(id, classroom) {
         return $http.delete("/api/classrooms/" + id, classroom)
-        .then(function(response){
-            return response.data
-        })
+            .then(function(response) {
+                return response.data
+            })
     }
+
     return classroomFactory
 });

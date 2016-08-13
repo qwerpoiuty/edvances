@@ -8,6 +8,6 @@ app.factory('searchFactory', function($http){
 			.then(function(response){
 				return response.data
 			})
-	}
+	}	
 	return searchFactory
 })

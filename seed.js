@@ -23,7 +23,6 @@ var fs = require('fs')
     //var Groups = Promise.promisifyAll(mongoose.model('Groups'));
     //var Graphs = Promise.promisifyAll(mongoose.model('Graphs'));
 
-var seed = fs.readFileSync('see.csv')
 console.log(seed)
 
 // var getCurrentUserData = function() {
@@ -77,23 +76,39 @@ console.log(seed)
 //     return Graphs.createAsync(graphs);
 // };
 
-connectToDb.then(function() {
-    User.findAsync({}).then(function(users) {
-        if (users.length === 0) {
-            return seedUsers();
-        } else {
-            console.log(chalk.magenta('Seems to already be user data, exiting!'));
-            process.kill(0);
-        }
-        // }).then(function() {
-        //     return seedGroups();
-        // }).then(function() {
-        //     return seedGraphs();
-    }).then(function() {
-        console.log(chalk.green('Seed successful!'));
-        process.kill(0);
-    }).catch(function(err) {
-        console.error(err);
-        process.kill(1);
-    });
-});
+// var start = new Date(2016, 7, 1)
+
+// for (var i = 0; i < 1000; i++) {
+//     var interval = 1800000 * i
+//     var now = new Date(start.getTime() + interval)
+//     var calendar = {
+//         date: new Date(now),
+//         year: now.getYear() + 1900,
+//         month: now.getMonth(),
+//         day: now.getDate(),
+//         weekday: now.getDay()
+//     }
+//     models.Calendar.create(calendar).then(function(calendar) {
+//         console.log(calendar.calendar_id)
+//     })
+// }
+// connectToDb.then(function() {
+//     User.findAsync({}).then(function(users) {
+//         if (users.length === 0) {
+//             return seedUsers();
+//         } else {
+//             console.log(chalk.magenta('Seems to already be user data, exiting!'));
+//             process.kill(0);
+//         }
+//         // }).then(function() {
+//         //     return seedGroups();
+//         // }).then(function() {
+//         //     return seedGraphs();
+//     }).then(function() {
+//         console.log(chalk.green('Seed successful!'));
+//         process.kill(0);
+//     }).catch(function(err) {
+//         console.error(err);
+//         process.kill(1);
+//     });
+// });
