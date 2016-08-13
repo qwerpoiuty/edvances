@@ -8,7 +8,7 @@ var upload = multer({
     storage: storage
 })
 var Sequelize = require('sequelize')
-var sequelize = new Sequelize('postgres://localhost:5432/edvancesdb', {
+var sequelize = new Sequelize('postgres://edvancesAdmin:edadmin@localhost:5432/edvancesdb', {
     dialect: 'postgres',
     protocol: 'postgres'
 })
@@ -41,6 +41,17 @@ router.get('/', function(req, res) {
     })
 })
 
+router.put('/search', function(req, res){
+    console.log(req.body, "HELLOLOLO")
+    sequelize.query('SELECT * FROM "Classrooms"' + " WHERE description similar to '%((Math)|(English)|(French))%'")
+
+        .then(function(classrooms){
+            console.log(classrooms)
+            res.json(classrooms)
+        })
+})
+
+
 // router.get('/:id', function(req, res) {
 //     models.Classroom.findById(req.params.id).then(function(classroom) {
 //         res.json(classroom)
@@ -48,23 +59,22 @@ router.get('/', function(req, res) {
 // })
 
 //some get function to do searches
-router.get('/search/:query', function(req, res) {
-    //req.body is probably going to be a string
-    var query = req.params.query.toString().split(',')
-    query = query.map(function(e) {
-        return '{' + e + '}'
-    })
-    models.Classroom.findAll({
-        where: {
-            tags: {
-                $in: query
-            }
-        }
-    }).then(function(classrooms) {
-        res.json(classroom)
-    })
-
-})
+// router.get('/search/:query', function(req, res) {
+//     //req.body is probably going to be a string
+//     var query = req.params.query.toString().split(',')
+//     query = query.map(function(e) {
+//         return '{' + e + '}'
+//     })
+//     models.Classroom.findAll({
+//         where: {
+//             tags: {
+//                 $in: query
+//             }
+//         }
+//     }).then(function(classrooms) {
+//         res.json(classroom)
+//     })
+// })
 
 //puts
 //this is probably going to be for adding descriptions or assignments

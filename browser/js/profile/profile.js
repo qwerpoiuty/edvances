@@ -13,6 +13,19 @@ app.config(function($stateProvider) {
     })
 })
 
-app.controller("profileCtrl", function($scope) {
+app.controller("profileCtrl", function($scope, user, userFactory, searchFactory, classroomFactory) {
+    $scope.user= user;
 
+    $scope.getSearch = function(tags){  
+        searchFactory.searchClassroomsByTag(tags)
+            .then(function(classroom){
+        })
+    }
+
+    $scope.saveChanges = function(user){
+        userFactory.updateUser(user)
+            .then(function(user){
+                $scope.user = user;
+        })
+    }
 })
