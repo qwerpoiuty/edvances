@@ -47,24 +47,27 @@ router.get('/', function(req, res) {
 //     })
 // })
 
-//some get function to do searches
-router.get('/search/:query', function(req, res) {
-    //req.body is probably going to be a string
-    var query = req.params.query.toString().split(',')
-    query = query.map(function(e) {
-        return '{' + e + '}'
-    })
-    models.Classroom.findAll({
-        where: {
-            tags: {
-                $in: query
-            }
-        }
-    }).then(function(classrooms) {
-        res.json(classroom)
-    })
-
+router.get('/search', function(req, res) {
+    console.log('hello')
 })
+//some get function to do searches
+// router.get('/search/:query', function(req, res) {
+//     //req.body is probably going to be a string
+//     var query = req.params.query.toString().split(',')
+//     query = query.map(function(e) {
+//         return '{' + e + '}'
+//     })
+//     models.Classroom.findAll({
+//         where: {
+//             tags: {
+//                 $in: query
+//             }
+//         }
+//     }).then(function(classrooms) {
+//         res.json(classroom)
+//     })
+
+// })
 
 //puts
 //this is probably going to be for adding descriptions or assignments

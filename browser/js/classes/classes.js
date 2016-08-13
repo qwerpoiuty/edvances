@@ -6,14 +6,14 @@ app.config(function($stateProvider) {
     })
 })
 
-app.controller("classesCtrl", function($scope, userFactory, classroomFactory, scheduler, $state) {
+app.controller("classesCtrl", function($scope, userFactory, classroomFactory, scheduler, $state, searchFactory) {
 
     $scope.createClassroom = function(classroom) {
 
         var now = new Date(2016, 7, 8)
             // console.log(start, now, ((now - start) / 1000) / 1800)
         var classroom = {
-            title: "Test1",
+            title: "Test2",
             start: Date.now(),
             end: Date.now(),
             teacher: 1,
@@ -27,10 +27,10 @@ app.controller("classesCtrl", function($scope, userFactory, classroomFactory, sc
         })
     }
 
-    $scope.updateClassroom = function(classroom) {
+    $scope.test = function(classroom) {
         var classroom = {
             classroom_id: 1,
-            title: 'Hello',
+            title: 'hello world',
             teacher: 1,
             description: 'lorem sucks'
         }
@@ -60,16 +60,19 @@ app.controller("classesCtrl", function($scope, userFactory, classroomFactory, sc
         })
     }
 
-    $scope.test = function(studentId) {
+    $scope.getCalendar = function(studentId) {
         scheduler.getCalendar(1).then(function(calendar) {
             console.log(calendar)
         })
     }
     $scope.search = function(search) {
-
+        searchFactory.searchClassroomsByTags(['hello', 'world', 'math'])
+            .then(function(classrooms) {
+                console.log('here!')
+            })
         // dataFactory.getClassrooms(search)
     }
-    $scope.search('test,testing');
+    // $scope.search('test,testing');
     $scope.classes = [{
         title: "Math",
         teacher: "Stan",

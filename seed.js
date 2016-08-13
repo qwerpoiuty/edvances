@@ -23,7 +23,6 @@ var fs = require('fs')
     //var Groups = Promise.promisifyAll(mongoose.model('Groups'));
     //var Graphs = Promise.promisifyAll(mongoose.model('Graphs'));
 
-var seed = fs.readFileSync('see.csv')
 console.log(seed)
 
 // var getCurrentUserData = function() {
